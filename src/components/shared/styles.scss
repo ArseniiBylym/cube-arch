@@ -1,0 +1,11 @@
+.LangToggle {
+    span {
+        font-size: 18px;
+        margin: 0 1rem;
+        cursor: pointer;
+
+        &.active {
+            font-weight: bold;
+        }
+    }
+}
