@@ -1,6 +1,7 @@
 import React from 'react';
 import {useStoreState} from 'easy-peasy';
 import {data} from '../../data/index';
+import {Lang} from '../../components/Home';
 import classNames from 'classnames';
 
 export const Nav = ({activeLink, setActiveLink}) => {
@@ -10,7 +11,8 @@ export const Nav = ({activeLink, setActiveLink}) => {
         if (!lang) return null;
         return data.lang[lang].pages.home.nav.map(item => {
             return (
-                <a href={`#${item.name}`}
+                <a
+                    href={`#${item.name}`}
                     className={classNames('link', {active: activeLink === item.index})}
                     onClick={() => setActiveLink(item.index)}
                     key={item.index}
@@ -21,5 +23,10 @@ export const Nav = ({activeLink, setActiveLink}) => {
         });
     };
 
-    return <div className="Nav">{getLinks()}</div>;
+    return (
+        <div className="Nav">
+            <Lang />
+            {getLinks()}
+        </div>
+    );
 };

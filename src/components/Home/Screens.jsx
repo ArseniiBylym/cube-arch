@@ -14,7 +14,7 @@ import './styles.scss';
 import {data} from './../../data/index';
 
 export const Screens = props => {
-    const {activeScreen} = props;
+    const {activeScreen, setActiveScreen} = props;
     const lang = useStoreState(state => state.lang.current);
     const components = [HomeScreen, GroupsScreen, ProgramsScreen, ClassesScreen, ToursScreen, GalleryScreen, AboutScreen];
 
@@ -23,7 +23,7 @@ export const Screens = props => {
         const id = key;
         return (
             <div key={key} className={classNames('item', {active: activeScreen === index})} id={id} >
-                <Component className={activeScreen === index ? 'active': ''} {...data.lang[lang].pages.home.screens[index]} />
+                <Component setActiveScreen={setActiveScreen} className={activeScreen === index ? 'active': ''} {...data.lang[lang].pages.home.screens[index]} />
             </div>
         )
     })

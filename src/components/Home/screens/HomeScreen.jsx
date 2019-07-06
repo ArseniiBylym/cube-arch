@@ -4,7 +4,7 @@ import logo from '../../../assets/icons/logo.svg';
 import { IoIosArrowDown} from 'react-icons/io'
 
 export const HomeScreen = props => {
-    const {text, linkText, linkUrl} = props;
+    const {text, linkText, linkUrl, setActiveScreen} = props;
     return (
         <div className="HomeScreen">
             <div className="logo">
@@ -15,8 +15,8 @@ export const HomeScreen = props => {
                 <div className="info">{text}</div>
             </div>
             <div className="next">
-                <a href={`#${linkUrl}`} className="button">{linkText}</a>
-                <a href={`#${linkUrl}`} className="icon-container">
+                <a onClick={() => setActiveScreen(1)} href={`#${linkUrl}`} className="button">{linkText}</a>
+                <a onClick={() => setActiveScreen(1)} href={`#${linkUrl}`} className="icon-container">
                     <IoIosArrowDown className="icon"/>
                 </a>
             </div>
