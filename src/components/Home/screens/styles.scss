@@ -1,6 +1,18 @@
+.ClassesScreen,
+.GroupsScreen,
+.AboutScreen,
+.ProgramsScreen,
+.ToursScreen,
+.GalleryScreen,
 .HomeScreen{
+    position: relative;
     width: 100%;
     height: 100%;
+    padding: 7rem;
+    padding-right: 300px;
+}
+
+.HomeScreen{
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -66,5 +78,57 @@
     }
     50%{
         transform: translateY(0)
+    }
+}
+
+
+.GroupsScreen{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &.active {
+        .text{
+            .content{
+                transform: translateX(0px);
+                opacity: 1;
+            }
+            .button{
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+    }
+    .text {
+        position: absolute;
+        top: 7rem;
+        right: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .content{
+            width: 80%;
+            font-size: 1.5rem;
+            margin-left: auto;
+            transform: translateX(-60px);
+            opacity: 0;
+            transition: all 2s ease-out .5s;
+        }
+        .button{
+            margin: 1rem 6rem 0 0;
+            transform: translateX(30px);
+            opacity: 0;
+            transition: all 1s ease-out 1s;
+         }
+    }
+    
+    .image{
+        width: 80%;
+        height: 80%;
+        .content{
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle 50vw at 100% 20%, #efefef 10%, transparent), 
+            url('../../../assets/images/groups.jpg') left bottom/ cover no-repeat;
+        }
     }
 }

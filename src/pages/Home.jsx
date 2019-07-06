@@ -14,7 +14,7 @@ const Home = () => {
                     activeLink={activeScreen}
                     setActiveLink={setActiveScreen}    
                 />
-                <Screens />
+                <Screens activeScreen={activeScreen}/>
             </Layout>
         </div>
     );
