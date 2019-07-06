@@ -4,8 +4,7 @@ import logo from '../../../assets/icons/logo.svg';
 import { IoIosArrowDown} from 'react-icons/io'
 
 export const HomeScreen = props => {
-    console.log(props)
-    const {index, name, text, linkText, linkUrl} = props;
+    const {text, linkText, linkUrl} = props;
     return (
         <div className="HomeScreen">
             <div className="logo">

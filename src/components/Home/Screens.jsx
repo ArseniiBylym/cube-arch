@@ -16,7 +16,7 @@ import {data} from './../../data/index';
 export const Screens = props => {
     const {activeScreen} = props;
     const lang = useStoreState(state => state.lang.current);
-    const components = [HomeScreen, GroupsScreen, ClassesScreen, ProgramsScreen, ToursScreen, GalleryScreen, AboutScreen];
+    const components = [HomeScreen, GroupsScreen, ProgramsScreen, ClassesScreen, ToursScreen, GalleryScreen, AboutScreen];
 
     const screens = components.map((Component, index) => {
         const key = data.lang[lang].pages.home.screens[index].name;
