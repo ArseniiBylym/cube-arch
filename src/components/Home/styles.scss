@@ -38,6 +38,10 @@
     padding: 0 1rem;
     width: 300px;
     z-index: 100;
+    .fontLoader{
+        visibility: hidden;
+        position: absolute;
+    }
 }
 .Screens{
     width: 100%;

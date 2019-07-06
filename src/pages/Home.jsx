@@ -1,34 +1,61 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {useStoreState} from 'easy-peasy';
 import {Layout, Nav, Screens, Particles } from './../components/Home';
 
 const Home = () => {
-    const lang = useStoreState(state => state.lang.current);
     const [activeScreen, setActiveScreen] = useState(0);
     const [timer, setTimer] = useState(null);
-    const [elems, setElems] = useState(null);
     const homeElem  = useRef(null);
 
     useEffect(() => {
         const elem = homeElem.current;
         elem.addEventListener('wheel', wheelHandler, {passive: false})
+        return function() {
+            elem.removeEventListener('wheel', wheelHandler)
+        }
     }, []);
 
     useEffect(() => {
-        const el = [...document.querySelectorAll('.Screens .item')];
-        setElems(el);
-    }, [lang]);
+        document.body.addEventListener('keydown', onKeyDownHandler)
+        return function () {
+            document.body.removeEventListener('keydown', onKeyDownHandler)
+        }
+    }, [activeScreen])
 
     const moveNext = () => {
         const nextNum = activeScreen + 1;
-        elems[nextNum].scrollIntoView();
+        const elem = [...document.querySelectorAll('.Screens .item')][nextNum];
+        elem.scrollIntoView();
         setActiveScreen(nextNum);
     }
 
     const movePrev = () => {
         const prevNum = activeScreen - 1;
-        elems[prevNum].scrollIntoView();
+        const elem = [...document.querySelectorAll('.Screens .item')][prevNum];
+        elem.scrollIntoView();
         setActiveScreen(prevNum);
+    }
+
+    const onKeyDownHandler = e => {
+        const key = e.key;
+        if (key === 'ArrowDown' || key === 'ArrowUp') e.preventDefault();
+        switch (key) {
+            case 'ArrowDown': 
+                if (activeScreen >= 6) {
+                    return false
+                } else {
+                    moveNext();
+                }
+                break;
+            case 'ArrowUp':
+                if (activeScreen === 0) {
+                    return false
+                } else {
+                    movePrev();
+                }
+                break
+            default: 
+                break;
+        }
     }
 
     const onWheel = (e) => {
