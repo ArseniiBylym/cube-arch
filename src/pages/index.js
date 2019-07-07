@@ -1,3 +1,4 @@
+import Layout from './Layout';
 import About from './About';
 import Admin from './Admin';
 import Gallery from './Gallery';
@@ -7,4 +8,4 @@ import Classes from './Classes';
 import Programs from './Programs';
 import Tours from './Tours';
 
-export {About, Admin, Gallery, Groups, Home, Classes, Programs, Tours};
+export {Layout, About, Admin, Gallery, Groups, Home, Classes, Programs, Tours};

@@ -29,7 +29,7 @@ export const Particles = props => (
                     "line_linked": {
                         "color": "#333",
                         "distance": 400,
-                        "opacity": 0.3,
+                        "opacity": 0.5,
                         "width": 1
                     },
                     "move": {
@@ -43,15 +43,10 @@ export const Particles = props => (
                             "enable": false,
                         },
                         "onclick": {
-                            "enable": true,
-                            "mode": "repulse"
+                            "enable": false,
                         }
                     },
-                    "modes": {
-                        "repulse": {
-                            "distance": 150
-                        }
-                    }
+                    
                 }
             }}
         />
