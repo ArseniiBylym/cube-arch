@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {Layout, Nav, Screens, Particles } from './../components/Home';
+import {Nav, Screens} from './../components/Home';
+import {Particles} from '../components/shared'
+import './styles.scss';
 
 const Home = () => {
     const [activeScreen, setActiveScreen] = useState(0);
@@ -91,14 +93,12 @@ const Home = () => {
 
     return (
         <div className="Home" ref={homeElem} onWheel={onWheel}>
-            <Layout>
-                <Particles />
-                <Nav 
-                    activeLink={activeScreen}
-                    setActiveLink={setActiveScreen}    
-                />
-                <Screens activeScreen={activeScreen} setActiveScreen={setActiveScreen}/>
-            </Layout>
+            <Particles />
+            <Nav 
+                activeLink={activeScreen}
+                setActiveLink={setActiveScreen}    
+            />
+            <Screens activeScreen={activeScreen} setActiveScreen={setActiveScreen}/>
         </div>
     );
 };
