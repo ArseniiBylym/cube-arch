@@ -3,6 +3,7 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 
 import {About, Classes, Gallery, Groups, Programs, Tours} from './';
 import {Header} from '../components/Layout';
+import './styles.scss';
 
 const Layout = () => {
     return (
