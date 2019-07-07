@@ -9,7 +9,7 @@ export const HomeScreen = props => {
         <div className="HomeScreen">
             <div className="logo">
                 <img className="image" src={logo} alt="" />
-                <div className="title">Cube Arch Club</div>
+                <div className="title">Cube ARCH Club</div>
             </div>
             <div className="content">
                 <div className="info">{text}</div>
