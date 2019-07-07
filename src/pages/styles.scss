@@ -11,12 +11,12 @@
        left: 0;
        top: 0;
        right: 0;
+       z-index: 100;
     }
     .content {
         margin-top: 60px;
-        & > div {
-            min-height: calc(100vh - 60px);
-        }
+        padding: 0 2rem;
+        position: relative;
     }
 }
 
@@ -26,5 +26,32 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
-.Groups {
+
+
+.PageDetails {
+    padding: 2rem 4rem;
+    padding-bottom: 0;
+
+    &__header{
+        font-size: 3rem;
+        border-bottom: 1px solid gray;
+        margin: 1rem 0;
+        padding: 0 2rem;
+    }
+
+    &__description{
+        font-size: 1.3rem;
+        margin-top: 2rem;
+    }
+
+    &__list{
+        padding: 5rem;
+
+    }
+}
+
+.Groups{
+    &__item{
+        background-color: white;
+    }
 }

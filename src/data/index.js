@@ -35,22 +35,28 @@ export const data = {
                     ]
                 },
                 groups: {
-                    
+                    title: "Groups",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 programs: {
-                    
+                    title: "Programs",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 classes: {
-                
+                    title: "Classes",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 tours: {
-                
+                    title: "Tours",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 gallery: {
-                
+                    title: "Groups",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 about: {
-                
+                    title: "Gallery",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 }
             }
         },
@@ -80,22 +86,28 @@ export const data = {
                     ]
                 },
                 groups: {
-                    
+                    title: "Групи",
+                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 programs: {
-                    
+                    title: "Програми",
+                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 classes: {
-                
+                    title: "Майстер-класи",
+                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 tours: {
-                
+                    title: "Екскурсії",
+                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 gallery: {
-                
+                    title: "Галерея",
+                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 about: {
-                
+                    title: "Про нас",
+                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 }
             }
         }
