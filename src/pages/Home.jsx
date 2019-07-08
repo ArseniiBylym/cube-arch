@@ -3,6 +3,8 @@ import {Nav, Screens} from './../components/Home';
 import {Particles} from '../components/shared'
 import './styles.scss';
 
+const SCREENS_LEN = 8;
+
 const Home = () => {
     const [activeScreen, setActiveScreen] = useState(0);
     const [timer, setTimer] = useState(null);
@@ -42,7 +44,7 @@ const Home = () => {
         if (key === 'ArrowDown' || key === 'ArrowUp') e.preventDefault();
         switch (key) {
             case 'ArrowDown': 
-                if (activeScreen >= 6) {
+                if (activeScreen >= SCREENS_LEN) {
                     return false
                 } else {
                     moveNext();
@@ -69,7 +71,7 @@ const Home = () => {
         const dir = e.deltaY > 0 ? 'down' : 'up'
         switch (dir) {
             case 'down': 
-                if (activeScreen >= 6) {
+                if (activeScreen >= SCREENS_LEN) {
                     return false
                 } else {
                     moveNext();

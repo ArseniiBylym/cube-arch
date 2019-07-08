@@ -8,7 +8,9 @@ import {
     ProgramsScreen,
     ToursScreen,
     GalleryScreen,
+    ArticlesScreen, 
     AboutScreen,
+    ContactsScreen,
 } from './screens/index';
 import './styles.scss';
 import {data} from './../../data/index';
@@ -16,7 +18,7 @@ import {data} from './../../data/index';
 export const Screens = props => {
     const {activeScreen, setActiveScreen} = props;
     const lang = useStoreState(state => state.lang.current);
-    const components = [HomeScreen, GroupsScreen, ProgramsScreen, ClassesScreen, ToursScreen, GalleryScreen, AboutScreen];
+    const components = [HomeScreen, GroupsScreen, ProgramsScreen, ClassesScreen, ToursScreen, GalleryScreen, ArticlesScreen, AboutScreen, ContactsScreen];
 
     const screens = components.map((Component, index) => {
         const key = data.lang[lang].pages.home.screens[index].name;

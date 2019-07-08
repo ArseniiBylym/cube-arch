@@ -7,5 +7,7 @@ import Home from './Home';
 import Classes from './Classes';
 import Programs from './Programs';
 import Tours from './Tours';
+import Articles from './Articles';
 
-export {Layout, About, Admin, Gallery, Groups, Home, Classes, Programs, Tours};
+
+export {Layout, About, Admin, Gallery, Groups, Home, Classes, Programs, Tours, Articles};

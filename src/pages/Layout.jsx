@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 
-import {About, Classes, Gallery, Groups, Programs, Tours} from './';
+import {About, Classes, Gallery, Groups, Programs, Tours, Articles} from './';
 import {Header} from '../components/Layout';
 import './styles.scss';
 
@@ -19,6 +19,7 @@ const Layout = () => {
                     <Route exact path="/tours" component={Tours} />
                     <Route exact path="/gallery" component={Gallery} />
                     <Route exact path="/about" component={About} />
+                    <Route exact path="/articles" component={Articles} />
                     <Redirect from="/*" to="/" />
                 </Switch>
             </div>
