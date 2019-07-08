@@ -33,7 +33,7 @@
         }
         .date{
         }
-        .duration{
+        .places{
 
         }
         .price{
@@ -47,22 +47,16 @@
         .description{
 
         }
-        .programs{
+        .program{
             margin-top: 1.5rem;
-            .programList{
-                display: flex;
-                flex-flow: column nowrap;
+            a {
                 font-weight: bold;
                 text-transform: uppercase;
-                a {
-                    font-size: 1.3rem;
-                    margin-bottom: 1.2rem;
-                    transition: all .5s ease-out;
-                    &:hover{
-                        transform: translateX(-15px);
-                    }
+                font-size: 1.3rem;
+                margin-bottom: 1.2rem;
+                transition: all .3s ease;
                 }
-            }
+            // }
         }
         .apply_container{
             margin-top: auto;
@@ -81,11 +75,12 @@
                 }
             }
             .closed{
+                color: rgba(51, 51, 51, 0.527);
                 display: inline;
                 font-size: 1.5rem;
                 text-transform: uppercase;
                 padding: 0 3rem;
-                border: 1px solid #333;
+                border: 1px solid rgba(51, 51, 51, 0.527);
             }
         }
     }

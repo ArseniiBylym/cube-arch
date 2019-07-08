@@ -38,13 +38,16 @@ export const data = {
                     title: "Groups",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
-                        date: "Starting date",
-                        duration: "Days duration",
-                        closed: "Registration ended",
+                        date: "Learning period",
+                        duration: "Classes ammount",
+                        places: "Available places",
                         price: "Price",
-                        description: "Details",
-                        programs: "Icluded programs",
-                        apply: "Register"
+                        program: {
+                            title: "Learning program",
+                            tooltip: "Read more"
+                        },
+                        apply: "Register",
+                        closed: "Registration ended",
                     },
                 },
                 programs: {
@@ -98,13 +101,16 @@ export const data = {
                     title: "Групи",
                     description: "Якщо потрібно, тут буде більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут буде більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут буде більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
-                        date: "Початок занять",
-                        duration: "Кількість днів",
-                        closed: "Реєстрацію завершено",
+                        date: "Період навчання",
+                        duration: "Кількість занять",
+                        places: "Залишилось місць",
                         price: "Вартість",
-                        description: "Деталі",
-                        programs: "Включені програми",
-                        apply: "Зареєструватися"
+                        program: {
+                            title: "Програма навчання",
+                            tooltip: "Докладніше"
+                        },
+                        apply: "Зареєструватися",
+                        closed: "Реєстрацію завершено",
                     }
                 },
                 programs: {
