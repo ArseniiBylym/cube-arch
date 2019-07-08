@@ -5,7 +5,6 @@ import './styles.scss';
 export const Lang = props => {
     return (
         <div className="Lang">
-            <div className="fontLoader">test/тест</div>
             <LangToggle />
         </div>
     )

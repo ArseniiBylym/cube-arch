@@ -10,6 +10,7 @@ export const LangToggle = props => {
 
     return (
         <div className="LangToggle">
+            <div className="fontLoader">test/тест</div>
             <span onClick={() => toggleLang('ukr')} className={classNames({active: lang === 'ukr'})}>UKR</span>
             /
             <span onClick={() => toggleLang('en')} className={classNames({active: lang === 'en'})}>EN</span>

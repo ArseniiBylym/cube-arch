@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import {Group} from '../components/Groups'
 import Divider from '@material-ui/core/Divider';
+import {Particles} from '../components/shared'
 
 
 import { Api } from '../api/index';
@@ -34,12 +35,12 @@ const Groups = () => {
                         <Grid item sm={12} md={10} className="Groups__item">
                             <Group {...item} dir="ltr"/>
                         </Grid>
-                        <Grid item sm={0} md={2} />
+                        <Grid item sm={false} md={2} />
                         <Divider />
                         </>
                     ) : (
                         <>
-                        <Grid item sm={0} md={2} />
+                        <Grid item sm={false} md={2} />
                         <Grid item sm={12} md={10} className="Groups__item">
                             <Group {...item} dir="rtl"/>
                         </Grid>
@@ -55,6 +56,9 @@ const Groups = () => {
 
     if (!groups || !content) return <Spinner />;
     return (
+        <>
+            <Particles />
+            
         <div className="PageDetails Groups">
             <Grid container direction="row-reverse" className="PageDetails__header">
                 <Grid className="PageDetails__header__text" item xs={12} sm={6} lg={4}>{content.title}</Grid>
@@ -62,6 +66,7 @@ const Groups = () => {
             <Container maxWidth="md" className="PageDetails__description">{content.description}</Container>
             <Grid container direction="column" spacing={10} className="PageDetails__list">{getGroups()}</Grid>
         </div>
+        </>
     );
 };
 

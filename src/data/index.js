@@ -37,6 +37,15 @@ export const data = {
                 groups: {
                     title: "Groups",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    details: {
+                        date: "Starting date",
+                        duration: "Days duration",
+                        closed: "Registration ended",
+                        price: "Price",
+                        description: "Details",
+                        programs: "Icluded programs",
+                        apply: "Register"
+                    },
                 },
                 programs: {
                     title: "Programs",
@@ -87,7 +96,16 @@ export const data = {
                 },
                 groups: {
                     title: "Групи",
-                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    description: "Якщо потрібно, тут буде більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут буде більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут буде більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    details: {
+                        date: "Початок занять",
+                        duration: "Кількість днів",
+                        closed: "Реєстрацію завершено",
+                        price: "Вартість",
+                        description: "Деталі",
+                        programs: "Включені програми",
+                        apply: "Зареєструватися"
+                    }
                 },
                 programs: {
                     title: "Програми",

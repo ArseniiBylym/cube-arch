@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #efefef !important;
 }
 
 ::-webkit-scrollbar{
@@ -22,10 +23,6 @@ a{
   text-decoration: none;
 }
 
-.bg-primary{
-  background-color: #efefef
-}
-
 .text-primary {
-  color: #333
+  color: #333;
 }

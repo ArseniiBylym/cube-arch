@@ -37,6 +37,12 @@
         border-bottom: 1px solid gray;
         margin: 1rem 0;
         padding: 0 2rem;
+
+        &__text{
+            opacity: 0;
+            transform: translateX(40px);
+            animation: apearFromRight 2s ease forwards;
+        }
     }
 
     &__description{
@@ -53,5 +59,31 @@
 .Groups{
     &__item{
         background-color: white;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: apearFromBottom 1s ease .5s forwards;
+        box-shadow: 0 20px 30px -10px #333;
+    }
+}
+
+@keyframes apearFromBottom {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes apearFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(40px)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
     }
 }

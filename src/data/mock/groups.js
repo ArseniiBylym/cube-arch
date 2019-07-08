@@ -5,9 +5,9 @@ export const groups = [
                 en: 'Some group name',
                 ukr: 'Назва групи'
             },
-            startDate: "2019, 8, 1",
+            startDate: new Date("2019, 8, 1"),
             duration: 10,
-            available: false,
+            closed: false,
             price: 1500,
             description: {
                 en: "Some description about this group.Some description about this group.Some description about this group.",
@@ -18,14 +18,14 @@ export const groups = [
                 {
                     name: {
                         en: 'First program name',
-                        urk: 'Назва першої программи'
+                        ukr: 'Назва першої программи'
                     }, 
                     linkUrl: '/programs/#0'
                 },
                 {
                     name: {
                         en: 'Second program name',
-                        urk: 'Назва другої програми'
+                        ukr: 'Назва другої програми'
                     }, 
                     linkUrl: '/programs/#1'
                 },
@@ -37,9 +37,9 @@ export const groups = [
                 en: 'Some group name #2',
                 ukr: 'Назва групи №2'
             },
-            startDate: "2019, 10, 3",
+            startDate: new Date("2019, 10, 3"),
             duration: 5,
-            available: true,
+            closed: true,
             price: 1000,
             description: {
                 en: "Some description about this group.Some description about this group.Some description about this group.",
@@ -50,7 +50,7 @@ export const groups = [
                 {
                     name: {
                         en: 'First program name',
-                        urk: 'Назва першої программи'
+                        ukr: 'Назва першої программи'
                     }, 
                     linkUrl: '/programs/#0'
                 },

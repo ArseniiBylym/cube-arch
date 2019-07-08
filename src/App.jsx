@@ -6,7 +6,7 @@ import {Admin, Home, Layout} from './pages';
 
 function App() {
     return (
-        <div className="App text-primary bg-primary">
+        <div className="App text-primary">
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home} />
