@@ -8,6 +8,7 @@ export const groups = [
             startDate: new Date("2019, 8, 7"),
             endDate: new Date("2019, 10, 7"),
             places: 10,
+            duration: 6,
             price: 1500,
             description: {
                 en: "Some description about this group.Some description about this group.Some description about this group.",
@@ -31,6 +32,7 @@ export const groups = [
             startDate: new Date("2019, 9, 8"),
             endDate: new Date("2019, 10, 8"),
             places: 0,
+            duration: 8,
             price: 1000,
             description: {
                 en: "Some description about this group.Some description about this group.Some description about this group.",

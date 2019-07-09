@@ -11,7 +11,7 @@ import { data } from './../../data/index';
 export const Group = props => {
     const [details, setDetails] = useState(null);
     const lang = useStoreState(state => state.lang.current);
-    const {id, name, startDate, endDate, places, price, description, imageUrl, program, dir} = props;
+    const {id, name, startDate, endDate, places, duration, price, description, imageUrl, program, dir} = props;
     useEffect(() => {
         setDetails(data.lang[lang].pages.groups.details);
     }, [lang])
@@ -27,6 +27,10 @@ export const Group = props => {
                 <div className={styleCompose(styles.row, styles.date)}>
                     <span>{details.date}</span>
                     <span>{moment(startDate).format("DD/MM")} - {moment(endDate).format("L")}</span>
+                </div>
+                <div className={styleCompose(styles.row, styles.duration)}>
+                    <span>{details.duration}</span>
+                    <span>{duration}</span>
                 </div>
                 <div className={styleCompose(styles.row, styles.places)}>
                     <span>{details.places}</span>
