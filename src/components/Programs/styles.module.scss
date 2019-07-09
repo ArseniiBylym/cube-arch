@@ -6,11 +6,12 @@
     .header {
         text-align: center;
         font-size: 3rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
     .container{
         margin-bottom: 10rem;
         box-shadow: 0 5px 30px rgba(51, 51, 51, 0.486);
+        background-color: #efefef;
         .image__wrapper {
             position: relative;
             .image {
@@ -43,7 +44,7 @@
                 padding-right: 1rem;
             }
             .item {
-                margin-bottom: 2rem;
+                margin-bottom: 4rem;
                 cursor: pointer;
                 &:hover,
                 &.selected {
@@ -55,6 +56,7 @@
                 &__header{
                     font-size: 1.5rem;
                     margin-bottom: 1rem;
+                    font-weight: bold;
                 }
                 &__content{
                     font-size: 1.2rem;
