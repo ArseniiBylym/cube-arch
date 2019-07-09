@@ -436,5 +436,66 @@
 }
 
 .ContactsScreen {
-    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    &.active{
+        .socials{
+            a{
+                opacity: 1;
+            }
+        }
+    }
+
+    & > div {
+        margin: 1rem 0;
+    }
+
+    .email {
+        a{
+            display: flex;
+            align-items: center;
+            svg {
+                transform: translateY(3px)
+            }
+            p {
+                margin: 0 0 0 2rem;
+            }
+        }
+    }
+    .phone{
+        p {
+            margin: 0 0 0 1rem;
+        }
+    }
+
+    .socials{
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-evenly;
+        a{
+            transition: all .8s ease;
+        }
+        .facebook{
+            opacity: 0;
+            transition-delay: .5s;
+        }
+        .google{
+            opacity: 0;
+            transition-delay: .6s;
+        }
+        .instagram{
+            opacity: 0;
+            transition-delay: .7s;
+        }
+        .twitter{
+            opacity: 0;
+            transition-delay: .8s;
+        }
+    }
 }

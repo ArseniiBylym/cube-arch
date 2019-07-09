@@ -5,7 +5,11 @@ export const data = {
             google: "someemail@gmail.com",
             instagram: "instagramAccound",
             twitter: "twitterAccount",
-            phone: "+380971234567"
+            phones: [
+                "+380971234567",
+                "+380667123434",
+            ],
+            email: "someemail@gmail.com",
         }
     },
     lang: {
@@ -107,7 +111,7 @@ export const data = {
                         {index: 5, name: "галерея", linkText: "до галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з майстер классів та інших заходів"},
                         {index: 6, name: "блог", linkText: "блог", linkUrl: "/articles", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 7, name: "про нас", linkText: "про нас", linkUrl: "/about", address: "Україна, Київ, вул. Незалежності, 22", "text": "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 8, name: "контакти", linkText: "контакти", linkUrl: "/contacts", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 8, name: "контакти", linkText: "контакти", linkUrl: "/contacts", address: "Україна, Київ, вул. Незалежності, 22", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                     ]
                 },
                 groups: {
