@@ -8,23 +8,25 @@ export const programs = [
         items: [
             {
                 name: {
-                    en: 'Program item 1',
-                    ukr: 'Пункт програми 1'
+                    en: 'City building',
+                    ukr: 'Містобудування'
                 },
                 details: {
-                    en: 'Some details about this program item. Some details about this program item. Some details about this program item.',
-                    ukr: 'Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми.'
-                }
+                    en: 'Some details about this program item. Some details about this program item. Some details about this program item. Some details about this program item. Some details about this program item. Some details about this program item. ',
+                    ukr: 'Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми.'
+                },
+                image: 'http://kostvlada.org/wp-content/uploads/2018/12/viber-image111-1024x682.jpg',
             },
             {
                 name: {
-                    en: 'Program item 2',
-                    ukr: 'Пункт програми 2'
+                    en: 'Land-art',
+                    ukr: 'Ленд-арт'
                 },
                 details: {
                     en: 'Some details about this program item. Some details about this program item. Some details about this program item.',
                     ukr: 'Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми.'
-                }
+                },
+                image: 'https://www.thisiscolossal.com/wp-content/uploads/2018/02/brunt-9.jpeg',
             }
         ]
     },
@@ -37,34 +39,38 @@ export const programs = [
         items: [ 
             {
                 name: {
-                    en: 'Program item 1',
-                    ukr: 'Пункт програми 1'
+                    en: 'City building',
+                    ukr: 'Містобудування'
                 },
                 details: {
-                    en: 'Some details about this program item. Some details about this program item. Some details about this program item.',
-                    ukr: 'Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми.'
-                }
+                    en: 'Some details about this program item. Some details about this program item. Some details about this program item. Some details about this program item. Some details about this program item. Some details about this program item. ',
+                    ukr: 'Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми.'
+                },
+                image: 'http://kostvlada.org/wp-content/uploads/2018/12/viber-image111-1024x682.jpg',
             },
             {
                 name: {
-                    en: 'Program item 2',
-                    ukr: 'Пункт програми 2'
+                    en: 'Land-art',
+                    ukr: 'Ленд-арт'
                 },
                 details: {
                     en: 'Some details about this program item. Some details about this program item. Some details about this program item.',
                     ukr: 'Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми.'
-                }
+                },
+                image: 'https://www.thisiscolossal.com/wp-content/uploads/2018/02/brunt-9.jpeg',
             },
             {
                 name: {
-                    en: 'Program item 3',
-                    ukr: 'Пункт програми 3'
+                    en: 'Constructions',
+                    ukr: 'Кострукції'
                 },
                 details: {
                     en: 'Some details about this program item. Some details about this program item. Some details about this program item.',
                     ukr: 'Інфа про цей пункт програми. Інфа про цей пункт програми. Інфа про цей пункт програми.'
-                }
-            }
+                },
+                image: 'https://www.gorhamsavings.bank/wp-content/uploads/2018/05/Construction-2.jpg',
+            },
+
         ]
     }
 ]

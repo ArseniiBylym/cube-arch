@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
-import {Spinner} from '../components/shared';
+import {Spinner, DetailsPageHeader} from '../components/shared';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import {Group} from '../components/Groups'
@@ -29,7 +29,7 @@ const Groups = () => {
     const getGroups = () => {
         return groups.map((item, index) => {
             return (
-                <Grid item key={item.id} container >
+                <Grid key={item.id} container className="Groups__elem" >
                     {index % 2 === 0 ? (
                         <>
                         <Grid item sm={12} md={10} className="Groups__item">
@@ -58,14 +58,10 @@ const Groups = () => {
     return (
         <>
             <Particles />
-            
-        <div className="PageDetails Groups">
-            <Grid container direction="row-reverse" className="PageDetails__header">
-                <Grid className="PageDetails__header__text" item xs={12} sm={6} lg={4}>{content.title}</Grid>
-            </Grid>
-            <Container maxWidth="md" className="PageDetails__description">{content.description}</Container>
-            <Grid container direction="column" spacing={10} className="PageDetails__list">{getGroups()}</Grid>
-        </div>
+            <div className="PageDetails Groups">
+                <DetailsPageHeader title={content.title} description={content.description} />
+                <div className="PageDetails__list">{getGroups()}</div>
+            </div>
         </>
     );
 };

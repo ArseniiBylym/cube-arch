@@ -57,6 +57,9 @@
 }
 
 .Groups{
+    &__elem{
+        margin-bottom: 8rem; 
+    }
     &__item{
         background-color: white;
         opacity: 0;

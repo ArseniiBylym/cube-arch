@@ -13,7 +13,7 @@ export const ContactsScreen = props => {
                 {address}
             </div>
             {data.core.contacts.phones.map(item => (
-                <div className="phone">
+                <div key={item} className="phone">
                     <p>{item}</p>
                 </div>
             ))}
