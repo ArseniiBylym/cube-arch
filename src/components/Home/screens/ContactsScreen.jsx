@@ -1,5 +1,5 @@
 import React from 'react';
-import {data} from '../../../data/index';
+import {data} from '../../../assets/data/index';
 
 import {IoLogoFacebook, IoLogoGoogleplus, IoLogoInstagram, IoLogoTwitter} from 'react-icons/io';
 import {MdMailOutline} from 'react-icons/md'

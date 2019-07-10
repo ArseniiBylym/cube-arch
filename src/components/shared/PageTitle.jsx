@@ -1,17 +1,17 @@
 import React from 'react';
-import styles from './styles.module.scss';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import styles from './PageTitle.module.scss';
 
-export const DetailsPageHeader = ({title, description}) => {
+export const PageTitle = ({title, description}) => {
     return (
         <>
-            <Grid container direction="row-reverse" className={styles.title__wrapper}>
+            <Grid container direction="row-reverse" className={styles.header}>
                 <Grid className={styles.title} item xs={12} sm={6} lg={4}>
                     {title}
                 </Grid>
             </Grid>
-            <Container maxWidth="md" className={styles.description}>
+            <Container maxWidth="md" className={styles.subHeader}>
                 {description}
             </Container>
         </>

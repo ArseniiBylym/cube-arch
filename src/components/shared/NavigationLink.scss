@@ -1,0 +1,20 @@
+.sidebarLink{
+    margin: 1rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    font-size: 2rem;
+    color: #444;
+    transition: all .5s ease-out;
+
+    &:hover{
+        transform: translateX(20px)
+    }
+
+    &.active {
+        text-decoration: underline;
+        &:hover{
+            transform: translateX(0)
+        }
+    }
+}

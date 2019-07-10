@@ -1,4 +1,4 @@
-import {groups, programs} from '../data/mock/index';
+import {groups, programs} from '../assets/data/mock/index';
 
 export class Api {
     static getGroups() {

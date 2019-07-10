@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import styles from './styles/modules/gallery.module.scss';
 
 const Gallery = () => {
     return (
-        <div className="Gallery">
+        <div className={styles.root}>
             <h3>Gallery component</h3>
         </div>
     );

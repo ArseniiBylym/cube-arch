@@ -13,7 +13,7 @@ import {
     ContactsScreen,
 } from './screens/index';
 import './styles.scss';
-import {data} from './../../data/index';
+import {data} from '../../assets/data/index';
 
 export const Screens = props => {
     const {activeScreen, setActiveScreen} = props;

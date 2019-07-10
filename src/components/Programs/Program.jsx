@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './styles.module.scss';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
-import { styleCompose } from './../../helpers';
+import { styleCompose } from '../../assets/helpers';
 
 
 export const Program = props => {

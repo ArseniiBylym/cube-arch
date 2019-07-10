@@ -11,7 +11,7 @@
     width: 100%;
     height: 100%;
     padding: 7rem;
-    padding-right: 300px;
+    padding-right: 20rem;
 }
 
 .HomeScreen{
@@ -23,8 +23,8 @@
         flex-flow: row wrap;
         align-items: center;
         .image{
-            width: 300px;
-            height: 300px;
+            width: 22rem;
+            height: 22rem;
         }
         .title{
             margin-left: 2rem;
@@ -106,13 +106,13 @@
     .image{
         width: 80%;
         height: 80%;
-        background: radial-gradient(circle 50vw at 100% 20%, #efefef 5%, transparent), 
-        url('../../../assets/images/home/groups.jpg') left bottom/ cover no-repeat;
+        background: radial-gradient(circle 30vw at 100% 20%, #efefef 5%, transparent), 
+        url('../../../assets/images/home/groups.jpg') center center/ cover no-repeat;
     }
     .content {
         position: absolute;
         top: 7rem;
-        right: 300px;
+        right: 20rem;
         display: flex;
         max-width: 70%;
         padding: 2rem;
@@ -200,14 +200,14 @@
         width: 80%;
         height: 90%;
         margin-right: auto;
-        background: radial-gradient(circle 40vw at 100% 90%, #efefef 10%, transparent), 
+        background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
         url('../../../assets/images/home/classes.jpg') left top/ cover no-repeat;
     }
     
     .content {
         position: absolute;
         bottom: 7rem;
-        right: 300px;
+        right: 20rem;
         padding: 3rem;
         background-color: #d2d2d2a4;
         width: 30%;
@@ -245,14 +245,14 @@
         width: 80%;
         height: 90%;
         margin-right: auto;
-        background: radial-gradient(circle 40vw at 100% 90%, #efefef 10%, transparent), 
-        url('../../../assets/images/home/tours.jpg') left top/ cover no-repeat;
+        background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
+        url('../../../assets/images/home/tours.jpg') center center/ cover no-repeat;
     }
     
     .content {
         position: absolute;
         bottom: 7rem;
-        right: 300px;
+        right: 20rem;
         padding: 1rem;
         background-color: #d2d2d2a4;
         width: 60%;
@@ -290,16 +290,16 @@
             position: relative;
             box-shadow: 0px 20px 20px rgba(0,0,0,.5);
             cursor: pointer;
-            filter: grayscale(40%) brightness(1.2);
+            filter: grayscale(60%) brightness(1.2);
             transition: all .7s ease;
             &:hover{
-                filter: grayscale(0%) brightness(1);
+                filter: grayscale(0%) brightness(1.2);
                 box-shadow: 0px 30px 30px rgba(0,0,0,.4);
             }
         }
         .image-1{
-            width: 370px;
-            height: 500px;
+            width: 23rem;
+            height: 30rem;
             background: url('../../../assets/images/home/gallery-1.jpg') left top/ cover no-repeat;
             transform: rotate(-5deg);
             z-index: 3;
@@ -309,8 +309,8 @@
             }
         }
         .image-2{
-            width: 500px;
-            height: 370px;
+            width: 30rem;
+            height: 23rem;
             background: url('../../../assets/images/home/gallery-2.jpg') left top/ cover no-repeat;
             transform: rotate(3deg);
             z-index: 2;
@@ -320,8 +320,8 @@
             }
         }
         .image-3{
-            width: 370px;
-            height: 500px;
+            width: 23rem;
+            height: 30rem;
             background: url('../../../assets/images/home/gallery-3.jpg') left top/ cover no-repeat;
             transform: rotate(12deg) translateY(20px);
             z-index: 1;
@@ -354,7 +354,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    // padding-bottom: 4rem;
     
     &.active {
         .content{
@@ -367,7 +366,7 @@
         width:70%;
         height: 90%;
         margin: 0 auto;
-        background: url('../../../assets/images/home/about.png') left top/ cover no-repeat;
+        background: url('../../../assets/images/home/about.png') center top/ cover no-repeat;
         box-shadow: 0 15px 20px -5px;
     }
     

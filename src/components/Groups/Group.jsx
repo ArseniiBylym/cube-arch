@@ -4,14 +4,16 @@ import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
 import moment from 'moment';
+
 import styles from './styles.module.scss'
-import { styleCompose } from '../../helpers';
-import { data } from './../../data/index';
+import {styleCompose} from '../../assets/helpers';
+import {data} from '../../assets/data/index';
 
 export const Group = props => {
     const [details, setDetails] = useState(null);
     const lang = useStoreState(state => state.lang.current);
     const {id, name, startDate, endDate, places, duration, price, description, imageUrl, program, dir} = props;
+    
     useEffect(() => {
         setDetails(data.lang[lang].pages.groups.details);
     }, [lang])

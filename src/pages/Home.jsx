@@ -1,7 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react';
+
 import {Nav, Screens} from './../components/Home';
 import {Particles} from '../components/shared'
-import './styles.scss';
+import styles from './styles/modules/home.module.scss';
 
 const SCREENS_LEN = 8;
 
@@ -94,7 +95,7 @@ const Home = () => {
     }
 
     return (
-        <div className="Home" ref={homeElem} onWheel={onWheel}>
+        <div className={styles.root} ref={homeElem} onWheel={onWheel}>
             <Particles />
             <Nav 
                 activeLink={activeScreen}

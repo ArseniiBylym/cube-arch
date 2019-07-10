@@ -1,12 +1,10 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
-import './App.scss';
 import {Admin, Home, Layout} from './pages';
 
 function App() {
     return (
-        <div className="App text-primary">
+        <div>
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home} />

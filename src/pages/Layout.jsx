@@ -3,15 +3,15 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 
 import {About, Classes, Gallery, Groups, Programs, Tours, Articles} from './';
 import {Header} from '../components/Layout';
-import './styles.scss';
+import styles from './styles/modules/layout.module.scss';
 
 const Layout = () => {
     return (
-        <div className="Layout">
-            <div className="header">
+        <div className={styles.root}>
+            <div className={styles.header}>
                 <Header />
             </div>
-            <div className="content">
+            <div className={styles.main}>
                 <Switch>
                     <Route exact path="/groups" component={Groups} />
                     <Route exact path="/programs" component={Programs} />

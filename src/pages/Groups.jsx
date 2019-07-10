@@ -1,15 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
-import {Spinner, DetailsPageHeader} from '../components/shared';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
+
+import {Spinner, PageTitle} from '../components/shared';
 import {Group} from '../components/Groups'
-import Divider from '@material-ui/core/Divider';
 import {Particles} from '../components/shared'
-
-
 import { Api } from '../api/index';
-import {data} from '../data/index'
+import {data} from '../assets/data/index';
+import styles from './styles/modules/groups.module.scss';
 
 const Groups = () => {
     const [groups, setGroups] = useState(null);
@@ -18,7 +16,6 @@ const Groups = () => {
 
     useEffect(() => {
         const fetchedGroups = Api.getGroups();
-       
         setGroups(fetchedGroups)
     }, [])
     useEffect(() => {
@@ -26,41 +23,43 @@ const Groups = () => {
         setContent(content)
     }, [lang])
 
-    const getGroups = () => {
-        return groups.map((item, index) => {
-            return (
-                <Grid key={item.id} container className="Groups__elem" >
-                    {index % 2 === 0 ? (
-                        <>
-                        <Grid item sm={12} md={10} className="Groups__item">
-                            <Group {...item} dir="ltr"/>
-                        </Grid>
-                        <Grid item sm={false} md={2} />
-                        <Divider />
-                        </>
-                    ) : (
-                        <>
-                        <Grid item sm={false} md={2} />
-                        <Grid item sm={12} md={10} className="Groups__item">
-                            <Group {...item} dir="rtl"/>
-                        </Grid>
-                        <Divider />
-                        </>
-                    )
-                    }
-                </Grid>
-            )
-        } )
-    }
 
+    const getGroups = () => {
+        return (
+            <div className={styles.main}>
+                {groups.map((item, index) => {
+                    return (
+                        <Grid key={item.id} container className={styles.section} >
+                            {index % 2 === 0 ? (
+                                <>
+                                <Grid item sm={12} md={10} className={styles.card}>
+                                    <Group {...item} dir="ltr"/>
+                                </Grid>
+                                <Grid item sm={false} md={2} />
+                                </>
+                            ) : (
+                                <>
+                                <Grid item sm={false} md={2} />
+                                <Grid item sm={12} md={10} className={styles.card}>
+                                    <Group {...item} dir="rtl"/>
+                                </Grid>
+                                </>
+                            )
+                            }
+                        </Grid>
+                    )
+                })}
+            </div>
+        )
+    }
 
     if (!groups || !content) return <Spinner />;
     return (
         <>
             <Particles />
-            <div className="PageDetails Groups">
-                <DetailsPageHeader title={content.title} description={content.description} />
-                <div className="PageDetails__list">{getGroups()}</div>
+            <div className={styles.root}>
+                <PageTitle title={content.title} description={content.description} />
+                {getGroups()}
             </div>
         </>
     );

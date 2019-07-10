@@ -1,8 +1,9 @@
 import React from 'react';
 import ParticlesLayout from 'react-particles-js';
+import styles from './Particles.module.scss';
 
 export const Particles = props => (
-    <div className="Particles">
+    <div className={styles.root}>
         <ParticlesLayout
             width="100vw"
             height="100vh"
