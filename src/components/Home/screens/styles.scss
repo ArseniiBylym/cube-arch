@@ -290,10 +290,10 @@
             position: relative;
             box-shadow: 0px 20px 20px rgba(0,0,0,.5);
             cursor: pointer;
-            filter: grayscale(60%) brightness(1.2);
+            filter: brightness(1.1);
             transition: all .7s ease;
             &:hover{
-                filter: grayscale(0%) brightness(1.2);
+                filter: brightness(1.25);
                 box-shadow: 0px 30px 30px rgba(0,0,0,.4);
             }
         }
@@ -444,6 +444,7 @@
         .socials{
             a{
                 opacity: 1;
+                transform: translateY(0)
             }
         }
     }
@@ -479,6 +480,7 @@
         justify-content: space-evenly;
         a{
             transition: all .8s ease;
+            transform: translateY(20px)
         }
         .facebook{
             opacity: 0;

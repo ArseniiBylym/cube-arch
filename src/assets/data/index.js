@@ -93,23 +93,23 @@ export const data = {
                     },
                     nav: [
                         {index: 0, name: "головна", linkUrl: "/home"},
-                        {index: 1, name: "групи", linkUrl: "/groups"},
+                        {index: 1, name: "набір у групи", linkUrl: "/groups"},
                         {index: 2, name: "програми", linkUrl: "/programs"},
                         {index: 3, name: "майстер-класи", linkUrl: "/classes"},
                         {index: 4, name: "екскурсії", linkUrl: "/tours"},
                         {index: 5, name: "галерея", linkUrl: "/gallery"},
-                        {index: 6, name: "блог", linkUrl: "/articles"},
+                        {index: 6, name: "статті", linkUrl: "/articles"},
                         {index: 7, name: "про нас", linkUrl: "/about"},
                         {index: 8, name: "контакти", linkUrl: "/contacts"}
                     ],
                     screens: [
                         {index: 0, name: "головна", linkText: "продовжити", linkUrl: "groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення"},
-                        {index: 1, name: "групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 1, name: "набір у групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 2, name: "програми", linkText: "докладніше", linkUrl: "/programs", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 3, name: "майстер-класи", linkText: "докладніше", linkUrl: "/classes", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 4, name: "екскурсії", linkText: "докладніше", linkUrl: "/tours", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 5, name: "галерея", linkText: "до галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з майстер классів та інших заходів"},
-                        {index: 6, name: "блог", linkText: "блог", linkUrl: "/articles", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 6, name: "статті", linkText: "статті", linkUrl: "/articles", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 7, name: "про нас", linkText: "про нас", linkUrl: "/about", address: "Україна, Київ, вул. Незалежності, 22", "text": "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 8, name: "контакти", linkText: "контакти", linkUrl: "/contacts", address: "Україна, Київ, вул. Незалежності, 22", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                     ]
