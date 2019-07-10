@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import styles from './styles/modules/tours.module.scss';
 
 const Tours = () => {
     return (
-        <div className="Tours">
+        <div className={styles.root}>
             <h3>Tours component</h3>
         </div>
     );

@@ -1,8 +1,9 @@
 import React from 'react';
 import ParticlesLayout from 'react-particles-js';
+import styles from './Particles.module.scss';
 
 export const Particles = props => (
-    <div className="Particles">
+    <div className={styles.root}>
         <ParticlesLayout
             width="100vw"
             height="100vh"
@@ -29,7 +30,7 @@ export const Particles = props => (
                     "line_linked": {
                         "color": "#333",
                         "distance": 400,
-                        "opacity": 0.3,
+                        "opacity": 0.5,
                         "width": 1
                     },
                     "move": {
@@ -43,15 +44,10 @@ export const Particles = props => (
                             "enable": false,
                         },
                         "onclick": {
-                            "enable": true,
-                            "mode": "repulse"
+                            "enable": false,
                         }
                     },
-                    "modes": {
-                        "repulse": {
-                            "distance": 150
-                        }
-                    }
+                    
                 }
             }}
         />

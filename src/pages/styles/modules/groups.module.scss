@@ -1,0 +1,29 @@
+.root {
+    padding: 2rem 4rem;
+    padding-bottom: 0;
+}
+.main {
+    padding: 5rem;
+}
+.section {
+    margin-bottom: 8rem; 
+}
+.card {
+    background-color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: apearFromBottom 1s ease .5s forwards;
+    box-shadow: 0 20px 30px -10px #333;
+}
+
+
+@keyframes apearFromBottom {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

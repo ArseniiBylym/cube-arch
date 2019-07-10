@@ -1,5 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {Layout, Nav, Screens, Particles } from './../components/Home';
+
+import {Nav, Screens} from './../components/Home';
+import {Particles} from '../components/shared'
+import styles from './styles/modules/home.module.scss';
+
+const SCREENS_LEN = 8;
 
 const Home = () => {
     const [activeScreen, setActiveScreen] = useState(0);
@@ -40,7 +45,7 @@ const Home = () => {
         if (key === 'ArrowDown' || key === 'ArrowUp') e.preventDefault();
         switch (key) {
             case 'ArrowDown': 
-                if (activeScreen >= 6) {
+                if (activeScreen >= SCREENS_LEN) {
                     return false
                 } else {
                     moveNext();
@@ -67,7 +72,7 @@ const Home = () => {
         const dir = e.deltaY > 0 ? 'down' : 'up'
         switch (dir) {
             case 'down': 
-                if (activeScreen >= 6) {
+                if (activeScreen >= SCREENS_LEN) {
                     return false
                 } else {
                     moveNext();
@@ -90,15 +95,13 @@ const Home = () => {
     }
 
     return (
-        <div className="Home" ref={homeElem} onWheel={onWheel}>
-            <Layout>
-                <Particles />
-                <Nav 
-                    activeLink={activeScreen}
-                    setActiveLink={setActiveScreen}    
-                />
-                <Screens activeScreen={activeScreen} setActiveScreen={setActiveScreen}/>
-            </Layout>
+        <div className={styles.root} ref={homeElem} onWheel={onWheel}>
+            <Particles />
+            <Nav 
+                activeLink={activeScreen}
+                setActiveLink={setActiveScreen}    
+            />
+            <Screens activeScreen={activeScreen} setActiveScreen={setActiveScreen}/>
         </div>
     );
 };

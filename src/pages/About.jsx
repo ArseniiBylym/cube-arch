@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import styles from './styles/modules/about.module.scss';
 
 const About = () => {
     return (
-        <div className="About">
+        <div className={styles.root}>
             <h3>About component</h3>
         </div>
     );

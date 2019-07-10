@@ -1,6 +1,6 @@
 import React from 'react';
 import {useStoreState} from 'easy-peasy';
-import {data} from '../../data/index';
+import {data} from '../../assets/data/index';
 import {Lang} from '../../components/Home';
 import classNames from 'classnames';
 

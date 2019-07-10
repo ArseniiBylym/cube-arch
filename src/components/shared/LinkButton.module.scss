@@ -1,0 +1,30 @@
+.root{
+    position: relative;
+    display: inline-block;
+    padding: 0rem 4rem;
+    font-size: 1.5rem;
+    color: #efefef;
+    border: 1px solid #444;
+    overflow: hidden;
+    transition: all .3s ease;
+    background-color: #444;
+
+    &:hover {
+        color: #444;
+        background-color: transparent;
+        // .background{
+        //     transform: translateY(100px);
+        // }
+    }
+
+    // .background{
+    //     position: absolute;
+    //     height: 150px;
+    //     top: -100px;
+    //     left: 0;
+    //     right: 0;
+    //     background: linear-gradient(to top, #444 33.33%, transparent 66.66%);
+    //     z-index: -1;
+    //     transition: all .5s ease;
+    // }
+}

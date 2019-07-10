@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import styles from './styles/modules/about.module.scss';
 
 const Admin = () => {
     return (
-        <div className="Admin">
+        <div className={styles.root}>
             <h3>Admin component</h3>
         </div>
     );

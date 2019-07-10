@@ -1,0 +1,79 @@
+.root{
+    opacity: 0;
+    transform: translateY(40px);
+    animation: show 1s ease .5s forwards;
+
+    .header {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    .container{
+        margin-bottom: 10rem;
+        box-shadow: 0 5px 30px rgba(51, 51, 51, 0.486);
+        background-color: #efefef;
+        .image__wrapper {
+            position: relative;
+            min-height: 20rem;
+            .image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-size: cover;
+                opacity: 0;
+                transition: all .5s linear;
+                &__active {
+                    opacity: 1;
+                }
+            }
+        }
+            
+        .content {
+            padding: 4rem 2rem;
+
+            .ltr{
+                text-align: left;
+                border-left: 2px solid transparent;
+                padding-left: 1rem;
+            }
+            .rtl{
+                text-align: right;
+                border-right: 2px solid transparent;
+                padding-right: 1rem;
+            }
+            .item {
+                margin-bottom: 4rem;
+                cursor: pointer;
+                &:hover,
+                &.selected {
+                    border-color: #333;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &__header{
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                    font-weight: bold;
+                }
+                &__content{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
