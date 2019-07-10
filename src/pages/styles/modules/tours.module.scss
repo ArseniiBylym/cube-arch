@@ -1,3 +1,12 @@
 .root {
-    
+
+}
+.main {
+    padding: 0 8rem;
+    @media screen and (max-width: 980px) {
+        padding: 0 5rem;
+    }
+    @media screen and (max-width: 650px) {
+        padding: 0 0;
+    }
 }

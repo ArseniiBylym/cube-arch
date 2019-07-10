@@ -70,6 +70,13 @@ export const data = {
                 tours: {
                     title: "Tours",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    details: {
+                        apply: "Register",
+                        closed: "Registration ended",
+                        order: "Order tour",
+                        select: "Select tour",
+                        price: "Tour's price"
+                    }
                 },
                 gallery: {
                     title: "Groups",
@@ -126,7 +133,7 @@ export const data = {
                             title: "Програма навчання",
                             tooltip: "Докладніше"
                         },
-                        apply: "Зареєструватися",
+                        apply: "Реєстрація",
                         closed: "Реєстрацію завершено",
                     }
                 },
@@ -141,6 +148,13 @@ export const data = {
                 tours: {
                     title: "Екскурсії",
                     description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    details: {
+                        apply: "Реєстрація",
+                        closed: "Реєстрацію завершено",
+                        order: "Замовити екскурсію",
+                        select: "Обрати екскурсію",
+                        price: "Вартість екскурсії"
+                    },
                 },
                 gallery: {
                     title: "Галерея",
