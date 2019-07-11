@@ -9,6 +9,10 @@ export const data = {
                 "+380971234567",
                 "+380667123434",
             ],
+            address: {
+                en: "Ukrain, Kyiv, Nezalezhosti st, 22",
+                ukr: "Україна, Київ, вул. Незалежності, 22",
+            },
             email: "someemail@gmail.com",
         }
     },
@@ -122,6 +126,10 @@ export const data = {
                             }
                         }
                     ]
+                },
+                contacts: {
+                    title: "Contacts",
+                    description: '',
                 }
             }
         },
@@ -233,6 +241,10 @@ export const data = {
                             }
                         }
                     ]
+                },
+                contacts: {
+                    title: 'Контакти',
+                    description: '',
                 }
             }
         }

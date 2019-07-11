@@ -6,7 +6,7 @@ import {MdMailOutline} from 'react-icons/md'
 
 
 export const ContactsScreen = props => {
-    const {text, address, className} = props;
+    const {address, className} = props;
     return (
         <div className={`ContactsScreen ${className}`}>
             <div className="address" >
