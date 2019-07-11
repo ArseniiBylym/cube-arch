@@ -17,7 +17,7 @@ export const TourContainer = props => {
                         <div className={styles.time}>{moment(datetime).format("HH : mm")}</div>
                         <div className={styles.date}>{moment(datetime).format("DD-MM-YYYY")}</div>
                     </div>
-                    <div className={styles.details}>{details[lang]}</div>
+                    <div className={styles.details}><pre>{details[lang]}</pre></div>
                     <div className={styles.price}><span>{text.price}:</span> {price[lang]}</div>
                     <div className={styles.duration}><span>{text.duration}:</span> {duration[lang]}</div>
                     <div className={styles.auditory}><span>{text.auditory}:</span> {auditory[lang]}</div>

@@ -53,7 +53,11 @@ export const tours = [
         },
         details: {
             en: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit vel voluptatem ipsa eveniet nobis molestiae, illo excepturi asperiores eum quasi animi voluptatibus tempore veniam odit nesciunt modi? Ipsum suscipit reprehenderit dicta similique doloremque, nisi autem delectus, minima, eius enim id culpa quisquam ipsam recusandae nulla? Obcaecati, ratione cum officia aut unde, eaque qui soluta saepe distinctio, inventore repellendus sunt mollitia delectus quo alias hic aspernatur ullam amet necessitatibus libero dolor explicabo consequuntur sed. Molestias nulla numquam fuga eveniet dolores, eius soluta excepturi nesciunt, error maxime mollitia. Sint, amet quisquam dolor dolore ipsum quibusdam, saepe repellendus, non omnis voluptate illo facere!',
-            ukr: 'Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. ',
+            ukr: 
+            `Деталі про цю екскурсію\n -item 1\n -item 2 \nДеталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію.`
+            //     - item 1
+            //     - item 2
+            // Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію. Деталі про цю екскурсію.`,
         },
         auditory: {
             en: "Adults and children",

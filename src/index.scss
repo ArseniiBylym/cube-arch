@@ -35,6 +35,15 @@ code {
     monospace;
 }
 
+pre {
+  font-family: -apple-system, BlinkMacSystemFont, "Jura", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  white-space: pre-wrap;
+}
+
 a {
   color: inherit;
   text-decoration: none;
