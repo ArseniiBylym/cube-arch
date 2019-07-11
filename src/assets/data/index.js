@@ -66,6 +66,13 @@ export const data = {
                 classes: {
                     title: "Classes",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    details: {
+                        apply: "Register",
+                        closed: "Registration ended",
+                        price: "Price of master-class",
+                        duration: "Duration of master-class",
+                        auditory: "Auditory"
+                    }
                 },
                 tours: {
                     title: "Tours",
@@ -76,7 +83,7 @@ export const data = {
                         order: "Order tour",
                         select: "Select tour",
                         price: "Tour's price",
-                        duration: "Tours's duration",
+                        duration: "Tour's duration",
                         auditory: "Auditory"
                     }
                 },
@@ -146,6 +153,13 @@ export const data = {
                 classes: {
                     title: "Майстер-класи",
                     description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    details: {
+                        apply: "Реєстрація",
+                        closed: "Реєстрацію завершено",
+                        price: "Вартість майстер-класу",
+                        duration: "Тривалість майстер-класу",
+                        auditory: "Для кого"
+                    },
                 },
                 tours: {
                     title: "Екскурсії",

@@ -1,4 +1,4 @@
-import {groups, programs, tours} from '../assets/data/mock/index';
+import {groups, programs, tours, classes} from '../assets/data/mock/index';
 
 export class Api {
     static getGroups() {
@@ -11,5 +11,9 @@ export class Api {
 
     static getTours() {
         return tours;
+    }
+
+    static getClasses() {
+        return classes;
     }
 }

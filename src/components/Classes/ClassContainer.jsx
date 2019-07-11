@@ -1,10 +1,10 @@
 import React from 'react';
 import moment from 'moment';
 import Grid from '@material-ui/core/Grid';
-import styles from './TourContainer.module.scss';
+import styles from './ClassContainer.module.scss';
 
-export const TourContainer = props => {
-    const {datetime, details, duration, image, lang, name, open, orderable, place, price, text, auditory} = props;
+export const ClassContainer = props => {
+    const {datetime, details, duration, image, name, open, place, price, auditory, lang, text} = props;
 
     return (
         <Grid container className={styles.root} justify="center"  >
@@ -27,8 +27,6 @@ export const TourContainer = props => {
                         ) : (
                             <div className={styles.registerClosed}>{text.closed}</div>
                         )}
-                        {orderable ? <div className={styles.order}>{text.order}</div> : null
-                        }
                     </div>
                 </div>
             </Grid>
