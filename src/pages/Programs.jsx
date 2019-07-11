@@ -2,9 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 
-import {Spinner, PageTitle} from '../components/shared';
+import {Spinner, PageTitle, Particles} from '../components/shared';
 import {Program} from '../components/Programs'
-import {Particles} from '../components/shared'
 import {Api} from '../api/index';
 import {data} from '../assets/data/index'
 
