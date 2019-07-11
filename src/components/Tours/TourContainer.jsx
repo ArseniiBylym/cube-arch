@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import styles from './TourContainer.module.scss';
 
 export const TourContainer = props => {
-    const {datetime, details, duration, id, image, lang, name, open, orderable, place, price, text} = props;
+    const {datetime, details, duration, id, image, lang, name, open, orderable, place, price, text, auditory} = props;
 
     return (
         <Grid container className={styles.root} justify="center"  >
@@ -18,7 +18,9 @@ export const TourContainer = props => {
                         <div className={styles.date}>{moment(datetime).format("DD-MM-YYYY")}</div>
                     </div>
                     <div className={styles.details}>{details[lang]}</div>
-                    <div className={styles.price}>{text.price}: &#8372; {price}</div>
+                    <div className={styles.price}><span>{text.price}:</span> {price[lang]}</div>
+                    <div className={styles.duration}><span>{text.duration}:</span> {duration[lang]}</div>
+                    <div className={styles.auditory}><span>{text.auditory}:</span> {auditory[lang]}</div>
                     <div className={styles.controls}>
                         {open ? (
                             <div className={styles.registerOpen}>{text.apply}</div>

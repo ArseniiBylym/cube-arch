@@ -21,10 +21,10 @@ export const Group = props => {
     if (!lang || !details) return null
     return (
         <Grid container className={styles.root} direction={dir === 'rtl' ? 'row-reverse': 'row'}>
-            <Grid item sm={12} md={4} className={styles.image_container} >
+            <Grid item xs={12} md={4} className={styles.image_container} >
                 <div style={{backgroundImage: `url(${imageUrl})`}} className={styles.image}></div>
             </Grid>
-            <Grid item sm={12} md={8} className={styles.content}>
+            <Grid item xs={12} md={8} className={styles.content}>
                 <div className={styles.title}>{name[lang]}</div>
                 <div className={styleCompose(styles.row, styles.date)}>
                     <span>{details.date}</span>

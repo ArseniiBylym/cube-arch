@@ -31,15 +31,15 @@ const Groups = () => {
                         <Grid key={item.id} container className={styles.section} >
                             {index % 2 === 0 ? (
                                 <>
-                                <Grid item sm={12} md={10} className={styles.card}>
+                                <Grid item xs={12} md={10} className={styles.card}>
                                     <Group {...item} dir="ltr"/>
                                 </Grid>
-                                <Grid item sm={false} md={2} />
+                                <Grid item xs={false} md={2} />
                                 </>
                             ) : (
                                 <>
-                                <Grid item sm={false} md={2} />
-                                <Grid item sm={12} md={10} className={styles.card}>
+                                <Grid item xs={false} md={2} />
+                                <Grid item xs={12} md={10} className={styles.card}>
                                     <Group {...item} dir="rtl"/>
                                 </Grid>
                                 </>

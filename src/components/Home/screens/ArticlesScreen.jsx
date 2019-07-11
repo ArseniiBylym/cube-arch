@@ -7,7 +7,7 @@ export const ArticlesScreen = props => {
     return (
         <div className={`ArticlesScreen ${className}`}>
             <Grid container className="ArticlesScreen__wrapper" direction="row-reverse" alignItems="flex-start">
-                <Grid item sm={12} md={6} className="content__wrapper">
+                <Grid item xs={12} md={6} className="content__wrapper">
                     <div className="content">
                         <div className="text">{text}</div>
                         <div className="link">

@@ -75,7 +75,9 @@ export const data = {
                         closed: "Registration ended",
                         order: "Order tour",
                         select: "Select tour",
-                        price: "Tour's price"
+                        price: "Tour's price",
+                        duration: "Tours's duration",
+                        auditory: "Auditory"
                     }
                 },
                 gallery: {
@@ -153,7 +155,9 @@ export const data = {
                         closed: "Реєстрацію завершено",
                         order: "Замовити екскурсію",
                         select: "Обрати екскурсію",
-                        price: "Вартість екскурсії"
+                        price: "Вартість екскурсії",
+                        duration: "Тривалість єкскурсії",
+                        auditory: "Для кого"
                     },
                 },
                 gallery: {

@@ -3,10 +3,38 @@
 }
 .main {
     padding: 0 8rem;
-    @media screen and (max-width: 980px) {
+    @media screen and (max-width: 960px) {
         padding: 0 5rem;
     }
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 600px) {
         padding: 0 0;
+    }
+}
+
+.content {
+    margin-top: 5rem;
+    .menu {
+        padding: 3rem;
+        .item {
+            padding: 3rem 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            border-left: 1px solid transparent;
+
+            &.selected {
+                background-color: #d8d6d685;
+            }
+            
+            .date {
+                font-weight: bold;
+            }
+        }
+    }
+    .details {
+        padding: 5rem;
     }
 }
