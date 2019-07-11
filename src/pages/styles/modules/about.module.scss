@@ -1,3 +1,46 @@
 .root {
-    
+    padding: 3rem 10rem;
+    @media screen and (max-width: 1280px) {
+        padding: 3rem 8rem;
+    }
+     @media screen and (max-width: 960px) {
+        padding: 3rem 4rem;
+    }
+    @media screen and (max-width: 600px) {
+        padding: 1rem;
+    }
+    .container {
+        .user {
+            padding: 5rem 10rem;
+            @media screen and (max-width: 1280px) {
+                padding: 3rem 4rem;
+            }
+            .image {
+                min-height: 300px;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                filter: grayscale(50%)
+            }
+            .details {
+                margin-top: 2rem;
+                font-size: 1.5rem;
+                .name {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    margin-bottom: 2rem;
+                }
+                .socials {
+                    margin-top: 2rem;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
 }
+
