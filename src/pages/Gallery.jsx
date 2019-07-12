@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import LazyHero from 'react-lazy-hero';
 
 import {Spinner, PageTitle, Particles} from '../components/shared';
+import {ImageViewer} from '../components/Gallery';
 import {Api} from '../api/index';
 import {data} from '../assets/data/index';
 import styles from './styles/modules/gallery.module.scss';
@@ -29,7 +30,7 @@ const Gallery = () => {
     const getImages = () => {
         return gallery.map((item, i) => {
             return (
-                <Grid key={item} item xs={12} sm={6} md={4} onClick={() => setSelectedImage(item)}>
+                <Grid key={item} className={styles.image} item xs={12} sm={6} md={4} onClick={() => setSelectedImage(item)}>
                     <LazyHero 
                         imageSrc={item} 
                         opacity={0.1}
@@ -51,6 +52,9 @@ const Gallery = () => {
                     </Grid>
                 </div>
             </div>
+            {selectedImage ? (
+                <ImageViewer image={selectedImage} closeHandler={() => setSelectedImage(false)} />
+            ) : null}
         </>
     );
 };
