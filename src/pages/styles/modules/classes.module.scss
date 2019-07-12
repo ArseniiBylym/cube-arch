@@ -9,7 +9,7 @@
 }
 
 .content {
-    margin-top: 5rem;
+    margin-top: 1rem;
     .menu {
         padding: 3rem;
         .item {
@@ -32,6 +32,24 @@
         }
     }
     .details {
-        padding: 5rem;
+        padding: 1rem 0 5rem 0;
+        @media screen and (max-width: 600px) {
+            padding: 1rem 0 1rem 0;
+        }
+    }
+}
+.sidebar {
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-align: start;
+    span {
+        font-weight: bold;
+    }
+    a {
+        display: block;
+        padding: 2rem 1rem;
+        &:hover {
+            background-color: rgba(168, 167, 167, 0.329);
+        }
     }
 }

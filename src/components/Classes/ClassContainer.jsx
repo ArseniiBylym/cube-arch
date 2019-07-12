@@ -4,10 +4,10 @@ import Grid from '@material-ui/core/Grid';
 import styles from './ClassContainer.module.scss';
 
 export const ClassContainer = props => {
-    const {datetime, details, duration, image, name, open, place, price, auditory, lang, text} = props;
+    const {id, datetime, details, duration, image, name, open, place, price, auditory, lang, text} = props;
 
     return (
-        <Grid container className={styles.root} justify="center"  >
+        <Grid container className={styles.root} justify="center" >
             <Grid item xs={12} md={10} >
                 <div className={styles.name}>{name[lang]}</div>
                 <div className={styles.image} style={{backgroundImage: `url(${image})`}} />

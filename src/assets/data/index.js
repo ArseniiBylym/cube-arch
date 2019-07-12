@@ -75,7 +75,9 @@ export const data = {
                         closed: "Registration ended",
                         price: "Price of master-class",
                         duration: "Duration of master-class",
-                        auditory: "Auditory"
+                        auditory: "Auditory",
+                        tooltip: "Classes list",
+
                     }
                 },
                 tours: {
@@ -190,7 +192,8 @@ export const data = {
                         closed: "Реєстрацію завершено",
                         price: "Вартість майстер-класу",
                         duration: "Тривалість майстер-класу",
-                        auditory: "Для кого"
+                        auditory: "Для кого",
+                        tooltip: "Перелік майстер-класів"
                     },
                 },
                 tours: {

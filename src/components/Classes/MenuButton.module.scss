@@ -1,0 +1,12 @@
+.root {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    font-size: 2.5rem;
+    color: #444;
+    cursor: pointer;
+
+    svg {
+        display: block
+    }
+}
