@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 
+
 import {Spinner, PageTitle, Particles} from '../components/shared';
 import {Program} from '../components/Programs'
 import {Api} from '../api/index';
@@ -9,7 +10,7 @@ import {data} from '../assets/data/index'
 
 import styles from './styles/modules/programs.module.scss';
 
-const Programs = () => {
+const Programs = (props) => {
     const [programs, setPrograms] = useState(null);
     const [content, setContent] = useState(null);
     const lang = useStoreState(state => state.lang.current);
@@ -22,6 +23,17 @@ const Programs = () => {
         const content = data.lang[lang].pages.programs;
         setContent(content)
     }, [lang])
+    useEffect(() => {
+        setTimeout(() => {
+            const id = props.location.search.split('=')[1];
+            console.log(id)
+            if (id) {
+                const elem = document.getElementById(id);
+                console.log(elem);
+                elem.scrollIntoView();
+            }
+        }, 200)
+    }, [])
 
 
     const getPrograms = () => {

@@ -20,7 +20,7 @@ export const groups = [
                         en: 'Program name',
                         ukr: 'Назва програми'
                     }, 
-                    linkUrl: '/programs/#0'
+                    linkUrl: '/programs?id=0'
             },
         },
         {
@@ -44,7 +44,7 @@ export const groups = [
                     en: 'Program name',
                     ukr: 'Назва програми'
                 }, 
-                linkUrl: '/programs/#1'
+                linkUrl: '/programs?id=1'
         },
         },
       ]
