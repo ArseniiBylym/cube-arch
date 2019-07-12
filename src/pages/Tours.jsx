@@ -10,8 +10,6 @@ import {Api} from '../api/index';
 import {data} from '../assets/data/index';
 import styles from './styles/modules/tours.module.scss';
 
-
-
 const Tours = () => {
     const [tours, setTours] = useState(null);
     const [selectedTour, setSelectedTour] = useState(null);

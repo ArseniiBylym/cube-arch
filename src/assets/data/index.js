@@ -92,7 +92,7 @@ export const data = {
                     }
                 },
                 gallery: {
-                    title: "Groups",
+                    title: "Gallery",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 articles: {

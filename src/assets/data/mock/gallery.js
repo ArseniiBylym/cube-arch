@@ -1,0 +1,7 @@
+export const gallery = [
+    `https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/65648859_385779825700429_9133721947534786560_n.jpg?_nc_cat=107&_nc_oc=AQn-7Qm8IYOMmigsL1h8tlJB9_npVhJEAXjSq1ZqTm98onD_J-2hHKpfBSWliUZKwaA&_nc_ht=scontent.fiev19-1.fna&oh=68d6a515b24d5edbabdf421b0f0e9b76&oe=5DC3C5D8`,
+    `https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/65462837_385779792367099_1226078601682616320_n.jpg?_nc_cat=104&_nc_oc=AQmGUekngLvz20153Z4eR3Y265mq6iV0wCvVRmr67x0go-sJVAgGRsccNaezq_C_nYA&_nc_ht=scontent.fiev19-1.fna&oh=7126cf3ac2c47406e057b69562fcaf5e&oe=5DB8243D`,
+    `https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/65699730_385145962430482_3664218431953043456_n.jpg?_nc_cat=108&_nc_oc=AQlWITJMwo0QhUO7MqsfbdHlOBQXvzlfn07F9EAtNWiFhNnjjWRoOu6Vyi5_GJim8Uo&_nc_ht=scontent.fiev19-1.fna&oh=c37f9e70dc296c4bb046a4f522309dba&oe=5DAFDCC5`,
+    `https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/61287261_363474147930997_6112112059938242560_n.jpg?_nc_cat=110&_nc_oc=AQmaJgZqLoSLK-R4rLEnejLx2wLx0kPt2UOnAWA6rXAgrkt6eQb0gRo4fkAEfo-mw6s&_nc_ht=scontent.fiev19-1.fna&oh=0bc16d1bcefa01469c7f80f015e1105f&oe=5DC6225C`,
+    `https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/61253106_363473871264358_5493050871350558720_n.jpg?_nc_cat=106&_nc_oc=AQkb8LqNusfaMRZ0-VVw_74bqKNSDHiMtmuipX3NIKpWz9cAdImTm3Kz9VQzxcVEOcw&_nc_ht=scontent.fiev19-1.fna&oh=4f28cd1b9c19ad75c04577ecaad79c2a&oe=5DB72E8A`,
+]
