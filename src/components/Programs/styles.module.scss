@@ -1,7 +1,7 @@
 .root{
     opacity: 0;
-    // transform: translateY(40px);
-    animation: show 1s ease .5s forwards;
+    transform: translateY(20px);
+    animation: show 1s ease 0s forwards;
 
     .header {
         text-align: center;
@@ -62,10 +62,10 @@
 @keyframes show {
     0% {
         opacity: 0;
-        // transform: translateY(40px);
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
-        // transform: translateY(0);
+        transform: translateY(0);
     }
 }

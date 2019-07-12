@@ -73,6 +73,7 @@ export const data = {
                     details: {
                         apply: "Register",
                         closed: "Registration ended",
+                        order: "Order class",
                         price: "Price of master-class",
                         duration: "Duration of master-class",
                         auditory: "Auditory",
@@ -191,6 +192,7 @@ export const data = {
                     details: {
                         apply: "Реєстрація",
                         closed: "Реєстрацію завершено",
+                        order: "Замовити майстер-клас",
                         price: "Вартість майстер-класу",
                         duration: "Тривалість майстер-класу",
                         auditory: "Для кого",

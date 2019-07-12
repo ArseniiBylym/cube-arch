@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import styles from './ClassContainer.module.scss';
 
 export const ClassContainer = props => {
-    const {datetime, details, duration, image, name, open, place, price, auditory, lang, text} = props;
+    const {datetime, details, duration, image, name, open, place, price, auditory, orderable, lang, text} = props;
 
     return (
         <Grid container className={styles.root} justify="center" >
@@ -27,6 +27,8 @@ export const ClassContainer = props => {
                         ) : (
                             <div className={styles.registerClosed}>{text.closed}</div>
                         )}
+                        {orderable ? <div className={styles.order}>{text.order}</div> : null
+                        }
                     </div>
                 </div>
             </Grid>

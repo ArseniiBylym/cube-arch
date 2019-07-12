@@ -31,7 +31,7 @@ const Articles = () => {
                 <PageTitle title={content.title} description={content.description} />
 
                 {articles.map(item => (
-                    <Grid container  wrap="nowrap" alignItems="center" justify="center" className={styles.container}>
+                    <Grid container key={item.id} wrap="nowrap" alignItems="center" justify="center" className={styles.container}>
                         <Grid item xs={12} sm={10} lg={8} xl={6} className={styles.section} >
                             <Grid container>
                                 <Grid item xs={12} md={4} className={styles.title}>{item.title[lang]}</Grid>

@@ -29,6 +29,7 @@ export const classes = [
             ukr: `Дорослі та діти`,
         },
         open: false,
+        orderable: true,
     },
     {
         id: 1,
@@ -60,6 +61,7 @@ export const classes = [
             ukr: `Дорослі та діти`,
         },
         open: true,
+        orderable: false,
     },
     
    
