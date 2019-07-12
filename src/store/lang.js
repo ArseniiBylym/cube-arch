@@ -1,4 +1,4 @@
-import {action, thunk, computed} from 'easy-peasy';
+import {action} from 'easy-peasy';
 
 export const lang = {
     current: 'ukr',

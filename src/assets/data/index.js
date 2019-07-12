@@ -90,7 +90,8 @@ export const data = {
                         select: "Select tour",
                         price: "Tour's price",
                         duration: "Tour's duration",
-                        auditory: "Auditory"
+                        auditory: "Auditory",
+                        tooltip: "Tours list",
                     }
                 },
                 gallery: {
@@ -206,7 +207,8 @@ export const data = {
                         select: "Обрати екскурсію",
                         price: "Вартість екскурсії",
                         duration: "Тривалість єкскурсії",
-                        auditory: "Для кого"
+                        auditory: "Для кого",
+                        tooltip: "Перелік екскурсій"
                     },
                 },
                 gallery: {

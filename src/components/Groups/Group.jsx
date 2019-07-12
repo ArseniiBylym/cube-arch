@@ -12,7 +12,7 @@ import {data} from '../../assets/data/index';
 export const Group = props => {
     const [details, setDetails] = useState(null);
     const lang = useStoreState(state => state.lang.current);
-    const {id, name, startDate, endDate, places, duration, price, description, imageUrl, program, dir} = props;
+    const {name, startDate, endDate, places, duration, price, description, imageUrl, program, dir} = props;
     
     useEffect(() => {
         setDetails(data.lang[lang].pages.groups.details);

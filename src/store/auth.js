@@ -1,4 +1,4 @@
-import {action, thunk, computed} from 'easy-peasy';
+import {action, computed} from 'easy-peasy';
 
 export const auth = {
     user: null,

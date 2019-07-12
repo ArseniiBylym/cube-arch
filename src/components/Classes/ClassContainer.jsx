@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import styles from './ClassContainer.module.scss';
 
 export const ClassContainer = props => {
-    const {id, datetime, details, duration, image, name, open, place, price, auditory, lang, text} = props;
+    const {datetime, details, duration, image, name, open, place, price, auditory, lang, text} = props;
 
     return (
         <Grid container className={styles.root} justify="center" >

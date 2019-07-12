@@ -32,9 +32,9 @@ const About = () => {
                                     <div className={styles.name}>{item.name}</div>
                                     <div className={styles.info}>{item.info}</div>
                                     <div className={styles.socials}>
-                                        <a target="_blank" href={item.socials.facebook} className={styles.facebook}><IoLogoFacebook /></a>
-                                        <a target="_blank" href={item.socials.google} className={styles.google}><IoLogoGoogleplus /></a>
-                                        <a target="_blank" href={item.socials.instagram} className={styles.instagram}><IoLogoInstagram /></a>
+                                        <a target="_blank" rel="noopener noreferrer" href={item.socials.facebook} className={styles.facebook}><IoLogoFacebook /></a>
+                                        <a target="_blank" rel="noopener noreferrer" href={item.socials.google} className={styles.google}><IoLogoGoogleplus /></a>
+                                        <a target="_blank" rel="noopener noreferrer" href={item.socials.instagram} className={styles.instagram}><IoLogoInstagram /></a>
                                     </div>
                                 </Grid>
                             </Grid>
