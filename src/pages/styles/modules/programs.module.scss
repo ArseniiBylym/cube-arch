@@ -1,7 +1,14 @@
 .root {
-    padding: 2rem 4rem;
-    padding-bottom: 0;
+    padding: 0 4rem;
+    @media screen and (max-width: 600px) {
+        padding: 0;
+    }
 }
 .programs {
     padding: 5rem;
+    max-width: 1920px;
+    margin: 0 auto;
+    @media screen and (max-width: 600px) {
+        padding: 0;
+    }
 }
