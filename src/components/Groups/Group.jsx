@@ -6,13 +6,15 @@ import Tooltip from '@material-ui/core/Tooltip';
 import moment from 'moment';
 
 import styles from './styles.module.scss'
+import {GroupRegisterModal} from '../modals'
 import {styleCompose} from '../../assets/helpers';
 import {data} from '../../assets/data/index';
 
 export const Group = props => {
     const [details, setDetails] = useState(null);
+    const [modal, setModal] = useState(false);
     const lang = useStoreState(state => state.lang.current);
-    const {name, startDate, endDate, places, duration, price, description, imageUrl, program, dir} = props;
+    const {id, name, startDate, endDate, places, duration, price, description, imageUrl, program, dir} = props;
     
     useEffect(() => {
         setDetails(data.lang[lang].pages.groups.details);
@@ -20,6 +22,7 @@ export const Group = props => {
 
     if (!lang || !details) return null
     return (
+        <>
         <Grid container className={styles.root} direction={dir === 'rtl' ? 'row-reverse': 'row'}>
             <Grid item xs={12} md={4} className={styles.image_container} >
                 <div style={{backgroundImage: `url(${imageUrl})`}} className={styles.image}></div>
@@ -56,10 +59,12 @@ export const Group = props => {
                     {places === 0 ? (
                         <div className={styles.closed}>{details.closed}</div>
                     ) : (
-                        <div className={styles.apply}>{details.apply}</div>
+                        <div onClick={() => setModal(true)}className={styles.apply}>{details.apply}</div>
                     )}
                 </div>
             </Grid>
         </Grid>
+        <GroupRegisterModal open={modal} closeModal={() => setModal(false)} {...{eventId: id, eventName: name, startDate, endDate}}/>
+        </>
     )
 }

@@ -4,6 +4,10 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
     position: relative;
+    &::-webkit-scrollbar{
+        width: 0;
+    }
+    
 }
 .header {
     height: 60px;

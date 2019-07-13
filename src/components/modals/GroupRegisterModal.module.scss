@@ -1,0 +1,25 @@
+.root {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.header {
+    padding: 1rem 5rem;
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    font-size: 1.5rem;
+
+}
+.buttonConfirm,
+.buttonCancel{
+    font-size: 1.5rem !important;
+}
+.confirmed {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.formContainer{
+    position: relative;
+}

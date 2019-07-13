@@ -16,6 +16,116 @@ export const data = {
             email: "someemail@gmail.com",
         }
     },
+    modals: {
+        buttons: {
+            confirm: {
+                en: 'Confirm',
+                ukr: 'Підтвердити',
+            },
+            cancel: {
+                en: 'Cancel',
+                ukr: 'Скасувати',
+            }
+        },
+        confirmMessage: {
+            en: `Thanks for your order! We'll contact you in the shortest possible time.`,
+            ukr: `Дякуємо за Ваше замовлення! Ми зв'яжемося з Вами у найкоротший термін.`
+        }, 
+        groupRegister: {
+            en: {
+                email: 'Email',
+                name: 'Name, surname of contact person',
+                phone: 'Phone number',
+                children: 'Number of children, theirs names and ages',
+                reason: 'What interested you in the program? What are you waiting for?',
+                sourse: 'Where did you find out about us?'
+            },
+            ukr: {
+                email: `Електронна адреса`,
+                name: `Прізвище ім'я  контактної особи`,
+                phone: `Телефон`,
+                children: `Кількість дітей, їх вік, ім'я`,
+                reason: `Що Вас зацікавило у програмі? Що очікуєте?`,
+                sourse: `Звідки дізналися про нас? `
+            }
+        },
+        classRegister: {
+            en: {
+                email: 'Email',
+                name: 'Name, surname of contact person',
+                phone: 'Phone number',
+                children: 'Number of children, theirs names and ages',
+                reason: 'What interested you in the class? What are you waiting for?',
+                sourse: 'Where did you find out about us?'
+            },
+            ukr: {
+                email: `Електронна адреса`,
+                name: `Прізвище ім'я  контактної особи`,
+                phone: `Телефон`,
+                children: `Кількість дітей, їх вік, ім'я`,
+                reason: `Що Вас зацікавило у майстер-класі? Що очікуєте?`,
+                sourse: `Звідки дізналися про нас? `
+            }
+        },
+        classOrder: {
+            en: {
+                date: 'Desired date',
+                email: 'Email',
+                name: 'Name, surname of contact person',
+                phone: 'Phone number',
+                children: 'Number of children, theirs names and ages',
+                reason: 'What interested you in the class? What are you waiting for?',
+                sourse: 'Where did you find out about us?'
+            },
+            ukr: {
+                date: `Бажана дата`,
+                email: `Електронна адреса`,
+                name: `Прізвище ім'я  контактної особи`,
+                phone: `Телефон`,
+                children: `Кількість дітей, їх вік, ім'я`,
+                reason: `Що Вас зацікавило у майстер-класі? Що очікуєте?`,
+                sourse: `Звідки дізналися про нас? `
+            }
+        },
+        tourRegister: {
+            en: {
+                email: 'Email',
+                name: 'Name, surname of contact person',
+                phone: 'Phone number',
+                children: 'Number of children, theirs names and ages',
+                reason: 'What interested you in the tour? What are you waiting for?',
+                sourse: 'Where did you find out about us?'
+            },
+            ukr: {
+                email: `Електронна адреса`,
+                name: `Прізвище ім'я  контактної особи`,
+                phone: `Телефон`,
+                children: `Кількість дітей, їх вік, ім'я`,
+                reason: `Що Вас зацікавило у єкскурсії? Що очікуєте?`,
+                sourse: `Звідки дізналися про нас? `
+            }
+        },
+        tourOrder: {
+            en: {
+                date: 'Desired date',
+                email: 'Email',
+                name: 'Name, surname of contact person',
+                phone: 'Phone number',
+                children: 'Number of children, theirs names and ages',
+                reason: 'What interested you in the tour? What are you waiting for?',
+                sourse: 'Where did you find out about us?'
+            },
+            ukr: {
+                date: `Бажана дата`,
+                email: `Електронна адреса`,
+                name: `Прізвище ім'я  контактної особи`,
+                phone: `Телефон`,
+                children: `Кількість дітей, їх вік, ім'я`,
+                reason: `Що Вас зацікавило у єкскурсії? Що очікуєте?`,
+                sourse: `Звідки дізналися про нас? `
+            }
+        }
+    },
     lang: {
         en: {
             pages: {
