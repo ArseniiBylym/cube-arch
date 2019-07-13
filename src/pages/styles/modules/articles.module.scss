@@ -1,13 +1,14 @@
+.root {
+    padding: 0 3rem;
+    @media screen and (max-width: 600px){
+        padding: 0;
+    }
+}
 .container {
-    margin: 4rem 0;
+    margin-top: 4rem !important;
     opacity: 0;
     transform: translateY(30px);
     animation: show 1s ease .5s forwards;
-    .section {
-        background-color: #efefef;
-        padding: 2rem;
-        box-shadow: 0 5px 30px rgba(51, 51, 51, 0.22);
-    }
     .title {
         font-size: 2rem;
         margin-bottom: 1rem;
@@ -21,17 +22,26 @@
     }
 }
 
-.blogLink {
+.blogLink,
+.articleLink {
     display: block;
     &__header{
         font-size: 2rem;
-        padding: 2rem;
+        padding: 1rem 2rem;
     }
     &__image{
-        min-height: 20rem;
+        height: 30rem;
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+    }
+    &__link {
+        text-align: center;
+        a {
+            height: 30rem;
+            margin: 0 auto;
+            width: 100%;
+        }
     }
 }
 

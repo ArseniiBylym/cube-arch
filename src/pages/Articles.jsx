@@ -17,7 +17,7 @@ const Articles = () => {
 
     useEffect(() => {
         const fetchedArticles = Api.getArticles();
-        setArticles(fetchedArticles);
+        setArticles(fetchedArticles.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime()));
     }, []);
     useEffect(() => {
         const content = data.lang[lang].pages.articles;
@@ -32,11 +32,17 @@ const Articles = () => {
     )
 
     const getMicrolink = item => (
-        <Microlink 
-            url={item.linkUrl} 
-            size="large" 
-            style={{ fontFamily: "Jura, sans-serif" }}
-        />
+        <div className={styles.articleLink}>
+            <div className={styles.articleLink__header}>{item.title[lang]}</div>
+            <div className={styles.articleLink__link}>
+                <Microlink 
+                    url={item.linkUrl} 
+                    size="large" 
+                    style={{ fontFamily: "Jura, sans-serif" }}
+                />
+            </div>
+        </div>
+        
     )
 
     if (!articles || !content) return <Spinner />;
@@ -45,19 +51,13 @@ const Articles = () => {
             <Particles />
             <div className={styles.root}>
                 <PageTitle title={content.title} description={content.description} />
-
-                {articles.map(item => (
-                    <Grid container key={item.id} wrap="nowrap" alignItems="center" justify="center" className={styles.container}>
-                        <Grid item xs={12} sm={10} lg={8} xl={6} className={styles.section} >
-                            <Grid container>
-                                <Grid item xs={12} md={4} className={styles.title}>{item.title[lang]}</Grid>
-                                <Grid item xs={12} md={8} className={styles.link}>
-                                    {item.isBlog ? getBlogPreview(item) : getMicrolink(item)}
-                                </Grid>
-                            </Grid>
+                <Grid container spacing={3} className={styles.container}>
+                    {articles.map(item => (
+                        <Grid key={item.id} item xs={12} sm={6} lg={4} className={styles.section}>
+                             {item.isBlog ? getBlogPreview(item) : getMicrolink(item)}
                         </Grid>
-                    </Grid>
-                ))}
+                    ))}
+                </Grid>
             </div>
         </>
     );
