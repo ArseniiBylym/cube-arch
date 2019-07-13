@@ -11,11 +11,12 @@ import moment from 'moment';
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
 
-export const GroupRegisterModal = props => {
-    const {open, closeModal, eventId, eventName, startDate, endDate} = props;
+export const ClassOrderModal = props => {
+    const {open, closeModal, eventId, eventName} = props;
     const [sending, setSending] = useState(false);
     const [registerConfirmed, setRegisterConfirmed] = useState(false);
 
+    const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -24,6 +25,7 @@ export const GroupRegisterModal = props => {
     const [sourse, setSourse] = useState('');
 
     const clearFormState = () => {
+        setDate(moment().format("YYYY-MM-DD"))
         setEmail('')
         setName('')
         setPhone('')
@@ -36,6 +38,7 @@ export const GroupRegisterModal = props => {
 
     const sendHandler = () => {
         const registerData = {
+            date,
             eventId,
             email,
             name,
@@ -61,7 +64,7 @@ export const GroupRegisterModal = props => {
         
     }
     const isDisabled = () => {
-        return !email || !phone || !name || !children || !reason;
+        return !date || !email || !phone || !name || !children || !reason;
     }
 
     return (
@@ -74,10 +77,6 @@ export const GroupRegisterModal = props => {
             >
                 <div className={styles.header}>
                     <div className={styles.title}>{eventName[lang]}</div>
-                    <div className={styles.subTitle}>
-                        <span>{data.lang[lang].pages.groups.details.date}: </span>
-                        <span>{moment(startDate).format("DD/MM")} - {moment(endDate).format("L")}</span>
-                    </div>
                 </div>
 
                 <DialogContent className={styles.formContainer}>
@@ -88,11 +87,25 @@ export const GroupRegisterModal = props => {
                         <div className={styles.confirmed}>{data.modals.confirmMessage[lang]}</div>
                     ) : (
                        <div className={styles.form}>
-                            <TextField
+                           <TextField
                                 autoFocus
                                 margin="normal"
                                 name="email"
-                                label={data.modals.groupRegister[lang].email}
+                                label={data.modals.classOrder[lang].date}
+                                type="date"
+                                fullWidth
+                                required
+                                onChange={(e) => setDate(e.target.value)}
+                                variant="outlined"
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                                value={date}
+                            />
+                            <TextField
+                                margin="normal"
+                                name="email"
+                                label={data.modals.classOrder[lang].email}
                                 type="email"
                                 fullWidth
                                 required
@@ -102,7 +115,7 @@ export const GroupRegisterModal = props => {
                               <TextField
                                 margin="normal"
                                 name="name"
-                                label={data.modals.groupRegister[lang].name}
+                                label={data.modals.classOrder[lang].name}
                                 type="text"
                                 fullWidth
                                 required
@@ -112,7 +125,7 @@ export const GroupRegisterModal = props => {
                              <TextField
                                 margin="normal"
                                 name="phone"
-                                label={data.modals.groupRegister[lang].phone}
+                                label={data.modals.classOrder[lang].phone}
                                 type="phone"
                                 fullWidth
                                 required
@@ -122,7 +135,7 @@ export const GroupRegisterModal = props => {
                              <TextField
                                 margin="normal"
                                 name="children"
-                                label={data.modals.groupRegister[lang].children}
+                                label={data.modals.classOrder[lang].children}
                                 type="text"
                                 fullWidth
                                 required
@@ -134,7 +147,7 @@ export const GroupRegisterModal = props => {
                              <TextField
                                 margin="normal"
                                 name="reason"
-                                label={data.modals.groupRegister[lang].reason}
+                                label={data.modals.classOrder[lang].reason}
                                 type="text"
                                 fullWidth
                                 required
@@ -146,7 +159,7 @@ export const GroupRegisterModal = props => {
                              <TextField
                                 margin="normal"
                                 name="sourse"
-                                label={data.modals.groupRegister[lang].sourse}
+                                label={data.modals.classOrder[lang].sourse}
                                 type="text"
                                 fullWidth
                                 multiline

@@ -11,8 +11,8 @@ import moment from 'moment';
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
 
-export const GroupRegisterModal = props => {
-    const {open, closeModal, eventId, eventName, startDate, endDate} = props;
+export const ClassRegisterModal = props => {
+    const {open, closeModal, eventId, eventName, datetime} = props;
     const [sending, setSending] = useState(false);
     const [registerConfirmed, setRegisterConfirmed] = useState(false);
 
@@ -75,8 +75,8 @@ export const GroupRegisterModal = props => {
                 <div className={styles.header}>
                     <div className={styles.title}>{eventName[lang]}</div>
                     <div className={styles.subTitle}>
-                        <span>{data.lang[lang].pages.groups.details.date}: </span>
-                        <span>{moment(startDate).format("DD/MM")} - {moment(endDate).format("L")}</span>
+                        <span>{data.lang[lang].pages.classes.details.date}: </span>
+                        <span>{moment(datetime).format("HH:mm DD/MM/YYYY")}</span>
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@ export const GroupRegisterModal = props => {
                                 autoFocus
                                 margin="normal"
                                 name="email"
-                                label={data.modals.groupRegister[lang].email}
+                                label={data.modals.classRegister[lang].email}
                                 type="email"
                                 fullWidth
                                 required
@@ -102,7 +102,7 @@ export const GroupRegisterModal = props => {
                               <TextField
                                 margin="normal"
                                 name="name"
-                                label={data.modals.groupRegister[lang].name}
+                                label={data.modals.classRegister[lang].name}
                                 type="text"
                                 fullWidth
                                 required
@@ -112,7 +112,7 @@ export const GroupRegisterModal = props => {
                              <TextField
                                 margin="normal"
                                 name="phone"
-                                label={data.modals.groupRegister[lang].phone}
+                                label={data.modals.classRegister[lang].phone}
                                 type="phone"
                                 fullWidth
                                 required
@@ -122,7 +122,7 @@ export const GroupRegisterModal = props => {
                              <TextField
                                 margin="normal"
                                 name="children"
-                                label={data.modals.groupRegister[lang].children}
+                                label={data.modals.classRegister[lang].children}
                                 type="text"
                                 fullWidth
                                 required
@@ -134,7 +134,7 @@ export const GroupRegisterModal = props => {
                              <TextField
                                 margin="normal"
                                 name="reason"
-                                label={data.modals.groupRegister[lang].reason}
+                                label={data.modals.classRegister[lang].reason}
                                 type="text"
                                 fullWidth
                                 required
@@ -146,7 +146,7 @@ export const GroupRegisterModal = props => {
                              <TextField
                                 margin="normal"
                                 name="sourse"
-                                label={data.modals.groupRegister[lang].sourse}
+                                label={data.modals.classRegister[lang].sourse}
                                 type="text"
                                 fullWidth
                                 multiline

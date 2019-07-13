@@ -28,7 +28,7 @@ export const classes = [
             en: `Adults and children`,
             ukr: `Дорослі та діти`,
         },
-        open: false,
+        open: true,
         orderable: true,
     },
     {

@@ -181,6 +181,7 @@ export const data = {
                     title: "Classes",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
+                        date: "Time and date",
                         apply: "Register",
                         closed: "Registration ended",
                         order: "Order class",
@@ -195,6 +196,7 @@ export const data = {
                     title: "Tours",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
+                        date: "Time and date",
                         apply: "Register",
                         closed: "Registration ended",
                         order: "Order tour",
@@ -300,6 +302,7 @@ export const data = {
                     title: "Майстер-класи",
                     description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
+                        date: "Час проведення",
                         apply: "Реєстрація",
                         closed: "Реєстрацію завершено",
                         order: "Замовити майстер-клас",
@@ -313,6 +316,7 @@ export const data = {
                     title: "Екскурсії",
                     description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
+                        date: "Час початку",
                         apply: "Реєстрація",
                         closed: "Реєстрацію завершено",
                         order: "Замовити екскурсію",
