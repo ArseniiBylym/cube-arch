@@ -21,6 +21,11 @@ export class Api {
         return articles;
     }
 
+    static getBlogArticle(id) {
+        const post = articles.find(item => item.id === +id);
+        return post; 
+    } 
+
     static getGallery() {
         return gallery;
     }

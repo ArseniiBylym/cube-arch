@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Microlink from '@microlink/react';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
+import {Link} from 'react-router-dom';
 
 import {Spinner, PageTitle, Particles} from '../components/shared';
 import {Api} from '../api/index';
@@ -23,6 +24,21 @@ const Articles = () => {
         setContent(content);
     }, [lang]);
 
+    const getBlogPreview = item => (
+        <Link to={`/articles/${item.id}`} className={styles.blogLink}>
+            <div className={styles.blogLink__header}>{item.title}</div>
+            <div className={styles.blogLink__image} style={{backgroundImage: `url(${item.imageUrl})`}}/>
+        </Link>
+    )
+
+    const getMicrolink = item => (
+        <Microlink 
+            url={item.linkUrl} 
+            size="large" 
+            style={{ fontFamily: "Jura, sans-serif" }}
+        />
+    )
+
     if (!articles || !content) return <Spinner />;
     return (
         <>
@@ -36,11 +52,7 @@ const Articles = () => {
                             <Grid container>
                                 <Grid item xs={12} md={4} className={styles.title}>{item.title[lang]}</Grid>
                                 <Grid item xs={12} md={8} className={styles.link}>
-                                    <Microlink 
-                                        url={item.linkUrl} 
-                                        size="large" 
-                                        style={{ fontFamily: "Jura, sans-serif" }}
-                                    />
+                                    {item.isBlog ? getBlogPreview(item) : getMicrolink(item)}
                                 </Grid>
                             </Grid>
                         </Grid>
