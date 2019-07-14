@@ -22,14 +22,24 @@ const theme = createMuiTheme({
         MuiInputLabel: {
             animated: {
                 fontSize: '1.3rem',
+                '@media (max-width:600px)': {
+                    fontSize: '1rem',
+                },
             }
         },
         MuiInputBase: {
             root: {
                 fontSize: '1.3rem',
-                lineHeight: '1.6rem'
+                lineHeight: '1.6rem',
+            },
+        },
+        MuiDialog: {
+            paper: {
+                '@media (max-width:600px)': {
+                    margin: '20px'
+                },
             }
-        }
+        },
     }
 });
 

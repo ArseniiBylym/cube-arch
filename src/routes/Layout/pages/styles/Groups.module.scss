@@ -1,11 +1,20 @@
 .root {
     padding: 0 4rem;
+    @media screen and (max-width: 600px) {
+        padding: 0;
+    }
 }
 .main {
     padding: 5rem;
+    padding-top: 2rem;
+    max-width: 1920px;
+    margin: 0 auto;
+    @media screen and (max-width: 600px) {
+        padding: 0;
+    }
 }
 .section {
-    margin-bottom: 8rem; 
+    margin-bottom: 6rem; 
 }
 .card {
     background-color: white;
