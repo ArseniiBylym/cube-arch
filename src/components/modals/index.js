@@ -3,3 +3,4 @@ export * from './ClassRegisterModal';
 export * from './ClassOrderModal';
 export * from './TourRegisterModal';
 export * from './TourOrderModal';
+export * from './SubscribeModal';

@@ -4,3 +4,4 @@ export * from './Particles';
 export * from './Spinner';
 export * from './PageTitle';
 export * from './NavigationLink';
+export * from './Subscribe';

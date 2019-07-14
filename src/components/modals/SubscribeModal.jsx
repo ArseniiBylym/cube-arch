@@ -7,45 +7,38 @@ import DialogContent from '@material-ui/core/DialogContent';
 import styles from './AllRegisterModals.module.scss';
 import {useStoreState} from 'easy-peasy';
 import moment from 'moment';
+// import { TransitionProps } from '@material-ui/core/transitions';
+import Slide from '@material-ui/core/Slide';
 
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
 
-export const TourOrderModal = props => {
-    const {open, closeModal, eventId, eventName} = props;
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
+
+export const SubscribeModal = props => {
+    const {open, closeModal} = props;
     const [sending, setSending] = useState(false);
     const [registerConfirmed, setRegisterConfirmed] = useState(false);
 
-    const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
-    const [children, setChildren] = useState('');
-    const [reason, setReason] = useState('');
-    const [sourse, setSourse] = useState('');
 
     const clearFormState = () => {
-        setDate(moment().format("YYYY-MM-DD"))
         setEmail('')
         setName('')
         setPhone('')
-        setChildren('')
-        setReason('')
-        setSourse('')
     }
 
     const lang = useStoreState(state => state.lang.current);
 
     const sendHandler = () => {
         const registerData = {
-            date,
-            eventId,
             email,
             name,
             phone,
-            children,
-            reason,
-            sourse,
         }
         console.log(registerData);
 
@@ -64,7 +57,7 @@ export const TourOrderModal = props => {
         
     }
     const isDisabled = () => {
-        return !date || !email || !phone || !name || !children || !reason;
+        return !email || !phone || !name;
     }
 
     return (
@@ -74,9 +67,10 @@ export const TourOrderModal = props => {
                 onClose={closeModal} 
                 aria-labelledby="form-dialog-title"
                 classes={{paper: styles.paper}}
+                TransitionComponent={Transition}
             >
                 <div className={styles.header}>
-                    <div className={styles.title}>{eventName[lang]}</div>
+                    <div className={styles.title}>{data.modals.subscribe[lang].title}</div>
                 </div>
 
                 <DialogContent className={styles.formContainer}>
@@ -84,28 +78,13 @@ export const TourOrderModal = props => {
                         <Spinner />
                     )}
                     {registerConfirmed ? (
-                        <div className={styles.confirmed}>{data.modals.confirmMessage[lang]}</div>
+                        <div className={styles.confirmed}>{data.modals.subscribe[lang].confirmMessage}</div>
                     ) : (
                        <div className={styles.form}>
-                           <TextField
-                                autoFocus
-                                margin="normal"
-                                name="date"
-                                label={data.modals.tourOrder[lang].date}
-                                type="date"
-                                fullWidth
-                                required
-                                onChange={(e) => setDate(e.target.value)}
-                                variant="outlined"
-                                InputLabelProps={{
-                                    shrink: true,
-                                }}
-                                value={date}
-                            />
                             <TextField
                                 margin="normal"
                                 name="email"
-                                label={data.modals.tourOrder[lang].email}
+                                label={data.modals.subscribe[lang].email}
                                 type="email"
                                 fullWidth
                                 required
@@ -115,7 +94,7 @@ export const TourOrderModal = props => {
                               <TextField
                                 margin="normal"
                                 name="name"
-                                label={data.modals.tourOrder[lang].name}
+                                label={data.modals.subscribe[lang].name}
                                 type="text"
                                 fullWidth
                                 required
@@ -125,46 +104,11 @@ export const TourOrderModal = props => {
                              <TextField
                                 margin="normal"
                                 name="phone"
-                                label={data.modals.tourOrder[lang].phone}
+                                label={data.modals.subscribe[lang].phone}
                                 type="phone"
                                 fullWidth
                                 required
                                 onChange={(e) => setPhone(e.target.value)}
-                                variant="outlined"
-                            />
-                             <TextField
-                                margin="normal"
-                                name="children"
-                                label={data.modals.tourOrder[lang].children}
-                                type="text"
-                                fullWidth
-                                required
-                                multiline
-                                rows={2}
-                                onChange={(e) => setChildren(e.target.value)}
-                                variant="outlined"
-                            />
-                             <TextField
-                                margin="normal"
-                                name="reason"
-                                label={data.modals.tourOrder[lang].reason}
-                                type="text"
-                                fullWidth
-                                required
-                                multiline
-                                rows={2}
-                                onChange={(e) => setReason(e.target.value)}
-                                variant="outlined"
-                            />
-                             <TextField
-                                margin="normal"
-                                name="sourse"
-                                label={data.modals.tourOrder[lang].sourse}
-                                type="text"
-                                fullWidth
-                                multiline
-                                rows={2}
-                                onChange={(e) => setSourse(e.target.value)}
                                 variant="outlined"
                             />
                         </div>

@@ -27,6 +27,22 @@ export const data = {
                 ukr: 'Скасувати',
             }
         },
+        subscribe: {
+            en: {
+                title: 'Leave your contacts to get information about future events.',
+                email: 'Email',
+                name: 'Name, surname of contact person',
+                phone: 'Phone number',
+                confirmMessage: 'Thank you! We will inform you about future events, wich could be interesting for you.'
+            },
+            ukr: {
+                title: `Залиште Ваші контактні данні для того, щоб отримувати сповіщення про майбутні події`,
+                email: `Електронна адреса`,
+                name: `Прізвище, ім'я контактної особи`,
+                phone: `Телефон`,
+                confirmMessage: `Дякуємо! Ми повідомимо Ваc про майбутні події, що можуть бути цікавими для Вас.`
+            }
+        },
         confirmMessage: {
             en: `Thanks for your order! We'll contact you in the shortest possible time.`,
             ukr: `Дякуємо за Ваше замовлення! Ми зв'яжемося з Вами у найкоротший термін.`
@@ -42,7 +58,7 @@ export const data = {
             },
             ukr: {
                 email: `Електронна адреса`,
-                name: `Прізвище ім'я  контактної особи`,
+                name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
                 children: `Кількість дітей, їх вік, ім'я`,
                 reason: `Що Вас зацікавило у програмі? Що очікуєте?`,
@@ -60,7 +76,7 @@ export const data = {
             },
             ukr: {
                 email: `Електронна адреса`,
-                name: `Прізвище ім'я  контактної особи`,
+                name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
                 children: `Кількість дітей, їх вік, ім'я`,
                 reason: `Що Вас зацікавило у майстер-класі? Що очікуєте?`,
@@ -80,7 +96,7 @@ export const data = {
             ukr: {
                 date: `Бажана дата`,
                 email: `Електронна адреса`,
-                name: `Прізвище ім'я  контактної особи`,
+                name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
                 children: `Кількість дітей, їх вік, ім'я`,
                 reason: `Що Вас зацікавило у майстер-класі? Що очікуєте?`,
@@ -98,7 +114,7 @@ export const data = {
             },
             ukr: {
                 email: `Електронна адреса`,
-                name: `Прізвище ім'я  контактної особи`,
+                name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
                 children: `Кількість дітей, їх вік, ім'я`,
                 reason: `Що Вас зацікавило у єкскурсії? Що очікуєте?`,
@@ -118,7 +134,7 @@ export const data = {
             ukr: {
                 date: `Бажана дата`,
                 email: `Електронна адреса`,
-                name: `Прізвище ім'я  контактної особи`,
+                name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
                 children: `Кількість дітей, їх вік, ім'я`,
                 reason: `Що Вас зацікавило у єкскурсії? Що очікуєте?`,

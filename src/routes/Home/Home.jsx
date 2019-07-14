@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import {Nav, Screens} from '../../components/Home';
 import {Particles} from '../../components/shared'
 import styles from './Home.module.scss';
+import { Subscribe } from './../../components/shared/Subscribe';
 
 const SCREENS_LEN = 8;
 
@@ -101,6 +102,7 @@ const Home = () => {
                 setActiveLink={setActiveScreen}    
             />
             <Screens activeScreen={activeScreen} setActiveScreen={setActiveScreen}/>
+            {/* <Subscribe /> */}
         </div>
     );
 };

@@ -1,0 +1,13 @@
+.root {
+    position: fixed;
+    left: 2rem;
+    bottom: 0;
+    padding: .5rem 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all .5s ease;
+    &:hover {
+        background-color: #efefef8e;
+    }
+}
