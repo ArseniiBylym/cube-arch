@@ -12,35 +12,61 @@
     height: 100%;
     padding: 7rem;
     padding-right: 20rem;
+    @media screen and (max-width: 600px) {
+        padding: 2rem;
+    }
 }
 
 .HomeScreen{
-    padding: 3rem;
+    padding: 2rem;
+    // padding-right: 20rem;
     display: flex;
     flex-direction: column;
+    background: url('../../../assets/images/home/home1.jpg') center center/ cover no-repeat fixed;
     .logo{
         display: flex;
         flex-flow: row wrap;
         align-items: center;
         .image{
-            width: 22rem;
-            height: 22rem;
+            width: 4rem;
+            height: 4rem;
         }
         .title{
             margin-left: 2rem;
-            font-size: 5rem;
-            word-spacing: 1rem;
+            font-size: 2rem;
         }
     }
     .content{
         display: flex;
         flex-grow: 1;
+        flex-flow: column nowrap;
         align-items: center;
-        width: 50%;
-        margin: 0 auto;
+        // justify-content: center;
+        width: 100%;
+        margin: 1rem auto;
+        padding-top: 6rem;
+        // background:
+        // radial-gradient(circle 30vw at 110% 50%, #efefef 5%, transparent), 
+        // radial-gradient(circle 30vw at -10% 50%, #efefef 5%, transparent), 
+        // linear-gradient(to bottom, #fcfcfc99,  #fcfcfc48),
+        // radial-gradient(circle 30vw at center 10%, #efefef 0%, transparent), 
+        // url('../../../assets/images/home/home2.jpg') center center/ cover no-repeat fixed;
+        // background-color:  #fcfcfc99;
+        
+        .title {
+            background-color: #fcfcfc99;
+            padding: 2rem;
+            // color: white;
+        }
         .info{
-            font-size: 1.7rem;
-            line-height: 2.5rem;
+            color: #444;
+            font-size: 6rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+        .secondaryInfo {
+            font-size: 1.3rem;
         }
     }
     .next{
@@ -59,7 +85,6 @@
             }
         }
         .icon-container{
-            margin-top: 2rem;
             display: block;
             font-size: 2rem;
             color: rgba(100, 100, 100, .5);

@@ -4,7 +4,7 @@ import logo from '../../../assets/icons/logo.svg';
 import { IoIosArrowDown} from 'react-icons/io'
 
 export const HomeScreen = props => {
-    const {text, linkText, linkUrl, setActiveScreen} = props;
+    const {text, secondaryText, linkText, linkUrl, setActiveScreen} = props;
     return (
         <div className="HomeScreen">
             <div className="logo">
@@ -12,7 +12,10 @@ export const HomeScreen = props => {
                 <div className="title">Cube ARCH Club</div>
             </div>
             <div className="content">
-                <div className="info">{text}</div>
+                <div className="title">
+                    <div className="info">{text}</div>
+                    <div className="secondaryInfo">{secondaryText}</div>
+                </div>
             </div>
             <div className="next">
                 <a onClick={() => setActiveScreen(1)} href={`#${linkUrl}`} className="button">{linkText}</a>

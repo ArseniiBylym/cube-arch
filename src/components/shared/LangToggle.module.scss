@@ -3,11 +3,16 @@
         visibility: hidden;
         position: absolute;
     }
+    @media screen and (max-width: 600px) {
+        transform: translateX(-25px)
+
+    }
     
     span {
         font-size: 1.2rem;
         margin: 0 1rem;
         cursor: pointer;
+       
 
         &.active {
             font-weight: bold;

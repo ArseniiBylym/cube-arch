@@ -146,7 +146,7 @@ export const data = {
 
                     ],
                     screens: [
-                        {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
+                        {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Short title.", secondaryText: "Longer text. Longer text. Longer text. Longer text. Longer text. Longer text."},
                         {index: 1, name: "groups", linkText: "details", linkUrl: "/groups", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 2, name: "programs", linkText: "details", linkUrl: "/programs", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 3, name: "classes", linkText: "details", linkUrl: "/classes", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
@@ -267,7 +267,7 @@ export const data = {
                         {index: 8, name: "контакти", linkUrl: "/contacts"}
                     ],
                     screens: [
-                        {index: 0, name: "головна", linkText: "продовжити", linkUrl: "groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення"},
+                        {index: 0, name: "головна", linkText: "продовжити", linkUrl: "groups", text: "Короткий заголовок", secondaryText: `Довгий заголовок. Довгий заголовок. Довгий заголовок. Довгий заголовок.`},
                         {index: 1, name: "набір у групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 2, name: "програми", linkText: "докладніше", linkUrl: "/programs", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 3, name: "майстер-класи", linkText: "докладніше", linkUrl: "/classes", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
