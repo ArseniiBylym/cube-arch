@@ -1,9 +1,8 @@
 import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
-
-import {About, Classes, Gallery, Groups, Programs, Tours, Articles, Contacts, BlogArticle} from './';
-import {Header} from '../components/Layout';
-import styles from './styles/modules/layout.module.scss';
+import {About, Classes, Gallery, Groups, Programs, Tours, Articles, Contacts, BlogArticle} from './pages';
+import {Header} from '../../components/Layout';
+import styles from './Layout.module.scss';
 
 const Layout = () => {
     return (

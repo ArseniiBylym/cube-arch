@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {StoreProvider} from 'easy-peasy';
-
-import './index.scss';
 import App from './App';
 import {store} from './store';
 import {MaterialThemeProvider} from './config/themeProvider';
 import * as serviceWorker from './serviceWorker';
+import './index.scss';
 
 const Root = () => {
     return (

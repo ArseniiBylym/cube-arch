@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
-
-import {Spinner, PageTitle, Particles} from '../components/shared';
-import {Group} from '../components/Groups'
-import { Api } from '../api/index';
-import {data} from '../assets/data/index';
-import styles from './styles/modules/groups.module.scss';
+import {Spinner, PageTitle, Particles} from '../../../components/shared';
+import {Group} from '../../../components/Groups'
+import {Api} from '../../../api/index';
+import {data} from '../../../assets/data/index';
+import styles from './styles/Groups.module.scss';
 
 const Groups = () => {
     const [groups, setGroups] = useState(null);

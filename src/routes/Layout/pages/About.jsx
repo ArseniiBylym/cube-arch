@@ -2,10 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import {IoLogoFacebook, IoLogoGoogleplus, IoLogoInstagram} from 'react-icons/io';
-
-import {Spinner, PageTitle, Particles} from '../components/shared';
-import {data} from '../assets/data/index';
-import styles from './styles/modules/about.module.scss';
+import {Spinner, PageTitle, Particles} from '../../../components/shared';
+import {data} from '../../../assets/data/index';
+import styles from './styles/About.module.scss';
 
 const About = () => {
     const [content, setContent] = useState(null);

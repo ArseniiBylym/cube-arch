@@ -3,12 +3,10 @@ import Microlink from '@microlink/react';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import {Link} from 'react-router-dom';
-
-import {Spinner, PageTitle, Particles} from '../components/shared';
-import {Api} from '../api/index';
-import {data} from '../assets/data/index';
-
-import styles from './styles/modules/articles.module.scss';
+import {Spinner, PageTitle, Particles} from '../../../components/shared';
+import {Api} from '../../../api/index';
+import {data} from '../../../assets/data/index';
+import styles from './styles/Articles.module.scss';
 
 const Articles = () => {
     const [articles, setArticles] = useState(null);

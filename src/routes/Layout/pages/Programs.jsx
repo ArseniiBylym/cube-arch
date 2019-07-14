@@ -1,14 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
-
-
-import {Spinner, PageTitle, Particles} from '../components/shared';
-import {Program} from '../components/Programs'
-import {Api} from '../api/index';
-import {data} from '../assets/data/index'
-
-import styles from './styles/modules/programs.module.scss';
+import {Spinner, PageTitle, Particles} from '../../../components/shared';
+import {Program} from '../../../components/Programs'
+import {Api} from '../../../api/index';
+import {data} from '../../../assets/data/index'
+import styles from './styles/Programs.module.scss';
 
 const Programs = (props) => {
     const [programs, setPrograms] = useState(null);

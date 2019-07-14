@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import ReactMarkdown from 'react-markdown';
 import Grid from '@material-ui/core/Grid';
-import styles from './styles/modules/blogArticle.module.scss';
-import { Spinner } from './../components/shared';
-import { Api } from './../api/index';
+import styles from './styles/BlogArticle.module.scss';
+import { Spinner } from '../../../components/shared';
+import { Api } from '../../../api/index';
 
 const BlogArticle = props => {
     const [post, setPost] = useState(null);

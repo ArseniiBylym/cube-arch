@@ -2,12 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import LazyHero from 'react-lazy-hero';
-
-import {Spinner, PageTitle, Particles} from '../components/shared';
-import {ImageViewer} from '../components/Gallery';
-import {Api} from '../api/index';
-import {data} from '../assets/data/index';
-import styles from './styles/modules/gallery.module.scss';
+import {Spinner, PageTitle, Particles} from '../../../components/shared';
+import {ImageViewer} from '../../../components/Gallery';
+import {Api} from '../../../api/index';
+import {data} from '../../../assets/data/index';
+import styles from './styles/Gallery.module.scss';
 
 const Gallery = () => {
     const [gallery, setGallery] = useState(null);

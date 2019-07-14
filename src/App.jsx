@@ -1,10 +1,10 @@
 import React, {Suspense, lazy} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from './pages/Home';
-import { Spinner } from './components/shared';
+import Home from './routes/Home/Home';
+import {Spinner} from './components/shared';
 
-const Layout = lazy(() => import('./pages/Layout'));
-const Admin = lazy(() => import('./pages/Admin'));
+const Layout = lazy(() => import('./routes/Layout/Layout'));
+const Admin = lazy(() => import('./routes/Admin/Admin'));
 
 function App() {
     return (

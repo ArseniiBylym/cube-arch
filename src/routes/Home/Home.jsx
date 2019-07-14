@@ -1,8 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
-
-import {Nav, Screens} from './../components/Home';
-import {Particles} from '../components/shared'
-import styles from './styles/modules/home.module.scss';
+import {Nav, Screens} from '../../components/Home';
+import {Particles} from '../../components/shared'
+import styles from './Home.module.scss';
 
 const SCREENS_LEN = 8;
 
