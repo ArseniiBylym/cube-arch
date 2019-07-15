@@ -9,7 +9,7 @@ export const Subscribe = props => {
     useEffect(() =>  {
         setTimeout(() => {
             setModal(true);
-        }, 5000)
+        }, 15000)
     }, []) 
 
     const clickHandler = (e) => {

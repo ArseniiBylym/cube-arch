@@ -6,8 +6,16 @@
     font-size: 2rem;
     cursor: pointer;
     border-radius: 50%;
-    transition: all .5s ease;
+    transition: background-color .5s ease;
     &:hover {
         background-color: #efefef8e;
     }
+}
+.button {
+    color: #727272c7;
+    transition: color .5s ease;
+    &:hover {
+        color: #333;
+    }
+
 }
