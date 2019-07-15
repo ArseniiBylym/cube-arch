@@ -7,3 +7,4 @@ export * from './GalleryScreen';
 export * from './ArticlesScreen';
 export * from './AboutScreen';
 export * from './ContactsScreen';
+export * from './InfoScreen';

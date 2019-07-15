@@ -1,4 +1,5 @@
 .ClassesScreen,
+.InfoScreen,
 .GroupsScreen,
 .AboutScreen,
 .ProgramsScreen,
@@ -104,6 +105,15 @@
     }
 }
 
+.InfoScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .text {
+        padding: 3rem;
+        font-size: 1.5rem;
+    }
+}
 
 .GroupsScreen{
     display: flex;

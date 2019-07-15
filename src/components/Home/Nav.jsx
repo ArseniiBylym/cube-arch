@@ -13,7 +13,7 @@ export const Nav = ({activeLink, setActiveLink}) => {
             return (
                 <a
                     href={`#${item.name}`}
-                    className={classNames('link', {active: activeLink === item.index})}
+                    className={classNames('link', {active: activeLink === item.index || (activeLink === 1 && item.index === 0)})}
                     onClick={() => setActiveLink(item.index)}
                     key={item.index}
                 >
