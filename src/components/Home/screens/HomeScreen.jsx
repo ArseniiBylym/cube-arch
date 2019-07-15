@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
-import logo from '../../../assets/icons/logo.svg';
+// import logo from '../../../assets/icons/logo.svg';
+import logo from '../../../assets/icons/logo2.png';
 import { IoIosArrowDown} from 'react-icons/io'
 
 export const HomeScreen = props => {

@@ -4,7 +4,8 @@ import Drawer from '@material-ui/core/Drawer';
 
 import {data} from '../../assets/data/index';
 import {LangToggle, NavigationLink} from './../shared';
-import logo from '../../assets/icons/logo.svg';
+// import logo from '../../assets/icons/logo.svg';
+import logo from '../../assets/icons/logo2.png';
 import './styles.scss';
 import styles from './Header.module.scss';
 
