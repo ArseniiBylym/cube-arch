@@ -150,16 +150,8 @@ export const data = {
                         
                     },
                     nav: [
-                        // {index: 0, name: "home", linkUrl: "/home"},
-                        // {index: 1, name: "groups", linkUrl: "/groups"},
-                        // {index: 2, name: "programs", linkUrl: "/programs"},
-                        // {index: 3, name: "classes", linkUrl: "/classes"},
-                        // {index: 4, name: "tours", linkUrl: "/tours"},
-                        // {index: 5, name: "gallery", linkUrl: "/gallery"},
-                        // {index: 6, name: "articles", linkUrl: "/articles"},
-                        // {index: 7, name: "about", linkUrl: "/about"},
-                        // {index: 8, name: "contacts", linkUrl: "/contacts"},
                         {index: 0, name: "home", linkUrl: "/home"},
+                        // empty link form info screen
                         {index: 2, name: "groups", linkUrl: "/groups"},
                         {index: 3, name: "programs", linkUrl: "/programs"},
                         {index: 4, name: "classes", linkUrl: "/classes"},
@@ -168,7 +160,6 @@ export const data = {
                         {index: 7, name: "articles", linkUrl: "/articles"},
                         {index: 8, name: "about", linkUrl: "/about"},
                         {index: 9, name: "contacts", linkUrl: "/contacts"},
-
                     ],
                     screens: [
                         {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Short title.", secondaryText: "Longer text. Longer text. Longer text. Longer text. Longer text. Longer text."},
@@ -282,16 +273,8 @@ export const data = {
 
                     },
                     nav: [
-                        // {index: 0, name: "головна", linkUrl: "/home"},
-                        // {index: 1, name: "набір у групи", linkUrl: "/groups"},
-                        // {index: 2, name: "програми", linkUrl: "/programs"},
-                        // {index: 3, name: "майстер-класи", linkUrl: "/classes"},
-                        // {index: 4, name: "екскурсії", linkUrl: "/tours"},
-                        // {index: 5, name: "галерея", linkUrl: "/gallery"},
-                        // {index: 6, name: "статті", linkUrl: "/articles"},
-                        // {index: 7, name: "про нас", linkUrl: "/about"},
-                        // {index: 8, name: "контакти", linkUrl: "/contacts"}
                         {index: 0, name: "головна", linkUrl: "/home"},
+                        //empty link with 1 index for info screen
                         {index: 2, name: "набір у групи", linkUrl: "/groups"},
                         {index: 3, name: "програми", linkUrl: "/programs"},
                         {index: 4, name: "майстер-класи", linkUrl: "/classes"},
