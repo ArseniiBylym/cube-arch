@@ -11,7 +11,8 @@
     justify-content: center;
     z-index: 50;
     @media screen and (max-width: 600px) {
-        width: 6rem;
+        width: 0;
+        padding: 0;
     }
 
     .link{
@@ -27,6 +28,21 @@
             border-color: #333;
         }
     }
+    // .pageName {
+    //     position: absolute;
+    //     right: 0;
+    //     top: 20%;
+    //     display: none;
+    //     font-size: 1.5rem;
+    //     transform: rotate(-90deg);
+    //     transform-origin: right bottom;
+    //     text-transform: uppercase;
+    //     white-space: nowrap;
+
+    //     &.active {
+    //         display: block;
+    //     }
+    // }
 }
 .Lang {
     position: fixed;

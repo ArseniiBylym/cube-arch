@@ -1,5 +1,6 @@
 import React from 'react';
 import {useStoreState} from 'easy-peasy';
+import Hidden from '@material-ui/core/Hidden';
 import {data} from '../../assets/data/index';
 import {Lang} from '../../components/Home';
 import classNames from 'classnames';
@@ -23,10 +24,30 @@ export const Nav = ({activeLink, setActiveLink}) => {
         });
     };
 
+    // const getNames = () => {
+    //     if (!lang) return null;
+    //     return data.lang[lang].pages.home.nav.map(item => {
+    //         return (
+    //             <div
+    //                 className={classNames('pageName', {active: activeLink === item.index && activeLink >= 2 })}
+    //                 key={item.index}
+    //             >
+    //                 {item.name}
+    //             </div>
+    //         );
+    //     });
+    // }
+
     return (
         <div className="Nav">
             <Lang />
-            {getLinks()}
+            <Hidden smDown>
+                {getLinks()}
+            </Hidden>
+            {/* <Hidden smUp>
+                {getNames()}
+            </Hidden> */}
+
         </div>
     );
 };

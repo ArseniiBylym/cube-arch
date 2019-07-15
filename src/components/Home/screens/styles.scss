@@ -15,13 +15,13 @@
     padding-right: 20rem;
     padding-bottom: 4rem;
     @media screen and (max-width: 600px) {
-        padding: 2rem;
+        padding: 0rem;
+        padding-top: 2rem;
     }
 }
 
 .HomeScreen{
     padding: 2rem;
-    // padding-right: 20rem;
     display: flex;
     flex-direction: column;
     background: url('../../../assets/images/home/home1.jpg') center center/ cover no-repeat fixed;
@@ -61,6 +61,9 @@
             text-transform: uppercase;
             font-weight: bold;
             margin-bottom: 2rem;
+            @media screen and (max-width: 600px) {
+                font-size: 4rem;
+            }
         }
         .secondaryInfo {
             font-size: 1.3rem;
@@ -139,6 +142,10 @@
         height: 90%;
         background: radial-gradient(circle 30vw at 100% 20%, #efefef 5%, transparent), 
         url('../../../assets/images/home/groups.jpg') center center/ cover no-repeat;
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            height: 92%;
+        }
     }
     .content {
         position: absolute;
@@ -152,6 +159,9 @@
         align-items: flex-end;
         opacity: 0;
         transition: all 1.5s ease .5s;
+        @media screen and (max-width: 600px) {
+            right: 0;
+        }
         .text{
             width: 80%;
             font-size: 1.5rem;
@@ -159,12 +169,19 @@
             transform: translateX(-60px);
             opacity: 0;
             transition: all 1s ease .5s;
+            @media screen and (max-width: 600px) {
+                width: 100%;
+                font-size: 1.2rem;
+            }
         }
         .link{
             margin: 1rem 6rem 0 0;
             transform: translateX(30px);
             opacity: 0;
             transition: all 1s ease .5s;
+            @media screen and (max-width: 600px) {
+                margin: 1rem auto;
+            }
          }
     }
     
@@ -188,6 +205,10 @@
         margin-left: auto;
         background: radial-gradient(circle 50vw at -20% 90%, #efefef 10%, transparent), 
         url('../../../assets/images/home/programs.jpg') right bottom/ cover no-repeat;
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            height: 92%;
+        }
     }
     
     .content {
@@ -203,8 +224,13 @@
         opacity: 0;
         transform: translateX(-50px);
         transition: all 1s ease .5s;
+        font-size: 1.5rem;
+        @media screen and (max-width: 600px) {
+           left: 0;
+           width: 80%;
+           font-size: 1.2rem;
+        }
         .text{
-            font-size: 1.5rem;
             opacity: 1;
         }
         .link{
@@ -233,6 +259,12 @@
         margin-right: auto;
         background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
         url('../../../assets/images/home/classes.jpg') left top/ cover no-repeat;
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            height: 92%;
+            background-position: left bottom;
+            margin-top: auto;
+        }
     }
     
     .content {
@@ -248,8 +280,13 @@
         opacity: 0;
         transform: translateX(50px);
         transition: all 1s ease .5s;
+        font-size: 1.5rem;
+        @media screen and (max-width: 600px) {
+            left: 0;
+            width: 80%;
+            font-size: 1.2rem;
+         }
         .text{
-            font-size: 1.5rem;
             opacity: 1;
         }
         .link{
@@ -278,6 +315,12 @@
         margin-right: auto;
         background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
         url('../../../assets/images/home/tours.jpg') center center/ cover no-repeat;
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            height: 92%;
+            background-position: left bottom;
+            margin-top: auto;
+        }
     }
     
     .content {
@@ -293,6 +336,11 @@
         opacity: 0;
         transform: translateY(50px);
         transition: all 1s ease .5s;
+        @media screen and (max-width: 600px) {
+            left: 0;
+            width: 80%;
+            font-size: 1.2rem;
+         }
         .text{
             font-size: 1.5rem;
         }
@@ -317,6 +365,10 @@
         align-items: center;
         justify-content: center;
         padding: 2rem;
+        @media screen and (max-width: 600px) {
+           margin-top: 4rem;
+           transform: scale(.45)
+        }
         .image{
             position: relative;
             box-shadow: 0px 20px 20px rgba(0,0,0,.5);
@@ -327,6 +379,7 @@
                 filter: brightness(1.25);
                 box-shadow: 0px 30px 30px rgba(0,0,0,.4);
             }
+           
         }
         .image-1{
             width: 23rem;
@@ -371,6 +424,9 @@
         justify-content: center;
         opacity: 0;
         transition: all 1.5s ease .5s;
+        @media screen and (max-width: 600px) {
+            display: block;
+        }
         .text{
             font-size: 1.5rem;
         }
@@ -399,6 +455,9 @@
         margin: 0 auto;
         background: url('../../../assets/images/home/about.png') center top/ cover no-repeat;
         box-shadow: 0 15px 20px -5px;
+        @media screen and (max-width: 600px) {
+            margin-top: 5rem;
+           }
     }
     
     .content {
@@ -451,12 +510,23 @@
         display: flex;
         align-items: center;
         background: url('../../../assets/images/home/articles.jpg') bottom left / cover no-repeat;
+        @media screen and (max-width: 600px) {
+          height: calc(100% - 5rem);
+          margin-top: 5rem;
+         }
 
         .content {
             margin-top: 5rem;
             transition: all 1s ease .5s;
             transform: translateY(30px);
             opacity: 0;
+
+            @media screen and (max-width: 600px) {
+                background-color: #d2d2d2a4;
+                width: 80%;
+                margin: 2rem auto;
+                padding: 1rem;
+               }
             .text {
                 font-size: 1.5rem;
                 margin-bottom: 2rem;
