@@ -12,8 +12,13 @@ const theme = createMuiTheme({
            light: '#333333a4',
            main: '#444',
            dark: '#333',
-
-       }
+       },
+       secondary: {
+        light: '#7986cb',
+        main: '#3f51b5',
+        dark: '#303f9f',
+        contrastText: "#fff"
+    }
     },
     typography: {
         fontFamily: ['-apple-system', 'Jura', 'Roboto', 'sans-serif'].join(','),
