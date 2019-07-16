@@ -13,14 +13,24 @@ const Groups = () => {
     const lang = useStoreState(state => state.lang.current);
 
     useEffect(() => {
-        const fetchedGroups = Api.getGroups();
-        setGroups(fetchedGroups)
-    }, [])
-    useEffect(() => {
         const content = data.lang[lang].pages.groups;
         setContent(content)
     }, [lang])
 
+    useEffect(() => {
+        fetchGroups();
+    }, [])
+
+    const fetchGroups = async() => {
+        try {
+            // const {docs} = await Api.groups.getAll();
+            // setGroups(docs);
+            const result = await Api.groups.getAll();
+            setGroups(result);
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const getGroups = () => {
         return (

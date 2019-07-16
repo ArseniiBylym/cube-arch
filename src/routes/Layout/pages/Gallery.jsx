@@ -16,13 +16,23 @@ const Gallery = () => {
     const lang = useStoreState(state => state.lang.current);
     
     useEffect(() => {
-        const fetchedGallery = Api.getGallery();
-        setGallery(fetchedGallery)
+        fetchGallery();
     }, [])
     useEffect(() => {
         const content = data.lang[lang].pages.gallery;
         setContent(content)
     }, [lang])
+
+    const fetchGallery = async () => {
+        try {
+            // const {docs} = await Api.gallery.getAll();
+            // setGroups(docs);
+            const result = await Api.gallery.getAll();
+            setGallery(result);
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
 
 

@@ -1,28 +1,46 @@
 import React, {useState, useEffect} from 'react'
-import styles from './Dashboard.module.scss'
 import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
-import {Profile, Users} from './routes'
+import {Profile, Users, Groups, Programs, Classes, Tours, Articles} from './routes'
+import Grid from '@material-ui/core/Grid';
+import styles from './Dashboard.module.scss'
+import './Dashboard.scss';
 
-export const Dashboard = ({match}) => {
+const routes = [
+    {path: '/admin/dashboard/profile', component: Profile, name: 'Profile'},
+    {path: '/admin/dashboard/users', component: Users, name: 'Users'},
+    {path: '/admin/dashboard/groups', component: Groups, name: 'Groups'},
+    {path: '/admin/dashboard/programs', component: Programs, name: 'Programs'},
+    {path: '/admin/dashboard/classes', component: Classes, name: 'Classes'},
+    {path: '/admin/dashboard/tours', component: Tours, name: 'Tours'},
+    {path: '/admin/dashboard/articles', component: Articles, name: 'Articles'},
+]
+
+export const Dashboard = (props) => {
+    useEffect(() => {
+        console.log(props)
+    })
 
     return (
         <div className={styles.root}>
-            <div className={styles.nav}>
-                <NavLink to="/admin/dashboard/profile">Profile</NavLink>
-                <NavLink to="/admin/dashboard/users">Users</NavLink>
-                <NavLink to="/admin/dashboard/groups">Groups</NavLink>
-                <NavLink to="/admin/dashboard/programs">Programs</NavLink>
-                <NavLink to="/admin/dashboard/classes">Classes</NavLink>
-                <NavLink to="/admin/dashboard/tours">Tours</NavLink>
-                <NavLink to="/admin/dashboard/articles">Articles</NavLink>
-            </div>
-            <div className={styles.main}>
-                <Switch>
-                    <Route to="/admin/dashboard/profile" component={Profile} />
-                    <Route to="/admin/dashboard/users" component={Users} />
-                    <Redirect from="/admin/dashboard/*" to="/admin/dashboard" />
-                </Switch>
-            </div>
+            <Grid container>
+                <Grid item xs={2} md={2}>
+                    <div className={styles.nav}>
+                        {routes.map(item => (
+                            <NavLink key={item.path} to={item.path}>{item.name}</NavLink>
+                        ))}
+                    </div>
+                </Grid>
+                <Grid item xs={10} md={10}>
+                    <div className={styles.main}>
+                        <Switch>
+                        {routes.map(item => (
+                            <Route key={item.path} path={item.path} component={item.component} />
+                        ))}
+                        </Switch>
+                    </div>
+                </Grid>
+            </Grid>
         </div>
     )
-};
+}
+

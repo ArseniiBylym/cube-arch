@@ -17,13 +17,24 @@ const Classes = () => {
     const lang = useStoreState(state => state.lang.current);
     
     useEffect(() => {
-        const fetchedClasses = Api.getClasses();
-        setClasses(fetchedClasses.sort((a, b) => a.datetime.getTime() - b.datetime.getTime()))
+        fetchClasses();
     }, [])
+    
     useEffect(() => {
         const content = data.lang[lang].pages.classes;
         setContent(content)
     }, [lang])
+
+    const fetchClasses = async () => {
+        try {
+            // const {docs} = await Api.classes.getAll();
+            // setGroups(docs);
+            const result = await Api.classes.getAll();
+            setClasses(result.sort((a, b) => a.datetime.getTime() - b.datetime.getTime()))
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const getClassesList = () => (
        classes.map((item, index) => (

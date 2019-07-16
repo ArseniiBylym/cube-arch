@@ -21,7 +21,7 @@ export const Login = props => {
         e.preventDefault();
         setSending(true)
         const data = {email, password};
-        Api.login(data)
+        Api.admin.login(data)
             .then(({user}) => {
                 console.log(user)
                 setEmail('')

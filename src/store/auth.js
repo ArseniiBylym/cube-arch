@@ -1,8 +1,10 @@
 import {action, computed} from 'easy-peasy';
 
 export const auth = {
-    admin: null,
-    adminFetched: false,
+    // admin: null,
+    // adminFetched: false,
+    admin: {email: 'admin@gmail.com', uid: '23423k23h4kh'},      // disable firebase request    NEED TO REMOVE IN FUTURE !!!!
+    adminFetched: true,                                         // disable firebase request    NEED TO REMOVE IN FUTURE !!!!  
     isAuth: computed(state => !!state.admin),
     login: action((state, payload) => {
         state.adminFetching = true;

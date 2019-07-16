@@ -1,0 +1,16 @@
+.root {
+    .nav {
+        display: flex;
+        flex-flow: column nowrap;
+        font-size: 1.5rem;
+        a {
+            padding: 1rem 2rem;
+            &:hover {
+                // font-weight: bold;
+            }
+        }
+    }
+    .main {
+
+    }
+}

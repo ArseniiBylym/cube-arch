@@ -10,7 +10,7 @@ const BlogArticle = props => {
 
     useEffect(() => {
         const postId = props.match.params.id;
-        const post = Api.getBlogArticle(postId);
+        const post = Api.articles.getDetails(postId);
         setPost(post)
     }, [])
 

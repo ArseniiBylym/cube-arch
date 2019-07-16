@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import {Spinner} from '../../components/shared';
 import styles from './Admin.module.scss';
+import {Route} from 'react-router-dom'
 import { Login, Dashboard } from './../../components/Admin';
 import { Api } from './../../api';
 
@@ -12,6 +13,7 @@ const Admin = () => {
     const loginSuccess = useStoreActions(actions => actions.auth.loginSuccess);
 
     useEffect(() => {
+        if (!isAuth && !adminFetched);   // disable firebase request    NEED TO REMOVE IN FUTURE !!!!
         fetchAdmin();
     }, []);
 
@@ -21,7 +23,7 @@ const Admin = () => {
             return loginFailed();
         }
         try {
-            const admin = await Api.login({...credentials});
+            const admin = await Api.admin.login({...credentials});
             return loginSuccess({...credentials, admin: {
                 email: admin.email,
                 uid: admin.uid,
@@ -42,10 +44,11 @@ const Admin = () => {
     if (!adminFetched) return <Spinner />;
     return (
         <div className={styles.root}>
+            
             {isAuth ? (
-                <Dashboard />
+                <Route to="/admin/*" component={Dashboard} />
             ) : (
-                <Login />
+                <Route to="/admin/*" component={Login} />
             )}
         </div>
     );

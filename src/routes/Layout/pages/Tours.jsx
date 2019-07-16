@@ -17,13 +17,24 @@ const Tours = () => {
     const lang = useStoreState(state => state.lang.current);
     
     useEffect(() => {
-        const fetchedTours = Api.getTours();
-        setTours(fetchedTours.sort((a, b) => a.datetime.getTime() - b.datetime.getTime()))
+        fetchTours();
     }, [])
+
     useEffect(() => {
         const content = data.lang[lang].pages.tours;
         setContent(content)
     }, [lang])
+
+    const fetchTours = async () => {
+        try {
+            // const {docs} = await Api.tours.getAll();
+            // setGroups(docs);
+            const result = await Api.tours.getAll();
+            setTours(result.sort((a, b) => a.datetime.getTime() - b.datetime.getTime()))
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const getToursList = () => (
         tours.map((item, index) => (

@@ -13,13 +13,14 @@ const Programs = (props) => {
     const lang = useStoreState(state => state.lang.current);
 
     useEffect(() => {
-        const fetchedPrograms = Api.getPrograms();
-        setPrograms(fetchedPrograms)
+        fetchPrograms();
     }, [])
+
     useEffect(() => {
         const content = data.lang[lang].pages.programs;
         setContent(content)
     }, [lang])
+
     useEffect(() => {
         setTimeout(() => {
             const id = props.location.search.split('=')[1];
@@ -31,6 +32,17 @@ const Programs = (props) => {
             }
         }, 200)
     }, [])
+
+    const fetchPrograms = async() => {
+        try {
+            // const {docs} = await Api.programs.getAll();
+            // setGroups(docs);
+            const result = await Api.programs.getAll();
+            setPrograms(result);
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
 
     const getPrograms = () => {

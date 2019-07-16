@@ -14,13 +14,24 @@ const Articles = () => {
     const lang = useStoreState(state => state.lang.current);
 
     useEffect(() => {
-        const fetchedArticles = Api.getArticles();
-        setArticles(fetchedArticles.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime()));
+        fetchArticles();
     }, []);
+
     useEffect(() => {
         const content = data.lang[lang].pages.articles;
         setContent(content);
     }, [lang]);
+
+    const fetchArticles = async () => {
+        try {
+            // const {docs} = await Api.articles.getAll();
+            // setGroups(docs);
+            const result = await Api.articles.getAll();
+            setArticles(result.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime()))
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const getBlogPreview = item => (
         <Link to={`/articles/${item.id}`} className={styles.blogLink}>
