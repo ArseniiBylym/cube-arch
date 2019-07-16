@@ -1,4 +1,5 @@
 import {groups, programs, tours, classes, articles, gallery} from '../assets/data/mock/index';
+import {firebaseAuth} from '../config/firebase';
 
 export class Api {
     static getGroups() {
@@ -30,5 +31,7 @@ export class Api {
         return gallery;
     }
 
-
+    static async login({email, password}) {
+        return firebaseAuth.signInWithEmailAndPassword(email, password);
+    }
 }

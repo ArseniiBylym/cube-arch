@@ -1,15 +1,35 @@
 import {action, computed} from 'easy-peasy';
 
 export const auth = {
-    user: null,
-    isAuth: computed(state => !!state.user),
+    admin: null,
+    adminFetched: false,
+    isAuth: computed(state => !!state.admin),
+    login: action((state, payload) => {
+        state.adminFetching = true;
+    }),
     loginSuccess: action((state, payload) => {
-        state.user = payload;
+        fillStorage(payload.email, payload.password);
+        state.admin = payload.admin;
+        state.adminFetched = true;
     }),
     loginFailed: action((state) => {
-        state.user = null
+        clearStorage()
+        state.admin = null;
+        state.adminFetched = true;
     }),
     logout: action(state => {
-        state.user = null;
+        state.admin = null;
     })
 };
+
+const fillStorage = (email, password) => {
+    localStorage.setItem('adminEmail', email);
+    localStorage.setItem('adminPassword', password);
+    localStorage.setItem('expDate', +Date.now() + 1 * 24 * 60 * 60 * 1000);
+}
+
+const clearStorage = () => {
+    localStorage.removeItem('adminEmail');
+    localStorage.removeItem('adminPassword');
+    localStorage.removeItem('expDate');
+}
