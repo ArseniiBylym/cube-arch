@@ -2,10 +2,11 @@ import {firebaseAuth, firebaseDB} from '../config/firebase';
 
 export const users = {
     getAll: async() => {
-        return firebaseDB.collection('users').get();
+        return firebaseDB.collection('users').orderBy('createdAt').get();
     },
     register: async(user) => {
-        return firebaseDB.collection('users').set(user);
+        user.createdAt = Date.now() + '';
+        return firebaseDB.collection('users').add(user);
     },
     delete: async(id) => {
         return firebaseDB.collection('users').doc(id).delete();

@@ -12,6 +12,7 @@ import Slide from '@material-ui/core/Slide';
 
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
+import { Api } from './../../api/index';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -34,7 +35,7 @@ export const SubscribeModal = props => {
 
     const lang = useStoreState(state => state.lang.current);
 
-    const sendHandler = () => {
+    const sendHandler = async() => {
         const registerData = {
             email,
             name,
@@ -43,9 +44,10 @@ export const SubscribeModal = props => {
         console.log(registerData);
 
         setSending(true);
-        setTimeout(() => {
+        try {
+            const result = await Api.users.register(registerData);
+            console.log(result);
             setRegisterConfirmed(true);
-            setSending(false);
             setTimeout(() => {
                 closeModal();
                 clearFormState();
@@ -53,7 +55,24 @@ export const SubscribeModal = props => {
                     setRegisterConfirmed(false);
                 }, 500)
             }, 3000)
-        }, 2000)
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setSending(false);
+            clearFormState();
+        }
+
+        // setTimeout(() => {
+        //     setRegisterConfirmed(true);
+        //     setSending(false);
+        //     setTimeout(() => {
+        //         closeModal();
+        //         clearFormState();
+        //         setTimeout(() => {
+        //             setRegisterConfirmed(false);
+        //         }, 500)
+        //     }, 3000)
+        // }, 2000)
         
     }
     const isDisabled = () => {

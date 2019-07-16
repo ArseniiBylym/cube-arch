@@ -8,13 +8,15 @@ import { Api } from './../../api';
 
 const Admin = () => {
     const isAuth = useStoreState(state => state.auth.isAuth);
+    const admin = useStoreState(state => state.auth.admin);
     const adminFetched = useStoreState(state => state.auth.adminFetched);
     const loginFailed = useStoreActions(actions => actions.auth.loginFailed);
     const loginSuccess = useStoreActions(actions => actions.auth.loginSuccess);
 
     useEffect(() => {
-        if (!isAuth && !adminFetched);   // disable firebase request    NEED TO REMOVE IN FUTURE !!!!
-        fetchAdmin();
+        if (!isAuth && !adminFetched) {  // disable firebase request    NEED TO REMOVE IN FUTURE !!!!
+            fetchAdmin();
+        }  
     }, []);
 
     const fetchAdmin = async () => {
@@ -46,9 +48,9 @@ const Admin = () => {
         <div className={styles.root}>
             
             {isAuth ? (
-                <Route to="/admin/*" component={Dashboard} />
+                <Dashboard />
             ) : (
-                <Route to="/admin/*" component={Login} />
+                <Login />
             )}
         </div>
     );

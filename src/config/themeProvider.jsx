@@ -40,6 +40,14 @@ const theme = createMuiTheme({
                 },
             }
         },
+        MuiTableCell: {
+            root: {
+                fontSize: '1.2rem'
+            },
+            head: {
+                fontSize: '1rem'
+            }
+        }
     }
 });
 

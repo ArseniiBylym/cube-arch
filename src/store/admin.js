@@ -6,7 +6,7 @@ export const admin = {
         state.users = payload;
     }),
     deleteUser: action((state, payload) => {
-        state.users = state.users.filter(item => item.id !== payload.id);
+        state.users = state.users.filter(item => item.id !== payload);
     }),
 
     
