@@ -7,7 +7,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import styles from './AllRegisterModals.module.scss';
 import {useStoreState} from 'easy-peasy';
 import moment from 'moment';
-// import { TransitionProps } from '@material-ui/core/transitions';
 import Slide from '@material-ui/core/Slide';
 
 import {data} from './../../assets/data/index';
@@ -61,19 +60,6 @@ export const SubscribeModal = props => {
             setSending(false);
             clearFormState();
         }
-
-        // setTimeout(() => {
-        //     setRegisterConfirmed(true);
-        //     setSending(false);
-        //     setTimeout(() => {
-        //         closeModal();
-        //         clearFormState();
-        //         setTimeout(() => {
-        //             setRegisterConfirmed(false);
-        //         }, 500)
-        //     }, 3000)
-        // }, 2000)
-        
     }
     const isDisabled = () => {
         return !email || !phone || !name;

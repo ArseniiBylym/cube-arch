@@ -8,7 +8,7 @@ import { Api } from './../../api';
 
 const Admin = () => {
     const isAuth = useStoreState(state => state.auth.isAuth);
-    const admin = useStoreState(state => state.auth.admin);
+    const auth = useStoreState(state => state.auth.admin);
     const adminFetched = useStoreState(state => state.auth.adminFetched);
     const loginFailed = useStoreActions(actions => actions.auth.loginFailed);
     const loginSuccess = useStoreActions(actions => actions.auth.loginSuccess);

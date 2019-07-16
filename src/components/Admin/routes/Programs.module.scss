@@ -1,0 +1,36 @@
+.root {
+    padding: 2rem;
+}
+
+.createButton {
+    position: fixed;
+    right: 4rem;
+    bottom: 4rem;
+}
+
+.program {
+    margin-bottom: 3rem;
+    background-color: #c5c5c5ed;
+    border-radius: 5px;
+    overflow: hidden;
+    &__image {
+        min-height: 20rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+    }
+    &__content {
+        display: flex;
+        flex-flow: column nowrap;
+        p {
+            font-size: 1.3rem;
+        }
+    }
+    &__buttons {
+        margin-top: auto;
+        button {
+            margin: 1rem 2rem;
+        }
+    }
+}

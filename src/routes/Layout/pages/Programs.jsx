@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useStoreState} from 'easy-peasy';
+import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import {Spinner, PageTitle, Particles} from '../../../components/shared';
 import {Program} from '../../../components/Programs'
@@ -8,12 +8,15 @@ import {data} from '../../../assets/data/index'
 import styles from './styles/Programs.module.scss';
 
 const Programs = (props) => {
-    const [programs, setPrograms] = useState(null);
     const [content, setContent] = useState(null);
+    const programs = useStoreState(state => state.content.programs);
+    const setPrograms = useStoreActions(state => state.content.setPrograms);
     const lang = useStoreState(state => state.lang.current);
 
     useEffect(() => {
-        fetchPrograms();
+        if(!programs) {
+            fetchPrograms();
+        }
     }, [])
 
     useEffect(() => {
@@ -24,10 +27,8 @@ const Programs = (props) => {
     useEffect(() => {
         setTimeout(() => {
             const id = props.location.search.split('=')[1];
-            console.log(id)
             if (id) {
                 const elem = document.getElementById(id);
-                console.log(elem);
                 elem.scrollIntoView();
             }
         }, 200)
@@ -35,10 +36,12 @@ const Programs = (props) => {
 
     const fetchPrograms = async() => {
         try {
-            // const {docs} = await Api.programs.getAll();
-            // setGroups(docs);
-            const result = await Api.programs.getAll();
-            setPrograms(result);
+            const snapshot = await Api.programs.getAll();
+            let programs = [];
+            snapshot.forEach(doc => {
+                programs.push({...doc.data(), id: doc.id})
+            });
+            setPrograms(programs)
         } catch (error) {
             console.log(error)
         }

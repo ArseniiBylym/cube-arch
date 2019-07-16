@@ -11,9 +11,9 @@ import styles from './Users.module.scss'
 import { Spinner } from './../../shared/Spinner';
 
 export const Users = props => {
-    const users = useStoreState(state => state.admin.users);
-    const setUsers = useStoreActions(state => state.admin.setUsers);
-    const deleteUser = useStoreActions(state => state.admin.deleteUser);
+    const users = useStoreState(state => state.content.users);
+    const setUsers = useStoreActions(state => state.content.setUsers);
+    const deleteUser = useStoreActions(state => state.content.deleteUser);
 
     useEffect(() => {
         if (!users) {

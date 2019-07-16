@@ -1,16 +1,19 @@
 .root {
     .nav {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 15rem;
         display: flex;
         flex-flow: column nowrap;
         font-size: 1.5rem;
         a {
             padding: 1rem 2rem;
-            &:hover {
-                // font-weight: bold;
-            }
         }
     }
     .main {
-
+        margin-left: 15rem;
     }
 }
