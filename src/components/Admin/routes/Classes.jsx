@@ -3,6 +3,7 @@ import {useStoreState, useStoreActions} from 'easy-peasy';
 import styles from './Classes.module.scss'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+
 import moment from 'moment';
 import { NewClass, EditClass } from './../components';
 import { Api } from './../../../api/index';
@@ -64,6 +65,7 @@ export const Classes = props => {
                             <Button className={styles.deleteButton} size="large" color="primary" variant="contained" onClick={() => deleteHandler(item.id)}>Delete</Button>
                         </div>
                     </Grid>
+                   
                 </Grid>
             </div>
         ))

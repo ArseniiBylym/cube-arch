@@ -85,7 +85,7 @@ export const data = {
         },
         classOrder: {
             en: {
-                date: 'Desired date',
+                datetime: 'Desired date and time',
                 email: 'Email',
                 name: 'Name, surname of contact person',
                 phone: 'Phone number',
@@ -94,7 +94,7 @@ export const data = {
                 sourse: 'Where did you find out about us?'
             },
             ukr: {
-                date: `Бажана дата`,
+                datetime: `Бажана дата та час`,
                 email: `Електронна адреса`,
                 name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
@@ -123,7 +123,7 @@ export const data = {
         },
         tourOrder: {
             en: {
-                date: 'Desired date',
+                datetime: 'Desired date and time',
                 email: 'Email',
                 name: 'Name, surname of contact person',
                 phone: 'Phone number',
@@ -132,7 +132,7 @@ export const data = {
                 sourse: 'Where did you find out about us?'
             },
             ukr: {
-                date: `Бажана дата`,
+                datetime: `Бажана датата час`,
                 email: `Електронна адреса`,
                 name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,

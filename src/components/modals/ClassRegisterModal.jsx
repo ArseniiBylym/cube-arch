@@ -10,9 +10,9 @@ import moment from 'moment';
 
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
+import { Api } from './../../api/index';
 
 export const ClassRegisterModal = props => {
-    console.log(props)
     const {open, closeModal, eventId, eventName, datetime} = props;
     const [sending, setSending] = useState(false);
     const [registerConfirmed, setRegisterConfirmed] = useState(false);
@@ -35,22 +35,21 @@ export const ClassRegisterModal = props => {
 
     const lang = useStoreState(state => state.lang.current);
 
-    const sendHandler = () => {
+    const sendHandler = async() => {
         const registerData = {
-            eventId,
             email,
             name,
             phone,
             children,
             reason,
             sourse,
+            createdAt: Date.now() + '',
         }
-        console.log(registerData);
 
         setSending(true);
-        setTimeout(() => {
+        try {
+            await Api.classes.registerToClass({classId: eventId, user: registerData});
             setRegisterConfirmed(true);
-            setSending(false);
             setTimeout(() => {
                 closeModal();
                 clearFormState();
@@ -58,9 +57,14 @@ export const ClassRegisterModal = props => {
                     setRegisterConfirmed(false);
                 }, 500)
             }, 3000)
-        }, 2000)
-        
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setSending(false);
+            clearFormState();
+        }
     }
+
     const isDisabled = () => {
         return !email || !phone || !name || !children || !reason;
     }
