@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useStoreState} from 'easy-peasy';
+import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import Drawer from '@material-ui/core/Drawer';
 import moment from 'moment';
@@ -10,14 +10,17 @@ import {data} from '../../../assets/data/index';
 import styles from './styles/Classes.module.scss';
 
 const Classes = () => {
-    const [classes, setClasses] = useState(null);
+    const classes = useStoreState(state => state.content.classes);
+    const setClasses = useStoreActions(state => state.content.setClasses);
     const [content, setContent] = useState(null);
     const [drawer, setDrawer] = useState(false);
 
     const lang = useStoreState(state => state.lang.current);
     
     useEffect(() => {
-        fetchClasses();
+        if (!classes) {
+            fetchClasses();
+        }
     }, [])
     
     useEffect(() => {
@@ -25,12 +28,14 @@ const Classes = () => {
         setContent(content)
     }, [lang])
 
-    const fetchClasses = async () => {
+    const fetchClasses = async() => {
         try {
-            // const {docs} = await Api.classes.getAll();
-            // setGroups(docs);
-            const result = await Api.classes.getAll();
-            setClasses(result.sort((a, b) => a.datetime.getTime() - b.datetime.getTime()))
+            const snapshot = await Api.classes.getAll();
+            let classes = [];
+            snapshot.forEach(doc => {
+                classes.push({...doc.data(), id: doc.id})
+            });
+            setClasses(classes)
         } catch (error) {
             console.log(error)
         }
@@ -53,7 +58,7 @@ const Classes = () => {
             {classes.map(item => {
                 return (
                     <a href={`#class_${item.id}`} key={item.id} className={styles.link}>
-                        <span>{moment(item.datetime).format("DD-MM-YYYY")}</span> - {item.name[lang]}
+                        <span>{moment(+item.datetime).format("DD-MM-YYYY")}</span> - {item.name[lang]}
                     </a>
                 )
             })}

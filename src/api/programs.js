@@ -6,7 +6,6 @@ const programsCol = firebaseDB.collection('programs');
 
 export const programs = {
     getAll: async() => {
-        // return Programs;
         return programsCol.get();
     },
     add: async(newProgram) => {

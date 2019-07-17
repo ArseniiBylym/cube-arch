@@ -26,6 +26,29 @@ export const content = {
         state.programs = state.programs.filter(item => item.id !== payload);
     }),
 
+
+    classes: null,
+    setClasses: action((state, payload) => {
+        state.classes = payload;
+    }),
+    addClass: action((state, payload) => {
+        state.classes.push(payload)
+    }),
+    updateClass: action((state, payload) => {
+        state.classes = state.classes.map(item => {
+           return (item.id === payload.id) ? payload : item
+        });
+    }),
+    // removeRegistrations: action((state, payload) => {
+    //     state.classes = state.classes.map(item => {
+    //        return (item.id === payload.id) ? payload : item
+    //     });
+    // }),
+    deleteClass: action((state, payload) => {
+        state.classes = state.classes.filter(item => item.id !== payload);
+    }),
+
+
     
 
 }

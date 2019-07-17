@@ -39,7 +39,6 @@ export const EditProgram = props => {
         try {
             await Api.programs.update({id: program.id, updatedProgram});
             updateProgram({...updatedProgram, id: program.id})
-
         } catch(error) {
             console.log(error)
         } finally {

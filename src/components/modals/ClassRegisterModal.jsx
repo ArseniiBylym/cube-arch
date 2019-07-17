@@ -12,6 +12,7 @@ import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
 
 export const ClassRegisterModal = props => {
+    console.log(props)
     const {open, closeModal, eventId, eventName, datetime} = props;
     const [sending, setSending] = useState(false);
     const [registerConfirmed, setRegisterConfirmed] = useState(false);
@@ -76,7 +77,7 @@ export const ClassRegisterModal = props => {
                     <div className={styles.title}>{eventName[lang]}</div>
                     <div className={styles.subTitle}>
                         <span>{data.lang[lang].pages.classes.details.date}: </span>
-                        <span>{moment(datetime).format("HH:mm DD/MM/YYYY")}</span>
+                        <span>{moment(+datetime).format("HH:mm DD/MM/YYYY")}</span>
                     </div>
                 </div>
 

@@ -11,7 +11,6 @@ export const Programs = props => {
     const programs = useStoreState(state => state.content.programs);
     const setPrograms = useStoreActions(state => state.content.setPrograms);
     const deleteProgram = useStoreActions(state => state.content.deleteProgram);
-    const updateProgram = useStoreActions(state => state.content.updateProgram);
 
     const [createMode, setCreateMode] = useState(false);
     const [editedProgram, setEditedProgram] = useState(null);
@@ -47,15 +46,15 @@ export const Programs = props => {
 
     const programList = () => {
         return programs.map(item => (
-            <div key={item.id} className={styles.program}>
+            <div key={item.id} className={styles.card}>
                 <Grid container>
                     <Grid item xs={4}>
-                        <div className={styles.program__image} style={{backgroundImage: `url(${item.image})`}}/>
+                        <div className={styles.card__image} style={{backgroundImage: `url(${item.image})`}}/>
                     </Grid>
-                    <Grid item xs={8} className={styles.program__content}>
+                    <Grid item xs={8} className={styles.card__content}>
                         <h1>{item.name['ukr']}</h1>
                         <p>{item.description['ukr']}</p>
-                        <div className={styles.program__buttons}> 
+                        <div className={styles.card__buttons}> 
                             <Button className={styles.editButton} size="large" color="secondary" variant="contained" onClick={() => setEditedProgram(item)}>Edit</Button>
                             <Button className={styles.deleteButton} size="large" color="primary" variant="contained" onClick={() => deleteHandler(item.id)}>Delete</Button>
                         </div>
@@ -77,7 +76,7 @@ export const Programs = props => {
             {!createMode && !editedProgram && (
                 <>
                     <h1>Programs list</h1>
-                    <div className={styles.programs}>
+                    <div className={styles.list}>
                         {programList()}
                     </div>
                     <Button className={styles.createButton} size="large" color="secondary" variant="contained" onClick={() => setCreateMode(true)}>Create program</Button>
