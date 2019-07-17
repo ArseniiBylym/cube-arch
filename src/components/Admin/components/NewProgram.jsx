@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import styles from './styles/NewProgram.module.scss';
 import imagePlaceholder from '../../../assets/images/admin/empty_image.png';
@@ -39,13 +40,11 @@ export const NewProgram = props => {
         } finally {
             close()
         }
-
-
     }
 
     return (
         <div className={styles.root}>
-           <h3>Create new program</h3>
+           <h1>Create new program</h1>
            <img src={image || imagePlaceholder} alt="" className={styles.image} />
            <TextField
                     margin="normal"
@@ -58,60 +57,72 @@ export const NewProgram = props => {
                     variant="outlined"
                     value={image}
                 />
-           <h5>Name</h5>
+           <h3>Name</h3>
+           <Grid container spacing={2}>
+               <Grid item xs={6}>
                 <TextField
-                    margin="normal"
-                    name="name_en"
-                    label="Program Name"
-                    type="text"
-                    fullWidth
-                    required
-                    onChange={onNameChange('en')}
-                    variant="outlined"
-                    value={name.en}
-                />
-                 <TextField
-                    margin="normal"
-                    name="name_ukr"
-                    label="Назва програми"
-                    type="text"
-                    fullWidth
-                    required
-                    onChange={onNameChange('ukr')}
-                    variant="outlined"
-                    value={name.ukr}
-                />
-            <h5>Description</h5>
+                        margin="normal"
+                        name="name_en"
+                        label="Program Name"
+                        type="text"
+                        fullWidth
+                        required
+                        onChange={onNameChange('en')}
+                        variant="outlined"
+                        value={name.en}
+                    />
+               </Grid>
+               <Grid item xs={6}>
                 <TextField
-                    margin="normal"
-                    name="description_en"
-                    label="Description"
-                    type="text"
-                    fullWidth
-                    required
-                    onChange={onDescriptionChange('en')}
-                    variant="outlined"
-                    value={description.en}
-                    multiline
-                    rows={5}
-                />
-                 <TextField
-                    margin="normal"
-                    name="description_ukr"
-                    label="Опис"
-                    type="text"
-                    fullWidth
-                    required
-                    onChange={onDescriptionChange('ukr')}
-                    variant="outlined"
-                    value={description.ukr}
-                    multiline
-                    rows={5}
-                />
-                <div className={styles.buttons}>
-                    <Button onClick={onCreate} color="secondary" variant="contained" size="large">Create</Button>
-                    <Button onClick={() => close()} color="primary" variant="contained" size="large">Close</Button>
-                </div>
+                        margin="normal"
+                        name="name_ukr"
+                        label="Назва програми"
+                        type="text"
+                        fullWidth
+                        required
+                        onChange={onNameChange('ukr')}
+                        variant="outlined"
+                        value={name.ukr}
+                    />
+               </Grid>
+           </Grid>
+            <h3>Description</h3>
+            <Grid container spacing={2}>
+                <Grid item xs={6}>
+                    <TextField
+                        margin="normal"
+                        name="description_en"
+                        label="Description"
+                        type="text"
+                        fullWidth
+                        required
+                        onChange={onDescriptionChange('en')}
+                        variant="outlined"
+                        value={description.en}
+                        multiline
+                        rows={5}
+                    />
+                </Grid>
+                <Grid item xs={6}> 
+                    <TextField
+                        margin="normal"
+                        name="description_ukr"
+                        label="Опис"
+                        type="text"
+                        fullWidth
+                        required
+                        onChange={onDescriptionChange('ukr')}
+                        variant="outlined"
+                        value={description.ukr}
+                        multiline
+                        rows={5}
+                    />
+                </Grid>
+            </Grid>
+            <div className={styles.buttons}>
+                <Button onClick={onCreate} color="secondary" variant="contained" size="large">Create</Button>
+                <Button onClick={() => close()} color="primary" variant="contained" size="large">Close</Button>
+            </div>
         </div>
     )
 };

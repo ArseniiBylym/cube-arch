@@ -149,7 +149,7 @@ export const EditClass = props => {
 
     return (
         <div className={styles.root}>
-            <h1>Update class</h1>
+            <h1>Edit class</h1>
             <img src={image || imagePlaceholder} alt="" className={styles.image} />
             <TextField
                 margin="normal"
@@ -391,8 +391,7 @@ export const EditClass = props => {
                             <Table className={styles.table}>
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>#</TableCell>
-                                        <TableCell>Name</TableCell>
+                                        <TableCell align="left">Name</TableCell>
                                         <TableCell align="left">Email</TableCell>
                                         <TableCell align="left">Phone</TableCell>
                                         <TableCell align="left">Childrens</TableCell>
@@ -404,7 +403,6 @@ export const EditClass = props => {
                                 <TableBody>
                                 {registeredUsers.map((item, index) => (
                                     <TableRow key={item.id}>
-                                        <TableCell align="left">{index + 1}</TableCell>
                                         <TableCell align="left">{item.name}</TableCell>
                                         <TableCell align="left">{item.email}</TableCell>
                                         <TableCell align="left">{item.phone}</TableCell>

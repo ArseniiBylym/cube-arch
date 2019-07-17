@@ -10,6 +10,7 @@ import moment from 'moment';
 
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
+import { Api } from './../../api/index';
 
 export const GroupRegisterModal = props => {
     const {open, closeModal, eventId, eventName, startDate, endDate} = props;
@@ -34,22 +35,22 @@ export const GroupRegisterModal = props => {
 
     const lang = useStoreState(state => state.lang.current);
 
-    const sendHandler = () => {
+    const sendHandler = async() => {
         const registerData = {
-            eventId,
+            // eventId,
             email,
             name,
             phone,
             children,
             reason,
             sourse,
+            createdAt: new Date().getTime() + ''
         }
         console.log(registerData);
 
-        setSending(true);
-        setTimeout(() => {
+        try {
+            await Api.groups.registerToGroup({classId: eventId, user: registerData});
             setRegisterConfirmed(true);
-            setSending(false);
             setTimeout(() => {
                 closeModal();
                 clearFormState();
@@ -57,9 +58,14 @@ export const GroupRegisterModal = props => {
                     setRegisterConfirmed(false);
                 }, 500)
             }, 3000)
-        }, 2000)
-        
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setSending(false);
+            clearFormState();
+        }
     }
+
     const isDisabled = () => {
         return !email || !phone || !name || !children || !reason;
     }
@@ -76,7 +82,7 @@ export const GroupRegisterModal = props => {
                     <div className={styles.title}>{eventName[lang]}</div>
                     <div className={styles.subTitle}>
                         <span>{data.lang[lang].pages.groups.details.date}: </span>
-                        <span>{moment(startDate).format("DD/MM")} - {moment(endDate).format("L")}</span>
+                        <span>{moment(+startDate).format("DD/MM")} - {moment(+endDate).format("L")}</span>
                     </div>
                 </div>
 

@@ -79,7 +79,7 @@ export const Programs = props => {
                     <div className={styles.list}>
                         {programList()}
                     </div>
-                    <Button className={styles.createButton} size="large" color="secondary" variant="contained" onClick={() => setCreateMode(true)}>Create program</Button>
+                    <Button className={styles.createButton} size="large" color="secondary" variant="contained" onClick={() => setCreateMode(true)}>Create new</Button>
                 </>
             )}
         </div>

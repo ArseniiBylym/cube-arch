@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import Button from '@material-ui/core/Button';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -15,89 +13,64 @@ import TableRow from '@material-ui/core/TableRow';
 import moment from 'moment';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import styles from './styles/NewTour.module.scss';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import styles from './styles/NewGroup.module.scss';
 import imagePlaceholder from '../../../assets/images/admin/empty_image.png';
 import {Api} from './../../../api';
 import {MdExpandMore} from 'react-icons/md'
 
-export const EditTour = props => {
+export const EditGroup = props => {
     const {close, editedElem} = props;
     const [registeredUsers, setRegisteredUsers] = useState([])
-    const [userOrders, setUserOrders] = useState([])
 
-    const updateTour = useStoreActions(state => state.content.updateTour);
+    const programs = useStoreState(state => state.content.programs)
+    const updateGroup = useStoreActions(state => state.content.updateGroup);
 
     const [image, setImage] = useState('');
     const [name, setName] = useState({en: '', ukr: ''});
-    const [place, setPlace] = useState({en: '', ukr: ''});
     const [description, setDescription] = useState({en: '', ukr: ''});
     const [price, setPrice] = useState({en: '', ukr: ''});
     const [duration, setDuration] = useState({en: '', ukr: ''});
-    const [auditory, setAuditory] = useState({en: '', ukr: ''});
-    const [datetime, setDatetime] = useState('');
-    const [open, setOpen] = useState(true);
-    const [orderable, setOrderable] = useState(false);
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [places, setPlaces] = useState(10);
+    const [program, setProgram] = useState(0);
 
     useEffect(() => {
         getRegistrations();
-        getOrders();
     }, [])
 
     useEffect(() => {
         setImage(editedElem.image);
         setName(editedElem.name);
-        setPlace(editedElem.place);
         setDescription(editedElem.description);
         setPrice(editedElem.price);
         setDuration(editedElem.duration);
-        setAuditory(editedElem.auditory);
-        setDatetime(moment(+editedElem.datetime).format("YYYY-MM-DDTHH:mm"));
-        setOpen(editedElem.open);
-        setOrderable(editedElem.orderable);
+        setStartDate(moment(+editedElem.startDate).format("YYYY-MM-DD"))
+        setEndDate(moment(+editedElem.endDate).format("YYYY-MM-DD"))
+        setPlaces(editedElem.places);
+        setProgram(programs.findIndex(item => item.id === editedElem.program.id))
     }, [])
 
     const onNameChange = lang => e => {
         setName({...name, [lang]: e.target.value});
     };
-    const onPlaceChange = lang => e => {
-        setPlace({...place, [lang]: e.target.value});
-    };
     const onDescriptionChange = lang => e => {
         setDescription({...description, [lang]: e.target.value});
     };
-    const onPriceChange = lang => e => {
-        setPrice({...price, [lang]: e.target.value});
-    };
-    const onDurationChange = lang => e => {
-        setDuration({...duration, [lang]: e.target.value});
-    };
-    const onAuditoryChange = lang => e => {
-        setAuditory({...auditory, [lang]: e.target.value});
-    };
+
 
     const getRegistrations = async() => {
         try {
-            const snapshot = await Api.tours.getRegisteredUsers(editedElem.id);
+            const snapshot = await Api.groups.getRegisteredUsers(editedElem.id);
             let docs = [];
             snapshot.forEach(doc => {
                 docs.push({...doc.data(), id: doc.id})
             });
-            console.log(docs)
             setRegisteredUsers(docs)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    const getOrders = async() => {
-        try {
-            const snapshot = await Api.tours.getUserOrders(editedElem.id);
-            let docs = [];
-            snapshot.forEach(doc => {
-                docs.push({...doc.data(), id: doc.id})
-            });
-            console.log(docs)
-            setUserOrders(docs)
         } catch (error) {
             console.log(error)
         }
@@ -105,19 +78,9 @@ export const EditTour = props => {
 
     const deleteRegisteredUser = async (userId) => {
         try {
-            await Api.tours.removeRegisteredUser(editedElem.id, userId);
+            await Api.groups.removeRegisteredUser(editedElem.id, userId);
             const updatedUsers = registeredUsers.filter(item => item.id !== userId);
             setRegisteredUsers(updatedUsers)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    const deleteOrderedUser = async(userId) => {
-        try {
-            await Api.tours.removeUserOrder(editedElem.id, userId);
-            const updatedUsers = userOrders.filter(item => item.id !== userId);
-            setUserOrders(updatedUsers)
         } catch (error) {
             console.log(error)
         }
@@ -127,19 +90,21 @@ export const EditTour = props => {
         const updatedDoc = {
             image,
             name,
-            place,
             description,
             price,
             duration,
-            auditory,
-            datetime: new Date(datetime).getTime() + '',
-            open,
-            orderable,
+            places,
+            startDate: new Date(startDate).getTime() + '',
+            endDate: new Date(endDate).getTime() + '',
+            program: {
+                name: {...programs[program].name},
+                id: programs[program].id
+            }
         };
 
         try {
-            await Api.tours.update({id: editedElem.id, updatedDoc});
-            updateTour({...updatedDoc, id: editedElem.id});
+            await Api.groups.update({id: editedElem.id, updatedDoc});
+            updateGroup({...updatedDoc, id: editedElem.id});
         } catch (error) {
             console.log(error);
         } finally {
@@ -149,7 +114,7 @@ export const EditTour = props => {
 
     return (
         <div className={styles.root}>
-            <h1>Edit tour</h1>
+            <h1>Edit group</h1>
             <img src={image || imagePlaceholder} alt="" className={styles.image} />
             <TextField
                 margin="normal"
@@ -166,33 +131,61 @@ export const EditTour = props => {
              <Grid container spacing={2}>
                 <Grid item xs={4}>
                     <TextField
-                        label="Date and time"
-                        type="datetime-local"
+                        label="Start date"
+                        type="date"
                         InputLabelProps={{
                             shrink: true,
                         }}
+                        fullWidth
+                        required
                         variant="outlined"
-                        onChange={(e) => setDatetime(e.target.value)}
-                        value={datetime}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        value={startDate}
                     />
                 </Grid>
                 <Grid item xs={4}>
-                    <FormControlLabel
-                    control={
-                        <Checkbox checked={open} onChange={() => setOpen(!open)} value={open} />
-                    }
-                    label="Registration open"
-                />
+                    <TextField
+                        label="End date"
+                        type="date"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        fullWidth
+                        required
+                        variant="outlined"
+                        onChange={(e) => setEndDate(e.target.value)}
+                        value={endDate}
+                    />
                 </Grid>
                 <Grid item xs={4}>
-                    <FormControlLabel
-                    control={
-                        <Checkbox checked={orderable} onChange={() => setOrderable(!orderable)} value={orderable} />
-                    }
-                    label="User can order"
-                />
+                    <TextField
+                        name="places"
+                        label="Places left"
+                        type="number"
+                        fullWidth
+                        required
+                        onChange={(e) => setPlaces(+e.target.value)}
+                        variant="outlined"
+                        value={places}
+                    />
                 </Grid>
             </Grid> 
+            <h3>Program</h3>
+            <Grid container justify="center" >
+                <Grid item xs={6}>
+                    <FormControl className={styles.formControl} variant="outlined" fullWidth>
+                        <Select
+                            value={program}
+                            onChange={(e) => setProgram(e.target.value)}
+                            input={<OutlinedInput name="program"  />}
+                        >
+                            {programs.map((item, i) => (
+                                <MenuItem key={item.id} value={i}>{item.name.ukr}</MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Grid>
+            </Grid>
             <h3>Name</h3>
             <Grid container spacing={2}>
                 <Grid item xs={6}>
@@ -219,35 +212,6 @@ export const EditTour = props => {
                         onChange={onNameChange('ukr')}
                         variant="outlined"
                         value={name.ukr}
-                    />
-                </Grid>
-            </Grid>
-            <h3>Place</h3>
-            <Grid container spacing={2}>
-                <Grid item xs={6}>
-                    <TextField
-                        margin="normal"
-                        name="place_en"
-                        label="Place"
-                        type="text"
-                        fullWidth
-                        required
-                        onChange={onPlaceChange('en')}
-                        variant="outlined"
-                        value={place.en}
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <TextField
-                        margin="normal"
-                        name="place_ukr"
-                        label="Місце"
-                        type="text"
-                        fullWidth
-                        required
-                        onChange={onPlaceChange('ukr')}
-                        variant="outlined"
-                        value={place.ukr}
                     />
                 </Grid>
             </Grid>
@@ -284,92 +248,37 @@ export const EditTour = props => {
                     />
                 </Grid>
             </Grid>
-            <h3>Price</h3>
             <Grid container spacing={2}>
                 <Grid item xs={6}>
+                    <h3>Price</h3>
                     <TextField
                         margin="normal"
                         name="price_en"
                         label="Price"
-                        type="text"
+                        type="number"
                         fullWidth
                         required
-                        onChange={onPriceChange('en')}
+                        onChange={(e) => setPrice(+e.target.value)}
                         variant="outlined"
-                        value={price.en}
+                        value={price}
                     />
                 </Grid>
                 <Grid item xs={6}>
-                    <TextField
-                        margin="normal"
-                        name="name_ukr"
-                        label="Ціна"
-                        type="text"
-                        fullWidth
-                        required
-                        onChange={onPriceChange('ukr')}
-                        variant="outlined"
-                        value={price.ukr}
-                    />
-                </Grid>
-            </Grid>
-            <h3>Duration</h3>
-            <Grid container spacing={2}>
-                <Grid item xs={6}>
+                    <h3>Classes amount</h3>
                     <TextField
                         margin="normal"
                         name="duration_en"
                         label="Duration"
-                        type="text"
+                        type="number"
                         fullWidth
                         required
-                        onChange={onDurationChange('en')}
+                        onChange={(e) => setDuration(+e.target.value)}
                         variant="outlined"
-                        value={duration.en}
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <TextField
-                        margin="normal"
-                        name="duration_ukr"
-                        label="Тривалість"
-                        type="text"
-                        fullWidth
-                        required
-                        onChange={onDurationChange('ukr')}
-                        variant="outlined"
-                        value={duration.ukr}
+                        value={duration}
                     />
                 </Grid>
             </Grid>
-            <h3>Auditory</h3>
-            <Grid container spacing={2}>
-                <Grid item xs={6}>
-                    <TextField
-                        margin="normal"
-                        name="auditory_en"
-                        label="Auditory"
-                        type="text"
-                        fullWidth
-                        required
-                        onChange={onAuditoryChange('en')}
-                        variant="outlined"
-                        value={auditory.en}
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <TextField
-                        margin="normal"
-                        name="auditory_ukr"
-                        label="Аудиторія"
-                        type="text"
-                        fullWidth
-                        required
-                        onChange={onAuditoryChange('ukr')}
-                        variant="outlined"
-                        value={auditory.ukr}
-                    />
-                </Grid>
+            <Grid container justify="center">
             </Grid>
             <div className={styles.buttons}>
                 <Button onClick={onUpdate} color="secondary" variant="contained" size="large">
@@ -391,7 +300,7 @@ export const EditTour = props => {
                             <Table className={styles.table}>
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Name</TableCell>
+                                        <TableCell align="left">Name</TableCell>
                                         <TableCell align="left">Email</TableCell>
                                         <TableCell align="left">Phone</TableCell>
                                         <TableCell align="left">Childrens</TableCell>
@@ -410,45 +319,6 @@ export const EditTour = props => {
                                         <TableCell align="left">{item.reason}</TableCell>
                                         <TableCell align="left">{item.sourse}</TableCell>
                                         <TableCell align="center"><Button onClick={() => deleteRegisteredUser(item.id)} color="secondary" >Delete</Button></TableCell>
-                                    </TableRow>
-                                ))}
-                                </TableBody>
-                            </Table>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                </Grid>
-                <Grid item xs={12}>
-                    <ExpansionPanel>
-                        <ExpansionPanelSummary
-                            expandIcon={<MdExpandMore />}
-                        >
-                            <Typography className={styles.heading}>User orders</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                        <Table className={styles.table}>
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell align="left">Name</TableCell>
-                                        <TableCell align="left">Date</TableCell>
-                                        <TableCell align="left">Email</TableCell>
-                                        <TableCell align="left">Phone</TableCell>
-                                        <TableCell align="left">Childrens</TableCell>
-                                        <TableCell align="left">Expectations</TableCell>
-                                        <TableCell align="left">Sourse</TableCell>
-                                        <TableCell align="left"></TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                {userOrders.map((item, index) => (
-                                    <TableRow key={item.id}>
-                                        <TableCell align="left">{item.name}</TableCell>
-                                        <TableCell align="left">{moment(item.datetime).format("DD-MM HH:mm")}</TableCell>
-                                        <TableCell align="left">{item.email}</TableCell>
-                                        <TableCell align="left">{item.phone}</TableCell>
-                                        <TableCell align="left">{item.children}</TableCell>
-                                        <TableCell align="left">{item.reason}</TableCell>
-                                        <TableCell align="left">{item.sourse}</TableCell>
-                                        <TableCell align="center"><Button onClick={() => deleteOrderedUser(item.id)} color="secondary" >Delete</Button></TableCell>
                                     </TableRow>
                                 ))}
                                 </TableBody>

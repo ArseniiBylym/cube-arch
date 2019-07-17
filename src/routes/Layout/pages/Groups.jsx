@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useStoreState} from 'easy-peasy';
+import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import {Spinner, PageTitle, Particles} from '../../../components/shared';
 import {Group} from '../../../components/Groups'
@@ -8,7 +8,9 @@ import {data} from '../../../assets/data/index';
 import styles from './styles/Groups.module.scss';
 
 const Groups = () => {
-    const [groups, setGroups] = useState(null);
+    // const [groups, setGroups] = useState(null);
+    const groups = useStoreState(state => state.content.groups);
+    const setGroups = useStoreActions(state => state.content.setGroups);
     const [content, setContent] = useState(null);
     const lang = useStoreState(state => state.lang.current);
 
@@ -18,15 +20,19 @@ const Groups = () => {
     }, [lang])
 
     useEffect(() => {
-        fetchGroups();
+        if(!groups) {
+            fetchGroups();
+        }
     }, [])
 
-    const fetchGroups = async() => {
+    const fetchGroups = async () => {
         try {
-            // const {docs} = await Api.groups.getAll();
-            // setGroups(docs);
-            const result = await Api.groups.getAll();
-            setGroups(result);
+            const snapshot = await Api.groups.getAll();
+            let tours = [];
+            snapshot.forEach(doc => {
+                tours.push({...doc.data(), id: doc.id})
+            });
+            setGroups(tours)
         } catch (error) {
             console.log(error)
         }

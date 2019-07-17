@@ -86,7 +86,7 @@ export const Classes = props => {
                     <div className={styles.classes}>
                         {itemsList()}
                     </div>
-                    <Button className={styles.createButton} size="large" color="secondary" variant="contained" onClick={() => setCreateMode(true)}>Create class</Button>
+                    <Button className={styles.createButton} size="large" color="secondary" variant="contained" onClick={() => setCreateMode(true)}>Create new</Button>
                 </>
             )}
         </div>

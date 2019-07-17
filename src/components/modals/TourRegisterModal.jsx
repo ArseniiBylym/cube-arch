@@ -48,7 +48,7 @@ export const TourRegisterModal = props => {
         }
 
         setSending(true);
-         try {
+        try {
             await Api.tours.registerToTour({classId: eventId, user: registerData});
             setRegisterConfirmed(true);
             setTimeout(() => {

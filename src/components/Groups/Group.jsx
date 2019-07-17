@@ -4,7 +4,6 @@ import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
 import moment from 'moment';
-
 import styles from './styles.module.scss'
 import {GroupRegisterModal} from '../modals'
 import {styleCompose} from '../../assets/helpers';
@@ -14,7 +13,7 @@ export const Group = props => {
     const [details, setDetails] = useState(null);
     const [modal, setModal] = useState(false);
     const lang = useStoreState(state => state.lang.current);
-    const {id, name, startDate, endDate, places, duration, price, description, imageUrl, program, dir} = props;
+    const {id, name, startDate, endDate, places, duration, price, description, image, program, dir} = props;
     
     useEffect(() => {
         setDetails(data.lang[lang].pages.groups.details);
@@ -25,13 +24,13 @@ export const Group = props => {
         <>
         <Grid container className={styles.root} direction={dir === 'rtl' ? 'row-reverse': 'row'}>
             <Grid item xs={12} md={4} className={styles.image_container} >
-                <div style={{backgroundImage: `url(${imageUrl})`}} className={styles.image}></div>
+                <div style={{backgroundImage: `url(${image})`}} className={styles.image}></div>
             </Grid>
             <Grid item xs={12} md={8} className={styles.content}>
                 <div className={styles.title}>{name[lang]}</div>
                 <div className={styleCompose(styles.row, styles.date)}>
                     <span>{details.date}</span>
-                    <span>{moment(startDate).format("DD/MM")} - {moment(endDate).format("L")}</span>
+                    <span>{moment(+startDate).format("DD/MM")} - {moment(+endDate).format("L")}</span>
                 </div>
                 <div className={styleCompose(styles.row, styles.duration)}>
                     <span>{details.duration}</span>
@@ -52,7 +51,7 @@ export const Group = props => {
                 <div className={styleCompose(styles.row, styles.program)}>
                     <span>{details.program.title}:</span>
                     <Tooltip title={details.program.tooltip} aria-label={details.program.tooltip} placement="top-start" enterDelay={300}>
-                        <Link to={program.linkUrl}>{program.name[lang]}</Link>
+                        <Link to={`/programs?id=${program.id}`}>{program.name[lang]}</Link>
                     </Tooltip>
                 </div>
                 <div className={styles.apply_container}>
