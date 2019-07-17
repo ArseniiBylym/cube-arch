@@ -39,13 +39,25 @@ export const content = {
            return (item.id === payload.id) ? payload : item
         });
     }),
-    // removeRegistrations: action((state, payload) => {
-    //     state.classes = state.classes.map(item => {
-    //        return (item.id === payload.id) ? payload : item
-    //     });
-    // }),
     deleteClass: action((state, payload) => {
         state.classes = state.classes.filter(item => item.id !== payload);
+    }),
+
+
+    tours: null,
+    setTours: action((state, payload) => {
+        state.tours = payload;
+    }),
+    addTour: action((state, payload) => {
+        state.tours.push(payload)
+    }),
+    updateTour: action((state, payload) => {
+        state.tours = state.tours.map(item => {
+           return (item.id === payload.id) ? payload : item
+        });
+    }),
+    deleteTour: action((state, payload) => {
+        state.tours = state.tours.filter(item => item.id !== payload);
     }),
 
 

@@ -15,17 +15,17 @@ import TableRow from '@material-ui/core/TableRow';
 import moment from 'moment';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import styles from './styles/NewClass.module.scss';
+import styles from './styles/NewTour.module.scss';
 import imagePlaceholder from '../../../assets/images/admin/empty_image.png';
 import {Api} from './../../../api';
 import {MdExpandMore} from 'react-icons/md'
 
-export const EditClass = props => {
-    const {close, editedClass} = props;
+export const EditTour = props => {
+    const {close, editedElem} = props;
     const [registeredUsers, setRegisteredUsers] = useState([])
     const [userOrders, setUserOrders] = useState([])
 
-    const updateClass = useStoreActions(state => state.content.updateClass);
+    const updateTour = useStoreActions(state => state.content.updateTour);
 
     const [image, setImage] = useState('');
     const [name, setName] = useState({en: '', ukr: ''});
@@ -44,16 +44,16 @@ export const EditClass = props => {
     }, [])
 
     useEffect(() => {
-        setImage(editedClass.image);
-        setName(editedClass.name);
-        setPlace(editedClass.place);
-        setDescription(editedClass.description);
-        setPrice(editedClass.price);
-        setDuration(editedClass.duration);
-        setAuditory(editedClass.auditory);
-        setDatetime(moment(+editedClass.datetime).format("YYYY-MM-DDTHH:mm"));
-        setOpen(editedClass.open);
-        setOrderable(editedClass.orderable);
+        setImage(editedElem.image);
+        setName(editedElem.name);
+        setPlace(editedElem.place);
+        setDescription(editedElem.description);
+        setPrice(editedElem.price);
+        setDuration(editedElem.duration);
+        setAuditory(editedElem.auditory);
+        setDatetime(moment(+editedElem.datetime).format("YYYY-MM-DDTHH:mm"));
+        setOpen(editedElem.open);
+        setOrderable(editedElem.orderable);
     }, [])
 
     const onNameChange = lang => e => {
@@ -77,7 +77,7 @@ export const EditClass = props => {
 
     const getRegistrations = async() => {
         try {
-            const snapshot = await Api.classes.getRegisteredUsers(editedClass.id);
+            const snapshot = await Api.tours.getRegisteredUsers(editedElem.id);
             let docs = [];
             snapshot.forEach(doc => {
                 docs.push({...doc.data(), id: doc.id})
@@ -91,7 +91,7 @@ export const EditClass = props => {
 
     const getOrders = async() => {
         try {
-            const snapshot = await Api.classes.getUserOrders(editedClass.id);
+            const snapshot = await Api.tours.getUserOrders(editedElem.id);
             let docs = [];
             snapshot.forEach(doc => {
                 docs.push({...doc.data(), id: doc.id})
@@ -105,7 +105,7 @@ export const EditClass = props => {
 
     const deleteRegisteredUser = async (userId) => {
         try {
-            await Api.classes.removeRegisteredUser(editedClass.id, userId);
+            await Api.tours.removeRegisteredUser(editedElem.id, userId);
             const updatedUsers = registeredUsers.filter(item => item.id !== userId);
             setRegisteredUsers(updatedUsers)
         } catch (error) {
@@ -115,7 +115,7 @@ export const EditClass = props => {
 
     const deleteOrderedUser = async(userId) => {
         try {
-            await Api.classes.removeUserOrder(editedClass.id, userId);
+            await Api.tours.removeUserOrder(editedElem.id, userId);
             const updatedUsers = userOrders.filter(item => item.id !== userId);
             setUserOrders(updatedUsers)
         } catch (error) {
@@ -138,8 +138,8 @@ export const EditClass = props => {
         };
 
         try {
-            await Api.classes.update({id: editedClass.id, updatedDoc});
-            updateClass({...updatedDoc, id: editedClass.id});
+            await Api.tours.update({id: editedElem.id, updatedDoc});
+            updateTour({...updatedDoc, id: editedElem.id});
         } catch (error) {
             console.log(error);
         } finally {
@@ -149,7 +149,7 @@ export const EditClass = props => {
 
     return (
         <div className={styles.root}>
-            <h1>Update class</h1>
+            <h1>Update tour</h1>
             <img src={image || imagePlaceholder} alt="" className={styles.image} />
             <TextField
                 margin="normal"
@@ -199,7 +199,7 @@ export const EditClass = props => {
                     <TextField
                         margin="normal"
                         name="name_en"
-                        label="Class Name"
+                        label="Name"
                         type="text"
                         fullWidth
                         required
@@ -212,7 +212,7 @@ export const EditClass = props => {
                     <TextField
                         margin="normal"
                         name="name_ukr"
-                        label="Назва майстер-класу"
+                        label="Назва"
                         type="text"
                         fullWidth
                         required
@@ -241,7 +241,7 @@ export const EditClass = props => {
                     <TextField
                         margin="normal"
                         name="place_ukr"
-                        label="Місце майстер-класу"
+                        label="Місце"
                         type="text"
                         fullWidth
                         required

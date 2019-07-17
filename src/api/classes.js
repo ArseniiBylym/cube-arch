@@ -14,9 +14,6 @@ export const classes = {
     update: async({id, updatedDoc}) => {
         return classesCol.doc(id).update(updatedDoc);
     },
-    // removeRegistrations: async({id, updatedDoc}) => {
-    //     return classesCol.doc(id).update(updatedDoc);
-    // },
     delete: async(id) => {
         return classesCol.doc(id).delete();
     },

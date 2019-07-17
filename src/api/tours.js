@@ -5,16 +5,35 @@ const toursCol = firebaseDB.collection('tours');
 
 export const tours = {
     getAll: async() => {
-        return Tours;
-        // return toursCol.get();
+        return toursCol.get();
     },
-    add: async(newProgram) => {
-        return toursCol.set(newProgram);
+    add: async(newElem) => {
+        return toursCol.add(newElem);
     },
-    update: async({id, updatedProgram}) => {
-        return toursCol.doc(id).update(updatedProgram);
+    update: async({id, updatedDoc}) => {
+        return toursCol.doc(id).update(updatedDoc);
     },
     delete: async(id) => {
         return toursCol.doc(id).delete();
-    }
+    },
+
+    registerToTour: async({classId, user}) => {
+        return toursCol.doc(classId).collection('registrations').add(user);
+    },
+    orderToTour: async({classId, user}) => {
+        return toursCol.doc(classId).collection('orders').add(user);
+    },
+
+    getRegisteredUsers: async(id) => {
+        return toursCol.doc(id).collection('registrations').orderBy('createdAt').get();
+    },
+    removeRegisteredUser: async(id, userId) => {
+        return toursCol.doc(id).collection('registrations').doc(userId).delete();
+    },
+    getUserOrders: async(id) => {
+        return toursCol.doc(id).collection('orders').orderBy('createdAt').get();
+    },
+    removeUserOrder: async(id, userId) => {
+        return toursCol.doc(id).collection('orders').doc(userId).delete();
+    },
 }

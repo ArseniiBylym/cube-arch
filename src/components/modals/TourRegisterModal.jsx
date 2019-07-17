@@ -10,6 +10,7 @@ import moment from 'moment';
 
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
+import { Api } from './../../api/index';
 
 export const TourRegisterModal = props => {
     const {open, closeModal, eventId, eventName, datetime} = props;
@@ -34,22 +35,22 @@ export const TourRegisterModal = props => {
 
     const lang = useStoreState(state => state.lang.current);
 
-    const sendHandler = () => {
+    const sendHandler = async() => {
         const registerData = {
-            eventId,
+            // eventId,
             email,
             name,
             phone,
             children,
             reason,
             sourse,
+            createdAt: Date.now() + '',
         }
-        console.log(registerData);
 
         setSending(true);
-        setTimeout(() => {
+         try {
+            await Api.tours.registerToTour({classId: eventId, user: registerData});
             setRegisterConfirmed(true);
-            setSending(false);
             setTimeout(() => {
                 closeModal();
                 clearFormState();
@@ -57,9 +58,14 @@ export const TourRegisterModal = props => {
                     setRegisterConfirmed(false);
                 }, 500)
             }, 3000)
-        }, 2000)
-        
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setSending(false);
+            clearFormState();
+        }
     }
+
     const isDisabled = () => {
         return !email || !phone || !name || !children || !reason;
     }
@@ -76,7 +82,7 @@ export const TourRegisterModal = props => {
                     <div className={styles.title}>{eventName[lang]}</div>
                     <div className={styles.subTitle}>
                         <span>{data.lang[lang].pages.tours.details.date}: </span>
-                        <span>{moment(datetime).format("HH:mm DD/MM/YYYY")}</span>
+                        <span>{moment(+datetime).format("HH:mm DD/MM/YYYY")}</span>
                     </div>
                 </div>
 

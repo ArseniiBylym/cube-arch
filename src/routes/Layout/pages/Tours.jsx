@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useStoreState} from 'easy-peasy';
+import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import Drawer from '@material-ui/core/Drawer';
 import moment from 'moment';
@@ -10,14 +10,17 @@ import {data} from '../../../assets/data/index';
 import styles from './styles/Tours.module.scss';
 
 const Tours = () => {
-    const [tours, setTours] = useState(null);
+    const tours = useStoreState(state => state.content.tours);
+    const setTours = useStoreActions(state => state.content.setTours);
     const [content, setContent] = useState(null);
     const [drawer, setDrawer] = useState(false);
 
     const lang = useStoreState(state => state.lang.current);
     
     useEffect(() => {
-        fetchTours();
+        if (!tours) {
+            fetchTours();
+        }
     }, [])
 
     useEffect(() => {
@@ -27,10 +30,12 @@ const Tours = () => {
 
     const fetchTours = async () => {
         try {
-            // const {docs} = await Api.tours.getAll();
-            // setGroups(docs);
-            const result = await Api.tours.getAll();
-            setTours(result.sort((a, b) => a.datetime.getTime() - b.datetime.getTime()))
+            const snapshot = await Api.tours.getAll();
+            let tours = [];
+            snapshot.forEach(doc => {
+                tours.push({...doc.data(), id: doc.id})
+            });
+            setTours(tours)
         } catch (error) {
             console.log(error)
         }

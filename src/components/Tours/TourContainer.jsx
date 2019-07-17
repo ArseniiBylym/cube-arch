@@ -7,7 +7,7 @@ import {TourRegisterModal, TourOrderModal} from '../modals';
 export const TourContainer = props => {
     const [registerModal, setRegisterModal] = useState(false);
     const [orderModal, setOrderModal] = useState(false);
-    const {id, datetime, details, duration, image, lang, name, open, orderable, place, price, text, auditory} = props;
+    const {id, datetime, description, duration, image, lang, name, open, orderable, place, price, text, auditory} = props;
 
     return (
         <>
@@ -18,10 +18,10 @@ export const TourContainer = props => {
                 <div className={styles.content}>
                     <div className={styles.place}>{place[lang]}</div>
                     <div className={styles.datetime}>
-                        <div className={styles.date}>{moment(datetime).format("DD-MM-YYYY")}</div>
-                        <div className={styles.time}>{moment(datetime).format("HH:mm")}</div>
+                        <div className={styles.date}>{moment(+datetime).format("DD-MM-YYYY")}</div>
+                        <div className={styles.time}>{moment(+datetime).format("HH:mm")}</div>
                     </div>
-                    <div className={styles.details}><pre>{details[lang]}</pre></div>
+                    <div className={styles.description}><pre>{description[lang]}</pre></div>
                     <div className={styles.price}><span>{text.price}:</span> {price[lang]}</div>
                     <div className={styles.duration}><span>{text.duration}:</span> {duration[lang]}</div>
                     <div className={styles.auditory}><span>{text.auditory}:</span> {auditory[lang]}</div>

@@ -10,13 +10,14 @@ import moment from 'moment';
 
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
+import { Api } from './../../api/index';
 
 export const TourOrderModal = props => {
     const {open, closeModal, eventId, eventName} = props;
     const [sending, setSending] = useState(false);
     const [registerConfirmed, setRegisterConfirmed] = useState(false);
 
-    const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
+    const [datetime, setDatetime] = useState(moment().format("YYYY-MM-DDTHH:mm"));
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -25,7 +26,7 @@ export const TourOrderModal = props => {
     const [sourse, setSourse] = useState('');
 
     const clearFormState = () => {
-        setDate(moment().format("YYYY-MM-DD"))
+        setDatetime(moment().format("YYYY-MM-DDTHH:mm"))
         setEmail('')
         setName('')
         setPhone('')
@@ -36,23 +37,22 @@ export const TourOrderModal = props => {
 
     const lang = useStoreState(state => state.lang.current);
 
-    const sendHandler = () => {
+    const sendHandler = async() => {
         const registerData = {
-            date,
-            eventId,
+            datetime,
             email,
             name,
             phone,
             children,
             reason,
             sourse,
+            createdAt: Date.now() + '',
         }
-        console.log(registerData);
 
         setSending(true);
-        setTimeout(() => {
+        try {
+            await Api.tours.orderToTour({classId: eventId, user: registerData});
             setRegisterConfirmed(true);
-            setSending(false);
             setTimeout(() => {
                 closeModal();
                 clearFormState();
@@ -60,11 +60,16 @@ export const TourOrderModal = props => {
                     setRegisterConfirmed(false);
                 }, 500)
             }, 3000)
-        }, 2000)
-        
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setSending(false);
+            clearFormState();
+        }
     }
+
     const isDisabled = () => {
-        return !date || !email || !phone || !name || !children || !reason;
+        return !datetime || !email || !phone || !name || !children || !reason;
     }
 
     return (
@@ -87,20 +92,20 @@ export const TourOrderModal = props => {
                         <div className={styles.confirmed}>{data.modals.confirmMessage[lang]}</div>
                     ) : (
                        <div className={styles.form}>
-                           <TextField
+                            <TextField
                                 autoFocus
                                 margin="normal"
-                                name="date"
-                                label={data.modals.tourOrder[lang].date}
-                                type="date"
+                                name="email"
+                                label={data.modals.tourOrder[lang].datetime}
+                                type="datetime-local"
                                 fullWidth
                                 required
-                                onChange={(e) => setDate(e.target.value)}
+                                onChange={(e) => setDatetime(e.target.value)}
                                 variant="outlined"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
-                                value={date}
+                                value={datetime}
                             />
                             <TextField
                                 margin="normal"
