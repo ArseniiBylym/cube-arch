@@ -14,7 +14,7 @@ export const Articles = props => {
     const setArticles = useStoreActions(state => state.content.setArticles);
     const deleteArticle = useStoreActions(state => state.content.deleteArticle);
 
-    const [createMode, setCreateMode] = useState(true);
+    const [createMode, setCreateMode] = useState(false);
 
     useEffect(() => {
         if (!articles) {

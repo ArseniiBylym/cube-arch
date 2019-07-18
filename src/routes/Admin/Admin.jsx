@@ -11,9 +11,10 @@ const Admin = () => {
     const loginSuccess = useStoreActions(actions => actions.auth.loginSuccess);
 
     useEffect(() => {
-        if (!isAuth && !adminFetched) {  // disable firebase request    NEED TO REMOVE IN FUTURE !!!!
-            fetchAdmin();
-        }  
+        fetchAdmin();
+        // if (!isAuth && !adminFetched) {  // disable firebase request    NEED TO REMOVE IN FUTURE !!!!
+        //     fetchAdmin();
+        // }  
     }, []);
 
     const fetchAdmin = async () => {
