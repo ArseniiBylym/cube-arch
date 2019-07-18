@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import Microlink from '@microlink/react';
-import moment from 'moment';
 import {MdDeleteForever} from 'react-icons/md'
-
-import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import styles from './styles.module.scss'
@@ -17,7 +14,7 @@ export const Articles = props => {
     const setArticles = useStoreActions(state => state.content.setArticles);
     const deleteArticle = useStoreActions(state => state.content.deleteArticle);
 
-    const [createMode, setCreateMode] = useState(false);
+    const [createMode, setCreateMode] = useState(true);
 
     useEffect(() => {
         if (!articles) {
@@ -32,7 +29,6 @@ export const Articles = props => {
             snapshot.forEach(doc => {
                 docs.push({...doc.data(), id: doc.id})
             });
-            console.log(docs)
             setArticles(docs)
         } catch (error) {
             console.log(error)
@@ -57,16 +53,17 @@ export const Articles = props => {
     }
 
     const getBlogPreview = item => (
-        <Link to={`/articles/${item.id}`} className={styles.blogLink}>
-            <div className={styles.blogLink__header}>{item.title}</div>
+        <div className={styles.blogLink}>
+            <div onClick={() => deleteHandler(item.id)} className={styles.delete}><MdDeleteForever /></div>
+            <div className={styles.blogLink__header}>{item.title.ukr}</div>
             <div className={styles.blogLink__image} style={{backgroundImage: `url(${item.imageUrl})`}}/>
-        </Link>
+        </div>
     )
 
     const getMicrolink = item => (
         <div className={styles.articleLink}>
-            <div className={styles.articleLink__header}>{item.title.ukr}</div>
             <div onClick={() => deleteHandler(item.id)} className={styles.delete}><MdDeleteForever /></div>
+            <div className={styles.articleLink__header}>{item.title.ukr}</div>
             <div className={styles.articleLink__link}>
                 <Microlink 
                     url={item.linkUrl} 

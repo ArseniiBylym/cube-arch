@@ -1,14 +1,22 @@
-import React, {useState, useEffect} from 'react';
-import {useStoreState, useStoreActions} from 'easy-peasy';
+import React, {useState} from 'react';
+import {useStoreActions} from 'easy-peasy';
+import ReactMde from 'react-mde';
+import * as Showdown from 'showdown';
 import Button from '@material-ui/core/Button';
-import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import styles from './styles/NewArticle.module.scss';
 import imagePlaceholder from '../../../assets/images/admin/empty_image.png';
 import {Api} from './../../../api';
+import styles from './styles/NewArticle.module.scss';
+import "react-mde/lib/styles/css/react-mde-all.css";
+
+const converter = new Showdown.Converter({
+    tables: true,
+    simplifiedAutoLink: true,
+    strikethrough: true,
+    tasklists: true
+  });
 
 export const NewArticle = props => {
     const {close} = props;
@@ -19,13 +27,14 @@ export const NewArticle = props => {
     const [title, setTitle] = useState({en: '', ukr: ''});
     const [linkUrl, setLinkUrl] = useState('');
     const [imageUrl, setImageUrl] = useState('');
-    const [text, setText] = useState({en: '', ukr: ''});
+
+    const [markdownTextEn, setMarkdownTextEn] = useState('')
+    const [markdownTextUkr, setMarkdownTextUkr] = useState('')
+    const [selectedTabEn, setSelectedTabEn] = useState('write');
+    const [selectedTabUkr, setSelectedTabUkr] = useState('write');
 
     const onTitleChange = lang => e => {
         setTitle({...title, [lang]: e.target.value});
-    };
-    const onTextChange = lang => e => {
-        setText({...text, [lang]: e.target.value});
     };
 
     const onCreate = async () => {
@@ -34,14 +43,16 @@ export const NewArticle = props => {
             title,
             linkUrl,
             imageUrl,
-            text,
+            text: {
+                en: markdownTextEn,
+                ukr: markdownTextUkr
+            },
             createdAt: new Date().getTime() + '',
         };
         if (!isBlog) {
             delete newArticle.imageUrl;
             delete newArticle.text;
         }
-        console.log(newArticle)
         try {
             const doc = await Api.articles.add(newArticle);
             addArticle({...newArticle, id: doc.id});
@@ -68,9 +79,78 @@ export const NewArticle = props => {
             </Grid>
             <Grid container spacing={2}>
                 {isBlog ? (
-                    <Grid item xs={12}>
-                     {/* <img src={image || imagePlaceholder} alt="" className={styles.image} /> */}
-                    </Grid>
+                    <>
+                        <Grid item xs={12}>
+                            <img src={imageUrl || imagePlaceholder} alt="" className={styles.image} />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                margin="normal"
+                                name="image"
+                                label="Image URL"
+                                type="text"
+                                fullWidth
+                                required
+                                onChange={e => setImageUrl(e.target.value)}
+                                variant="outlined"
+                                value={imageUrl}
+                            />
+                        </Grid>
+                        <Grid item xs={6}>
+                            <TextField
+                                margin="normal"
+                                name="title_en"
+                                label="Title"
+                                type="text"
+                                fullWidth
+                                required
+                                onChange={onTitleChange('en')}
+                                variant="outlined"
+                                value={title.en}
+                            />
+                        </Grid>
+                        <Grid item xs={6}>
+                            <TextField
+                                margin="normal"
+                                name="title_ukr"
+                                label="Заголовок"
+                                type="text"
+                                fullWidth
+                                required
+                                onChange={onTitleChange('ukr')}
+                                variant="outlined"
+                                value={title.ukr}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <h3>Blog content (en)</h3>
+                            <div className="container">
+                                <ReactMde
+                                    value={markdownTextEn}
+                                    onChange={setMarkdownTextEn}
+                                    selectedTab={selectedTabEn}
+                                    onTabChange={setSelectedTabEn}
+                                    generateMarkdownPreview={markdown =>
+                                    Promise.resolve(converter.makeHtml(markdown))
+                                    }
+                                />
+                            </div>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <h3>Blog content (ukr)</h3>
+                            <div className="container">
+                                <ReactMde
+                                    value={markdownTextUkr}
+                                    onChange={setMarkdownTextUkr}
+                                    selectedTab={selectedTabUkr}
+                                    onTabChange={setSelectedTabUkr}
+                                    generateMarkdownPreview={markdown =>
+                                    Promise.resolve(converter.makeHtml(markdown))
+                                    }
+                                />
+                            </div>
+                        </Grid>
+                    </>
                 ) : (
                     <>
                         <Grid item xs={12}>
