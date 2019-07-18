@@ -43,3 +43,36 @@
         }
     }
 }
+
+.imagePreview {
+    width: 30rem;
+    height: 22rem;
+    margin: 0 auto;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.delete {
+    position: absolute
+}
+.image {
+    .delete {
+        font-size: 2rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: .5rem;
+        border: 1px solid black;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all .5s ease;
+        background-color: rgba(182, 182, 182, 0.493);
+        &:hover {
+            background-color: black;
+            color: white
+        }
+        svg {
+            display: block;
+        }
+    }
+}

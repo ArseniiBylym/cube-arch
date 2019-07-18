@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useStoreState, useStoreActions} from 'easy-peasy';
-import styles from './Programs.module.scss'
+import styles from './styles.module.scss'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { NewProgram, EditProgram } from './../components';

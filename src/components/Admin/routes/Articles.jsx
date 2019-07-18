@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import styles from './Articles.module.scss'
+import styles from './styles.module.scss'
 
 export const Articles = props => {
 

@@ -1,14 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import {Spinner} from '../../components/shared';
-import styles from './Admin.module.scss';
-import {Route} from 'react-router-dom'
 import { Login, Dashboard } from './../../components/Admin';
 import { Api } from './../../api';
 
 const Admin = () => {
     const isAuth = useStoreState(state => state.auth.isAuth);
-    const auth = useStoreState(state => state.auth.admin);
     const adminFetched = useStoreState(state => state.auth.adminFetched);
     const loginFailed = useStoreActions(actions => actions.auth.loginFailed);
     const loginSuccess = useStoreActions(actions => actions.auth.loginSuccess);
@@ -45,8 +42,7 @@ const Admin = () => {
 
     if (!adminFetched) return <Spinner />;
     return (
-        <div className={styles.root}>
-            
+        <div>
             {isAuth ? (
                 <Dashboard />
             ) : (

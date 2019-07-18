@@ -78,6 +78,16 @@ export const content = {
     }),
 
 
+    gallery: null,
+    setGallery: action((state, payload) => {
+        state.gallery = payload;
+    }),
+    addToGallery: action((state, payload) => {
+        state.gallery.push(payload);
+    }),
+    removeFromGallery: action((state, payload) => {
+        state.gallery = state.gallery.filter(item => item.id !== payload);
+    })
     
 
 }

@@ -7,7 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import { Api } from './../../../api/index';
-import styles from './Users.module.scss'
+import styles from './styles.module.scss'
 import { Spinner } from './../../shared/Spinner';
 
 export const Users = props => {
