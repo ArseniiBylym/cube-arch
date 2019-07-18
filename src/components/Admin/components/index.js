@@ -6,3 +6,4 @@ export * from './NewTour';
 export * from './EditTour';
 export * from './NewGroup';
 export * from './EditGroup';
+export * from './NewArticle';

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Microlink from '@microlink/react';
-import {useStoreState} from 'easy-peasy';
+import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import {Link} from 'react-router-dom';
 import {Spinner, PageTitle, Particles} from '../../../components/shared';
@@ -9,12 +9,15 @@ import {data} from '../../../assets/data/index';
 import styles from './styles/Articles.module.scss';
 
 const Articles = () => {
-    const [articles, setArticles] = useState(null);
+    const articles = useStoreState(state => state.content.articles);
+    const setArticles = useStoreActions(state => state.content.setArticles);
     const [content, setContent] = useState(null);
     const lang = useStoreState(state => state.lang.current);
 
     useEffect(() => {
-        fetchArticles();
+        if (!articles) {
+            fetchData();
+        }
     }, []);
 
     useEffect(() => {
@@ -22,12 +25,14 @@ const Articles = () => {
         setContent(content);
     }, [lang]);
 
-    const fetchArticles = async () => {
+    const fetchData = async () => {
         try {
-            // const {docs} = await Api.articles.getAll();
-            // setGroups(docs);
-            const result = await Api.articles.getAll();
-            setArticles(result.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime()))
+            const snapshot = await Api.articles.getAll();
+            let articles = [];
+            snapshot.forEach(doc => {
+                articles.push({...doc.data(), id: doc.id})
+            });
+            setArticles(articles)
         } catch (error) {
             console.log(error)
         }
@@ -51,7 +56,6 @@ const Articles = () => {
                 />
             </div>
         </div>
-        
     )
 
     if (!articles || !content) return <Spinner />;

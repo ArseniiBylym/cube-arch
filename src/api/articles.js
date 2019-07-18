@@ -5,8 +5,8 @@ const articlesCol = firebaseDB.collection('articles');
 
 export const articles = {
     getAll: async() => {
-        return Articles;
-        // return articlesCol.get();
+        // return Articles;
+        return articlesCol.orderBy('createdAt').get();
     },
     getDetails: async(id) => {
         const post = Articles.find(item => item.id === +id);
@@ -14,7 +14,7 @@ export const articles = {
         // return articles.doc(id);
     },
     add: async(newProgram) => {
-        return articlesCol.set(newProgram);
+        return articlesCol.add(newProgram);
     },
     update: async({id, updatedProgram}) => {
         return articlesCol.doc(id).update(updatedProgram);

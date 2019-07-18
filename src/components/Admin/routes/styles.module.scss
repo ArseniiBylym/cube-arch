@@ -53,26 +53,45 @@
     background-repeat: no-repeat;
 }
 .delete {
-    position: absolute
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: rgba(182, 182, 182, 0.493);
+    &:hover {
+        background-color: black;
+        color: white
+    }
+    svg {
+        display: block;
+    }
 }
-.image {
-    .delete {
+
+
+.blogLink,
+.articleLink {
+    position: relative;
+    display: block;
+    &__header{
         font-size: 2rem;
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: .5rem;
-        border: 1px solid black;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all .5s ease;
-        background-color: rgba(182, 182, 182, 0.493);
-        &:hover {
-            background-color: black;
-            color: white
-        }
-        svg {
-            display: block;
+        padding: 1rem 2rem;
+    }
+    &__image{
+        height: 30rem;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    &__link {
+        text-align: center;
+        a {
+            height: 30rem;
+            margin: 0 auto;
+            width: 100%;
         }
     }
 }
