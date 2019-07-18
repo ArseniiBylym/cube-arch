@@ -57,7 +57,7 @@ const Tours = () => {
             {tours.map(item => {
                 return (
                     <a href={`#tour_${item.id}`} key={item.id} className={styles.link}>
-                        <span>{moment(item.datetime).format("DD-MM-YYYY")}</span> - {item.name[lang]}
+                        <span>{moment(+item.datetime).format("DD-MM-YYYY")}</span> - {item.name[lang]}
                     </a>
                 )
             })}

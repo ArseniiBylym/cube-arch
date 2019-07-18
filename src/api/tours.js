@@ -1,4 +1,3 @@
-import {tours as Tours} from '../assets/data/mock/index';
 import {firebaseAuth, firebaseDB} from '../config/firebase';
 
 const toursCol = firebaseDB.collection('tours');

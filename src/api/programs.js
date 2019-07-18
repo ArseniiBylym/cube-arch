@@ -1,5 +1,3 @@
-import {programs as Programs} from '../assets/data/mock/index';
-
 import {firebaseAuth, firebaseDB} from '../config/firebase';
 
 const programsCol = firebaseDB.collection('programs');

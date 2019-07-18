@@ -1,6 +1,4 @@
-import {classes as Classes} from '../assets/data/mock/index';
-
-import {firebaseAuth, firebaseDB} from '../config/firebase';
+import {firebaseDB} from '../config/firebase';
 
 const classesCol = firebaseDB.collection('classes');
 
