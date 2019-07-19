@@ -35,7 +35,7 @@ export const Header = () => {
         <div className={styles.root}>
             <div className={styles.logo} onClick={() => setDrawer(true)}>
                 <img src={logo} alt=""/>
-                <h3>Cube ARCH Club</h3>
+                <div className={styles.title}>Cube ARCH Club</div>
             </div>
             <LangToggle />
             <Drawer open={drawer} onClose={() => setDrawer(false)}>

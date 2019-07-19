@@ -45,10 +45,11 @@ const Gallery = () => {
     const getImages = () => {
         return gallery.map((item, i) => {
             return (
-                <Grid key={item.id} className={styles.image} item xs={12} sm={6} md={4} onClick={() => setSelectedImage(item.url)}>
+                <Grid key={item.id} className={styles.image} item xs={12} sm={6} md={4} lg={3} onClick={() => setSelectedImage(item.url)}>
                     <LazyHero 
                         imageSrc={item.url} 
                         opacity={0.1}
+                        style={{minHeight: '25rem'}}
                     />
                 </Grid>
             )

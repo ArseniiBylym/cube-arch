@@ -1,19 +1,22 @@
 .root {
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .logo {
-    font-size: 1rem;
+    font-size: 2rem;
     display: flex;
     align-items: center;
     cursor: pointer;
 
     img {
-        width: 40px;
-        height: 40px;
-        margin-right: 1rem;
+        width: 4rem;
+        height: 4rem;
+    }
+    .title {
+        margin-left: 2rem;
+        font-size: 2rem;
     }
 }
 .sidebar {

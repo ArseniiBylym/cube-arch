@@ -12,7 +12,7 @@ export const ClassContainer = props => {
     return (
         <>
         <Grid container className={styles.root} justify="center" >
-            <Grid item xs={12} md={10} >
+            <Grid item xs={12}>
                 <div className={styles.name}>{name[lang]}</div>
                 <div className={styles.image} style={{backgroundImage: `url(${image})`}} />
                 <div className={styles.content}>
