@@ -50,6 +50,7 @@ export const TourRegisterModal = props => {
         setSending(true);
         try {
             await Api.tours.registerToTour({classId: eventId, user: registerData});
+            Api.notifications.send(`New registration: ${registerData.name} registered to ${eventName.ukr} at ${moment(+datetime).format("DD/MM")}`)
             setRegisterConfirmed(true);
             setTimeout(() => {
                 closeModal();

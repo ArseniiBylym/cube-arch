@@ -45,6 +45,7 @@ export const SubscribeModal = props => {
         setSending(true);
         try {
             const result = await Api.users.register(registerData);
+            Api.notifications.send(`New user subscribed: ${registerData.name} ${registerData.email}`)
             console.log(result);
             setRegisterConfirmed(true);
             setTimeout(() => {
