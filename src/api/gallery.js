@@ -1,5 +1,5 @@
 import uuid from 'uuid/v4';
-import {firebaseAuth, firebaseDB, firebaseStorage} from '../config/firebase';
+import {firebaseDB, firebaseStorage} from '../config/firebase';
 
 const galleryCol = firebaseDB.collection('gallery');
 

@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import imagePlaceholder from '../../../assets/images/admin/empty_image.png';
 import {Api} from './../../../api';
-import styles from './styles/NewArticle.module.scss';
+import styles from './styles.module.scss';
 import "react-mde/lib/styles/css/react-mde-all.css";
 
 const converter = new Showdown.Converter({

@@ -6,9 +6,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import styles from './AllRegisterModals.module.scss';
 import {useStoreState} from 'easy-peasy';
-import moment from 'moment';
 import Slide from '@material-ui/core/Slide';
-
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
 import { Api } from './../../api/index';
@@ -40,13 +38,11 @@ export const SubscribeModal = props => {
             name,
             phone,
         }
-        console.log(registerData);
 
         setSending(true);
         try {
-            const result = await Api.users.register(registerData);
+            await Api.users.register(registerData);
             Api.notifications.send(`New user subscribed: ${registerData.name} ${registerData.email}`)
-            console.log(result);
             setRegisterConfirmed(true);
             setTimeout(() => {
                 closeModal();

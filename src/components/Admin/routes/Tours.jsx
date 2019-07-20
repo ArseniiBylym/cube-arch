@@ -30,7 +30,6 @@ export const Tours = props => {
             snapshot.forEach(doc => {
                 docs.push({...doc.data(), id: doc.id})
             });
-            console.log(docs)
             setTours(docs)
         } catch (error) {
             console.log(error)

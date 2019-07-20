@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import LazyHero from 'react-lazy-hero';
-import {Spinner, PageTitle, Particles} from '../../../components/shared';
+import {Spinner, PageTitle} from '../../../components/shared';
 import {ImageViewer} from '../../../components/Gallery';
 import {Api} from '../../../api/index';
 import {data} from '../../../assets/data/index';
@@ -59,7 +59,6 @@ const Gallery = () => {
     if (!gallery || !content) return <Spinner />;
     return (
         <>
-            <Particles />
             <div className={styles.root}>
                 <PageTitle title={content.title} description={content.description} />
                 <div className={styles.content}>

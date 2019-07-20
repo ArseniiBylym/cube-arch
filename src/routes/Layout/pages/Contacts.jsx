@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
 import {IoLogoFacebook, IoLogoGoogleplus, IoLogoInstagram, IoLogoTwitter} from 'react-icons/io';
 import {MdMailOutline} from 'react-icons/md'
-import {Spinner, PageTitle, Particles} from '../../../components/shared';
+import {Spinner, PageTitle} from '../../../components/shared';
 import {data} from '../../../assets/data/index';
 import styles from './styles/Contacts.module.scss';
 
@@ -19,7 +19,6 @@ const Contacts = () => {
     if (!content) return <Spinner />;
     return (
         <>
-            <Particles />
             <PageTitle title={content.title} description={content.description} />
             <div className={styles.root}>
                 <div className={styles.address} >

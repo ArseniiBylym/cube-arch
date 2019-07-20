@@ -1,4 +1,4 @@
-import {firebaseAuth, firebaseDB} from '../config/firebase';
+import {firebaseDB} from '../config/firebase';
 
 export const users = {
     getAll: async() => {

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';

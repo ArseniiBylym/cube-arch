@@ -3,7 +3,6 @@ import styles from './MenuButton.module.scss';
 import {IoIosList} from 'react-icons/io'
 import Tooltip from '@material-ui/core/Tooltip';
 import {useStoreState} from 'easy-peasy';
-import './styles.scss'
 
 import { data } from './../../assets/data/index';
 
@@ -13,7 +12,7 @@ export const MenuButton = props => {
     
     const {openMenu} = props;
     return (
-        <Tooltip title={data.lang[lang].pages.tours.details.tooltip} placement="left"  classes={{tooltip: "tooltip" }}>
+        <Tooltip title={data.lang[lang].pages.tours.details.tooltip} placement="left">
             <div className={styles.root} onClick={openMenu}><IoIosList /></div>
         </Tooltip>
     )

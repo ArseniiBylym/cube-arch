@@ -7,7 +7,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import styles from './AllRegisterModals.module.scss';
 import {useStoreState} from 'easy-peasy';
 import moment from 'moment';
-
 import {data} from './../../assets/data/index';
 import { Spinner } from './../shared';
 import { Api } from './../../api/index';
@@ -37,7 +36,6 @@ export const GroupRegisterModal = props => {
 
     const sendHandler = async() => {
         const registerData = {
-            // eventId,
             email,
             name,
             phone,
@@ -46,7 +44,6 @@ export const GroupRegisterModal = props => {
             sourse,
             createdAt: new Date().getTime() + ''
         }
-        console.log(registerData);
 
         try {
             await Api.groups.registerToGroup({classId: eventId, user: registerData});

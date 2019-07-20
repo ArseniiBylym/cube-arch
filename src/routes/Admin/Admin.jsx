@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import {Spinner} from '../../components/shared';
 import { Login, Dashboard } from './../../components/Admin';
@@ -12,9 +12,6 @@ const Admin = () => {
 
     useEffect(() => {
         fetchAdmin();
-        // if (!isAuth && !adminFetched) {  // disable firebase request    NEED TO REMOVE IN FUTURE !!!!
-        //     fetchAdmin();
-        // }  
     }, []);
 
     const fetchAdmin = async () => {

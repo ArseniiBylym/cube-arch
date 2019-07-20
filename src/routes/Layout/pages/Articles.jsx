@@ -3,7 +3,7 @@ import Microlink from '@microlink/react';
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import {Link} from 'react-router-dom';
-import {Spinner, PageTitle, Particles} from '../../../components/shared';
+import {Spinner, PageTitle} from '../../../components/shared';
 import {Api} from '../../../api/index';
 import {data} from '../../../assets/data/index';
 import styles from './styles/Articles.module.scss';
@@ -60,19 +60,16 @@ const Articles = () => {
 
     if (!articles || !content) return <Spinner />;
     return (
-        <>
-            <Particles />
-            <div className={styles.root}>
-                <PageTitle title={content.title} description={content.description} />
-                <Grid container spacing={3} className={styles.container}>
-                    {articles.map(item => (
-                        <Grid key={item.id} item xs={12} sm={6} md={4} lg={3} className={styles.section}>
-                             {item.isBlog ? getBlogPreview(item) : getMicrolink(item)}
-                        </Grid>
-                    ))}
-                </Grid>
-            </div>
-        </>
+        <div className={styles.root}>
+            <PageTitle title={content.title} description={content.description} />
+            <Grid container spacing={3} className={styles.container}>
+                {articles.map(item => (
+                    <Grid key={item.id} item xs={12} sm={6} md={4} lg={3} className={styles.section}>
+                            {item.isBlog ? getBlogPreview(item) : getMicrolink(item)}
+                    </Grid>
+                ))}
+            </Grid>
+        </div>
     );
 };
 

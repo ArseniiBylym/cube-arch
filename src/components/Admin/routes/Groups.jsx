@@ -48,7 +48,6 @@ export const Groups = props => {
             snapshot.forEach(doc => {
                 docs.push({...doc.data(), id: doc.id})
             });
-            console.log(docs)
             setGroups(docs)
         } catch (error) {
             console.log(error)
@@ -82,7 +81,6 @@ export const Groups = props => {
                             <Button className={styles.deleteButton} size="large" color="primary" variant="contained" onClick={() => deleteHandler(item.id)}>Delete</Button>
                         </div>
                     </Grid>
-                   
                 </Grid>
             </div>
         ))

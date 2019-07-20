@@ -47,7 +47,6 @@ export const ClassOrderModal = props => {
             sourse,
             createdAt: Date.now() + '',
         }
-        console.log(registerData);
 
         setSending(true);
         try {

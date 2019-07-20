@@ -2,11 +2,13 @@ import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import {About, Classes, Gallery, Groups, Programs, Tours, Articles, Contacts, BlogArticle} from './pages';
 import {Header} from '../../components/Layout';
+import {Particles} from '../../components/shared';
 import styles from './Layout.module.scss';
 
 const Layout = () => {
     return (
         <div className={styles.root}>
+            <Particles />
             <div className={styles.header}>
                 <Header />
             </div>

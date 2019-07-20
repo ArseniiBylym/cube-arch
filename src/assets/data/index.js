@@ -243,7 +243,7 @@ export const data = {
                             id: 0,
                             name: "Daryna Pasyuta",
                             info: "Some info about you. Some info about you.Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you.",
-                            image: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/43879435_2208384116042130_1921172724433027072_n.jpg?_nc_cat=105&_nc_oc=AQlhM7qgAdcDwmqjDkoUTTHOf1RkLg_GWtvGHGMSgVRJspSxo4LL-tJjxkNUToLnAVQ&_nc_ht=scontent.fiev19-1.fna&oh=c14f553525678a91a6d737b74484119c&oe=5DB2398B",
+                            image: darynaImage,
                             socials: {
                                 facebook: "https://www.facebook.com/cube.arch.club/",
                                 google: "someemail@gmail.com",
@@ -254,7 +254,7 @@ export const data = {
                             id: 1,
                             name: "Olga",
                             info: "Some info about you. Some info about you.Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you.",
-                            image: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/60930031_360993671512378_8109004147266682880_n.jpg?_nc_cat=106&_nc_oc=AQlgTQPRekPGDuE_Umcypo9_i3Fw_Txk6U1oZEUlTwSw2HRuVjmLRIEgNV65allOWVs&_nc_ht=scontent.fiev19-1.fna&oh=fd32c2ca8601229df7146e36afb6cb8a&oe=5DBD09E9",
+                            image: olgaImage,
                             socials: {
                                 facebook: "https://www.facebook.com/cube.arch.club/",
                                 google: "someemail@gmail.com",
@@ -365,7 +365,6 @@ export const data = {
                             id: 0,
                             name: "Дарина Пасюта",
                             info: "Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе.  Інформація про тебе. Інформація про тебе. Інформація про тебе.  Інформація про тебе. Інформація про тебе. Інформація про тебе. ",
-                            // image: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/43879435_2208384116042130_1921172724433027072_n.jpg?_nc_cat=105&_nc_oc=AQlhM7qgAdcDwmqjDkoUTTHOf1RkLg_GWtvGHGMSgVRJspSxo4LL-tJjxkNUToLnAVQ&_nc_ht=scontent.fiev19-1.fna&oh=c14f553525678a91a6d737b74484119c&oe=5DB2398B",
                             image: darynaImage,
                             socials: {
                                 facebook: "https://www.facebook.com/cube.arch.club/",
@@ -377,7 +376,6 @@ export const data = {
                             id: 1,
                             name: "Ольга",
                             info: "Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. ",
-                            // image: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/60930031_360993671512378_8109004147266682880_n.jpg?_nc_cat=106&_nc_oc=AQlgTQPRekPGDuE_Umcypo9_i3Fw_Txk6U1oZEUlTwSw2HRuVjmLRIEgNV65allOWVs&_nc_ht=scontent.fiev19-1.fna&oh=fd32c2ca8601229df7146e36afb6cb8a&oe=5DBD09E9",
                             image: olgaImage,
                             socials: {
                                 facebook: "https://www.facebook.com/cube.arch.club/",

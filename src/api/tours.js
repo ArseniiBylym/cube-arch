@@ -1,4 +1,4 @@
-import {firebaseAuth, firebaseDB} from '../config/firebase';
+import {firebaseDB} from '../config/firebase';
 
 const toursCol = firebaseDB.collection('tours');
 

@@ -6,7 +6,6 @@ export const LinkButton = props => {
     const {linkUrl, linkText} = props;
     return (
         <Link to={linkUrl} className={styles.root}>
-            {/* <div className={styles.background} /> */}
             {linkText}
         </Link>
     );

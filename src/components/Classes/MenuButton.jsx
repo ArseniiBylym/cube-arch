@@ -3,8 +3,6 @@ import styles from './MenuButton.module.scss';
 import {IoIosList} from 'react-icons/io'
 import Tooltip from '@material-ui/core/Tooltip';
 import {useStoreState} from 'easy-peasy';
-import './styles.scss'
-
 import { data } from './../../assets/data/index';
 
 export const MenuButton = props => {

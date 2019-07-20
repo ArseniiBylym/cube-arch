@@ -27,9 +27,6 @@
     }
     .content {
         padding: 0 2rem;
-        // @media screen and (max-width: 960px) {
-        //     padding: 0 2rem;
-        // }
         
         & > div {
             margin: 2rem auto;
@@ -43,9 +40,6 @@
             span {
                 font-weight: bold;
             }
-        }
-        .description {
-            // text-align: left;
         }
         .datetime{
             display: flex;

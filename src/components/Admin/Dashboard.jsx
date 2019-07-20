@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { Switch, Route, NavLink } from 'react-router-dom';
 import {Profile, Users, Groups, Programs, Classes, Tours, Articles, Gallery} from './routes'
 import styles from './Dashboard.module.scss'

@@ -1,4 +1,4 @@
-import {firebaseAuth, firebaseDB} from '../config/firebase';
+import {firebaseAuth} from '../config/firebase';
 
 export const admin = {
     login: async({email, password}) => {

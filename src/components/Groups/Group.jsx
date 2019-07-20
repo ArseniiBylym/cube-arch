@@ -4,10 +4,10 @@ import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
 import moment from 'moment';
-import styles from './styles.module.scss'
+import styles from './Groups.module.scss'
 import {GroupRegisterModal} from '../modals'
-import {styleCompose} from '../../assets/helpers';
 import {data} from '../../assets/data/index';
+import classNames from 'classnames';
 
 export const Group = props => {
     const [details, setDetails] = useState(null);
@@ -22,48 +22,48 @@ export const Group = props => {
     if (!lang || !details) return null
     return (
         <>
-        <Grid container className={styles.root} direction={dir === 'rtl' ? 'row-reverse': 'row'}>
-            <Grid item xs={12} md={4} className={styles.image_container} >
-                <div style={{backgroundImage: `url(${image})`}} className={styles.image}></div>
+            <Grid container className={styles.root} direction={dir === 'rtl' ? 'row-reverse': 'row'}>
+                <Grid item xs={12} md={4} className={styles.image_container} >
+                    <div style={{backgroundImage: `url(${image})`}} className={styles.image}></div>
+                </Grid>
+                <Grid item xs={12} md={8} className={styles.content}>
+                    <div className={styles.title}>{name[lang]}</div>
+                    <div className={styles.row}>
+                        <span>{details.date}</span>
+                        <span>{moment(+startDate).format("DD/MM")} - {moment(+endDate).format("L")}</span>
+                    </div>
+                    <div className={styles.row}>
+                        <span>{details.duration}</span>
+                        <span>{duration}</span>
+                    </div>
+                    <div className={styles.row}>
+                        <span>{details.places}</span>
+                        <span>{places}</span>
+                    </div>
+                    <div className={styles.row}>
+                        <span>{details.price}</span>
+                        <span>&#8372; {price}</span>
+                    </div>
+                    <div className={styles.divider} />
+                    <div className={styles.description}>
+                        {description[lang]}
+                    </div>
+                    <div className={classNames(styles.row, styles.program)}>
+                        <span>{details.program.title}:</span>
+                        <Tooltip title={details.program.tooltip} aria-label={details.program.tooltip} placement="top-start" enterDelay={300}>
+                            <Link to={`/programs?id=${program.id}`}>{program.name[lang]}</Link>
+                        </Tooltip>
+                    </div>
+                    <div className={styles.apply_container}>
+                        {places === 0 ? (
+                            <div className={styles.closed}>{details.closed}</div>
+                        ) : (
+                            <div onClick={() => setModal(true)}className={styles.apply}>{details.apply}</div>
+                        )}
+                    </div>
+                </Grid>
             </Grid>
-            <Grid item xs={12} md={8} className={styles.content}>
-                <div className={styles.title}>{name[lang]}</div>
-                <div className={styleCompose(styles.row, styles.date)}>
-                    <span>{details.date}</span>
-                    <span>{moment(+startDate).format("DD/MM")} - {moment(+endDate).format("L")}</span>
-                </div>
-                <div className={styleCompose(styles.row, styles.duration)}>
-                    <span>{details.duration}</span>
-                    <span>{duration}</span>
-                </div>
-                <div className={styleCompose(styles.row, styles.places)}>
-                    <span>{details.places}</span>
-                    <span>{places}</span>
-                </div>
-                <div className={styleCompose(styles.row, styles.price)}>
-                    <span>{details.price}</span>
-                    <span>&#8372; {price}</span>
-                </div>
-                <div className={styles.divider} />
-                <div className={styles.description}>
-                    {description[lang]}
-                </div>
-                <div className={styleCompose(styles.row, styles.program)}>
-                    <span>{details.program.title}:</span>
-                    <Tooltip title={details.program.tooltip} aria-label={details.program.tooltip} placement="top-start" enterDelay={300}>
-                        <Link to={`/programs?id=${program.id}`}>{program.name[lang]}</Link>
-                    </Tooltip>
-                </div>
-                <div className={styles.apply_container}>
-                    {places === 0 ? (
-                        <div className={styles.closed}>{details.closed}</div>
-                    ) : (
-                        <div onClick={() => setModal(true)}className={styles.apply}>{details.apply}</div>
-                    )}
-                </div>
-            </Grid>
-        </Grid>
-        <GroupRegisterModal open={modal} closeModal={() => setModal(false)} {...{eventId: id, eventName: name, startDate, endDate}}/>
+            <GroupRegisterModal open={modal} closeModal={() => setModal(false)} {...{eventId: id, eventName: name, startDate, endDate}}/>
         </>
     )
 }

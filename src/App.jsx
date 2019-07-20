@@ -1,4 +1,4 @@
-import React, {useEffect, Suspense, lazy} from 'react';
+import React, {Suspense, lazy} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './routes/Home/Home';
 import {Spinner} from './components/shared';

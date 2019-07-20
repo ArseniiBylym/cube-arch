@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.module.scss';
+import styles from './Program.module.scss';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 

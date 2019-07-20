@@ -3,7 +3,7 @@ import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import Drawer from '@material-ui/core/Drawer';
 import moment from 'moment';
-import {Spinner, PageTitle, Particles} from '../../../components/shared';
+import {Spinner, PageTitle} from '../../../components/shared';
 import {ClassContainer, MenuButton} from '../../../components/Classes'
 import {Api} from '../../../api/index';
 import {data} from '../../../assets/data/index';
@@ -68,7 +68,6 @@ const Classes = () => {
     if (!classes || !content) return <Spinner />;
     return (
         <>
-            <Particles />
             <div className={styles.root}>
                 <PageTitle title={content.title} description={content.description} />
                 <div className={styles.content}>
