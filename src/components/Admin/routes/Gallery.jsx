@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useStoreState, useStoreActions} from 'easy-peasy';
-import LazyHero from 'react-lazy-hero';
+// import LazyHero from 'react-lazy-hero';
+import {LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 import Button from '@material-ui/core/Button';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
@@ -13,7 +14,7 @@ import styles from './styles.module.scss'
 import { Api } from './../../../api/index';
 import { Spinner } from './../../shared';
 
-export const Gallery = props => {
+export const Gallery = trackWindowScroll(({scrollPosition}) => {
     const gallery = useStoreState(state => state.content.gallery);
     const setGallery = useStoreActions(state => state.content.setGallery);
     const addToGallery = useStoreActions(state => state.content.addToGallery);
@@ -80,13 +81,20 @@ export const Gallery = props => {
     const itemsList = () => {
         return gallery.map(item => (
             <Grid item key={item.id} xs={12} sm={6} md={3} lg={4} className={styles.image}>
-                <LazyHero 
+                {/* <LazyHero 
                     imageSrc={item.url} 
                     opacity={0.1}
                     style={{minHeight: '25rem', width: 'auto'}}
-                >
+                > */}
+                     <LazyLoadImage
+                        height="auto"
+                        src={item.url}
+                        scrollPosition={scrollPosition}
+                        width="100%"
+                    >
+                    </LazyLoadImage>
                     <div onClick={() => deleteHandler(item)} className={styles.delete}><MdDeleteForever /></div>
-                </LazyHero>
+                {/* </LazyHero> */}
             </Grid>
         ))
     }
@@ -117,4 +125,5 @@ export const Gallery = props => {
             </Dialog>
         </div>
     )
-};
+});
+

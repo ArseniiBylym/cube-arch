@@ -6,4 +6,7 @@
 }
 .image {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    min-height: 300px;
 }
