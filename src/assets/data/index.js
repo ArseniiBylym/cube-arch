@@ -184,7 +184,24 @@ export const data = {
                     ],
                     screens: [
                         {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Short title.", secondaryText: "Longer text. Longer text. Longer text. Longer text. Longer text. Longer text.", testClass: "register to the test class"},
-                        {index: 1, name: "info", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia",},
+                        {index: 1, name: "info", text: [
+                            {
+                                title: `Title 1`,
+                                subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
+                            },
+                            {
+                                title: `Title 2`,
+                                subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
+                            },
+                            {
+                                title: `Title 3`,
+                                subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
+                            },
+                            {
+                                title: `Title 4`,
+                                subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
+                            },
+                        ]},
                         {index: 2, name: "groups", linkText: "details", linkUrl: "/groups", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 3, name: "programs", linkText: "details", linkUrl: "/programs", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 4, name: "classes", linkText: "details", linkUrl: "/classes", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
@@ -307,7 +324,24 @@ export const data = {
                     ],
                     screens: [
                         {index: 0, name: "головна", linkText: "продовжити", linkUrl: "groups", text: "Короткий заголовок", secondaryText: `Довгий заголовок. Довгий заголовок. Довгий заголовок. Довгий заголовок.`,  testClass: `записатися на пробне зайняття`},
-                        {index: 1, name: "інфо", text: "Якась коротка інформація про цей конкретний розділ.Якась коротка інформація про цей конкретний розділ. Якась коротка інформація про цей конкретний розділ. Якась коротка інформація про цей конкретний розділ."},
+                        {index: 1, name: "інфо", text: [
+                            {
+                                title: `Заголовок 1`,
+                                subtitle: 'Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку.'
+                            },
+                            {
+                                title: `Заголовок 2`,
+                                subtitle: 'Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку.'
+                            },
+                            {
+                                title: `Заголовок 3`,
+                                subtitle: 'Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку.'
+                            },
+                            {
+                                title: `Заголовок 4`,
+                                subtitle: 'Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку.'
+                            },
+                        ]},
                         {index: 2, name: "набір у групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 3, name: "програми", linkText: "докладніше", linkUrl: "/programs", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 4, name: "майстер-класи", linkText: "докладніше", linkUrl: "/classes", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
