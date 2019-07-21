@@ -10,5 +10,17 @@ export const users = {
     },
     delete: async(id) => {
         return firebaseDB.collection('users').doc(id).delete();
+    },
+
+
+    getAllTestClasses: async() => {
+        return firebaseDB.collection('testClasses').orderBy('createdAt').get();
+    },
+    registerTestClass: async(user) => {
+        user.createdAt = Date.now() + '';
+        return firebaseDB.collection('testClasses').add(user);
+    },
+    deleteTestClass: async(id) => {
+        return firebaseDB.collection('testClasses').doc(id).delete();
     }
 }

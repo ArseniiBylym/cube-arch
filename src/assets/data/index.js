@@ -46,6 +46,24 @@ export const data = {
                 confirmMessage: `Дякуємо! Ми повідомимо Ваc про майбутні події, що можуть бути цікавими для Вас.`
             }
         },
+        testClass: {
+            en: {
+                title: 'Leave your contacts to get information about future events.',
+                email: 'Email',
+                name: 'Name, surname of contact person',
+                phone: 'Phone number',
+                child: 'Child age and name',
+                confirmMessage: 'Thank you! We will inform you about future events, wich could be interesting for you.'
+            },
+            ukr: {
+                title: `Влітку ніхто не хоче до школи! Якщо ви теж втомились від уроків, але не хочете зупиняти мозкову діяльність та розвиток особистості, то вам сюди.`,
+                email: `Електронна адреса`,
+                name: `Ваші ім'я та прізвище`,
+                phone: `Телефон`,
+                child: `Ім'я та вік вашої дитини`,
+                confirmMessage: `Дякуємо за замовлення пробного заняття! Ми зв'яжемося з Вами у найкоротший термін`
+            },
+        },
         confirmMessage: {
             en: `Thanks for your order! We'll contact you in the shortest possible time.`,
             ukr: `Дякуємо за Ваше замовлення! Ми зв'яжемося з Вами у найкоротший термін.`
@@ -165,7 +183,7 @@ export const data = {
                         {index: 9, name: "contacts", linkUrl: "/contacts"},
                     ],
                     screens: [
-                        {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Short title.", secondaryText: "Longer text. Longer text. Longer text. Longer text. Longer text. Longer text."},
+                        {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Short title.", secondaryText: "Longer text. Longer text. Longer text. Longer text. Longer text. Longer text.", testClass: "register to the test class"},
                         {index: 1, name: "info", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia",},
                         {index: 2, name: "groups", linkText: "details", linkUrl: "/groups", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 3, name: "programs", linkText: "details", linkUrl: "/programs", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
@@ -288,7 +306,7 @@ export const data = {
                         {index: 9, name: "контакти", linkUrl: "/contacts"}
                     ],
                     screens: [
-                        {index: 0, name: "головна", linkText: "продовжити", linkUrl: "groups", text: "Короткий заголовок", secondaryText: `Довгий заголовок. Довгий заголовок. Довгий заголовок. Довгий заголовок.`},
+                        {index: 0, name: "головна", linkText: "продовжити", linkUrl: "groups", text: "Короткий заголовок", secondaryText: `Довгий заголовок. Довгий заголовок. Довгий заголовок. Довгий заголовок.`,  testClass: `записатися на пробне зайняття`},
                         {index: 1, name: "інфо", text: "Якась коротка інформація про цей конкретний розділ.Якась коротка інформація про цей конкретний розділ. Якась коротка інформація про цей конкретний розділ. Якась коротка інформація про цей конкретний розділ."},
                         {index: 2, name: "набір у групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 3, name: "програми", linkText: "докладніше", linkUrl: "/programs", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},

@@ -68,6 +68,22 @@
         .secondaryInfo {
             font-size: 1.3rem;
         }
+        .subscribe{
+            padding-top: 2rem;
+            .testRegisterButton {
+                padding: .5rem 2rem;
+                background-color: #4f8c4f;
+                color: white;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 1.3rem;
+                box-shadow: 0 5px 5px -2px #444444a4;
+                transition: all .5s ease;
+                &:hover{
+                    background-color: #3d6d3d;
+                }
+            }
+        }
     }
     .next{
         display: flex;

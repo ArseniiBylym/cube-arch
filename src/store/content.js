@@ -1,4 +1,4 @@
-import {action, computed} from 'easy-peasy';
+import {action} from 'easy-peasy';
 
 export const content = {
     users: null,
@@ -7,6 +7,14 @@ export const content = {
     }),
     deleteUser: action((state, payload) => {
         state.users = state.users.filter(item => item.id !== payload);
+    }),
+
+    usersTestClasses: null,
+    setUsersTestClasses: action((state, payload) => {
+        state.usersTestClasses = payload;
+    }),
+    deleteUserTestClasses: action((state, payload) => {
+        state.usersTestClasses = state.usersTestClasses.filter(item => item.id !== payload);
     }),
 
 
