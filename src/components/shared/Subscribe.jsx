@@ -12,7 +12,7 @@ export const Subscribe = props => {
             if (visit === '2') return;
             visit === '1' ? localStorage.setItem('visitCounter', '2') : localStorage.setItem('visitCounter', '1');
             setModal(true);
-        }, 15000)
+        }, 2 * 60 * 1000)
     }, []) 
 
     const clickHandler = (e) => {
@@ -22,8 +22,8 @@ export const Subscribe = props => {
 
     return (
         <>
-            <div className={styles.root}>
-                <div id="subscribeButton" onClick={clickHandler} className={styles.button}><FaRegBell /></div>
+            <div id="subscribeButton" className={styles.root} onClick={clickHandler}>
+                <div className={styles.button}><FaRegBell /></div>
             </div>
             <SubscribeModal open={modal} closeModal={() => setModal(false)} />
         </>

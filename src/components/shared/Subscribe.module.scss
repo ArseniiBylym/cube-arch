@@ -1,21 +1,23 @@
 .root {
     position: fixed;
-    left: 2rem;
-    bottom: 1rem;
+    right: 8rem;
+    bottom: 2rem;
     padding: .5rem 1rem;
     font-size: 2rem;
     cursor: pointer;
     border-radius: 50%;
     transition: background-color .5s ease;
+    z-index: 300;
+    background-color: #4f8c4f;
     &:hover {
-        background-color: #efefef8e;
+        background-color: #4f8c4f88;
+        .button{
+            color: #333;
+        }
     }
-}
-.button {
-    color: #727272c7;
-    transition: color .5s ease;
-    &:hover {
-        color: #333;
+    .button {
+        color: white;
+        transition: color .5s ease;
+    
     }
-
 }
