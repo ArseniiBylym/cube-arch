@@ -10,10 +10,10 @@ export const HomeScreen = props => {
     return (
         <>
         <div className="HomeScreen">
-            <div className="logo">
+            {/* <div className="logo">
                 <img className="image" src={logo} alt="" />
                 <div className="title">Cube ARCH Club</div>
-            </div>
+            </div> */}
             <div className="content">
                 <div className="title">
                     <div className="info">{text}</div>

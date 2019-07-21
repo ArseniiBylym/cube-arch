@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import {Nav, Screens} from '../../components/Home';
 import {Particles} from '../../components/shared'
 import styles from './Home.module.scss';
+import {Header} from '../../components/Layout'
 
 const SCREENS_LEN = 9;
 
@@ -96,10 +97,13 @@ const Home = () => {
     return (
         <div className={styles.root} ref={homeElem} onWheel={onWheel}>
             <Particles />
-            <Nav 
+            {/* <Nav 
                 activeLink={activeScreen}
                 setActiveLink={setActiveScreen}    
-            />
+            /> */}
+            <div className={styles.header}>
+                <Header />
+            </div>
             <Screens activeScreen={activeScreen} setActiveScreen={setActiveScreen}/>
         </div>
     );

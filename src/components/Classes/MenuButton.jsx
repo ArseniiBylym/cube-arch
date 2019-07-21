@@ -11,7 +11,7 @@ export const MenuButton = props => {
     
     const {openMenu} = props;
     return (
-        <Tooltip title={data.lang[lang].pages.classes.details.tooltip} placement="top-start" >
+        <Tooltip title={data.lang[lang].pages.classes.details.tooltip} placement="top-end" >
             <div className={styles.root} onClick={openMenu}><IoIosList /></div>
         </Tooltip>
     )

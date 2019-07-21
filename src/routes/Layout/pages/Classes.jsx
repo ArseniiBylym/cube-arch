@@ -79,7 +79,7 @@ const Classes = () => {
             <MenuButton openMenu={() => setDrawer(true)}/>
             <Drawer 
                 open={drawer} 
-                anchor="right" 
+                anchor="left" 
                 onClose={() => setDrawer(false)}
             >
                 {getMenuList()}
