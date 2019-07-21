@@ -10,6 +10,31 @@
     padding: 2rem;
     opacity: 0;
     animation: show .5s ease forwards;
+    .navButton {
+        position: fixed;
+        top: 50%;
+        font-size: 2rem;
+        padding: 1rem;
+        border-radius: 50%;
+        background-color: rgb(88, 87, 87);
+        color: white;
+        transform: translateY(-50%);
+        z-index: 300;
+        transition: background-color .5s ease;
+        &:hover {
+            background-color: rgb(70, 69, 69);
+        }
+        svg{
+            display: block;
+        }
+    }
+
+    .prevImage {
+      left: 2rem;
+    }
+    .nextImage{
+      right: 2rem;
+    }
 }
 
 .image {

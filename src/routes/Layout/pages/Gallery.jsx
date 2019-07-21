@@ -16,6 +16,10 @@ const Gallery = ({scrollPosition}) => {
     const [selectedImage, setSelectedImage] = useState(null);
 
     const lang = useStoreState(state => state.lang.current);
+
+    useEffect(()=> {
+        console.log(selectedImage);
+    })
     
     useEffect(() => {
         if (!gallery) {
@@ -41,12 +45,22 @@ const Gallery = ({scrollPosition}) => {
         }
     }
 
-
+    const changePictureHandler = i => {
+        let index = i
+        const len = gallery.length;
+        if (index < 0) {
+            index = len - 1;
+        }
+        if (index >= len) {
+            index = 0;
+        }
+        setSelectedImage({image: gallery[index].url, index})
+    }
 
     const getImages = () => {
         return gallery.map((item, i) => {
             return (
-                <Grid key={item.id} className={styles.image} item xs={12} sm={6} md={4} lg={3} onClick={() => setSelectedImage(item.url)}>
+                <Grid key={item.id} className={styles.image} item xs={12} sm={6} md={4} lg={3} onClick={() => setSelectedImage({image: item.url, index: i})}>
                     {/* <LazyHero 
                         imageSrc={item.url} 
                         opacity={0.1}
@@ -75,7 +89,7 @@ const Gallery = ({scrollPosition}) => {
                 </div>
             </div>
             {selectedImage ? (
-                <ImageViewer image={selectedImage} closeHandler={() => setSelectedImage(false)} />
+                <ImageViewer picture={selectedImage} changePicture={changePictureHandler} closeHandler={() => setSelectedImage(false)} />
             ) : null}
         </>
     );
