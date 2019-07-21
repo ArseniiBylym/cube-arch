@@ -1,10 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import styles from './Subscribe.module.scss';
+import {withRouter} from 'react-router';
 import {FaRegBell} from 'react-icons/fa';
 import { SubscribeModal } from './../modals';
 
-export const Subscribe = props => {
+export const Subscribe = withRouter(props => {
     const [modal, setModal] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        if (props.location.pathname.indexOf('/admin') !== -1) {
+            setIsVisible(false)
+        }
+    }, [props.location.pathname])
 
     useEffect(() =>  {
         setTimeout(() => {
@@ -20,6 +28,7 @@ export const Subscribe = props => {
         setModal(true)
     }
 
+    if (!isVisible) return null;
     return (
         <>
             <div id="subscribeButton" className={styles.root} onClick={clickHandler}>
@@ -28,4 +37,4 @@ export const Subscribe = props => {
             <SubscribeModal open={modal} closeModal={() => setModal(false)} />
         </>
     )
-}
+});
