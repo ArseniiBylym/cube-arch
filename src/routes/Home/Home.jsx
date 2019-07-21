@@ -4,7 +4,7 @@ import {Particles} from '../../components/shared'
 import styles from './Home.module.scss';
 import {Header} from '../../components/Layout'
 
-const SCREENS_LEN = 9;
+const SCREENS_LEN = 10;
 
 const Home = () => {
     const [activeScreen, setActiveScreen] = useState(0);

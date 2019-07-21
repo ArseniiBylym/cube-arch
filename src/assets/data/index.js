@@ -172,15 +172,16 @@ export const data = {
                     },
                     nav: [
                         {index: 0, name: "home", linkUrl: "/home"},
-                        // empty link form info screen
-                        {index: 2, name: "groups", linkUrl: "/groups"},
-                        {index: 3, name: "programs", linkUrl: "/programs"},
-                        {index: 4, name: "classes", linkUrl: "/classes"},
-                        {index: 5, name: "tours", linkUrl: "/tours"},
-                        {index: 6, name: "gallery", linkUrl: "/gallery"},
-                        {index: 7, name: "articles", linkUrl: "/articles"},
-                        {index: 8, name: "about", linkUrl: "/about"},
-                        {index: 9, name: "contacts", linkUrl: "/contacts"},
+                        // empty index 1 link for info screen
+                        // empty index 2 link for review screen
+                        {index: 3, name: "groups", linkUrl: "/groups"},
+                        {index: 4, name: "programs", linkUrl: "/programs"},
+                        {index: 5, name: "classes", linkUrl: "/classes"},
+                        {index: 6, name: "tours", linkUrl: "/tours"},
+                        {index: 7, name: "gallery", linkUrl: "/gallery"},
+                        {index: 8, name: "articles", linkUrl: "/articles"},
+                        {index: 9, name: "about", linkUrl: "/about"},
+                        {index: 10, name: "contacts", linkUrl: "/contacts"},
                     ],
                     screens: [
                         {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Short title.", secondaryText: "Longer text. Longer text. Longer text. Longer text. Longer text. Longer text.", testClass: "register to the test class"},
@@ -202,14 +203,36 @@ export const data = {
                                 subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
                             },
                         ]},
-                        {index: 2, name: "groups", linkText: "details", linkUrl: "/groups", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
-                        {index: 3, name: "programs", linkText: "details", linkUrl: "/programs", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
-                        {index: 4, name: "classes", linkText: "details", linkUrl: "/classes", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
-                        {index: 5, name: "tours", linkText: "details", linkUrl: "/tours", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
-                        {index: 6, name: "gallery", linkText: "to the gallery", linkUrl: "/gallery", text: "Go to the gallery to see photoes from owr master classes and another events"},
-                        {index: 7, name: "articles", linkText: "articles", linkUrl: "/articles", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus"},
-                        {index: 8, name: "about", linkText: "about us", linkUrl: "/about",  text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus facere maxime nulla excepturi provident enim totam. Error, laboriosam veritatis."},
-                        {index: 9, name: "contacts", linkText: "contacts", linkUrl: "/contacts", address: "Ukrain, Kyiv, Nezalezhosti st, 22", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus"},
+                        {index: 2, name: "reviews", linkText: "reviews", text: [
+                            {
+                                name: "user1",
+                                photoUrl: "https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg",
+                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                            },
+                            {
+                                name: "user2",
+                                photoUrl: "http://mhalabs.org/wp-content/uploads/upme/1451456913_brodie.jpg",
+                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                            },
+                            {
+                                name: "user3",
+                                photoUrl: "https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg",
+                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                            },
+                            {
+                                name: "user4",
+                                photoUrl: "https://triathlon-images.imgix.net/athlete_thumbs/taylor_spivey_USA.jpg?w=350&h=350&fit=facearea&facepad=2&auto=format",
+                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                            },
+                        ]},
+                        {index: 3, name: "groups", linkText: "details", linkUrl: "/groups", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
+                        {index: 4, name: "programs", linkText: "details", linkUrl: "/programs", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
+                        {index: 5, name: "classes", linkText: "details", linkUrl: "/classes", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
+                        {index: 6, name: "tours", linkText: "details", linkUrl: "/tours", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
+                        {index: 7, name: "gallery", linkText: "to the gallery", linkUrl: "/gallery", text: "Go to the gallery to see photoes from owr master classes and another events"},
+                        {index: 8, name: "articles", linkText: "articles", linkUrl: "/articles", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus"},
+                        {index: 9, name: "about", linkText: "about us", linkUrl: "/about",  text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus facere maxime nulla excepturi provident enim totam. Error, laboriosam veritatis."},
+                        {index: 10, name: "contacts", linkText: "contacts", linkUrl: "/contacts", address: "Ukrain, Kyiv, Nezalezhosti st, 22", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus"},
                     ]
                 },
                 groups: {
@@ -313,14 +336,15 @@ export const data = {
                     nav: [
                         {index: 0, name: "головна", linkUrl: "/home"},
                         //empty link with 1 index for info screen
-                        {index: 2, name: "набір у групи", linkUrl: "/groups"},
-                        {index: 3, name: "програми", linkUrl: "/programs"},
-                        {index: 4, name: "майстер-класи", linkUrl: "/classes"},
-                        {index: 5, name: "екскурсії", linkUrl: "/tours"},
-                        {index: 6, name: "галерея", linkUrl: "/gallery"},
-                        {index: 7, name: "статті", linkUrl: "/articles"},
-                        {index: 8, name: "про нас", linkUrl: "/about"},
-                        {index: 9, name: "контакти", linkUrl: "/contacts"}
+                        //empty link with 2 index for info screen
+                        {index: 3, name: "набір у групи", linkUrl: "/groups"},
+                        {index: 4, name: "програми", linkUrl: "/programs"},
+                        {index: 5, name: "майстер-класи", linkUrl: "/classes"},
+                        {index: 6, name: "екскурсії", linkUrl: "/tours"},
+                        {index: 7, name: "галерея", linkUrl: "/gallery"},
+                        {index: 8, name: "статті", linkUrl: "/articles"},
+                        {index: 9, name: "про нас", linkUrl: "/about"},
+                        {index: 10, name: "контакти", linkUrl: "/contacts"}
                     ],
                     screens: [
                         {index: 0, name: "головна", linkText: "продовжити", linkUrl: "groups", text: "Короткий заголовок", secondaryText: `Довгий заголовок. Довгий заголовок. Довгий заголовок. Довгий заголовок.`,  testClass: `записатися на пробне зайняття`},
@@ -342,14 +366,36 @@ export const data = {
                                 subtitle: 'Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку.'
                             },
                         ]},
-                        {index: 2, name: "набір у групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 3, name: "програми", linkText: "докладніше", linkUrl: "/programs", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 4, name: "майстер-класи", linkText: "докладніше", linkUrl: "/classes", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 5, name: "екскурсії", linkText: "докладніше", linkUrl: "/tours", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 6, name: "галерея", linkText: "до галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з майстер классів та інших заходів"},
-                        {index: 7, name: "статті", linkText: "статті", linkUrl: "/articles", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 8, name: "про нас", linkText: "про нас", linkUrl: "/about", address: "Україна, Київ, вул. Незалежності, 22", "text": "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 9, name: "контакти", linkText: "контакти", linkUrl: "/contacts", address: "Україна, Київ, вул. Незалежності, 22", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 2, name: "відгуки", linkText: "відгуки", text: [
+                            {
+                                name: "user1",
+                                photoUrl: "https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg",
+                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                            },
+                            {
+                                name: "user2",
+                                photoUrl: "http://mhalabs.org/wp-content/uploads/upme/1451456913_brodie.jpg",
+                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                            },
+                            {
+                                name: "user3",
+                                photoUrl: "https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg",
+                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                            },
+                            {
+                                name: "user4",
+                                photoUrl: "https://triathlon-images.imgix.net/athlete_thumbs/taylor_spivey_USA.jpg?w=350&h=350&fit=facearea&facepad=2&auto=format",
+                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                            },
+                        ]},
+                        {index: 3, name: "набір у групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 4, name: "програми", linkText: "докладніше", linkUrl: "/programs", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 5, name: "майстер-класи", linkText: "докладніше", linkUrl: "/classes", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 6, name: "екскурсії", linkText: "докладніше", linkUrl: "/tours", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 7, name: "галерея", linkText: "до галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з майстер классів та інших заходів"},
+                        {index: 8, name: "статті", linkText: "статті", linkUrl: "/articles", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 9, name: "про нас", linkText: "про нас", linkUrl: "/about", address: "Україна, Київ, вул. Незалежності, 22", "text": "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 10, name: "контакти", linkText: "контакти", linkUrl: "/contacts", address: "Україна, Київ, вул. Незалежності, 22", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                     ]
                 },
                 groups: {
