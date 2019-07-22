@@ -6,6 +6,9 @@ export const programs = {
     getAll: async() => {
         return programsCol.get();
     },
+    getProgram: async(id) => {
+        return programsCol.doc(id).get();
+    },
     add: async(newProgram) => {
         return programsCol.add(newProgram);
     },
@@ -14,5 +17,16 @@ export const programs = {
     },
     delete: async(id) => {
         return programsCol.doc(id).delete();
-    }
+    },
+
+    registerToProgram: async({classId, user}) => {
+        return programsCol.doc(classId).collection('registrations').add(user);
+    },
+
+    getRegisteredUsers: async(id) => {
+        return programsCol.doc(id).collection('registrations').orderBy('createdAt').get();
+    },
+    removeRegisteredUser: async(id, userId) => {
+        return programsCol.doc(id).collection('registrations').doc(userId).delete();
+    },
 }

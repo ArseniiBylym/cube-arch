@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { NewProgram, EditProgram } from './../components';
 import { Api } from './../../../api/index';
+import moment from 'moment';
 import { Spinner } from './../../shared/Spinner';
 
 export const Programs = props => {
@@ -51,9 +52,15 @@ export const Programs = props => {
                     <Grid item xs={4}>
                         <div className={styles.card__image} style={{backgroundImage: `url(${item.image})`}}/>
                     </Grid>
-                    <Grid item xs={8} className={styles.card__content}>
-                        <h1>{item.name['ukr']}</h1>
-                        <p>{item.description['ukr']}</p>
+                    <Grid item xs={2}>
+                        <h2>{item.name['ukr']}</h2>
+                    </Grid>
+                    <Grid item xs={6} className={styles.card__content}>
+                        <div className={styles.date}>Start date: {moment(+item.startDate).format("DD-MM-YYYY")}</div>
+                        <div className={styles.time}>End date: {moment(+item.endDate).format("DD-MM-YYYY")}</div>
+                        <div className={styles.card__price}>Price: {item.price}</div>
+                        <div className={styles.card__places}>Places left: {item.places}</div>
+                        <div className={styles.card__classes}>Classes amount: {item.duration}</div>
                         <div className={styles.card__buttons}> 
                             <Button className={styles.editButton} size="large" color="secondary" variant="contained" onClick={() => setEditedProgram(item)}>Edit</Button>
                             <Button className={styles.deleteButton} size="large" color="primary" variant="contained" onClick={() => deleteHandler(item.id)}>Delete</Button>
@@ -75,7 +82,7 @@ export const Programs = props => {
             )}
             {!createMode && !editedProgram && (
                 <>
-                    <h1>Programs list</h1>
+                    <h1>Courses list</h1>
                     <div className={styles.list}>
                         {programList()}
                     </div>

@@ -87,7 +87,7 @@ const Programs = (props) => {
             <PageTitle title={content.title} description={''} />
             {getPrograms()}
             <div className={styles.compare}>
-                <div className={styles.compare__title}>Порівняти курси</div>
+                <div className={styles.compare__title}>{content.compareTitle}</div>
                 <img src="https://thulitables.com/wp-content/uploads/2015/10/comparison-chart-all-tables.jpg" alt='' className={styles.compare__image} />
             </div>
         </div>

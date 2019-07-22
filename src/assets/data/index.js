@@ -86,6 +86,24 @@ export const data = {
                 sourse: `Звідки дізналися про нас? `
             }
         },
+        programRegister: {
+            en: {
+                email: 'Email',
+                name: 'Name, surname of contact person',
+                phone: 'Phone number',
+                children: 'Number of children, theirs names and ages',
+                reason: 'What interested you in the courese? What are you waiting for?',
+                sourse: 'Where did you find out about us?'
+            },
+            ukr: {
+                email: `Електронна адреса`,
+                name: `Прізвище, ім'я контактної особи`,
+                phone: `Телефон`,
+                children: `Кількість дітей, їх вік, ім'я`,
+                reason: `Що Вас зацікавило у цьому курсі? Що очікуєте?`,
+                sourse: `Звідки дізналися про нас? `
+            }
+        },
         classRegister: {
             en: {
                 email: 'Email',
@@ -254,6 +272,17 @@ export const data = {
                 programs: {
                     title: "Courses",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    details: {
+                        startDate: "Classes start date",
+                        endDate: "Classes end date",
+                        duration: "Classes ammount",
+                        places: "Available places",
+                        price: "Price",
+                        description: "Course description",
+                        apply: "Register",
+                        closed: "Registration ended",
+                    },
+                    compareTitle: "Compare courses"
                 },
                 classes: {
                     title: "Classes",
@@ -417,6 +446,17 @@ export const data = {
                 programs: {
                     title: "Курси",
                     description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    details: {
+                        startDate: "Початок навчання",
+                        endDate: "Кінець навчання",
+                        duration: "Кількість занять",
+                        places: "Залишилось місць",
+                        price: "Вартість",
+                        description: "Деталі цього курсу",
+                        apply: "Реєстрація",
+                        closed: "Реєстрацію завершено",
+                    },
+                    compareTitle: "Порівняти курси"
                 },
                 classes: {
                     title: "Майстер-класи",

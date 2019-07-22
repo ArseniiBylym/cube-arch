@@ -15,6 +15,9 @@
     border-radius: 5px;
     overflow: hidden;
     font-size: 1.3rem;
+    &__content {
+        padding: 1rem;
+    }
 
     &__datetime {
         display: flex;

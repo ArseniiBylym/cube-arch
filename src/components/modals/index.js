@@ -1,4 +1,5 @@
 export * from './GroupRegisterModal';
+export * from './ProgramRegisterModal';
 export * from './ClassRegisterModal';
 export * from './ClassOrderModal';
 export * from './TourRegisterModal';
