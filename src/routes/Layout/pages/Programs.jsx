@@ -6,6 +6,7 @@ import {Program} from '../../../components/Programs'
 import {Api} from '../../../api/index';
 import {data} from '../../../assets/data/index'
 import styles from './styles/Programs.module.scss';
+import {Link} from 'react-router-dom';
 
 const Programs = (props) => {
     const [content, setContent] = useState(null);
@@ -48,23 +49,46 @@ const Programs = (props) => {
     }
 
 
+    // const getPrograms = () => {
+    //     return (
+    //         <div className={styles.programs}>
+    //             {programs.map((item, index) => (
+    //                     <Grid key={item.id} item sm={12}>
+    //                         <Program {...item} index={index}/>
+    //                     </Grid>
+    //             ))}
+    //         </div>
+    //     )
+    // }
     const getPrograms = () => {
         return (
-            <div className={styles.programs}>
-                {programs.map((item, index) => (
-                        <Grid key={item.id} item sm={12}>
-                            <Program {...item} index={index}/>
-                        </Grid>
+            <Grid container spacing={6}>
+                {programs.map(item => (
+                    <Grid key={item.id} item xs={12} sm={6} className={styles.program}>
+                        <Link to={`/programs/${item.id}`}>
+
+                        <div className={styles.program__container}>
+                            <div className={styles.program__image} style={{backgroundImage: `url(${item.image})`}}>
+                            </div>
+                            <div className={styles.program__name}>{item.name[lang]}</div>
+                        </div>
+                        </Link>
+                    </Grid>
                 ))}
-            </div>
+            </Grid>
         )
     }
 
     if (!programs || !content) return <Spinner />;
     return (
         <div className={styles.root}>
-            <PageTitle title={content.title} description={content.description} />
+            {/* <PageTitle title={content.title} description={content.description} /> */}
+            <PageTitle title={content.title} description={''} />
             {getPrograms()}
+            <div className={styles.compare}>
+                <div className={styles.compare__title}>Порівняти курси</div>
+                <img src="https://thulitables.com/wp-content/uploads/2015/10/comparison-chart-all-tables.jpg" alt='' className={styles.compare__image} />
+            </div>
         </div>
     );
 };
