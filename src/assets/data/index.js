@@ -1,5 +1,5 @@
 import darynaImage from '../images/profile/daryna_profile.jpg';
-import olgaImage from '../images/profile/olga.jpg';
+import olgaImage from '../images/profile/olga_profile.jpg';
 
 export const data = {
     core: {
@@ -17,6 +17,10 @@ export const data = {
                 ukr: "Україна, Київ, вул. Незалежності, 22",
             },
             email: "someemail@gmail.com",
+            development: {
+                name: "Arsenii Bylym",
+                email: "arseniibylym@gmail.com"
+            }
         }
     },
     modals: {
@@ -68,24 +72,6 @@ export const data = {
             en: `Thanks for your order! We'll contact you in the shortest possible time.`,
             ukr: `Дякуємо за Ваше замовлення! Ми зв'яжемося з Вами у найкоротший термін.`
         }, 
-        groupRegister: {
-            en: {
-                email: 'Email',
-                name: 'Name, surname of contact person',
-                phone: 'Phone number',
-                children: 'Number of children, theirs names and ages',
-                reason: 'What interested you in the program? What are you waiting for?',
-                sourse: 'Where did you find out about us?'
-            },
-            ukr: {
-                email: `Електронна адреса`,
-                name: `Прізвище, ім'я контактної особи`,
-                phone: `Телефон`,
-                children: `Кількість дітей, їх вік, ім'я`,
-                reason: `Що Вас зацікавило у програмі? Що очікуєте?`,
-                sourse: `Звідки дізналися про нас? `
-            }
-        },
         programRegister: {
             en: {
                 email: 'Email',
@@ -190,16 +176,13 @@ export const data = {
                     },
                     nav: [
                         {index: 0, name: "home", linkUrl: "/home"},
-                        // empty index 1 link for info screen
-                        // empty index 2 link for review screen
-                        // {index: 3, name: "groups", linkUrl: "/groups"},
-                        {index: 3, name: "courses", linkUrl: "/courses"},
-                        {index: 4, name: "classes", linkUrl: "/classes"},
-                        {index: 5, name: "tours", linkUrl: "/tours"},
-                        {index: 6, name: "gallery", linkUrl: "/gallery"},
-                        {index: 7, name: "articles", linkUrl: "/articles"},
-                        {index: 8, name: "about", linkUrl: "/about"},
-                        {index: 9, name: "contacts", linkUrl: "/contacts"},
+                        {index: 1, name: "courses", linkUrl: "/courses"},
+                        {index: 2, name: "classes", linkUrl: "/classes"},
+                        {index: 3, name: "tours", linkUrl: "/tours"},
+                        {index: 4, name: "gallery", linkUrl: "/gallery"},
+                        {index: 5, name: "articles", linkUrl: "/articles"},
+                        {index: 6, name: "about", linkUrl: "/about"},
+                        {index: 7, name: "contacts", linkUrl: "/contacts"},
                     ],
                     screens: [
                         {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Short title.", secondaryText: "Longer text. Longer text. Longer text. Longer text. Longer text. Longer text.", testClass: "register to the test class"},
@@ -221,7 +204,6 @@ export const data = {
                                 subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
                             },
                         ]},
-                        // {index: 3, name: "groups", linkText: "details", linkUrl: "/groups", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 3, name: "courses", linkText: "details", linkUrl: "/courses", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 4, name: "reviews", linkText: "reviews", text: [
                             {
@@ -253,22 +235,6 @@ export const data = {
                         {index: 10, name: "contacts", linkText: "contacts", linkUrl: "/contacts", address: "Ukrain, Kyiv, Nezalezhosti st, 22", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus"},
                     ]
                 },
-                groups: {
-                    title: "Groups",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
-                    details: {
-                        date: "Learning period",
-                        duration: "Classes ammount",
-                        places: "Available places",
-                        price: "Price",
-                        program: {
-                            title: "Learning program",
-                            tooltip: "Read more"
-                        },
-                        apply: "Register",
-                        closed: "Registration ended",
-                    },
-                },
                 programs: {
                     title: "Courses",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
@@ -296,7 +262,6 @@ export const data = {
                         duration: "Duration of master-class",
                         auditory: "Auditory",
                         tooltip: "Classes list",
-
                     }
                 },
                 tours: {
@@ -364,16 +329,13 @@ export const data = {
                     },
                     nav: [
                         {index: 0, name: "головна", linkUrl: "/home"},
-                        //empty link with 1 index for info screen
-                        //empty link with 2 index for info screen
-                        // {index: 3, name: "набір у групи", linkUrl: "/groups"},
-                        {index: 3, name: "курси", linkUrl: "/courses"},
-                        {index: 4, name: "майстер-класи", linkUrl: "/classes"},
-                        {index: 5, name: "екскурсії", linkUrl: "/tours"},
-                        {index: 6, name: "галерея", linkUrl: "/gallery"},
-                        {index: 7, name: "статті", linkUrl: "/articles"},
-                        {index: 8, name: "про нас", linkUrl: "/about"},
-                        {index: 9, name: "контакти", linkUrl: "/contacts"}
+                        {index: 1, name: "курси", linkUrl: "/courses"},
+                        {index: 2, name: "майстер-класи", linkUrl: "/classes"},
+                        {index: 3, name: "екскурсії", linkUrl: "/tours"},
+                        {index: 4, name: "галерея", linkUrl: "/gallery"},
+                        {index: 5, name: "статті", linkUrl: "/articles"},
+                        {index: 6, name: "про нас", linkUrl: "/about"},
+                        {index: 7, name: "контакти", linkUrl: "/contacts"}
                     ],
                     screens: [
                         {index: 0, name: "головна", linkText: "продовжити", linkUrl: "groups", text: "Короткий заголовок", secondaryText: `Довгий заголовок. Довгий заголовок. Довгий заголовок. Довгий заголовок.`,  testClass: `записатися на пробне зайняття`},
@@ -396,7 +358,6 @@ export const data = {
                             },
                         ]},
                         {index: 3, name: "курси", linkText: "докладніше", linkUrl: "/courses", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        // {index: 3, name: "набір у групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 4, name: "відгуки", linkText: "відгуки", text: [
                             {
                                 name: "user1",
@@ -426,22 +387,6 @@ export const data = {
                         {index: 9, name: "про нас", linkText: "про нас", linkUrl: "/about", address: "Україна, Київ, вул. Незалежності, 22", "text": "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 10, name: "контакти", linkText: "контакти", linkUrl: "/contacts", address: "Україна, Київ, вул. Незалежності, 22", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                     ]
-                },
-                groups: {
-                    title: "Групи",
-                    description: "Якщо потрібно, тут буде більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут буде більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут буде більш детальна, ніж на головній сторінці, інформація про цей розділ.",
-                    details: {
-                        date: "Період навчання",
-                        duration: "Кількість занять",
-                        places: "Залишилось місць",
-                        price: "Вартість",
-                        program: {
-                            title: "Програма навчання",
-                            tooltip: "Докладніше"
-                        },
-                        apply: "Реєстрація",
-                        closed: "Реєстрацію завершено",
-                    }
                 },
                 programs: {
                     title: "Курси",

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styles from './styles.module.scss'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';

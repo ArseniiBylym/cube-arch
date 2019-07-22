@@ -6,11 +6,11 @@ export const classes = {
     getAll: async() => {
         return classesCol.orderBy('datetime').get();
     },
-    add: async(newGroup) => {
-        return classesCol.add(newGroup);
+    add: async(newDoc) => {
+        return classesCol.add(newDoc);
     },
-    update: async({id, updatedDoc}) => {
-        return classesCol.doc(id).update(updatedDoc);
+    update: async({id, newDoc}) => {
+        return classesCol.doc(id).update(newDoc);
     },
     delete: async(id) => {
         return classesCol.doc(id).delete();

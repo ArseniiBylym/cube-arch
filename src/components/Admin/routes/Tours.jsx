@@ -3,7 +3,6 @@ import {useStoreState, useStoreActions} from 'easy-peasy';
 import styles from './styles.module.scss'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-
 import moment from 'moment';
 import { NewTour, EditTour } from './../components';
 import { Api } from './../../../api/index';

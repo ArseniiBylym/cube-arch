@@ -3,7 +3,6 @@ import styles from './Program.module.scss';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 
-
 export const Program = props => {
     const lang = useStoreState(state => state.lang.current);
     const {id, name, description, image} = props;

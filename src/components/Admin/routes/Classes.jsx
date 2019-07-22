@@ -3,9 +3,8 @@ import {useStoreState, useStoreActions} from 'easy-peasy';
 import styles from './styles.module.scss'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-
 import moment from 'moment';
-import { NewClass, EditClass } from './../components';
+import {ManageClassForm} from './../components';
 import { Api } from './../../../api/index';
 import { Spinner } from './../../shared/Spinner';
 
@@ -74,12 +73,16 @@ export const Classes = props => {
     if (!classes) return <Spinner />
     return (
         <div className={styles.root}>
-            {createMode && (
+            {/* {createMode && (
                 <NewClass close={() => setCreateMode(false)} />
             )}
             {edited && (
                 <EditClass close={() => setEdited(null)} editedClass={edited} />
-            )}
+            )} */}
+            {(createMode || edited) && <ManageClassForm 
+                close={createMode ? () => setCreateMode(false) : () => setEdited(null)}
+                editedElem={edited}    
+            />}
             {!createMode && !edited && (
                 <>
                     <h1>Classes list</h1>

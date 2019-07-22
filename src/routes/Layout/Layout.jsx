@@ -14,7 +14,6 @@ const Layout = () => {
             </div>
             <div className={styles.main}>
                 <Switch>
-                    {/* <Route exact path="/groups" component={Groups} /> */}
                     <Route exact path="/courses" component={Programs} />
                     <Route exact path="/courses/:id" component={ProgramDetails} />
                     <Route exact path="/classes" component={Classes} />

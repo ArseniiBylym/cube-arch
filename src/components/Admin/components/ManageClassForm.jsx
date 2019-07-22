@@ -3,6 +3,9 @@ import {useStoreActions} from 'easy-peasy';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import moment from 'moment';
+import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -12,19 +15,17 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import moment from 'moment';
-import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
+import {MdExpandMore} from 'react-icons/md'
 import styles from './styles.module.scss';
 import imagePlaceholder from '../../../assets/images/admin/empty_image.png';
 import {Api} from './../../../api';
-import {MdExpandMore} from 'react-icons/md'
 
-export const EditClass = props => {
-    const {close, editedClass} = props;
+export const ManageClassForm = props => {
+    const {close, editedElem} = props;
     const [registeredUsers, setRegisteredUsers] = useState([])
     const [userOrders, setUserOrders] = useState([])
 
+    const addClass = useStoreActions(state => state.content.addClass);
     const updateClass = useStoreActions(state => state.content.updateClass);
 
     const [image, setImage] = useState('');
@@ -39,92 +40,66 @@ export const EditClass = props => {
     const [orderable, setOrderable] = useState(false);
 
     useEffect(() => {
-        getRegistrations();
-        getOrders();
+        if (editedElem) {
+            getSubscribers();
+        }
     }, [])
 
     useEffect(() => {
-        setImage(editedClass.image);
-        setName(editedClass.name);
-        setPlace(editedClass.place);
-        setDescription(editedClass.description);
-        setPrice(editedClass.price);
-        setDuration(editedClass.duration);
-        setAuditory(editedClass.auditory);
-        setDatetime(moment(+editedClass.datetime).format("YYYY-MM-DDTHH:mm"));
-        setOpen(editedClass.open);
-        setOrderable(editedClass.orderable);
+        if (editedElem) {
+            const {image, name, place, description, price, duration, auditory, datetime, open, orderable} = editedElem;
+            setImage(image);
+            setName(name);
+            setPlace(place);
+            setDescription(description);
+            setPrice(price);
+            setDuration(duration);
+            setAuditory(auditory);
+            setDatetime(moment(+datetime).format("YYYY-MM-DDTHH:mm"));
+            setOpen(open);
+            setOrderable(orderable);
+        }
     }, [])
 
-    const onNameChange = lang => e => {
-        setName({...name, [lang]: e.target.value});
-    };
-    const onPlaceChange = lang => e => {
-        setPlace({...place, [lang]: e.target.value});
-    };
-    const onDescriptionChange = lang => e => {
-        setDescription({...description, [lang]: e.target.value});
-    };
-    const onPriceChange = lang => e => {
-        setPrice({...price, [lang]: e.target.value});
-    };
-    const onDurationChange = lang => e => {
-        setDuration({...duration, [lang]: e.target.value});
-    };
-    const onAuditoryChange = lang => e => {
-        setAuditory({...auditory, [lang]: e.target.value});
-    };
-
-    const getRegistrations = async() => {
+    const getSubscribers = async() => {
         try {
-            const snapshot = await Api.classes.getRegisteredUsers(editedClass.id);
-            let docs = [];
-            snapshot.forEach(doc => {
-                docs.push({...doc.data(), id: doc.id})
+            const registrations = await Api.classes.getRegisteredUsers(editedElem.id);
+            const orders = await Api.classes.getUserOrders(editedElem.id);
+
+            let registrationsDocs = [];
+            registrations.forEach(doc => {
+                registrationsDocs.push({...doc.data(), id: doc.id})
             });
-            console.log(docs)
-            setRegisteredUsers(docs)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+            setRegisteredUsers(registrationsDocs);
 
-    const getOrders = async() => {
-        try {
-            const snapshot = await Api.classes.getUserOrders(editedClass.id);
-            let docs = [];
-            snapshot.forEach(doc => {
-                docs.push({...doc.data(), id: doc.id})
+            let ordersDocs = [];
+            orders.forEach(doc => {
+                ordersDocs.push({...doc.data(), id: doc.id})
             });
-            console.log(docs)
-            setUserOrders(docs)
+            setUserOrders(ordersDocs)
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 
-    const deleteRegisteredUser = async (userId) => {
+    const deleteUser = async (userId, userType) => {
         try {
-            await Api.classes.removeRegisteredUser(editedClass.id, userId);
-            const updatedUsers = registeredUsers.filter(item => item.id !== userId);
-            setRegisteredUsers(updatedUsers)
+            if (userType === 'registered') {
+                await Api.classes.removeRegisteredUser(editedElem.id, userId);
+                const updatedUsers = registeredUsers.filter(item => item.id !== userId);
+                setRegisteredUsers(updatedUsers)
+            } else {
+                await Api.classes.removeUserOrder(editedElem.id, userId);
+                const updatedUsers = userOrders.filter(item => item.id !== userId);
+                setUserOrders(updatedUsers)
+            }
         } catch (error) {
             console.log(error)
         }
     }
 
-    const deleteOrderedUser = async(userId) => {
-        try {
-            await Api.classes.removeUserOrder(editedClass.id, userId);
-            const updatedUsers = userOrders.filter(item => item.id !== userId);
-            setUserOrders(updatedUsers)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    const onUpdate = async () => {
-        const updatedDoc = {
+    const onCreate = async () => {
+        const newDoc = {
             image,
             name,
             place,
@@ -135,11 +110,16 @@ export const EditClass = props => {
             datetime: new Date(datetime).getTime() + '',
             open,
             orderable,
-        };
 
+        };
         try {
-            await Api.classes.update({id: editedClass.id, updatedDoc});
-            updateClass({...updatedDoc, id: editedClass.id});
+            if (editedElem) {
+                await Api.classes.update({id: editedElem.id, newDoc});
+                updateClass({...newDoc, id: editedElem.id});
+            } else {
+                const doc = await Api.classes.add(newDoc);
+                addClass({...newDoc, id: doc.id});
+            }
         } catch (error) {
             console.log(error);
         } finally {
@@ -149,7 +129,7 @@ export const EditClass = props => {
 
     return (
         <div className={styles.root}>
-            <h1>Edit class</h1>
+            <h1>{editedElem ? 'Edit' : 'Create new'} class</h1>
             <img src={image || imagePlaceholder} alt="" className={styles.image} />
             <TextField
                 margin="normal"
@@ -179,7 +159,7 @@ export const EditClass = props => {
                 <Grid item xs={4}>
                     <FormControlLabel
                     control={
-                        <Checkbox checked={open} onChange={() => setOpen(!open)} value={open} />
+                    <Checkbox checked={open} onChange={() => setOpen(!open)} value={open} />
                     }
                     label="Registration open"
                 />
@@ -187,7 +167,7 @@ export const EditClass = props => {
                 <Grid item xs={4}>
                     <FormControlLabel
                     control={
-                        <Checkbox checked={orderable} onChange={() => setOrderable(!orderable)} value={orderable} />
+                    <Checkbox checked={orderable} onChange={() => setOrderable(!orderable)} value={orderable} />
                     }
                     label="User can order"
                 />
@@ -203,7 +183,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onNameChange('en')}
+                        onChange={(e) => setName({...name, en: e.target.value})}
                         variant="outlined"
                         value={name.en}
                     />
@@ -216,7 +196,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onNameChange('ukr')}
+                        onChange={(e) => setName({...name, ukr: e.target.value})}
                         variant="outlined"
                         value={name.ukr}
                     />
@@ -232,7 +212,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onPlaceChange('en')}
+                        onChange={e => setPlace({...place, en: e.target.value})}
                         variant="outlined"
                         value={place.en}
                     />
@@ -245,7 +225,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onPlaceChange('ukr')}
+                        onChange={e => setPlace({...place, ukr: e.target.value})}
                         variant="outlined"
                         value={place.ukr}
                     />
@@ -261,7 +241,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onDescriptionChange('en')}
+                        onChange={e => setDescription({...description, en: e.target.value})}
                         variant="outlined"
                         value={description.en}
                         multiline
@@ -276,7 +256,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onDescriptionChange('ukr')}
+                        onChange={e => setDescription({...description, ukr: e.target.value})}
                         variant="outlined"
                         value={description.ukr}
                         multiline
@@ -294,7 +274,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onPriceChange('en')}
+                        onChange={e => setPrice({...price, en: e.target.value})}
                         variant="outlined"
                         value={price.en}
                     />
@@ -307,7 +287,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onPriceChange('ukr')}
+                        onChange={e => setPrice({...price, ukr: e.target.value})}
                         variant="outlined"
                         value={price.ukr}
                     />
@@ -323,7 +303,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onDurationChange('en')}
+                        onChange={e => setDuration({...duration, en: e.target.value})}
                         variant="outlined"
                         value={duration.en}
                     />
@@ -336,7 +316,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onDurationChange('ukr')}
+                        onChange={e => setDuration({...duration, ukr: e.target.value})}
                         variant="outlined"
                         value={duration.ukr}
                     />
@@ -352,7 +332,7 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onAuditoryChange('en')}
+                        onChange={e => setAuditory({...auditory, en: e.target.value})}
                         variant="outlined"
                         value={auditory.en}
                     />
@@ -365,21 +345,22 @@ export const EditClass = props => {
                         type="text"
                         fullWidth
                         required
-                        onChange={onAuditoryChange('ukr')}
+                        onChange={e => setAuditory({...auditory, ukr: e.target.value})}
                         variant="outlined"
                         value={auditory.ukr}
                     />
                 </Grid>
             </Grid>
             <div className={styles.buttons}>
-                <Button onClick={onUpdate} color="secondary" variant="contained" size="large">
-                    Update
+                <Button onClick={onCreate} color="secondary" variant="contained" size="large">
+                    {editedElem ? 'Update': 'Create'}
                 </Button>
                 <Button onClick={() => close()} color="primary" variant="contained" size="large">
                     Close
                 </Button>
             </div>
-            <Grid container spacing={2}>
+            {editedElem && (
+                <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <ExpansionPanel>
                         <ExpansionPanelSummary
@@ -409,7 +390,7 @@ export const EditClass = props => {
                                         <TableCell align="left">{item.children}</TableCell>
                                         <TableCell align="left">{item.reason}</TableCell>
                                         <TableCell align="left">{item.sourse}</TableCell>
-                                        <TableCell align="center"><Button onClick={() => deleteRegisteredUser(item.id)} color="secondary" >Delete</Button></TableCell>
+                                        <TableCell align="center"><Button onClick={() => deleteUser(item.id, 'registered')} color="secondary" >Delete</Button></TableCell>
                                     </TableRow>
                                 ))}
                                 </TableBody>
@@ -448,7 +429,7 @@ export const EditClass = props => {
                                         <TableCell align="left">{item.children}</TableCell>
                                         <TableCell align="left">{item.reason}</TableCell>
                                         <TableCell align="left">{item.sourse}</TableCell>
-                                        <TableCell align="center"><Button onClick={() => deleteOrderedUser(item.id)} color="secondary" >Delete</Button></TableCell>
+                                        <TableCell align="center"><Button onClick={() => deleteUser(item.id, 'ordered')} color="secondary" >Delete</Button></TableCell>
                                     </TableRow>
                                 ))}
                                 </TableBody>
@@ -457,6 +438,7 @@ export const EditClass = props => {
                     </ExpansionPanel>
                 </Grid>
             </Grid>
+            )}
         </div>
     );
 };

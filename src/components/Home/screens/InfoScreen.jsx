@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles.scss';
 import Grid from '@material-ui/core/Grid'
+import './styles.scss';
 
 export const InfoScreen = props => {
     const {text, className} = props;

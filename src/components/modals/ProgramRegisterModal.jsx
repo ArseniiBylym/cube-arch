@@ -78,7 +78,6 @@ export const ProgramRegisterModal = props => {
                 <div className={styles.header}>
                     <div className={styles.title}>{eventName[lang]}</div>
                     <div className={styles.subTitle}>
-                        <span>{data.lang[lang].pages.groups.details.date}: </span>
                         <span>{moment(+startDate).format("DD/MM")} - {moment(+endDate).format("DD/MM/YYYY")}</span>
                     </div>
                 </div>

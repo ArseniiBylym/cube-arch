@@ -97,14 +97,10 @@ const Home = () => {
     return (
         <div className={styles.root} ref={homeElem} onWheel={onWheel}>
             <Particles />
-            {/* <Nav 
-                activeLink={activeScreen}
-                setActiveLink={setActiveScreen}    
-            /> */}
             <div className={styles.header}>
                 <Header />
             </div>
-            <Screens activeScreen={activeScreen} setActiveScreen={setActiveScreen}/>
+            <Screens activeScreen={activeScreen} />
         </div>
     );
 };

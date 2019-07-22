@@ -1,7 +1,6 @@
 import React from 'react';
 import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from 'react-icons/md';
 import classNames from 'classnames'
-
 import styles from './ImageViewer.module.scss';
 
 export const ImageViewer = ({picture, closeHandler, changePicture}) => {

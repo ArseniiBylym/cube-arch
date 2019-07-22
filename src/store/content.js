@@ -69,23 +69,6 @@ export const content = {
     }),
 
 
-    groups: null,
-    setGroups: action((state, payload) => {
-        state.groups = payload;
-    }),
-    addGroup: action((state, payload) => {
-        state.groups.push(payload)
-    }),
-    updateGroup: action((state, payload) => {
-        state.groups = state.groups.map(item => {
-           return (item.id === payload.id) ? payload : item
-        });
-    }),
-    deleteGroup: action((state, payload) => {
-        state.groups = state.groups.filter(item => item.id !== payload);
-    }),
-
-
     gallery: null,
     setGallery: action((state, payload) => {
         state.gallery = payload;

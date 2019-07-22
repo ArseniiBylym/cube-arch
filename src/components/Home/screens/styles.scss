@@ -1,6 +1,5 @@
 .ClassesScreen,
 .InfoScreen,
-.GroupsScreen,
 .AboutScreen,
 .ProgramsScreen,
 .ToursScreen,
@@ -13,7 +12,6 @@
     width: 100%;
     height: 100%;
     padding: 7rem 4rem;
-    // padding-right: 20rem;
     padding-bottom: 4rem;
     @media screen and (max-width: 600px) {
         padding: 0rem;
@@ -92,21 +90,13 @@
         align-items: center;
         .button{
             position: relative;
-            padding: 0 3rem;
             font-size: 1.5rem;
-            border: 1px solid transparent;
-            transition: all 1s ease;
-            
-            &:hover{
-                border-color: #333;
-            }
         }
         .icon-container{
             display: block;
             font-size: 2rem;
             color: rgba(100, 100, 100, .5);
             .icon{
-                cursor: pointer;
                 animation: 5s ease infinite iconDown;
             }
         }
@@ -226,51 +216,6 @@
             }
         }
     }
-}
-
-.GroupsScreen{
-    display: flex;
-    &.active {
-        .content{
-            opacity: 1;
-            transform: translateX(0)
-        }
-    }
-    .image{
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle 30vw at 100% 20%, #efefef 5%, transparent), 
-        url('../../../assets/images/home/groups.jpg') left bottom/ contain no-repeat fixed;
-        @media screen and (max-width: 600px) {
-            width: 100%;
-            height: 92%;
-        }
-    }
-    .content {
-        margin-top: 2rem;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        opacity: 0;
-        transform: translateX(40px);
-        transition: all 1s ease .5s;
-        .text{
-            width: 100%;
-            font-size: 1.5rem;
-            @media screen and (max-width: 600px) {
-                font-size: 1.2rem;
-            }
-        }
-        .link{
-            margin: 3rem auto;
-            @media screen and (max-width: 600px) {
-                margin: 1rem auto;
-            }
-         }
-    }
-    
 }
 
 .ProgramsScreen{
@@ -676,5 +621,16 @@
             opacity: 0;
             transition-delay: .8s;
         }
+    }
+    .development {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 1.2rem;
     }
 }
