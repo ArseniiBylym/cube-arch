@@ -174,14 +174,14 @@ export const data = {
                         {index: 0, name: "home", linkUrl: "/home"},
                         // empty index 1 link for info screen
                         // empty index 2 link for review screen
-                        {index: 3, name: "groups", linkUrl: "/groups"},
-                        {index: 4, name: "programs", linkUrl: "/programs"},
-                        {index: 5, name: "classes", linkUrl: "/classes"},
-                        {index: 6, name: "tours", linkUrl: "/tours"},
-                        {index: 7, name: "gallery", linkUrl: "/gallery"},
-                        {index: 8, name: "articles", linkUrl: "/articles"},
-                        {index: 9, name: "about", linkUrl: "/about"},
-                        {index: 10, name: "contacts", linkUrl: "/contacts"},
+                        // {index: 3, name: "groups", linkUrl: "/groups"},
+                        {index: 3, name: "courses", linkUrl: "/courses"},
+                        {index: 4, name: "classes", linkUrl: "/classes"},
+                        {index: 5, name: "tours", linkUrl: "/tours"},
+                        {index: 6, name: "gallery", linkUrl: "/gallery"},
+                        {index: 7, name: "articles", linkUrl: "/articles"},
+                        {index: 8, name: "about", linkUrl: "/about"},
+                        {index: 9, name: "contacts", linkUrl: "/contacts"},
                     ],
                     screens: [
                         {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Short title.", secondaryText: "Longer text. Longer text. Longer text. Longer text. Longer text. Longer text.", testClass: "register to the test class"},
@@ -203,7 +203,9 @@ export const data = {
                                 subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
                             },
                         ]},
-                        {index: 2, name: "reviews", linkText: "reviews", text: [
+                        // {index: 3, name: "groups", linkText: "details", linkUrl: "/groups", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
+                        {index: 3, name: "courses", linkText: "details", linkUrl: "/courses", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
+                        {index: 4, name: "reviews", linkText: "reviews", text: [
                             {
                                 name: "user1",
                                 photoUrl: "https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg",
@@ -225,8 +227,6 @@ export const data = {
                                 review: "Some review about your courses. Some review about your courses. Some review about your courses."
                             },
                         ]},
-                        {index: 3, name: "groups", linkText: "details", linkUrl: "/groups", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
-                        {index: 4, name: "programs", linkText: "details", linkUrl: "/programs", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 5, name: "classes", linkText: "details", linkUrl: "/classes", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 6, name: "tours", linkText: "details", linkUrl: "/tours", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 7, name: "gallery", linkText: "to the gallery", linkUrl: "/gallery", text: "Go to the gallery to see photoes from owr master classes and another events"},
@@ -252,7 +252,7 @@ export const data = {
                     },
                 },
                 programs: {
-                    title: "Programs",
+                    title: "Courses",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 classes: {
@@ -337,14 +337,14 @@ export const data = {
                         {index: 0, name: "головна", linkUrl: "/home"},
                         //empty link with 1 index for info screen
                         //empty link with 2 index for info screen
-                        {index: 3, name: "набір у групи", linkUrl: "/groups"},
-                        {index: 4, name: "програми", linkUrl: "/programs"},
-                        {index: 5, name: "майстер-класи", linkUrl: "/classes"},
-                        {index: 6, name: "екскурсії", linkUrl: "/tours"},
-                        {index: 7, name: "галерея", linkUrl: "/gallery"},
-                        {index: 8, name: "статті", linkUrl: "/articles"},
-                        {index: 9, name: "про нас", linkUrl: "/about"},
-                        {index: 10, name: "контакти", linkUrl: "/contacts"}
+                        // {index: 3, name: "набір у групи", linkUrl: "/groups"},
+                        {index: 3, name: "курси", linkUrl: "/courses"},
+                        {index: 4, name: "майстер-класи", linkUrl: "/classes"},
+                        {index: 5, name: "екскурсії", linkUrl: "/tours"},
+                        {index: 6, name: "галерея", linkUrl: "/gallery"},
+                        {index: 7, name: "статті", linkUrl: "/articles"},
+                        {index: 8, name: "про нас", linkUrl: "/about"},
+                        {index: 9, name: "контакти", linkUrl: "/contacts"}
                     ],
                     screens: [
                         {index: 0, name: "головна", linkText: "продовжити", linkUrl: "groups", text: "Короткий заголовок", secondaryText: `Довгий заголовок. Довгий заголовок. Довгий заголовок. Довгий заголовок.`,  testClass: `записатися на пробне зайняття`},
@@ -366,7 +366,9 @@ export const data = {
                                 subtitle: 'Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку. Текст до цього заголовку.'
                             },
                         ]},
-                        {index: 2, name: "відгуки", linkText: "відгуки", text: [
+                        {index: 3, name: "курси", linkText: "докладніше", linkUrl: "/courses", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        // {index: 3, name: "набір у групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 4, name: "відгуки", linkText: "відгуки", text: [
                             {
                                 name: "user1",
                                 photoUrl: "https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg",
@@ -388,8 +390,6 @@ export const data = {
                                 review: "Some review about your courses. Some review about your courses. Some review about your courses."
                             },
                         ]},
-                        {index: 3, name: "набір у групи", linkText: "докладніше", linkUrl: "/groups", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 4, name: "програми", linkText: "докладніше", linkUrl: "/programs", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 5, name: "майстер-класи", linkText: "докладніше", linkUrl: "/classes", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 6, name: "екскурсії", linkText: "докладніше", linkUrl: "/tours", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 7, name: "галерея", linkText: "до галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з майстер классів та інших заходів"},
@@ -415,7 +415,7 @@ export const data = {
                     }
                 },
                 programs: {
-                    title: "Програми",
+                    title: "Курси",
                     description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 classes: {

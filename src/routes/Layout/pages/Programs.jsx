@@ -65,7 +65,7 @@ const Programs = (props) => {
             <Grid container spacing={6}>
                 {programs.map(item => (
                     <Grid key={item.id} item xs={12} sm={6} className={styles.program}>
-                        <Link to={`/programs/${item.id}`}>
+                        <Link to={`/courses/${item.id}`}>
 
                         <div className={styles.program__container}>
                             <div className={styles.program__image} style={{backgroundImage: `url(${item.image})`}}>

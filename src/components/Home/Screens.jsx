@@ -20,7 +20,7 @@ import {data} from '../../assets/data/index';
 export const Screens = props => {
     const {activeScreen, setActiveScreen} = props;
     const lang = useStoreState(state => state.lang.current);
-    const components = [HomeScreen, InfoScreen, ReviewsScreen, GroupsScreen, ProgramsScreen, ClassesScreen, ToursScreen, GalleryScreen, ArticlesScreen, AboutScreen, ContactsScreen];
+    const components = [HomeScreen, InfoScreen, ProgramsScreen, ReviewsScreen, ClassesScreen, ToursScreen, GalleryScreen, ArticlesScreen, AboutScreen, ContactsScreen];
 
     const screens = components.map((Component, index) => {
         const key = data.lang[lang].pages.home.screens[index].name;
