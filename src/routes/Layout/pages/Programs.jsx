@@ -69,6 +69,7 @@ const Programs = (props) => {
 
                         <div className={styles.program__container}>
                             <div className={styles.program__image} style={{backgroundImage: `url(${item.image})`}}>
+                                <div className={styles.program__info}>Start date, price or something else</div>
                             </div>
                             <div className={styles.program__name}>{item.name[lang]}</div>
                         </div>
