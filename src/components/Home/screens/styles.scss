@@ -23,7 +23,7 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    background: url('../../../assets/images/home/home1.jpg') center center/ cover no-repeat fixed;
+    background: url('../../../assets/images/home/home1-min.jpg') center center/ cover no-repeat fixed;
     .logo{
         position: fixed;
         left: 2rem;
@@ -119,16 +119,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    &.active {
-        .wrapper {
-            opacity: 1;
-            .element{
-                opacity: 1;
-                transform: translateY(0);
-            }
-        
-        }
-    }
     .text {
         padding: 3rem;
         font-size: 1.5rem;
@@ -138,7 +128,14 @@
         padding: 5rem 3rem;
         color: white;
         opacity: 0;
-        transition: all 1s ease .5s;
+        transition: all 1s ease .2s;
+        &.visible {
+            opacity: 1; 
+            .element{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         .element{
             transition: all .5s ease;
@@ -168,24 +165,58 @@
     }
 }
 
-.ReviewsScreen {
-
-    &.active {
-        .wrapper{
-            .element{
-                opacity: 1;
-                transform: translateY(0);
-            }
+.ProgramsScreen{
+    display: flex;
+    .image{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        background: radial-gradient(circle 40vw at -20% 90%, #efefef 10%, transparent), 
+        url('../../../assets/images/home/programs-min.jpg') right bottom/ contain no-repeat fixed;
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            height: 92%;
         }
     }
+    .content {
+        padding: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 1s ease .5s;
+        font-size: 1.5rem;
+        &.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        @media screen and (max-width: 600px) {
+           left: 0;
+           width: 80%;
+           font-size: 1.2rem;
+        }
+        .link{
+            margin-top: 2rem;
+         }
+    }
+}
+
+.ReviewsScreen {
     .wrapper {
         height: 100%;
         align-content: space-evenly;
+        &.visible {
+            .element {
+                opacity: 1;
+            }
+        }
 
         .element {
             padding: 1rem;
             opacity: 0;
-            transform: translateY(-10px);
             transition: all .5s ease;
             &:nth-child(1){
                 transition-delay: .5s;
@@ -225,66 +256,18 @@
     }
 }
 
-.ProgramsScreen{
-    display: flex;
-    &.active {
-        .content{
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    .image{
-        display: block;
-        width: 100%;
-        height: 100%;
-        margin-left: auto;
-        background: radial-gradient(circle 50vw at -20% 90%, #efefef 10%, transparent), 
-        url('../../../assets/images/home/programs.jpg') right bottom/ contain no-repeat fixed;
-        @media screen and (max-width: 600px) {
-            width: 100%;
-            height: 92%;
-        }
-    }
-    .content {
-        padding: 2rem;
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: all 1s ease .5s;
-        font-size: 1.5rem;
-        @media screen and (max-width: 600px) {
-           left: 0;
-           width: 80%;
-           font-size: 1.2rem;
-        }
-        .link{
-            margin-top: 2rem;
-         }
-    }
-}
-
 
 .ClassesScreen{
     display: flex;
     
-    &.active {
-        .content{
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
     .image{
         display: block;
         width: 100%;
         height: 100%;
         margin-right: auto;
-        background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
-        url('../../../assets/images/home/classes.jpg') left top/ contain no-repeat fixed;
         filter: saturate(80%);
+        background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
+        url('../../../assets/images/home/classes-min.jpg') left top/ contain no-repeat fixed;
         @media screen and (max-width: 600px) {
             width: 100%;
             height: 92%;
@@ -304,6 +287,10 @@
         transform: translateX(50px);
         transition: all 1s ease .5s;
         font-size: 1.5rem;
+        &.visible{
+            transform: translateX(0);
+            opacity: 1;
+        }
         @media screen and (max-width: 600px) {
            left: 0;
            width: 80%;
@@ -319,20 +306,13 @@
 .ToursScreen{
     display: flex;
     
-    &.active {
-        .content{
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
     .image{
         display: block;
         width: 100%;
         height: 100%;
         margin-right: auto;
         background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
-        url('../../../assets/images/home/tours.jpg') left center/ contain no-repeat fixed;
+        url('../../../assets/images/home/tours-min.jpg') left center/ contain no-repeat fixed;
         @media screen and (max-width: 600px) {
             width: 100%;
             height: 92%;
@@ -342,12 +322,6 @@
     }
     
     .content {
-        // position: absolute;
-        // bottom: 7rem;
-        // right: 20rem;
-        // padding: 1rem;
-        // background-color: #d2d2d2a4;
-        // width: 60%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -355,6 +329,10 @@
         transform: translateY(50px);
         transition: all 1s ease .5s;
         font-size: 1.5rem;
+        &.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
         @media screen and (max-width: 600px) {
             left: 0;
             width: 80%;
@@ -369,23 +347,17 @@
 .GalleryScreen{
     display: flex; 
     flex-flow: column nowrap;
-    &.active {
-        .content{
-            transform: translateY(0);
-            opacity: 1;
-        }
-        .images {
-            .image{
-               opacity: 1;
-            }
-        }
-    }
     .images {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
         padding: 2rem;
+        &.visible {
+            .image {
+                opacity: 1;
+            }
+        }
         @media screen and (max-width: 600px) {
            margin-top: 4rem;
            transform: scale(.45)
@@ -396,9 +368,6 @@
             cursor: pointer;
             filter: brightness(1.1);
             opacity: 0;
-            // transition: opacity 1s ease .5s, transform .7s ease;
-            // transition: transform .7s ease;
-            // transition: scale .7s ease;
             &:hover{
                 filter: brightness(1.25);
                 box-shadow: 0px 30px 30px rgba(0,0,0,.4);
@@ -408,7 +377,7 @@
         .image-1{
             width: 23rem;
             height: 30rem;
-            background: url('../../../assets/images/home/gallery-1.jpg') left top/ cover no-repeat;
+            background: url('../../../assets/images/home/gallery-1-min.jpg') left top/ cover no-repeat;
             transform: rotate(-5deg);
             z-index: 3;
             transition: opacity .5s ease .5s, transform .7s ease, filter .7s ease;
@@ -451,6 +420,10 @@
         justify-content: center;
         opacity: 0;
         transition: all 1.5s ease .5s;
+        &.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
         @media screen and (max-width: 600px) {
             display: block;
         }
@@ -464,19 +437,11 @@
 }
 
 .ArticlesScreen {
-
-    &.active {
-        .content{
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
     &__wrapper {
         height: 100%;
         display: flex;
         align-items: center;
-        // background: url('../../../assets/images/home/articles.jpg') bottom left / cover no-repeat;
-        background: url('../../../assets/images/home/articles.jpg') bottom center / contain no-repeat fixed;
+        background: url('../../../assets/images/home/articles-min.jpg') bottom center / contain no-repeat fixed;
         @media screen and (max-width: 600px) {
           height: calc(100% - 5rem);
           margin-top: 5rem;
@@ -488,6 +453,10 @@
             transition: all 1s ease .5s;
             transform: translateY(30px);
             opacity: 0;
+            &.visible {
+                transform: translateY(0);
+                opacity: 1;
+            }
 
             @media screen and (max-width: 600px) {
                 background-color: #d2d2d2a4;
@@ -507,20 +476,11 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    
-    &.active {
-        .content{
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
     .image{
-        width: 80%;
+        width: 70%;
         height: 80%;
         margin: 0 auto;
-        // background: url('../../../assets/images/home/about.png') center top/ cover no-repeat;
-        background: url('../../../assets/images/home/about.png') center top/ contain no-repeat fixed;
+        background: url('../../../assets/images/home/about-min.jpg') center center/ 100% auto no-repeat ;
         box-shadow: 0 15px 20px -5px;
         @media screen and (max-width: 600px) {
             margin-top: 5rem;
@@ -539,6 +499,10 @@
         width: 80%;
         opacity: 0;
         transition: all 1.5s ease .5s;
+        &.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
         .text{
             font-size: 1.5rem;
         }
@@ -570,14 +534,6 @@
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    &.active{
-        .socials{
-            a{
-                opacity: 1;
-                transform: translateY(0)
-            }
-        }
-    }
 
     & > div {
         margin: 1rem 0;
@@ -608,6 +564,12 @@
         flex-flow: row;
         align-items: center;
         justify-content: space-evenly;
+        &.visible {
+            a{
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
         a{
             transition: all .8s ease;
             transform: translateY(20px)

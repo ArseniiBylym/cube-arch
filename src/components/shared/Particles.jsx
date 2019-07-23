@@ -2,7 +2,7 @@ import React from 'react';
 import ParticlesLayout from 'react-particles-js';
 import styles from './Particles.module.scss';
 
-export const Particles = props => (
+export const Particles = React.memo(props => (
     <div className={styles.root}>
         <ParticlesLayout
             width="100vw"
@@ -47,9 +47,8 @@ export const Particles = props => (
                             "enable": false,
                         }
                     },
-                    
                 }
             }}
         />
     </div>
-);
+));

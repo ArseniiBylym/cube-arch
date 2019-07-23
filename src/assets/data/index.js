@@ -252,7 +252,8 @@ export const data = {
                         apply: "Register",
                         closed: "Registration ended",
                     },
-                    compareTitle: "Compare courses"
+                    compareTitle: "Compare courses",
+                    readMore: "Read more"
                 },
                 classes: {
                     title: "Classes",
@@ -413,7 +414,8 @@ export const data = {
                         apply: "Реєстрація",
                         closed: "Реєстрацію завершено",
                     },
-                    compareTitle: "Порівняти курси"
+                    compareTitle: "Порівняти курси",
+                    readMore: "Детальніше"
                 },
                 classes: {
                     title: "Майстер-класи",

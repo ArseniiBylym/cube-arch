@@ -48,18 +48,6 @@ const Programs = (props) => {
         }
     }
 
-
-    // const getPrograms = () => {
-    //     return (
-    //         <div className={styles.programs}>
-    //             {programs.map((item, index) => (
-    //                     <Grid key={item.id} item sm={12}>
-    //                         <Program {...item} index={index}/>
-    //                     </Grid>
-    //             ))}
-    //         </div>
-    //     )
-    // }
     const getPrograms = () => {
         return (
             <Grid container spacing={6}>
@@ -69,7 +57,7 @@ const Programs = (props) => {
 
                         <div className={styles.program__container}>
                             <div className={styles.program__image} style={{backgroundImage: `url(${item.image})`}}>
-                                <div className={styles.program__info}>Start date, price or something else</div>
+                                <div className={styles.program__info}>{content.readMore}</div>
                             </div>
                             <div className={styles.program__name}>{item.name[lang]}</div>
                         </div>

@@ -6,7 +6,7 @@ import {LangToggle, NavigationLink} from './../shared';
 import logo from '../../assets/icons/logo.svg';
 import styles from './Header.module.scss';
 
-export const Header = () => {
+export const Header = React.memo(() => {
     const [drawer, setDrawer] = useState(false);
     const lang = useStoreState(state => state.lang.current);
     const links = data.lang[lang].pages.home.nav;
@@ -41,4 +41,4 @@ export const Header = () => {
             </Drawer>
         </div>
     )
-}
+});
