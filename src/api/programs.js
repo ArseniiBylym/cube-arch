@@ -9,11 +9,11 @@ export const programs = {
     getProgram: async(id) => {
         return programsCol.doc(id).get();
     },
-    add: async(newProgram) => {
-        return programsCol.add(newProgram);
+    add: async(newDoc) => {
+        return programsCol.add(newDoc);
     },
-    update: async({id, updatedProgram}) => {
-        return programsCol.doc(id).update(updatedProgram);
+    update: async({id, newDoc}) => {
+        return programsCol.doc(id).update(newDoc);
     },
     delete: async(id) => {
         return programsCol.doc(id).delete();

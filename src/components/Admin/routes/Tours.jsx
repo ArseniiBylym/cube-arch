@@ -4,7 +4,7 @@ import styles from './styles.module.scss'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import moment from 'moment';
-import { NewTour, EditTour, ManageTourForm } from './../components';
+import {ManageTourForm} from './../components';
 import { Api } from './../../../api/index';
 import { Spinner } from './../../shared/Spinner';
 
@@ -73,13 +73,7 @@ export const Tours = props => {
     if (!tours) return <Spinner />
     return (
         <div className={styles.root}>
-            {/* {createMode && (
-                <NewTour close={() => setCreateMode(false)} />
-            )}
-            {edited && (
-                <EditTour close={() => setEdited(null)} editedElem={edited} />
-            )} */}
-             {(createMode || edited) && <ManageTourForm 
+            {(createMode || edited) && <ManageTourForm 
                 close={createMode ? () => setCreateMode(false) : () => setEdited(null)}
                 editedElem={edited}    
             />}

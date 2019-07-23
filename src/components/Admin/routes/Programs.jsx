@@ -3,7 +3,7 @@ import {useStoreState, useStoreActions} from 'easy-peasy';
 import styles from './styles.module.scss'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { NewProgram, EditProgram } from './../components';
+import {ManageProgramForm} from './../components';
 import { Api } from './../../../api/index';
 import moment from 'moment';
 import { Spinner } from './../../shared/Spinner';
@@ -14,7 +14,7 @@ export const Programs = props => {
     const deleteProgram = useStoreActions(state => state.content.deleteProgram);
 
     const [createMode, setCreateMode] = useState(false);
-    const [editedProgram, setEditedProgram] = useState(null);
+    const [edited, setEdited] = useState(null);
 
     useEffect(() => {
         if (!programs) {
@@ -62,7 +62,7 @@ export const Programs = props => {
                         <div className={styles.card__places}>Places left: {item.places}</div>
                         <div className={styles.card__classes}>Classes amount: {item.duration}</div>
                         <div className={styles.card__buttons}> 
-                            <Button className={styles.editButton} size="large" color="secondary" variant="contained" onClick={() => setEditedProgram(item)}>Edit</Button>
+                            <Button className={styles.editButton} size="large" color="secondary" variant="contained" onClick={() => setEdited(item)}>Edit</Button>
                             <Button className={styles.deleteButton} size="large" color="primary" variant="contained" onClick={() => deleteHandler(item.id)}>Delete</Button>
                         </div>
                     </Grid>
@@ -74,13 +74,11 @@ export const Programs = props => {
     if (!programs) return <Spinner />
     return (
         <div className={styles.root}>
-            {createMode && (
-                <NewProgram close={() => setCreateMode(false)} />
-            )}
-            {editedProgram && (
-                <EditProgram close={() => setEditedProgram(null)} program={editedProgram} />
-            )}
-            {!createMode && !editedProgram && (
+            {(createMode || edited) && <ManageProgramForm 
+                close={createMode ? () => setCreateMode(false) : () => setEdited(null)}
+                editedElem={edited}    
+            />}
+            {!createMode && !edited && (
                 <>
                     <h1>Courses list</h1>
                     <div className={styles.list}>
