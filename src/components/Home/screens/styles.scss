@@ -180,9 +180,10 @@
     }
     .wrapper {
         height: 100%;
+        align-content: space-evenly;
 
         .element {
-            padding: 3rem;
+            padding: 1rem;
             opacity: 0;
             transform: translateY(-10px);
             transition: all .5s ease;
@@ -198,21 +199,27 @@
             &:nth-child(4){
                 transition-delay: .8s;
             }
+            .reviewPhoto{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
             .photoUrl {
-                width: 10rem;
-                height: 10rem;
+                width: 6rem;
+                height: 6rem;
                 background-position: center center;
                 background-size: cover;
                 background-repeat: no-repeat;
                 border-radius: 50%;
             }
             .name{ 
-                font-size: 2rem;
-                margin: 2rem auto 1rem auto;
+                font-size: 1.5rem;
+                text-align: start;
             }
             .review {
-                font-size: 1.5rem;
+                margin-top: 2rem;
+                font-size: 1.3rem;
             }
         }
     }

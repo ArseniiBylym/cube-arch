@@ -207,24 +207,28 @@ export const data = {
                         {index: 3, name: "courses", linkText: "details", linkUrl: "/courses", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 4, name: "reviews", linkText: "reviews", text: [
                             {
-                                name: "user1",
-                                photoUrl: "https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg",
-                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                                name: "Nadiya Kantaurova",
+                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/13062233_213009899082458_3562126366937109409_n.jpg?_nc_cat=103&_nc_oc=AQmvpM8zb197kM19m7ygZudjgQg6qmNA7kn5e1VCuzSzIAD9E8JFo2FMmUTBkOlV0nM&_nc_ht=scontent.fiev19-1.fna&oh=553e149d60f541efd7a53fcbdbbd856c&oe=5DA18C0B",
+                                review: `Хочу порадити клуб Cube ARCH club. Була з дитиною на майстер-класі - дитина у захваті. Всі секрети архітектури викладаються у простій, ігровій формі. На практичній частині заняття діти мають можливість проявити себе. Використання у роботі різних матеріалів, розвиває у дітях креативність, фантазію та просторове мислення. Сподобалося, що в Cube ARCH club дитина може самостійно зконструювати та "відчути" архітектурні елементи з різноманітних геоометричних форм.`,
+                                linkUrl: `https://www.facebook.com/nadiya.kantaurova/posts/873724079677700`,
                             },
                             {
-                                name: "user2",
-                                photoUrl: "http://mhalabs.org/wp-content/uploads/upme/1451456913_brodie.jpg",
-                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                                name: "Serge Klimovych",
+                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/39594157_2055369594496305_462028370973032448_n.jpg?_nc_cat=102&_nc_oc=AQnf3SfyTNYkXjOU-jFXj8OV7Sf49CTMg4Qj4x_Szu_zkxHL5xX0ezkcNSfA4B3BCxk&_nc_ht=scontent.fiev19-1.fna&oh=1d5de1961e66e79957f7aca8e031bd1f&oe=5DB3E8E4",
+                                review: `Мій 9-річний син і його подруга були на повноцінному двогодинному занятті. Коли я його забирав, то побачив палаючі від ентузіазму очі - Оля і Даша гарно знаходять підхід до маленьких потенційних архітекторів, розповідаючи масу корисних речей, про які у школі зазвичай не дізнатися. Сміливо віддавайте малюків у руки викладачам - не пошкодуєте!`,
+                                linkUrl: `https://www.facebook.com/sergiy.klimovy4/posts/2394535527246375`,
                             },
                             {
-                                name: "user3",
-                                photoUrl: "https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg",
-                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                                name: "Ірина Кравченко",
+                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/65308296_2820943744587912_6239051433279225856_n.jpg?_nc_cat=108&_nc_oc=AQlJlunDB2wsGbqBMzMh9Q4XL55efvKS9kC26hhoaRVC0HOw34MLm_syn0FE8fFCqJc&_nc_ht=scontent.fiev19-1.fna&oh=714f2b8def4cd8b23a74784716e4d7f8&oe=5DA0274B",
+                                review: `Діти бачать те, чого не бачимо ми, іх рішення можуть бути дуже простими, геніальними та несподіваними.`,
+                                linkUrl: `https://www.facebook.com/permalink.php?story_fbid=2600886146593674&id=100000169437808`
                             },
                             {
-                                name: "user4",
-                                photoUrl: "https://triathlon-images.imgix.net/athlete_thumbs/taylor_spivey_USA.jpg?w=350&h=350&fit=facearea&facepad=2&auto=format",
-                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                                name: "Татьяна Ромашко-Богданова",
+                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/59960634_2325050447775977_4288445830542655488_n.jpg?_nc_cat=107&_nc_oc=AQn0-GAw0NMe1Fr0m1bru4eOCf8JR_oHpw8XkN8lBzRQXuSWOpkIcNolBK9gWXnJPrg&_nc_ht=scontent.fiev19-1.fna&oh=11ec12e59b0ebee0d9f2939f4309f273&oe=5DE7EEF6",
+                                review: `Діти на відміну від дорослих не бояться фантазувати, вони сміливіші за нас! Я якщо ми хочемо, щоб наші міста були красивими та затишними, нам потрібно підтримувати та трішечки "направляти" дітей. І можливо, вона нас теж чомусь навчать! На відміну від університетів, тут не змушують вчитися, всі заняття проходять в ігровій формі, так, щоби діти самі розкривалися.`,
+                                linkUrl: `https://www.facebook.com/permalink.php?story_fbid=2274874792793543&id=100008131336394`,
                             },
                         ]},
                         {index: 5, name: "classes", linkText: "details", linkUrl: "/classes", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
@@ -360,24 +364,32 @@ export const data = {
                         {index: 3, name: "курси", linkText: "докладніше", linkUrl: "/courses", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
                         {index: 4, name: "відгуки", linkText: "відгуки", text: [
                             {
-                                name: "user1",
-                                photoUrl: "https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg",
-                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                                name: "Nadiya Kantaurova",
+                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/13062233_213009899082458_3562126366937109409_n.jpg?_nc_cat=103&_nc_oc=AQmvpM8zb197kM19m7ygZudjgQg6qmNA7kn5e1VCuzSzIAD9E8JFo2FMmUTBkOlV0nM&_nc_ht=scontent.fiev19-1.fna&oh=553e149d60f541efd7a53fcbdbbd856c&oe=5DA18C0B",
+                                profileUrl: `https://www.facebook.com/nadiya.kantaurova?__tn__=%2CdlC-R-R&eid=ARCv9peWDPuuC_VeDR9Y6IJUlVSuyPWPyr6xzUy4t_aDR-JlyF5l8ZHBWLXZBsHMvlZb3w2IpO0uXBZu&hc_ref=ARRbErflkYZ2ow1IrVTjbeTGAQMgT4mV_LAp_DEVmM1XdcqlXFS_PIFvLy6l0cAaLuQ`,
+                                review: `Хочу порадити клуб Cube ARCH club. Була з дитиною на майстер-класі - дитина у захваті. Всі секрети архітектури викладаються у простій, ігровій формі. На практичній частині заняття діти мають можливість проявити себе. Використання у роботі різних матеріалів, розвиває у дітях креативність, фантазію та просторове мислення. Сподобалося, що в Cube ARCH club дитина може самостійно зконструювати та "відчути" архітектурні елементи з різноманітних геоометричних форм.`,
+                                linkUrl: `https://www.facebook.com/nadiya.kantaurova/posts/873724079677700`,
                             },
                             {
-                                name: "user2",
-                                photoUrl: "http://mhalabs.org/wp-content/uploads/upme/1451456913_brodie.jpg",
-                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                                name: "Serge Klimovych",
+                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/39594157_2055369594496305_462028370973032448_n.jpg?_nc_cat=102&_nc_oc=AQnf3SfyTNYkXjOU-jFXj8OV7Sf49CTMg4Qj4x_Szu_zkxHL5xX0ezkcNSfA4B3BCxk&_nc_ht=scontent.fiev19-1.fna&oh=1d5de1961e66e79957f7aca8e031bd1f&oe=5DB3E8E4",
+                                profileUrl: `https://www.facebook.com/sergiy.klimovy4?__tn__=%2CdlC-R-R&eid=ARCht2eOa28x5QlXmHtPn4d2ALhTcQVwrjoiU6SZfWMNfg7ab2Lr-ivl4fDJbnT0K3KdWsVfyHVWaT1v&hc_ref=ARSTtG4_UyOpSRXWa7wRHLQPPmPFo7O7-sjkc_JrFketCbxElVv_KbKfDBosptdhsaI`,
+                                review: `Мій 9-річний син і його подруга були на повноцінному двогодинному занятті. Коли я його забирав, то побачив палаючі від ентузіазму очі - Оля і Даша гарно знаходять підхід до маленьких потенційних архітекторів, розповідаючи масу корисних речей, про які у школі зазвичай не дізнатися. Сміливо віддавайте малюків у руки викладачам - не пошкодуєте!`,
+                                linkUrl: `https://www.facebook.com/sergiy.klimovy4/posts/2394535527246375`,
                             },
                             {
-                                name: "user3",
-                                photoUrl: "https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg",
-                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                                name: "Ірина Кравченко",
+                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/65308296_2820943744587912_6239051433279225856_n.jpg?_nc_cat=108&_nc_oc=AQlJlunDB2wsGbqBMzMh9Q4XL55efvKS9kC26hhoaRVC0HOw34MLm_syn0FE8fFCqJc&_nc_ht=scontent.fiev19-1.fna&oh=714f2b8def4cd8b23a74784716e4d7f8&oe=5DA0274B",
+                                profileUrl: `https://www.facebook.com/profile.php?id=100000169437808&__tn__=%2CdlC-R-R&eid=ARD8nMMBp59eXlPl_1bz9FTePTon01_m9D-IEZWNWfCVs_wAJSYBLDOQIlKjFXaqesKo0w0lVtpG3-Hx&hc_ref=ARQW2ClsnsLyS4_33dFbCcHuwapd5kZRcMHGia7KjIFSd1SUM0lu0VSdJ-JRAPvT0fY`,
+                                review: `Діти бачать те, чого не бачимо ми, іх рішення можуть бути дуже простими, геніальними та несподіваними.`,
+                                linkUrl: `https://www.facebook.com/permalink.php?story_fbid=2600886146593674&id=100000169437808`
                             },
                             {
-                                name: "user4",
-                                photoUrl: "https://triathlon-images.imgix.net/athlete_thumbs/taylor_spivey_USA.jpg?w=350&h=350&fit=facearea&facepad=2&auto=format",
-                                review: "Some review about your courses. Some review about your courses. Some review about your courses."
+                                name: "Татьяна Ромашко-Богданова",
+                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/59960634_2325050447775977_4288445830542655488_n.jpg?_nc_cat=107&_nc_oc=AQn0-GAw0NMe1Fr0m1bru4eOCf8JR_oHpw8XkN8lBzRQXuSWOpkIcNolBK9gWXnJPrg&_nc_ht=scontent.fiev19-1.fna&oh=11ec12e59b0ebee0d9f2939f4309f273&oe=5DE7EEF6",
+                                profileUrl: `https://www.facebook.com/profile.php?id=100008131336394&__tn__=%2CdlC-R-R&eid=ARC-pQpw4mdwDW94nAC6O3MuyX_lFvr3hRWC7DHzkVi5qrbMIckVDyPns9CMZyIf1lkvwpB_Ty8ZUoe-&hc_ref=ARQmxykTl3KFuqMz-StBonzqIRrJBIQgoiOVaYl_i1yCrQb86NAHyVsqQO6JZDadYtc`,
+                                review: `Діти на відміну від дорослих не бояться фантазувати, вони сміливіші за нас! Я якщо ми хочемо, щоб наші міста були красивими та затишними, нам потрібно підтримувати та трішечки "направляти" дітей. І можливо, вона нас теж чомусь навчать! На відміну від університетів, тут не змушують вчитися, всі заняття проходять в ігровій формі, так, щоби діти самі розкривалися.`,
+                                linkUrl: `https://www.facebook.com/permalink.php?story_fbid=2274874792793543&id=100008131336394`,
                             },
                         ]},
                         {index: 5, name: "майстер-класи", linkText: "докладніше", linkUrl: "/classes", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення. Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
