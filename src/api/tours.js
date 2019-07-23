@@ -6,11 +6,11 @@ export const tours = {
     getAll: async() => {
         return toursCol.get();
     },
-    add: async(newElem) => {
-        return toursCol.add(newElem);
+    add: async(newDoc) => {
+        return toursCol.add(newDoc);
     },
-    update: async({id, updatedDoc}) => {
-        return toursCol.doc(id).update(updatedDoc);
+    update: async({id, newDoc}) => {
+        return toursCol.doc(id).update(newDoc);
     },
     delete: async(id) => {
         return toursCol.doc(id).delete();

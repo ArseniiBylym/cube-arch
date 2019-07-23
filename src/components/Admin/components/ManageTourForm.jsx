@@ -3,9 +3,6 @@ import {useStoreActions} from 'easy-peasy';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import moment from 'moment';
-import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -15,18 +12,21 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import {MdExpandMore} from 'react-icons/md'
+import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 import styles from './styles.module.scss';
 import imagePlaceholder from '../../../assets/images/admin/empty_image.png';
 import {Api} from './../../../api';
+import moment from 'moment';
+import {MdExpandMore} from 'react-icons/md'
 
-export const ManageClassForm = props => {
+export const ManageTourForm = props => {
     const {close, editedElem} = props;
     const [registeredUsers, setRegisteredUsers] = useState([])
     const [userOrders, setUserOrders] = useState([])
 
-    const addClass = useStoreActions(state => state.content.addClass);
-    const updateClass = useStoreActions(state => state.content.updateClass);
+    const addTour = useStoreActions(state => state.content.addTour);
+    const updateTour = useStoreActions(state => state.content.updateTour);
 
     const [image, setImage] = useState('');
     const [name, setName] = useState({en: '', ukr: ''});
@@ -48,6 +48,7 @@ export const ManageClassForm = props => {
     useEffect(() => {
         if (editedElem) {
             const {image, name, place, description, price, duration, auditory, datetime, open, orderable} = editedElem;
+
             setImage(image);
             setName(name);
             setPlace(place);
@@ -63,8 +64,8 @@ export const ManageClassForm = props => {
 
     const getSubscribers = async() => {
         try {
-            const registrations = await Api.classes.getRegisteredUsers(editedElem.id);
-            const orders = await Api.classes.getUserOrders(editedElem.id);
+            const registrations = await Api.tours.getRegisteredUsers(editedElem.id);
+            const orders = await Api.tours.getUserOrders(editedElem.id);
 
             let registrationsDocs = [];
             registrations.forEach(doc => {
@@ -85,11 +86,11 @@ export const ManageClassForm = props => {
     const deleteUser = async (userId, userType) => {
         try {
             if (userType === 'registered') {
-                await Api.classes.removeRegisteredUser(editedElem.id, userId);
+                await Api.tours.removeRegisteredUser(editedElem.id, userId);
                 const updatedUsers = registeredUsers.filter(item => item.id !== userId);
                 setRegisteredUsers(updatedUsers)
             } else {
-                await Api.classes.removeUserOrder(editedElem.id, userId);
+                await Api.tours.removeUserOrder(editedElem.id, userId);
                 const updatedUsers = userOrders.filter(item => item.id !== userId);
                 setUserOrders(updatedUsers)
             }
@@ -114,11 +115,11 @@ export const ManageClassForm = props => {
         };
         try {
             if (editedElem) {
-                await Api.classes.update({id: editedElem.id, newDoc});
-                updateClass({...newDoc, id: editedElem.id});
+                await Api.tours.update({id: editedElem.id, newDoc});
+                updateTour({...newDoc, id: editedElem.id});
             } else {
-                const doc = await Api.classes.add(newDoc);
-                addClass({...newDoc, id: doc.id});
+                const doc = await Api.tours.add(newDoc);
+                addTour({...newDoc, id: doc.id});
             }
         } catch (error) {
             console.log(error);
@@ -129,7 +130,7 @@ export const ManageClassForm = props => {
 
     return (
         <div className={styles.root}>
-            <h1>{editedElem ? 'Edit' : 'Create new'} class</h1>
+            <h1>{editedElem ? 'Edit' : 'Create new'} tour</h1>
             <img src={image || imagePlaceholder} alt="" className={styles.image} />
             <TextField
                 margin="normal"
@@ -179,7 +180,7 @@ export const ManageClassForm = props => {
                     <TextField
                         margin="normal"
                         name="name_en"
-                        label="Class Name"
+                        label="Name"
                         type="text"
                         fullWidth
                         required
@@ -192,7 +193,7 @@ export const ManageClassForm = props => {
                     <TextField
                         margin="normal"
                         name="name_ukr"
-                        label="Назва майстер-класу"
+                        label="Назва"
                         type="text"
                         fullWidth
                         required
@@ -221,7 +222,7 @@ export const ManageClassForm = props => {
                     <TextField
                         margin="normal"
                         name="place_ukr"
-                        label="Місце майстер-класу"
+                        label="Місце"
                         type="text"
                         fullWidth
                         required
@@ -360,84 +361,84 @@ export const ManageClassForm = props => {
                 </Button>
             </div>
             {editedElem && (
-                <Grid container spacing={2}>
-                <Grid item xs={12}>
-                    <ExpansionPanel>
-                        <ExpansionPanelSummary
-                            expandIcon={<MdExpandMore />}
-                        >
-                            <Typography className={styles.heading}>Registered users</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <Table className={styles.table}>
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell align="left">Name</TableCell>
-                                        <TableCell align="left">Email</TableCell>
-                                        <TableCell align="left">Phone</TableCell>
-                                        <TableCell align="left">Childrens</TableCell>
-                                        <TableCell align="left">Expectations</TableCell>
-                                        <TableCell align="left">Sourse</TableCell>
-                                        <TableCell align="left"></TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                {registeredUsers.map((item, index) => (
-                                    <TableRow key={item.id}>
-                                        <TableCell align="left">{item.name}</TableCell>
-                                        <TableCell align="left">{item.email}</TableCell>
-                                        <TableCell align="left">{item.phone}</TableCell>
-                                        <TableCell align="left">{item.children}</TableCell>
-                                        <TableCell align="left">{item.reason}</TableCell>
-                                        <TableCell align="left">{item.sourse}</TableCell>
-                                        <TableCell align="center"><Button onClick={() => deleteUser(item.id, 'registered')} color="secondary" >Delete</Button></TableCell>
-                                    </TableRow>
-                                ))}
-                                </TableBody>
-                            </Table>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                </Grid>
-                <Grid item xs={12}>
-                    <ExpansionPanel>
-                        <ExpansionPanelSummary
-                            expandIcon={<MdExpandMore />}
-                        >
-                            <Typography className={styles.heading}>User orders</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                        <Table className={styles.table}>
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell align="left">Name</TableCell>
-                                        <TableCell align="left">Date</TableCell>
-                                        <TableCell align="left">Email</TableCell>
-                                        <TableCell align="left">Phone</TableCell>
-                                        <TableCell align="left">Childrens</TableCell>
-                                        <TableCell align="left">Expectations</TableCell>
-                                        <TableCell align="left">Sourse</TableCell>
-                                        <TableCell align="left"></TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                {userOrders.map((item, index) => (
-                                    <TableRow key={item.id}>
-                                        <TableCell align="left">{item.name}</TableCell>
-                                        <TableCell align="left">{moment(item.datetime).format("DD-MM HH:mm")}</TableCell>
-                                        <TableCell align="left">{item.email}</TableCell>
-                                        <TableCell align="left">{item.phone}</TableCell>
-                                        <TableCell align="left">{item.children}</TableCell>
-                                        <TableCell align="left">{item.reason}</TableCell>
-                                        <TableCell align="left">{item.sourse}</TableCell>
-                                        <TableCell align="center"><Button onClick={() => deleteUser(item.id, 'ordered')} color="secondary" >Delete</Button></TableCell>
-                                    </TableRow>
-                                ))}
-                                </TableBody>
-                            </Table>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                </Grid>
-            </Grid>
+                 <Grid container spacing={2}>
+                 <Grid item xs={12}>
+                     <ExpansionPanel>
+                         <ExpansionPanelSummary
+                             expandIcon={<MdExpandMore />}
+                         >
+                             <Typography className={styles.heading}>Registered users</Typography>
+                         </ExpansionPanelSummary>
+                         <ExpansionPanelDetails>
+                             <Table className={styles.table}>
+                                 <TableHead>
+                                     <TableRow>
+                                         <TableCell>Name</TableCell>
+                                         <TableCell align="left">Email</TableCell>
+                                         <TableCell align="left">Phone</TableCell>
+                                         <TableCell align="left">Childrens</TableCell>
+                                         <TableCell align="left">Expectations</TableCell>
+                                         <TableCell align="left">Sourse</TableCell>
+                                         <TableCell align="left"></TableCell>
+                                     </TableRow>
+                                 </TableHead>
+                                 <TableBody>
+                                 {registeredUsers.map((item, index) => (
+                                     <TableRow key={item.id}>
+                                         <TableCell align="left">{item.name}</TableCell>
+                                         <TableCell align="left">{item.email}</TableCell>
+                                         <TableCell align="left">{item.phone}</TableCell>
+                                         <TableCell align="left">{item.children}</TableCell>
+                                         <TableCell align="left">{item.reason}</TableCell>
+                                         <TableCell align="left">{item.sourse}</TableCell>
+                                         <TableCell align="center"><Button onClick={() => deleteUser(item.id, 'registered')} color="secondary" >Delete</Button></TableCell>
+                                     </TableRow>
+                                 ))}
+                                 </TableBody>
+                             </Table>
+                         </ExpansionPanelDetails>
+                     </ExpansionPanel>
+                 </Grid>
+                 <Grid item xs={12}>
+                     <ExpansionPanel>
+                         <ExpansionPanelSummary
+                             expandIcon={<MdExpandMore />}
+                         >
+                             <Typography className={styles.heading}>User orders</Typography>
+                         </ExpansionPanelSummary>
+                         <ExpansionPanelDetails>
+                         <Table className={styles.table}>
+                                 <TableHead>
+                                     <TableRow>
+                                         <TableCell align="left">Name</TableCell>
+                                         <TableCell align="left">Date</TableCell>
+                                         <TableCell align="left">Email</TableCell>
+                                         <TableCell align="left">Phone</TableCell>
+                                         <TableCell align="left">Childrens</TableCell>
+                                         <TableCell align="left">Expectations</TableCell>
+                                         <TableCell align="left">Sourse</TableCell>
+                                         <TableCell align="left"></TableCell>
+                                     </TableRow>
+                                 </TableHead>
+                                 <TableBody>
+                                 {userOrders.map((item, index) => (
+                                     <TableRow key={item.id}>
+                                         <TableCell align="left">{item.name}</TableCell>
+                                         <TableCell align="left">{moment(item.datetime).format("DD-MM HH:mm")}</TableCell>
+                                         <TableCell align="left">{item.email}</TableCell>
+                                         <TableCell align="left">{item.phone}</TableCell>
+                                         <TableCell align="left">{item.children}</TableCell>
+                                         <TableCell align="left">{item.reason}</TableCell>
+                                         <TableCell align="left">{item.sourse}</TableCell>
+                                         <TableCell align="center"><Button onClick={() => deleteUser(item.id, 'ordered')} color="secondary" >Delete</Button></TableCell>
+                                     </TableRow>
+                                 ))}
+                                 </TableBody>
+                             </Table>
+                         </ExpansionPanelDetails>
+                     </ExpansionPanel>
+                 </Grid>
+             </Grid>
             )}
         </div>
     );
