@@ -67,6 +67,7 @@
     cursor: pointer;
     transition: all .5s ease;
     background-color: rgba(182, 182, 182, 0.493);
+    z-index: 150;
     &:hover {
         background-color: black;
         color: white
@@ -82,8 +83,16 @@
     position: relative;
     display: block;
     &__header{
-        font-size: 2rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        background-color: #80808091;
+        font-size: 1.7rem;
         padding: 1rem 2rem;
+        color: white;
+        pointer-events: none;
+        z-index: 100;
     }
     &__image{
         height: 30rem;

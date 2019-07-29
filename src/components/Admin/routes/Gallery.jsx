@@ -79,7 +79,7 @@ export const Gallery = trackWindowScroll(({scrollPosition}) => {
 
     const itemsList = () => {
         return gallery.map(item => (
-            <Grid item key={item.id} xs={12} sm={6} md={3} lg={4} className={styles.image}>
+            <Grid item key={item.id} xs={12} sm={4} md={3} lg={2} className={styles.image}>
                 <LazyLoadImage
                     height="auto"
                     src={item.url}
