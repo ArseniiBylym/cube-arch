@@ -14,14 +14,14 @@
     
     .name {
         font-size: 2rem;
-        font-size: bold;
+        font-weight: bold;
         margin-bottom: 3rem;
     }
 
     .image {
-        min-height: 400px;
+        min-height: 500px;
         background-position: center center;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         margin-bottom: 3rem;
     }
@@ -40,6 +40,10 @@
             span {
                 font-weight: bold;
             }
+        }
+        .description{
+            text-align: left;
+            padding: 0 3rem;
         }
         .datetime{
             display: flex;

@@ -100,7 +100,7 @@ const ProgramDetails = props => {
                 </Grid>
                 <Grid item xs={12} className={styles.description}>
                     <div className={styles.description__title}>{content.details.description}</div>
-                    <div className={styles.description__content}>{program.description[lang]}</div>
+                    <div className={styles.description__content}><pre>{program.description[lang]}</pre></div>
                 </Grid>
             </Grid>
         </div>

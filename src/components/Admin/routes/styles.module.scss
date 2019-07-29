@@ -15,9 +15,6 @@
     border-radius: 5px;
     overflow: hidden;
     font-size: 1.3rem;
-    &__content {
-        padding: 1rem;
-    }
 
     &__datetime {
         display: flex;
@@ -29,10 +26,10 @@
         min-height: 20rem;
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: cover;
-
+        background-size: contain;
     }
     &__content {
+        padding: 1rem;
         display: flex;
         flex-flow: column nowrap;
         p {

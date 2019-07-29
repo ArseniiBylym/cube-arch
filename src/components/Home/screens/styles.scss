@@ -251,6 +251,7 @@
             .review {
                 margin-top: 2rem;
                 font-size: 1.3rem;
+                text-align: left;
             }
         }
     }
@@ -265,7 +266,6 @@
         width: 100%;
         height: 100%;
         margin-right: auto;
-        filter: saturate(80%);
         background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
         url('../../../assets/images/home/classes-min.jpg') left top/ contain no-repeat fixed;
         @media screen and (max-width: 600px) {

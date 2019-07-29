@@ -54,7 +54,6 @@ const Programs = (props) => {
                 {programs.map(item => (
                     <Grid key={item.id} item xs={12} sm={6} className={styles.program}>
                         <Link to={`/courses/${item.id}`}>
-
                         <div className={styles.program__container}>
                             <div className={styles.program__image} style={{backgroundImage: `url(${item.image})`}}>
                                 <div className={styles.program__info}>{content.readMore}</div>
@@ -71,13 +70,12 @@ const Programs = (props) => {
     if (!programs || !content) return <Spinner />;
     return (
         <div className={styles.root}>
-            {/* <PageTitle title={content.title} description={content.description} /> */}
             <PageTitle title={content.title} description={''} />
             {getPrograms()}
-            <div className={styles.compare}>
+            {/* <div className={styles.compare}>
                 <div className={styles.compare__title}>{content.compareTitle}</div>
                 <img src="https://thulitables.com/wp-content/uploads/2015/10/comparison-chart-all-tables.jpg" alt='' className={styles.compare__image} />
-            </div>
+            </div> */}
         </div>
     );
 };
