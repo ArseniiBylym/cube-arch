@@ -3,11 +3,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    pointer-events: none;
 }
 .logo {
     font-size: 2rem;
     display: flex;
     align-items: center;
+    pointer-events: auto;
+
     cursor: pointer;
 
     img {

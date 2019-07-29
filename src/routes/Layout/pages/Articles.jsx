@@ -62,9 +62,9 @@ const Articles = () => {
     return (
         <div className={styles.root}>
             <PageTitle title={content.title} description={content.description} />
-            <Grid container spacing={3} className={styles.container}>
+            <Grid container spacing={7} className={styles.container}>
                 {articles.map(item => (
-                    <Grid key={item.id} item xs={12} sm={6} md={4} lg={3} className={styles.section}>
+                    <Grid key={item.id} item xs={12} sm={6} md={6} lg={4} className={styles.section}>
                             {item.isBlog ? getBlogPreview(item) : getMicrolink(item)}
                     </Grid>
                 ))}

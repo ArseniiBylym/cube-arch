@@ -7,19 +7,18 @@
     &::-webkit-scrollbar{
         width: 0;
     }
-    
 }
 .header {
-    height: 60px;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     z-index: 100;
+    pointer-events: none;
 }
 .main {
-    min-height: calc(100vh - 60px);
-    margin-top: 60px;
+    min-height: calc(100vh - 84px);
+    margin-top: 84px;
     padding: 0 2rem;
     position: relative;
 }
