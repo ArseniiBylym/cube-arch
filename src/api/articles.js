@@ -1,17 +1,16 @@
 import uuid from 'uuid/v4';
-
 import {firebaseDB, firebaseStorage} from '../config/firebase';
 
 const articlesCol = firebaseDB.collection('articles');
 
 export const articles = {
-    getAll: async() => {
+    getAll: async () => {
         return articlesCol.orderBy('createdAt', 'desc').get();
     },
-    getArticle: async(id) => {
+    getArticle: async id => {
         return articlesCol.doc(id).get();
     },
-    add: async({newDoc, callback}) => {
+    add: async ({newDoc, callback}) => {
         const {file} = newDoc;
         if (!file) {
             const doc = await articlesCol.add(newDoc);
@@ -19,49 +18,72 @@ export const articles = {
         }
         const fileExtension = file.name.split('.').slice(-1)[0];
         const name = `${uuid()}.${fileExtension}`;
-        const task = firebaseStorage.ref().child(`articles/${name}`).put(file)
-        task.on('state_changed', 
+        const task = firebaseStorage
+            .ref()
+            .child(`articles/${name}`)
+            .put(file);
+        task.on(
+            'state_changed',
             function() {},
-            function(error) {console.log(error)},
+            function(error) {
+                console.log(error);
+            },
             function() {
-                task.snapshot.ref.getDownloadURL()
-                    .then(async url => {
-                        delete newDoc.file;
-                        const doc = await articlesCol.add({...newDoc, imageUrl: url, storageFileName: name})
-                        callback({...newDoc, imageUrl: url, storageFileName: name, id: doc.id})
-                    }) 
-            }
-        )
-
-        // return articlesCol.add(newDoc);
+                task.snapshot.ref.getDownloadURL().then(async url => {
+                    delete newDoc.file;
+                    const doc = await articlesCol.add({...newDoc, fileUrl: url, fileName: name});
+                    callback({...newDoc, fileUrl: url, fileName: name, id: doc.id});
+                });
+            },
+        );
     },
-    update: async({id, newDoc, callback}) => {
-        const {file, storageFileName} = newDoc;
+    update: async ({id, newDoc, fileName, callback}) => {
+        const {file} = newDoc;
         if (!file) {
-            await articlesCol.doc(id).update(newDoc);
-            return callback({...newDoc, id});
-        }
-        if (storageFileName) {
-            await firebaseStorage.ref().child(`articles/${storageFileName}`).delete()
-        }
-        const fileExtension = file.name.split('.').slice(-1)[0];
-        const name = `${uuid()}.${fileExtension}`;
-        const task = firebaseStorage.ref().child(`articles/${name}`).put(file)
-        task.on('state_changed', 
-            function() {},
-            function(error) {console.log(error)},
-            function() {
-                task.snapshot.ref.getDownloadURL()
-                    .then(async url => {
-                        delete newDoc.file;
-                        await articlesCol.doc(id).update({...newDoc, imageUrl: url, storageFileName: name})
-                        callback({...newDoc, imageUrl: url, storageFileName: name, id})
-                    }) 
+            if (fileName) {
+                await firebaseStorage
+                    .ref()
+                    .child(`articles/${fileName}`)
+                    .delete();
             }
-        )
-        // return articlesCol.doc(id).update(newDoc);
+            await articlesCol.doc(id).set(newDoc);
+            return callback({...newDoc, id});
+        } else {
+            if (fileName) {
+                await firebaseStorage
+                    .ref()
+                    .child(`articles/${fileName}`)
+                    .delete();
+            }
+            const fileExtension = newDoc.file.name.split('.').slice(-1)[0];
+            const name = `${uuid()}.${fileExtension}`;
+            const task = firebaseStorage
+                .ref()
+                .child(`articles/${name}`)
+                .put(newDoc.file);
+            task.on(
+                'state_changed',
+                function() {},
+                function(error) {
+                    console.log(error);
+                },
+                function() {
+                    task.snapshot.ref.getDownloadURL().then(async url => {
+                        delete newDoc.file;
+                        await articlesCol.doc(id).set({...newDoc, fileUrl: url, fileName: name});
+                        callback({...newDoc, fileUrl: url, fileName: name, id});
+                    });
+                },
+            );
+        }
     },
-    delete: async(id) => {
+    delete: async id => {
         return articlesCol.doc(id).delete();
-    }
-}
+    },
+    deleteFile: async fileName => {
+        return await firebaseStorage
+            .ref()
+            .child(`articles/${fileName}`)
+            .delete();
+    },
+};

@@ -36,8 +36,12 @@ export const Articles = props => {
         }
     }
 
-    const deleteHandler = async (id) => {
+    const deleteHandler = async item => {
+        const {id, fileName} = item;
         try {
+            if (fileName) {
+                await Api.articles.deleteFile(fileName)
+            }
             await Api.articles.delete(id);
             deleteArticle(id) 
         } catch (error) {
@@ -55,16 +59,16 @@ export const Articles = props => {
 
     const getBlogPreview = item => (
         <div className={styles.blogLink}>
-            <div onClick={() => deleteHandler(item.id)} className={styles.delete}><MdDeleteForever /></div>
+            <div onClick={() => deleteHandler(item)} className={styles.delete}><MdDeleteForever /></div>
             <div onClick={() => setEditedArticle(item)} className={styles.edit}><MdEdit /></div>
             <div className={styles.blogLink__header}>{item.title.ukr}</div>
-            <div className={styles.blogLink__image} style={{backgroundImage: `url(${item.imageUrl})`}}/>
+            <div className={styles.blogLink__image} style={{backgroundImage: `url(${item.fileUrl || item.imageUrl})`}}/>
         </div>
     )
 
     const getMicrolink = item => (
         <div className={styles.articleLink}>
-            <div onClick={() => deleteHandler(item.id)} className={styles.delete}><MdDeleteForever /></div>
+            <div onClick={() => deleteHandler(item)} className={styles.delete}><MdDeleteForever /></div>
             <div onClick={() => setEditedArticle(item)} className={styles.edit}><MdEdit /></div>
             <div className={styles.articleLink__header}>{item.title.ukr}</div>
             <div className={styles.articleLink__link}>
@@ -78,7 +82,6 @@ export const Articles = props => {
     )
 
     const closeHandler = () => {
-        console.log('hello')
         setCreateMode(false);
         setEditedArticle(null);
     }

@@ -28,11 +28,11 @@ export const ManageArticleForm = props => {
     const [isBlog, setIsBlog] = useState(false);
     const [fileMode, setFileMode] = useState(false);
     const [file, setFile] = useState(null);
-    const [base64, setBase64] = useState(null);
 
     const [title, setTitle] = useState({en: '', ukr: ''});
     const [linkUrl, setLinkUrl] = useState('');
     const [imageUrl, setImageUrl] = useState('');
+    const [fileUrl, setFileUrl] = useState(null);
     const [markdownTextEn, setMarkdownTextEn] = useState('');
     const [markdownTextUkr, setMarkdownTextUkr] = useState('');
     const [selectedTabEn, setSelectedTabEn] = useState('write');
@@ -40,15 +40,13 @@ export const ManageArticleForm = props => {
 
     useEffect(() => {
         if (editedElem) {
-            const {title, imageUrl, text, linkUrl, isBlog, storageImage} = editedElem;
-            if (storageImage) {
-
-            }
+            const {title, text, linkUrl, isBlog, imageUrl, fileUrl} = editedElem;
             if (isBlog) {
                 setIsBlog(true);
                 setMarkdownTextEn(text.en);
                 setMarkdownTextUkr(text.ukr);
                 setImageUrl(imageUrl);
+                setFileUrl(fileUrl);
             } else {
                 setLinkUrl(linkUrl);
             }
@@ -62,6 +60,7 @@ export const ManageArticleForm = props => {
             title,
             linkUrl,
             imageUrl,
+            fileUrl,
             file,
             text: {
                 en: markdownTextEn,
@@ -69,19 +68,22 @@ export const ManageArticleForm = props => {
             },
             createdAt: new Date().getTime() + '',
         };
-        if (!isBlog) {
-            delete newDoc.file;
-            delete newDoc.imageUrl;
-            delete newDoc.text;
-        }
         try {
+            if (fileMode) {
+                delete newDoc.imageUrl;
+            } else {
+                delete newDoc.file;
+                delete newDoc.fileUrl;
+            }
             if (editedElem) {
-                newDoc.storageFileName = editedElem.storageFileName
-                await Api.articles.update({id: editedElem.id, newDoc, callback: updateArticle});
-                // updateArticle({...newDoc, id: editedElem.id});
+                await Api.articles.update({
+                    id: editedElem.id,
+                    newDoc,
+                    fileName: editedElem.fileName,
+                    callback: updateArticle,
+                });
             } else {
                 await Api.articles.add({newDoc, callback: addArticle});
-                // addArticle({...newDoc, id: doc.id});
             }
         } catch (error) {
             console.log(error);
@@ -89,16 +91,6 @@ export const ManageArticleForm = props => {
             close();
         }
     };
-
-    const fileModeHandler = () => {
-        if (fileMode) {
-            setFile(null);
-            setBase64(null);
-        } else {
-            setImageUrl(null);
-        }
-        setFileMode(!fileMode)
-    }
 
     const fileInputChangeHandler = e => {
         const file = e.target.files[0];
@@ -112,7 +104,7 @@ export const ManageArticleForm = props => {
             'load',
             () => {
                 const image = reader.result;
-                setBase64(image);
+                setFileUrl(image);
             },
             false,
         );
@@ -134,17 +126,21 @@ export const ManageArticleForm = props => {
                     <>
                         <Grid item xs={12}>
                             <img
-                                src={imageUrl || base64 || imagePlaceholder}
+                                src={
+                                    fileMode
+                                        ? fileUrl || imagePlaceholder
+                                        : imageUrl || imagePlaceholder
+                                }
                                 alt=""
                                 className={styles.image}
                             />
                         </Grid>
-                        <Grid item xs={4} container justify='center' alignItems='center'>
+                        <Grid item xs={4} container justify="center" alignItems="center">
                             <Grid item>Link</Grid>
                             <Grid item>
                                 <Switch
                                     checked={fileMode}
-                                    onChange={fileModeHandler}
+                                    onChange={() => setFileMode(!fileMode)}
                                     color="primary"
                                 />
                             </Grid>

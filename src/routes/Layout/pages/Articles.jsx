@@ -41,7 +41,7 @@ const Articles = () => {
     const getBlogPreview = item => (
         <Link to={`/articles/${item.id}`} className={styles.blogLink}>
             <div className={styles.blogLink__header}>{item.title[lang]}</div>
-            <div className={styles.blogLink__image} style={{backgroundImage: `url(${item.imageUrl})`}}/>
+            <div className={styles.blogLink__image} style={{backgroundImage: `url(${item.fileUrl || item.imageUrl})`}}/>
         </Link>
     )
 
