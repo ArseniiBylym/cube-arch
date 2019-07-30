@@ -88,6 +88,11 @@ export const content = {
     addArticle: action((state, payload) => {
         state.articles.push(payload);
     }),
+    updateArticle: action((state, payload) => {
+        state.articles = state.articles.map(item => {
+           return (item.id === payload.id) ? payload : item
+        });
+    }),
     deleteArticle: action((state, payload) => {
         state.articles = state.articles.filter(item => item.id !== payload)
     })

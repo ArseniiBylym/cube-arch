@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useStoreActions} from 'easy-peasy';
 import ReactMde from 'react-mde';
 import * as Showdown from 'showdown';
@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import imagePlaceholder from '../../../assets/images/admin/empty_image.png';
 import {Api} from './../../../api';
+import classNames from 'classnames';
 import styles from './styles.module.scss';
 import "react-mde/lib/styles/css/react-mde-all.css";
 
@@ -18,10 +19,11 @@ const converter = new Showdown.Converter({
     tasklists: true
   });
 
-export const NewArticle = props => {
-    const {close} = props;
+export const ManageArticleForm = props => {
+    const {close, editedElem} = props;
 
     const addArticle = useStoreActions(state => state.content.addArticle);
+    const updateArticle = useStoreActions(state => state.content.updateArticle);
 
     const [isBlog, setIsBlog] = useState(false);
     const [title, setTitle] = useState({en: '', ukr: ''});
@@ -33,12 +35,23 @@ export const NewArticle = props => {
     const [selectedTabEn, setSelectedTabEn] = useState('write');
     const [selectedTabUkr, setSelectedTabUkr] = useState('write');
 
-    const onTitleChange = lang => e => {
-        setTitle({...title, [lang]: e.target.value});
-    };
+    useEffect(() => {
+        if (editedElem) {
+            const {title, imageUrl, text, linkUrl, isBlog} = editedElem;
+            if (isBlog) {
+                setIsBlog(true);
+                setMarkdownTextEn(text.en);
+                setMarkdownTextUkr(text.ukr)
+                setImageUrl(imageUrl);
+            } else {
+                setLinkUrl(linkUrl);
+            }
+            setTitle({en: title.en, ukr: title.ukr})
+        }
+    }, [])
 
     const onCreate = async () => {
-        const newArticle = {
+        const newDoc = {
             isBlog,
             title,
             linkUrl,
@@ -50,12 +63,17 @@ export const NewArticle = props => {
             createdAt: new Date().getTime() + '',
         };
         if (!isBlog) {
-            delete newArticle.imageUrl;
-            delete newArticle.text;
+            delete newDoc.imageUrl;
+            delete newDoc.text;
         }
         try {
-            const doc = await Api.articles.add(newArticle);
-            addArticle({...newArticle, id: doc.id});
+            if (editedElem) {
+                await Api.articles.update({id: editedElem.id, newDoc});
+                updateArticle({...newDoc, id: editedElem.id});
+            } else {
+                const doc = await Api.articles.add(newDoc);
+                addArticle({...newDoc, id: doc.id});
+            }
         } catch (error) {
             console.log(error);
         } finally {
@@ -65,7 +83,7 @@ export const NewArticle = props => {
 
     return (
         <div className={styles.root}>
-            <h1>Create new article</h1>
+            <h1>{editedElem ? 'Update': 'Create new'} article</h1>
             <Grid container>
                 <Grid item>Outsourced article</Grid>
                 <Grid item>
@@ -104,7 +122,7 @@ export const NewArticle = props => {
                                 type="text"
                                 fullWidth
                                 required
-                                onChange={onTitleChange('en')}
+                                onChange={e => setTitle({...title, en: e.target.value})}
                                 variant="outlined"
                                 value={title.en}
                             />
@@ -117,7 +135,7 @@ export const NewArticle = props => {
                                 type="text"
                                 fullWidth
                                 required
-                                onChange={onTitleChange('ukr')}
+                                onChange={e => setTitle({...title, ukr: e.target.value})}
                                 variant="outlined"
                                 value={title.ukr}
                             />
@@ -138,7 +156,7 @@ export const NewArticle = props => {
                         </Grid>
                         <Grid item xs={12}>
                             <h3>Blog content (ukr)</h3>
-                            <div className="container">
+                            <div className={classNames('container', styles.editor)}>
                                 <ReactMde
                                     value={markdownTextUkr}
                                     onChange={setMarkdownTextUkr}
@@ -177,7 +195,7 @@ export const NewArticle = props => {
                                 type="text"
                                 fullWidth
                                 required
-                                onChange={onTitleChange('en')}
+                                onChange={e => setTitle({...title, en: e.target.value})}
                                 variant="outlined"
                                 value={title.en}
                             />
@@ -190,7 +208,7 @@ export const NewArticle = props => {
                                 type="text"
                                 fullWidth
                                 required
-                                onChange={onTitleChange('ukr')}
+                                onChange={e => setTitle({...title, ukr: e.target.value})}
                                 variant="outlined"
                                 value={title.ukr}
                             />
@@ -201,7 +219,7 @@ export const NewArticle = props => {
             
             <div className={styles.buttons}>
                 <Button onClick={onCreate} color="secondary" variant="contained" size="large">
-                    Create
+                    {editedElem ? 'Update' : 'Create'}
                 </Button>
                 <Button onClick={() => close()} color="primary" variant="contained" size="large">
                     Close

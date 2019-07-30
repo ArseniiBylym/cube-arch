@@ -73,12 +73,6 @@ export const Classes = props => {
     if (!classes) return <Spinner />
     return (
         <div className={styles.root}>
-            {/* {createMode && (
-                <NewClass close={() => setCreateMode(false)} />
-            )}
-            {edited && (
-                <EditClass close={() => setEdited(null)} editedClass={edited} />
-            )} */}
             {(createMode || edited) && <ManageClassForm 
                 close={createMode ? () => setCreateMode(false) : () => setEdited(null)}
                 editedElem={edited}    

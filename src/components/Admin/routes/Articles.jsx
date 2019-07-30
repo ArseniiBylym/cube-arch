@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import Microlink from '@microlink/react';
-import {MdDeleteForever} from 'react-icons/md'
+import {MdDeleteForever, MdEdit} from 'react-icons/md'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import styles from './styles.module.scss'
-import { NewArticle} from './../components';
+import { ManageArticleForm} from './../components';
 import { Api } from './../../../api/index';
 import { Spinner } from './../../shared/Spinner';
 
@@ -15,6 +15,7 @@ export const Articles = props => {
     const deleteArticle = useStoreActions(state => state.content.deleteArticle);
 
     const [createMode, setCreateMode] = useState(false);
+    const [editedArticle, setEditedArticle] = useState(null);
 
     useEffect(() => {
         if (!articles) {
@@ -55,6 +56,7 @@ export const Articles = props => {
     const getBlogPreview = item => (
         <div className={styles.blogLink}>
             <div onClick={() => deleteHandler(item.id)} className={styles.delete}><MdDeleteForever /></div>
+            <div onClick={() => setEditedArticle(item)} className={styles.edit}><MdEdit /></div>
             <div className={styles.blogLink__header}>{item.title.ukr}</div>
             <div className={styles.blogLink__image} style={{backgroundImage: `url(${item.imageUrl})`}}/>
         </div>
@@ -63,6 +65,7 @@ export const Articles = props => {
     const getMicrolink = item => (
         <div className={styles.articleLink}>
             <div onClick={() => deleteHandler(item.id)} className={styles.delete}><MdDeleteForever /></div>
+            <div onClick={() => setEditedArticle(item)} className={styles.edit}><MdEdit /></div>
             <div className={styles.articleLink__header}>{item.title.ukr}</div>
             <div className={styles.articleLink__link}>
                 <Microlink 
@@ -74,11 +77,17 @@ export const Articles = props => {
         </div>
     )
 
+    const closeHandler = () => {
+        console.log('hello')
+        setCreateMode(false);
+        setEditedArticle(null);
+    }
+
     if (!articles) return <Spinner />
     return (
         <div className={styles.root}>
-            {createMode ? (
-                <NewArticle close={() => setCreateMode(false)} />
+            {(createMode || editedArticle) ? (
+                <ManageArticleForm close={closeHandler} editedElem={editedArticle} />
             ) : (
                 <>
                     <h1>Articles</h1>
