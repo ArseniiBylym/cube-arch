@@ -10,14 +10,14 @@ import imagePlaceholder from '../../../assets/images/admin/empty_image.png';
 import {Api} from './../../../api';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
-import "react-mde/lib/styles/css/react-mde-all.css";
+import 'react-mde/lib/styles/css/react-mde-all.css';
 
 const converter = new Showdown.Converter({
     tables: true,
     simplifiedAutoLink: true,
     strikethrough: true,
-    tasklists: true
-  });
+    tasklists: true,
+});
 
 export const ManageArticleForm = props => {
     const {close, editedElem} = props;
@@ -26,29 +26,35 @@ export const ManageArticleForm = props => {
     const updateArticle = useStoreActions(state => state.content.updateArticle);
 
     const [isBlog, setIsBlog] = useState(false);
+    const [fileMode, setFileMode] = useState(false);
+    const [file, setFile] = useState(null);
+    const [base64, setBase64] = useState(null);
+
     const [title, setTitle] = useState({en: '', ukr: ''});
     const [linkUrl, setLinkUrl] = useState('');
     const [imageUrl, setImageUrl] = useState('');
-
-    const [markdownTextEn, setMarkdownTextEn] = useState('')
-    const [markdownTextUkr, setMarkdownTextUkr] = useState('')
+    const [markdownTextEn, setMarkdownTextEn] = useState('');
+    const [markdownTextUkr, setMarkdownTextUkr] = useState('');
     const [selectedTabEn, setSelectedTabEn] = useState('write');
     const [selectedTabUkr, setSelectedTabUkr] = useState('write');
 
     useEffect(() => {
         if (editedElem) {
-            const {title, imageUrl, text, linkUrl, isBlog} = editedElem;
+            const {title, imageUrl, text, linkUrl, isBlog, storageImage} = editedElem;
+            if (storageImage) {
+
+            }
             if (isBlog) {
                 setIsBlog(true);
                 setMarkdownTextEn(text.en);
-                setMarkdownTextUkr(text.ukr)
+                setMarkdownTextUkr(text.ukr);
                 setImageUrl(imageUrl);
             } else {
                 setLinkUrl(linkUrl);
             }
-            setTitle({en: title.en, ukr: title.ukr})
+            setTitle({en: title.en, ukr: title.ukr});
         }
-    }, [])
+    }, []);
 
     const onCreate = async () => {
         const newDoc = {
@@ -56,23 +62,26 @@ export const ManageArticleForm = props => {
             title,
             linkUrl,
             imageUrl,
+            file,
             text: {
                 en: markdownTextEn,
-                ukr: markdownTextUkr
+                ukr: markdownTextUkr,
             },
             createdAt: new Date().getTime() + '',
         };
         if (!isBlog) {
+            delete newDoc.file;
             delete newDoc.imageUrl;
             delete newDoc.text;
         }
         try {
             if (editedElem) {
-                await Api.articles.update({id: editedElem.id, newDoc});
-                updateArticle({...newDoc, id: editedElem.id});
+                newDoc.storageFileName = editedElem.storageFileName
+                await Api.articles.update({id: editedElem.id, newDoc, callback: updateArticle});
+                // updateArticle({...newDoc, id: editedElem.id});
             } else {
-                const doc = await Api.articles.add(newDoc);
-                addArticle({...newDoc, id: doc.id});
+                await Api.articles.add({newDoc, callback: addArticle});
+                // addArticle({...newDoc, id: doc.id});
             }
         } catch (error) {
             console.log(error);
@@ -81,17 +90,42 @@ export const ManageArticleForm = props => {
         }
     };
 
+    const fileModeHandler = () => {
+        if (fileMode) {
+            setFile(null);
+            setBase64(null);
+        } else {
+            setImageUrl(null);
+        }
+        setFileMode(!fileMode)
+    }
+
+    const fileInputChangeHandler = e => {
+        const file = e.target.files[0];
+        setFile(file);
+        getImageFromFile(file);
+    };
+
+    const getImageFromFile = file => {
+        const reader = new FileReader();
+        reader.addEventListener(
+            'load',
+            () => {
+                const image = reader.result;
+                setBase64(image);
+            },
+            false,
+        );
+        reader.readAsDataURL(file);
+    };
+
     return (
         <div className={styles.root}>
-            <h1>{editedElem ? 'Update': 'Create new'} article</h1>
+            <h1>{editedElem ? 'Update' : 'Create new'} article</h1>
             <Grid container>
                 <Grid item>Outsourced article</Grid>
                 <Grid item>
-                    <Switch
-                        checked={isBlog}
-                        onChange={() => setIsBlog(!isBlog)}
-                        color="primary"
-                    />
+                    <Switch checked={isBlog} onChange={() => setIsBlog(!isBlog)} color="primary" />
                 </Grid>
                 <Grid item>My blog</Grid>
             </Grid>
@@ -99,20 +133,44 @@ export const ManageArticleForm = props => {
                 {isBlog ? (
                     <>
                         <Grid item xs={12}>
-                            <img src={imageUrl || imagePlaceholder} alt="" className={styles.image} />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                margin="normal"
-                                name="image"
-                                label="Image URL"
-                                type="text"
-                                fullWidth
-                                required
-                                onChange={e => setImageUrl(e.target.value)}
-                                variant="outlined"
-                                value={imageUrl}
+                            <img
+                                src={imageUrl || base64 || imagePlaceholder}
+                                alt=""
+                                className={styles.image}
                             />
+                        </Grid>
+                        <Grid item xs={4} container justify='center' alignItems='center'>
+                            <Grid item>Link</Grid>
+                            <Grid item>
+                                <Switch
+                                    checked={fileMode}
+                                    onChange={fileModeHandler}
+                                    color="primary"
+                                />
+                            </Grid>
+                            <Grid item>File</Grid>
+                        </Grid>
+                        <Grid item xs={8}>
+                            {fileMode ? (
+                                <TextField
+                                    onChange={fileInputChangeHandler}
+                                    type="file"
+                                    margin="normal"
+                                    variant="filled"
+                                />
+                            ) : (
+                                <TextField
+                                    margin="normal"
+                                    name="image"
+                                    label="Image URL"
+                                    type="text"
+                                    fullWidth
+                                    required
+                                    onChange={e => setImageUrl(e.target.value)}
+                                    variant="outlined"
+                                    value={imageUrl}
+                                />
+                            )}
                         </Grid>
                         <Grid item xs={6}>
                             <TextField
@@ -149,7 +207,7 @@ export const ManageArticleForm = props => {
                                     selectedTab={selectedTabEn}
                                     onTabChange={setSelectedTabEn}
                                     generateMarkdownPreview={markdown =>
-                                    Promise.resolve(converter.makeHtml(markdown))
+                                        Promise.resolve(converter.makeHtml(markdown))
                                     }
                                 />
                             </div>
@@ -163,7 +221,7 @@ export const ManageArticleForm = props => {
                                     selectedTab={selectedTabUkr}
                                     onTabChange={setSelectedTabUkr}
                                     generateMarkdownPreview={markdown =>
-                                    Promise.resolve(converter.makeHtml(markdown))
+                                        Promise.resolve(converter.makeHtml(markdown))
                                     }
                                 />
                             </div>
@@ -216,7 +274,7 @@ export const ManageArticleForm = props => {
                     </>
                 )}
             </Grid>
-            
+
             <div className={styles.buttons}>
                 <Button onClick={onCreate} color="secondary" variant="contained" size="large">
                     {editedElem ? 'Update' : 'Create'}

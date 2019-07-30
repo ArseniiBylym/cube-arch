@@ -74,7 +74,6 @@ export const Gallery = trackWindowScroll(({scrollPosition}) => {
             setBase64(image)
         }, false)
         reader.readAsDataURL(file)
-
     }
 
     const itemsList = () => {
