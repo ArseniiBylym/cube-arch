@@ -35,8 +35,12 @@ export const Classes = props => {
         }
     }
 
-    const deleteHandler = async (id) => {
+    const deleteHandler = async item => {
+        const {id, fileName} = item;
         try {
+            if (fileName) {
+                await Api.classes.deleteFile(fileName)
+            }
             await Api.classes.delete(id);
             deleteClass(id) 
         } catch (error) {
@@ -49,7 +53,7 @@ export const Classes = props => {
             <div key={item.id} className={styles.card}>
                 <Grid container>
                     <Grid item xs={4}>
-                        <div className={styles.card__image} style={{backgroundImage: `url(${item.image})`}}/>
+                        <div className={styles.card__image} style={{backgroundImage: `url(${item.fileUrl || item.image})`}}/>
                     </Grid>
                     <Grid item xs={8} className={styles.card__content}>
                         <h2>{item.name['ukr']}</h2>
@@ -61,7 +65,7 @@ export const Classes = props => {
                         <div className={styles.card__price}>{item.price.ukr}</div>
                         <div className={styles.card__buttons}> 
                             <Button className={styles.editButton} size="large" color="secondary" variant="contained" onClick={() => setEdited(item)}>Edit</Button>
-                            <Button className={styles.deleteButton} size="large" color="primary" variant="contained" onClick={() => deleteHandler(item.id)}>Delete</Button>
+                            <Button className={styles.deleteButton} size="large" color="primary" variant="contained" onClick={() => deleteHandler(item)}>Delete</Button>
                         </div>
                     </Grid>
                    

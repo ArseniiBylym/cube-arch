@@ -7,14 +7,14 @@ import { ClassRegisterModal, ClassOrderModal } from './../modals';
 export const ClassContainer = props => {
     const [registerModal, setRegisterModal] = useState(false);
     const [orderModal, setOrderModal] = useState(false);
-    const {id, datetime, description, duration, image, name, open, place, price, auditory, orderable, lang, text} = props;
+    const {id, datetime, description, duration, image, fileUrl, name, open, place, price, auditory, orderable, lang, text} = props;
 
     return (
         <>
         <Grid container className={styles.root} justify="center" >
             <Grid item xs={12}>
                 <div className={styles.name}>{name[lang]}</div>
-                <div className={styles.image} style={{backgroundImage: `url(${image})`}} />
+                <div className={styles.image} style={{backgroundImage: `url(${fileUrl || image})`}} />
                 <div className={styles.content}>
                     <div className={styles.place}>{place[lang]}</div>
                     <div className={styles.datetime}>
