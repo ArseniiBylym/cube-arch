@@ -1,6 +1,5 @@
 import React from 'react';
 import {useStoreState} from 'easy-peasy';
-import classNames from 'classnames';
 import {
     HomeScreen,
     InfoScreen,

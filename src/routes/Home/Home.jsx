@@ -1,23 +1,29 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {Nav, Screens} from '../../components/Home';
+import {Screens} from '../../components/Home';
 import {Particles} from '../../components/shared'
 import styles from './Home.module.scss';
 import {Header} from '../../components/Layout'
+import { Spinner } from './../../components/shared';
+import mainImage from '../../assets/images/home/home1-min.jpg';
 
 const SCREENS_LEN = 9;
 
 const Home = () => {
     const [activeScreen, setActiveScreen] = useState(0);
     const [timer, setTimer] = useState(null);
+    const [pageLoaded, setPageLoaded] = useState(false);
     const homeElem  = useRef(null);
+
+    useEffect(() => preloadImage(), [])
 
     useEffect(() => {
         const elem = homeElem.current;
+        if (!elem) return;
         elem.addEventListener('wheel', wheelHandler, {passive: false})
         return function() {
             elem.removeEventListener('wheel', wheelHandler)
         }
-    }, []);
+    }, [pageLoaded]);
 
     useEffect(() => {
         document.body.addEventListener('keydown', onKeyDownHandler)
@@ -25,6 +31,12 @@ const Home = () => {
             document.body.removeEventListener('keydown', onKeyDownHandler)
         }
     }, [activeScreen])
+
+    const preloadImage = () => {
+        const img = new Image();
+        img.onload = () => {setPageLoaded(true)}
+        img.src = mainImage;
+    }
 
     const moveNext = () => {
         const nextNum = activeScreen + 1;
@@ -94,14 +106,13 @@ const Home = () => {
         e.preventDefault();
     }
 
+    if (!pageLoaded) return <Spinner bgColor="white"/>
     return (
         <div className={styles.root} ref={homeElem} onWheel={onWheel}>
-        {/* <div className={styles.root} > */}
             <Particles />
             <div className={styles.header}>
                 <Header />
             </div>
-            {/* <Screens activeScreen={activeScreen} /> */}
             <Screens />
         </div>
     );
