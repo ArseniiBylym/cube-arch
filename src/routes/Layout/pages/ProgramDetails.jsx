@@ -53,7 +53,7 @@ const ProgramDetails = props => {
                 <Grid item xs={12} sm={6} className={styles.image__wrapper}>
                     <div
                         className={styles.image__content}
-                        style={{backgroundImage: `url(${program.image}`}}
+                        style={{backgroundImage: `url(${program.fileUrl || program.image}`}}
                     />
                 </Grid>
                 <Grid

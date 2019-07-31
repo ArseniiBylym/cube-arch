@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import {Spinner, PageTitle} from '../../../components/shared';
-import {Program} from '../../../components/Programs'
 import {Api} from '../../../api/index';
 import {data} from '../../../assets/data/index'
 import styles from './styles/Programs.module.scss';
@@ -55,7 +54,7 @@ const Programs = (props) => {
                     <Grid key={item.id} item xs={12} sm={6} className={styles.program}>
                         <Link to={`/courses/${item.id}`}>
                         <div className={styles.program__container}>
-                            <div className={styles.program__image} style={{backgroundImage: `url(${item.image})`}}>
+                            <div className={styles.program__image} style={{backgroundImage: `url(${item.fileUrl || item.image})`}}>
                                 <div className={styles.program__info}>{content.readMore}</div>
                             </div>
                             <div className={styles.program__name}>{item.name[lang]}</div>
