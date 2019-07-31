@@ -1,5 +1,4 @@
 import uuid from 'uuid/v4';
-
 import {firebaseDB, firebaseStorage} from '../config/firebase';
 
 const classesCol = firebaseDB.collection('classes');

@@ -185,24 +185,24 @@ export const ManageClassForm = props => {
                 className={styles.image}
             />
             <Grid container justify="center" alignItems="center">
-            <Grid item>Link</Grid>
-                            <Grid item>
-                                <Switch
-                                    checked={fileMode}
-                                    onChange={() => setFileMode(!fileMode)}
-                                    color="primary"
-                                />
-                            </Grid>
-                            <Grid item>File</Grid>
+                <Grid item>Link</Grid>
+                <Grid item>
+                    <Switch
+                        checked={fileMode}
+                        onChange={() => setFileMode(!fileMode)}
+                        color="primary"
+                    />
                 </Grid>
+                <Grid item>File</Grid>
+            </Grid>
 
             {fileMode ? (
-                 <TextField
-                 onChange={fileInputChangeHandler}
-                 type="file"
-                 margin="normal"
-                 variant="filled"
-             />
+                <TextField
+                    onChange={fileInputChangeHandler}
+                    type="file"
+                    margin="normal"
+                    variant="filled"
+                />
             ) : (
                 <TextField
                     margin="normal"
@@ -216,7 +216,7 @@ export const ManageClassForm = props => {
                     value={image}
                 />
             )}
-            
+
             <h3>Options</h3>
             <Grid container spacing={2}>
                 <Grid item xs={4}>

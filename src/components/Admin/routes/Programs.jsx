@@ -35,8 +35,12 @@ export const Programs = props => {
         }
     }
 
-    const deleteHandler = async (id) => {
+    const deleteHandler = async item => {
+        const {id, fileName} = item;
         try {
+            if (fileName) {
+                await Api.programs.deleteFile(fileName)
+            }
             await Api.programs.delete(id);
             deleteProgram(id) 
         } catch (error) {
@@ -44,13 +48,12 @@ export const Programs = props => {
         }
     }
 
-
     const programList = () => {
         return programs.map(item => (
             <div key={item.id} className={styles.card}>
                 <Grid container>
                     <Grid item xs={4}>
-                        <div className={styles.card__image} style={{backgroundImage: `url(${item.image})`}}/>
+                        <div className={styles.card__image} style={{backgroundImage: `url(${item.fileUrl || item.image})`}}/>
                     </Grid>
                     <Grid item xs={2}>
                         <h2>{item.name['ukr']}</h2>
@@ -63,7 +66,7 @@ export const Programs = props => {
                         <div className={styles.card__classes}>Classes amount: {item.duration}</div>
                         <div className={styles.card__buttons}> 
                             <Button className={styles.editButton} size="large" color="secondary" variant="contained" onClick={() => setEdited(item)}>Edit</Button>
-                            <Button className={styles.deleteButton} size="large" color="primary" variant="contained" onClick={() => deleteHandler(item.id)}>Delete</Button>
+                            <Button className={styles.deleteButton} size="large" color="primary" variant="contained" onClick={() => deleteHandler(item)}>Delete</Button>
                         </div>
                     </Grid>
                 </Grid>

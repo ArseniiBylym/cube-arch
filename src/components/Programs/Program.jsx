@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 
 export const Program = props => {
     const lang = useStoreState(state => state.lang.current);
-    const {id, name, description, image} = props;
+    const {id, name, description, image, fileUrl} = props;
 
     return (
         <Grid container className={styles.root} id={id} direction="row" justify="center" >
@@ -18,7 +18,7 @@ export const Program = props => {
                     <div 
                         key={name[lang]} 
                         className={styles.image} 
-                        style={{backgroundImage: `url(${image})`}} 
+                        style={{backgroundImage: `url(${fileUrl || image})`}} 
                     />
                 </Grid>
                 <Grid item xs={12} className={styles.content}>
