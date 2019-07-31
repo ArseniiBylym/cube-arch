@@ -145,10 +145,8 @@ export const ManageClassForm = props => {
                     fileName: editedElem.fileName,
                     callback: updateClass,
                 });
-                // updateClass({...newDoc, id: editedElem.id});
             } else {
                 await Api.classes.add({newDoc, callback: addClass});
-                // addClass({...newDoc, id: doc.id});
             }
         } catch (error) {
             console.log(error);

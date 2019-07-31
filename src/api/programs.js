@@ -10,12 +10,6 @@ export const programs = {
     getProgram: async(id) => {
         return programsCol.doc(id).get();
     },
-    // add: async(newDoc) => {
-    //     return programsCol.add(newDoc);
-    // },
-    // update: async({id, newDoc}) => {
-    //     return programsCol.doc(id).update(newDoc);
-    // },
     add: async ({newDoc, callback}) => {
         const {file} = newDoc;
         if (!file) {

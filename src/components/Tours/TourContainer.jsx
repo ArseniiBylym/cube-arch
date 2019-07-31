@@ -7,14 +7,14 @@ import {TourRegisterModal, TourOrderModal} from '../modals';
 export const TourContainer = props => {
     const [registerModal, setRegisterModal] = useState(false);
     const [orderModal, setOrderModal] = useState(false);
-    const {id, datetime, description, duration, image, lang, name, open, orderable, place, price, text, auditory} = props;
+    const {id, datetime, description, duration, image, fileUrl, lang, name, open, orderable, place, price, text, auditory} = props;
 
     return (
         <>
         <Grid container className={styles.root} justify="center"  >
             <Grid item xs={12} md={12} >
                 <div className={styles.name}>{name[lang]}</div>
-                <div className={styles.image} style={{backgroundImage: `url(${image})`}} />
+                <div className={styles.image} style={{backgroundImage: `url(${fileUrl || image})`}} />
                 <div className={styles.content}>
                     <div className={styles.place}>{place[lang]}</div>
                     <div className={styles.datetime}>

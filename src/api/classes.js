@@ -7,9 +7,6 @@ export const classes = {
     getAll: async() => {
         return classesCol.orderBy('datetime').get();
     },
-    // add: async(newDoc) => {
-    //     return classesCol.add(newDoc);
-    // },
     add: async ({newDoc, callback}) => {
         const {file} = newDoc;
         if (!file) {
@@ -37,9 +34,6 @@ export const classes = {
             },
         );
     },
-    // update: async({id, newDoc}) => {
-    //     return classesCol.doc(id).update(newDoc);
-    // },
     update: async ({id, newDoc, fileName, callback}) => {
         const {file} = newDoc;
         if (!file) {
