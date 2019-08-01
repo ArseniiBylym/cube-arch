@@ -9,6 +9,10 @@ export const ClassContainer = props => {
     const [orderModal, setOrderModal] = useState(false);
     const {id, datetime, description, duration, image, fileUrl, name, open, place, price, auditory, orderable, lang, text} = props;
 
+    const isFutureDate = date => {
+        return Date.now() < date;
+    }
+
     return (
         <>
         <Grid container className={styles.root} justify="center" >
@@ -17,10 +21,12 @@ export const ClassContainer = props => {
                 <div className={styles.image} style={{backgroundImage: `url(${fileUrl || image})`}} />
                 <div className={styles.content}>
                     <div className={styles.place}>{place[lang]}</div>
-                    <div className={styles.datetime}>
-                        <div className={styles.date}>{moment(+datetime).format("DD-MM-YYYY")}</div>
-                        <div className={styles.time}>{moment(+datetime).format("HH:mm")}</div>
-                    </div>
+                    {isFutureDate(+datetime) && (
+                        <div className={styles.datetime}>
+                            <div className={styles.date}>{moment(+datetime).format("DD-MM-YYYY")}</div>
+                            <div className={styles.time}>{moment(+datetime).format("HH:mm")}</div>
+                        </div>
+                    )}
                     <div className={styles.description}><pre>{description[lang]}</pre></div>
                     <div className={styles.price}><span>{text.price}:</span> {price[lang]}</div>
                     <div className={styles.duration}><span>{text.duration}:</span> {duration[lang]}</div>
