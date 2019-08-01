@@ -1,5 +1,8 @@
 .root {
     padding: 3rem 3rem;
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto 6rem auto;
     .title {
         font-size: 3rem;
         margin-bottom: 2rem;
@@ -58,6 +61,7 @@
         &__content {
             text-align: left;
             font-size: 1.5rem;
+            padding: 0 2rem;
         }
     }
 }
