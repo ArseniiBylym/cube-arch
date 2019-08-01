@@ -68,6 +68,9 @@ export const ManageProgramForm = props => {
             setStartDate(moment(+startDate).format('YYYY-MM-DD'));
             setEndDate(moment(+endDate).format('YYYY-MM-DD'));
             setPlaces(places);
+            if (fileUrl) {
+                setFileMode(true)
+            }
         }
     }, []);
 
@@ -99,6 +102,7 @@ export const ManageProgramForm = props => {
             image,
             fileUrl,
             file,
+            fileName: editedElem && editedElem.fileName ? editedElem.fileName : null,
             name,
             description,
             price,
@@ -119,13 +123,11 @@ export const ManageProgramForm = props => {
                 await Api.programs.update({
                     id: editedElem.id,
                     newDoc,
-                    fileName: editedElem.fileName,
+                    // fileName: editedElem.fileName,
                     callback: updateProgram,
                 });
-                // updateProgram({...newDoc, id: editedElem.id});
             } else {
                 await Api.programs.add({newDoc, callback: addProgram});
-                // addProgram({...newDoc, id: doc.id})
             }
         } catch (error) {
             console.log(error);

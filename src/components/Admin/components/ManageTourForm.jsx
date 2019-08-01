@@ -77,6 +77,9 @@ export const ManageTourForm = props => {
             setDatetime(moment(+datetime).format('YYYY-MM-DDTHH:mm'));
             setOpen(open);
             setOrderable(orderable);
+            if (fileUrl) {
+                setFileMode(true)
+            }
         }
     }, []);
 
@@ -122,6 +125,7 @@ export const ManageTourForm = props => {
             image,
             fileUrl,
             file,
+            fileName: editedElem && editedElem.fileName ? editedElem.fileName : null,
             name,
             place,
             description,
@@ -143,7 +147,6 @@ export const ManageTourForm = props => {
                 await Api.tours.update({
                     id: editedElem.id,
                     newDoc,
-                    fileName: editedElem.fileName,
                     callback: updateTour,
                 });
             } else {

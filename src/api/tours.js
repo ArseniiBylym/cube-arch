@@ -34,14 +34,15 @@ export const tours = {
             },
         );
     },
-    update: async ({id, newDoc, fileName, callback}) => {
-        const {file} = newDoc;
+    update: async ({id, newDoc, callback}) => {
+        const {file, fileName, image} = newDoc;
         if (!file) {
-            if (fileName) {
+            if (image && fileName) {
                 await firebaseStorage
                     .ref()
                     .child(`tours/${fileName}`)
                     .delete();
+                delete newDoc.fileName;
             }
             await toursCol.doc(id).set(newDoc);
             return callback({...newDoc, id});

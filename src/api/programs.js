@@ -37,14 +37,15 @@ export const programs = {
             },
         );
     },
-    update: async ({id, newDoc, fileName, callback}) => {
-        const {file} = newDoc;
+    update: async ({id, newDoc, callback}) => {
+        const {file, fileName, image} = newDoc;
         if (!file) {
-            if (fileName) {
+            if (image && fileName) {
                 await firebaseStorage
                     .ref()
                     .child(`programs/${fileName}`)
                     .delete();
+                delete newDoc.fileName;
             }
             await programsCol.doc(id).set(newDoc);
             return callback({...newDoc, id});
@@ -55,6 +56,7 @@ export const programs = {
                     .child(`programs/${fileName}`)
                     .delete();
             }
+            
             const fileExtension = newDoc.file.name.split('.').slice(-1)[0];
             const name = `${uuid()}.${fileExtension}`;
             const task = firebaseStorage
