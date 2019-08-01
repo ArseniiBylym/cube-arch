@@ -36,8 +36,6 @@ export const classes = {
     },
     update: async ({id, newDoc, callback}) => {
         const {file, fileName, image} = newDoc;
-        console.log(newDoc)
-
         if (!file) {
             if (image && fileName) {
                 await firebaseStorage
@@ -55,7 +53,7 @@ export const classes = {
                     .child(`classes/${fileName}`)
                     .delete();
             }
-
+            
             const fileExtension = newDoc.file.name.split('.').slice(-1)[0];
             const name = `${uuid()}.${fileExtension}`;
             const task = firebaseStorage

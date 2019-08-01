@@ -47,6 +47,9 @@ export const ManageArticleForm = props => {
                 setMarkdownTextUkr(text.ukr);
                 setImageUrl(imageUrl);
                 setFileUrl(fileUrl);
+                if (fileUrl) {
+                    setFileMode(true);
+                }
             } else {
                 setLinkUrl(linkUrl);
             }
@@ -62,6 +65,7 @@ export const ManageArticleForm = props => {
             imageUrl,
             fileUrl,
             file,
+            fileName: editedElem && editedElem.fileName ? editedElem.fileName : null,
             text: {
                 en: markdownTextEn,
                 ukr: markdownTextUkr,
@@ -79,7 +83,7 @@ export const ManageArticleForm = props => {
                 await Api.articles.update({
                     id: editedElem.id,
                     newDoc,
-                    fileName: editedElem.fileName,
+                    // fileName: editedElem.fileName,
                     callback: updateArticle,
                 });
             } else {
