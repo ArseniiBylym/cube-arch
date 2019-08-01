@@ -76,6 +76,9 @@ export const ManageClassForm = props => {
             setDatetime(moment(+datetime).format('YYYY-MM-DDTHH:mm'));
             setOpen(open);
             setOrderable(orderable);
+            if (fileUrl) {
+                setFileMode(true)
+            }
         }
     }, []);
 
@@ -121,6 +124,7 @@ export const ManageClassForm = props => {
             image,
             fileUrl,
             file,
+            fileName: editedElem && editedElem.fileName ? editedElem.fileName : null,
             name,
             place,
             description,
@@ -130,6 +134,7 @@ export const ManageClassForm = props => {
             datetime: new Date(datetime).getTime() + '',
             open,
             orderable,
+            
         };
         try {
             if (fileMode) {
@@ -142,7 +147,7 @@ export const ManageClassForm = props => {
                 await Api.classes.update({
                     id: editedElem.id,
                     newDoc,
-                    fileName: editedElem.fileName,
+                    // fileName: editedElem.fileName,
                     callback: updateClass,
                 });
             } else {
