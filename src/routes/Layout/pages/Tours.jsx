@@ -31,11 +31,15 @@ const Tours = () => {
     const fetchTours = async () => {
         try {
             const snapshot = await Api.tours.getAll();
-            let tours = [];
+            const today = Date.now();
+            const newEvents = [];
+            const oldEvents = [];
             snapshot.forEach(doc => {
-                tours.push({...doc.data(), id: doc.id})
+                doc.data().datetime > today
+                    ? newEvents.push({...doc.data(), id: doc.id})
+                    : oldEvents.push({...doc.data(), id: doc.id});
             });
-            setTours(tours)
+            setTours([...newEvents, ...oldEvents]);
         } catch (error) {
             console.log(error)
         }
