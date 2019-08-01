@@ -25,9 +25,12 @@
 
 .program {
     &__container{
-        height: 30rem;
+        height: 25vw;
         overflow: hidden;
         position: relative;
+        @media screen and (max-width: 960px) {
+            height: 40vw;
+        }
     }
     &__image {
         background-position: center center;
@@ -41,7 +44,7 @@
         justify-content: center;
         cursor: pointer;
         transition: all 2s ease;
-        .program__info {
+        .program__details {
             font-size: 1.3rem;
             padding: 1rem 3rem;
             background-color: #252322e0;
@@ -53,23 +56,37 @@
         
         &:hover {
             transform: scale(1.1);
-            .program__info {
+            .program__details {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
     }
-    &__name{
+    &__info{
         position: absolute;
-        color: white;
+        // color: white;
+        color: #333;
         top: 0;
         left: 0;
         right: 0;
         flex-grow: 1;
-        font-weight: bold;
-        font-size: 2.5rem;
+       
         padding: 1rem;
-        background-color: rgba(82, 81, 77, 0.48);
+        // background-color: rgba(82, 81, 77, 0.48);
+        background-color: #fffdfdc9;
+        &__name {
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        &__date{
+            font-size: 1.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+                margin: 0 2rem;
+            }
+        }
     }
 }

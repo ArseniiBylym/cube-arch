@@ -259,7 +259,8 @@ export const data = {
                     title: "Classes",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
-                        date: "Time and date",
+                        date: "Date",
+                        time: "Time",
                         apply: "Register",
                         closed: "Registration ended",
                         order: "Order class",
@@ -267,13 +268,16 @@ export const data = {
                         duration: "Duration of master-class",
                         auditory: "Auditory",
                         tooltip: "Classes list",
-                    }
+                        place: "Place"
+                    },
+                    readMore: "Read more"
                 },
                 tours: {
                     title: "Tours",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
-                        date: "Time and date",
+                        date: "Date",
+                        time: "Time",
                         apply: "Register",
                         closed: "Registration ended",
                         order: "Order tour",
@@ -282,7 +286,9 @@ export const data = {
                         duration: "Tour's duration",
                         auditory: "Auditory",
                         tooltip: "Tours list",
-                    }
+                        place: "Place"
+                    },
+                    readMore: "Read more"
                 },
                 gallery: {
                     title: "Gallery",
@@ -421,21 +427,25 @@ export const data = {
                     title: "Майстер-класи",
                     description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
-                        date: "Час проведення",
+                        date: "Дата проведення",
+                        time: "Час",
                         apply: "Реєстрація",
                         closed: "Реєстрацію завершено",
                         order: "Замовити майстер-клас",
                         price: "Вартість майстер-класу",
                         duration: "Тривалість майстер-класу",
                         auditory: "Для кого",
-                        tooltip: "Перелік майстер-класів"
+                        tooltip: "Перелік майстер-класів",
+                        place: "Місце проведення"
                     },
+                    readMore: "Детальніше"
                 },
                 tours: {
                     title: "Екскурсії",
                     description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
-                        date: "Час початку",
+                        date: "Дата проведення",
+                        time: "Час",
                         apply: "Реєстрація",
                         closed: "Реєстрацію завершено",
                         order: "Замовити екскурсію",
@@ -443,8 +453,10 @@ export const data = {
                         price: "Вартість екскурсії",
                         duration: "Тривалість єкскурсії",
                         auditory: "Для кого",
-                        tooltip: "Перелік екскурсій"
+                        tooltip: "Перелік екскурсій",
+                        place: "Місце проведення"
                     },
+                    readMore: "Детальніше"
                 },
                 gallery: {
                     title: "Галерея",

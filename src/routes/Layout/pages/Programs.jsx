@@ -6,6 +6,7 @@ import {Api} from '../../../api/index';
 import {data} from '../../../assets/data/index'
 import styles from './styles/Programs.module.scss';
 import {Link} from 'react-router-dom';
+import moment from 'moment';
 
 const Programs = (props) => {
     const [content, setContent] = useState(null);
@@ -24,16 +25,6 @@ const Programs = (props) => {
         setContent(content)
     }, [lang])
 
-    useEffect(() => {
-        setTimeout(() => {
-            const id = props.location.search.split('=')[1];
-            if (id) {
-                const elem = document.getElementById(id);
-                elem.scrollIntoView();
-            }
-        }, 200)
-    }, [])
-
     const fetchPrograms = async() => {
         try {
             const snapshot = await Api.programs.getAll();
@@ -51,13 +42,18 @@ const Programs = (props) => {
         return (
             <Grid container spacing={6}>
                 {programs.map(item => (
-                    <Grid key={item.id} item xs={12} sm={6} className={styles.program}>
+                    <Grid key={item.id} item xs={12} md={6} className={styles.program}>
                         <Link to={`/courses/${item.id}`}>
                         <div className={styles.program__container}>
                             <div className={styles.program__image} style={{backgroundImage: `url(${item.fileUrl || item.image})`}}>
-                                <div className={styles.program__info}>{content.readMore}</div>
+                                <div className={styles.program__details}>{content.readMore}</div>
                             </div>
-                            <div className={styles.program__name}>{item.name[lang]}</div>
+                            <div className={styles.program__info}>
+                                <div className={styles.program__info__name}>{item.name[lang]}</div>
+                                <div className={styles.program__info__date}>
+                                    <span>{moment(+item.startDate).format("DD/MM/YYYY")} </span>
+                                </div>
+                            </div>
                         </div>
                         </Link>
                     </Grid>

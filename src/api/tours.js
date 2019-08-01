@@ -7,6 +7,9 @@ export const tours = {
     getAll: async() => {
         return toursCol.get();
     },
+    getTour: async(id) => {
+        return toursCol.doc(id).get();
+    },
     add: async ({newDoc, callback}) => {
         const {file} = newDoc;
         if (!file) {
