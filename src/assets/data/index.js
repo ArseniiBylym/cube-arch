@@ -182,57 +182,53 @@ export const data = {
                         {index: 7, name: "contacts", linkUrl: "/contacts"},
                     ],
                     screens: [
-                        {index: 0, name: "home", linkText: "continue", linkUrl: "groups", text: "Short title.", secondaryText: "Longer text. Longer text. Longer text. Longer text. Longer text. Longer text.", testClass: "register to the test class"},
-                        {index: 1, name: "info", text: [
+                        {index: 0, name: "home", nextScreenTitle: `What is the benefit of architecture for children?`, text: `Skills for the future —\n thanks to the architecture `, secondaryText: `Develop the children's <b>creativity, critical thinking,</b> ability to <b>work in teams</b> and <b>present</b> their ideas using architectural courses, workshops and excursions.`, testClass: `Sign up for free class`},
+                        {index: 1, name: "info", nextScreenTitle: `What do we offer?`, header: `What is the benefit of architecture for children?`, subHeader: `In our architecture classes, your child develops skills that will help him or her <b>succeed in the future:</b>`, text: [
                             {
-                                title: `Title 1`,
-                                subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
+                                title: `Creativity`,
+                                subtitle: `Architecture is both a science and an art. The child learns and fantasize, and logically think, harmoniously develops both the right and left hemispheres of the brain.`
                             },
                             {
-                                title: `Title 2`,
-                                subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
+                                title: `Teamwork`,
+                                subtitle: `Creating an architectural project requires the efforts of many people. The child learns to interact with others for mutual success.`
                             },
                             {
-                                title: `Title 3`,
-                                subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
-                            },
-                            {
-                                title: `Title 4`,
-                                subtitle: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur eos ex voluptatum aliquam quae quam laudantium, nulla magni itaque expedita, inventore exercitationem perferendis commodi! Facilis dignissimos cumque quidem doloremque fugiat.'
+                                title: `Presentation`,
+                                subtitle: `There is little to create a project - it has to be shown from the best side. The child learns to persuade, communicate his thoughts, present his successes.`
                             },
                         ]},
-                        {index: 3, name: "courses", linkText: "details", linkUrl: "/courses", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
-                        {index: 4, name: "reviews", linkText: "reviews", text: [
+                        {index: 3, name: "courses", nextScreenTitle: `Little time? Try short workshops`, linkText: `Choose course`, linkUrl: "/courses", header: `Architectural courses for children`, text: `A series of 8-12 sessions that will help you understand a specific architectural theme in depth and as quickly as possible, such as:\n\n— The first steps in architecture\n— Architectural design\n— Urban Design\n— Mini-construction\n— Sketching\n\nand other.`},
+                        {index: 4, name: "classes", linkText: `Choose a master class`, linkUrl: "/classes", header: `Architectural workshops for children`, text: `<p><b>A two-hour masterclass</b> is an opportunity to quickly get acquainted with <b>an interesting architectural theme</b> and <b>put your knowledge into practice right away.</b></p><p>Children can try themselves as an architect, town planner, stained glass master, designer, designer…</p>`},
+                        {index: 5, name: "reviews", linkText: "reviews", text: [
                             {
                                 name: "Nadiya Kantaurova",
                                 photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/13062233_213009899082458_3562126366937109409_n.jpg?_nc_cat=103&_nc_oc=AQmvpM8zb197kM19m7ygZudjgQg6qmNA7kn5e1VCuzSzIAD9E8JFo2FMmUTBkOlV0nM&_nc_ht=scontent.fiev19-1.fna&oh=553e149d60f541efd7a53fcbdbbd856c&oe=5DA18C0B",
-                                review: `Хочу порадити клуб Cube ARCH club. Була з дитиною на майстер-класі - дитина у захваті. Всі секрети архітектури викладаються у простій, ігровій формі. На практичній частині заняття діти мають можливість проявити себе. Використання у роботі різних матеріалів, розвиває у дітях креативність, фантазію та просторове мислення. Сподобалося, що в Cube ARCH club дитина може самостійно зконструювати та "відчути" архітектурні елементи з різноманітних геоометричних форм.`,
+                                review: `I want to advise Cube ARCH club. She was with a child at a master class - a child in awe. All the secrets of architecture are laid out in a simple, playful way. In the practical part of the lesson, children have the opportunity to express themselves. The use of different materials in the work, develops creativity, imagination and spatial thinking in children. It was pleasing that in Cube ARCH club the child can independently design and "feel" architectural elements of various geometric forms.`,
                                 linkUrl: `https://www.facebook.com/nadiya.kantaurova/posts/873724079677700`,
                             },
                             {
                                 name: "Serge Klimovych",
                                 photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/39594157_2055369594496305_462028370973032448_n.jpg?_nc_cat=102&_nc_oc=AQnf3SfyTNYkXjOU-jFXj8OV7Sf49CTMg4Qj4x_Szu_zkxHL5xX0ezkcNSfA4B3BCxk&_nc_ht=scontent.fiev19-1.fna&oh=1d5de1961e66e79957f7aca8e031bd1f&oe=5DB3E8E4",
-                                review: `Мій 9-річний син і його подруга були на повноцінному двогодинному занятті. Коли я його забирав, то побачив палаючі від ентузіазму очі - Оля і Даша гарно знаходять підхід до маленьких потенційних архітекторів, розповідаючи масу корисних речей, про які у школі зазвичай не дізнатися. Сміливо віддавайте малюків у руки викладачам - не пошкодуєте!`,
+                                review: `My 9-year-old son and his girlfriend were in full-fledged two-hour classes. When I picked it up, I saw enthusiastic eyes burning - Olha and Dasha find a good approach to small potential architects, telling a lot of useful things that are usually not learned at school. Boldly give your kids the hands of teachers - you will not regret it!`,
                                 linkUrl: `https://www.facebook.com/sergiy.klimovy4/posts/2394535527246375`,
                             },
                             {
-                                name: "Ірина Кравченко",
+                                name: "Irina Kravchenko",
                                 photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/65308296_2820943744587912_6239051433279225856_n.jpg?_nc_cat=108&_nc_oc=AQlJlunDB2wsGbqBMzMh9Q4XL55efvKS9kC26hhoaRVC0HOw34MLm_syn0FE8fFCqJc&_nc_ht=scontent.fiev19-1.fna&oh=714f2b8def4cd8b23a74784716e4d7f8&oe=5DA0274B",
-                                review: `Діти бачать те, чого не бачимо ми, іх рішення можуть бути дуже простими, геніальними та несподіваними.`,
+                                review: `Kids see what we don't see, and their decisions can be very simple, brilliant and unexpected.`,
                                 linkUrl: `https://www.facebook.com/permalink.php?story_fbid=2600886146593674&id=100000169437808`
                             },
                             {
-                                name: "Татьяна Ромашко-Богданова",
+                                name: "Tatyana Romashko-Bogdanova",
                                 photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/59960634_2325050447775977_4288445830542655488_n.jpg?_nc_cat=107&_nc_oc=AQn0-GAw0NMe1Fr0m1bru4eOCf8JR_oHpw8XkN8lBzRQXuSWOpkIcNolBK9gWXnJPrg&_nc_ht=scontent.fiev19-1.fna&oh=11ec12e59b0ebee0d9f2939f4309f273&oe=5DE7EEF6",
-                                review: `Діти на відміну від дорослих не бояться фантазувати, вони сміливіші за нас! Я якщо ми хочемо, щоб наші міста були красивими та затишними, нам потрібно підтримувати та трішечки "направляти" дітей. І можливо, вона нас теж чомусь навчать! На відміну від університетів, тут не змушують вчитися, всі заняття проходять в ігровій формі, так, щоби діти самі розкривалися.`,
+                                review: `Children, unlike adults, are not afraid to fantasize, they are bolder than us! If we want our cities to be beautiful and cozy, we need support and a little "guide" for the children. And maybe she will teach us something too! Unlike universities, they are not forced to study here; all lessons are played in a playful way so that the children discover themselves.`,
                                 linkUrl: `https://www.facebook.com/permalink.php?story_fbid=2274874792793543&id=100008131336394`,
                             },
                         ]},
-                        {index: 5, name: "classes", linkText: "details", linkUrl: "/classes", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
-                        {index: 6, name: "tours", linkText: "details", linkUrl: "/tours", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
-                        {index: 7, name: "gallery", linkText: "to the gallery", linkUrl: "/gallery", text: "Go to the gallery to see photoes from owr master classes and another events"},
-                        {index: 8, name: "articles", linkText: "articles", linkUrl: "/articles"}, 
-                        {index: 9, name: "about", linkText: "about us", linkUrl: "/about"},
+                        {index: 6, name: "tours", linkText: "Choose a tour", linkUrl: "/tours", header: `Architectural excursions in Kyiv for children`, text: `<b>Take a look at the city with the eyes of an architect</b> and find interesting architectural stories about homes, squares and streets.`},
+                        {index: 7, name: "gallery", linkText: "To the gallery", linkUrl: "/gallery", text: "Works of our students, photos from workshops and other events"},
+                        {index: 8, name: "articles", linkText: "Articles", linkUrl: "/articles"}, 
+                        {index: 9, name: "about", linkText: "About us", linkUrl: "/about"},
                         {index: 10, name: "contacts", address: "Ukrain, Kyiv, Bilomorskya st, 1"},
                     ]
                 },
@@ -303,7 +299,7 @@ export const data = {
                         {
                             id: 0,
                             name: "Daryna Pasyuta",
-                            info: "Some info about you. Some info about you.Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you.",
+                            info: `Architect, specialist in urban planning. Has 13 years of experience in urban planning, landscaping and design. She created sketch projects, concept designs of objects, developed detailed plans of territories and master plans of cities.`,
                             image: darynaImage,
                             socials: {
                                 facebook: "facebook.com/daryna.bylym",
@@ -313,7 +309,7 @@ export const data = {
                         {
                             id: 1,
                             name: "Olga Pavlenko",
-                            info: "Some info about you. Some info about you.Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you.",
+                            info: `The author of the idea and the founder of the children's architecture studio cube Arch club. Practicing architect, teacher of architectural design at KNUBA "theory of architecture" department. He is working on a dissertation on the design of modern educational institutions, researching the newest methods of education. Founder of the professional blogs network "do arch" and others.`,
                             image: olgaImage,
                             socials: {
                                 facebook: "facebook.com/olga.mykhailovna1",
