@@ -72,7 +72,7 @@
             }
         }
         .secondaryInfo {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         .subscribe{
             margin: 1rem auto;
@@ -130,6 +130,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &__header {
+        font-size: 3rem;
+    }
+    &__subHeader {
+        width: 70%;
+        font-size: 2rem;
+    }
     .text {
         padding: 3rem;
         font-size: 1.5rem;
@@ -172,6 +179,28 @@
         }
         .subtitle {
             font-size: 1.3rem;
+        }
+        
+    }
+    &__footer{
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        .button{
+            position: relative;
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: #333;
+            // background-color: #fcfcfc99;
+            padding: .5rem 2rem;
+        }
+        .icon-container{
+            display: block;
+            font-size: 2rem;
+            color:#333;
+            .icon{
+                animation: 5s ease infinite iconDown;
+            }
         }
     }
 }
