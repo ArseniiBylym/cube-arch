@@ -208,9 +208,7 @@
         width: 100%;
         height: 100%;
         margin-left: auto;
-        // background: radial-gradient(circle 40vw at -20% 90%, #efefef 10%, transparent), 
-        // url('../../../assets/images/home/programs-min.jpg') right center/ contain no-repeat fixed;
-        background: url('../../../assets/images/home/programs-min.jpg') right center/ contain no-repeat fixed;
+        background: url('../../../assets/images/home/programs-min.jpg') right center/ cover no-repeat ;
         @media screen and (max-width: 600px) {
             width: 100%;
             height: 92%;
@@ -268,15 +266,14 @@
 
 .ClassesScreen{
     display: flex;
+    padding-bottom: 7rem;
     
     .image{
         display: block;
         width: 100%;
         height: 100%;
         margin-right: auto;
-        // background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
-        // url('../../../assets/images/home/classes-min.jpg') left top/ contain no-repeat fixed;
-        background: url('../../../assets/images/home/classes-min.jpg') left top/ contain no-repeat fixed;
+        background: url('../../../assets/images/home/classes-min.jpg') left top/ cover no-repeat ;
         @media screen and (max-width: 600px) {
             width: 100%;
             height: 92%;
@@ -373,15 +370,14 @@
 
 .ToursScreen{
     display: flex;
+    padding-bottom: 7rem;
     
     .image{
         display: block;
         width: 100%;
         height: 100%;
         margin-right: auto;
-        // background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
-        // url('../../../assets/images/home/tours-min.jpg') left center/ contain no-repeat fixed;
-        background: url('../../../assets/images/home/tours-min-reverse.png') right center/ contain no-repeat fixed;
+        background: url('../../../assets/images/home/tours-min-reverse.png') right bottom/ cover no-repeat ;
         @media screen and (max-width: 600px) {
             width: 100%;
             height: 92%;

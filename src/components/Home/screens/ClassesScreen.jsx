@@ -9,7 +9,7 @@ export const ClassesScreen = props => {
     const {text, linkUrl, linkText, header} = props;
     return (
         <div className="ClassesScreen">
-            <Grid container spacing={6}>
+            <Grid container spacing={0}>
                 <Grid item xs={12} sm={8}>
                     <Link to={linkUrl} className="image" />
                 </Grid>
