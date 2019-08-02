@@ -1,13 +1,21 @@
 .root {
     padding: 1rem 2rem;
-    background-color: #ff6c00;
     color: white;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.8rem;
     box-shadow: 0 5px 5px -2px #444444a4;
     transition: all .5s ease;
+}
+.primary {
+    background-color: #ff6c00;
     &:hover {
         background-color: #d65a02;
+    }
+}
+.secondary {
+    background-color: #7a716a;
+    &:hover {
+        background-color: #5a544f;
     }
 }

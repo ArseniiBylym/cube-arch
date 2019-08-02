@@ -26,7 +26,7 @@ export const ArticlesScreen = props => {
                             <Grid item xs={12} md={6} className="content__wrapper">
                                 <div className={isVisible ? "content visible" : "content"}>
                                     <div className="link">
-                                        <LinkButton linkText={linkText} linkUrl={linkUrl} />
+                                        <LinkButton linkText={linkText} linkUrl={linkUrl} color="secondary" />
                                     </div>
                                 </div>
                             </Grid>
