@@ -6,7 +6,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 export const AboutScreen = props => {
     const [visible, setVisible] = useState(false);
 
-    const {text, linkUrl, linkText} = props;
+    const {linkUrl, linkText} = props;
     return (
         <div className="AboutScreen">
             <Link to={linkUrl} className="image" />
@@ -17,7 +17,6 @@ export const AboutScreen = props => {
             >
                 {({isVisible}) => (
                     <div className={isVisible ? "content visible" : "content"}>
-                        <div className="text">{text}</div>
                         <div className="link">
                             <LinkButton linkText={linkText} linkUrl={linkUrl} />
                         </div>

@@ -35,6 +35,7 @@ export const ManageProgramForm = props => {
     const [description, setDescription] = useState({en: '', ukr: ''});
     const [price, setPrice] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [auditory, setAuditory] = useState({en: '', ukr: ''});
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [places, setPlaces] = useState(10);
@@ -54,6 +55,7 @@ export const ManageProgramForm = props => {
                 description,
                 price,
                 duration,
+                auditory,
                 startDate,
                 endDate,
                 places,
@@ -65,6 +67,7 @@ export const ManageProgramForm = props => {
             setDescription(description);
             setPrice(price);
             setDuration(duration);
+            setAuditory(auditory);
             setStartDate(moment(+startDate).format('YYYY-MM-DD'));
             setEndDate(moment(+endDate).format('YYYY-MM-DD'));
             setPlaces(places);
@@ -107,6 +110,7 @@ export const ManageProgramForm = props => {
             description,
             price,
             duration,
+            auditory,
             places,
             startDate: new Date(startDate).getTime() + '',
             endDate: new Date(endDate).getTime() + '',
@@ -327,6 +331,35 @@ export const ManageProgramForm = props => {
                         value={description.ukr}
                         multiline
                         rows={5}
+                    />
+                </Grid>
+            </Grid>
+            <h3>Auditory</h3>
+            <Grid container spacing={2}>
+                <Grid item xs={6}>
+                    <TextField
+                        margin="normal"
+                        name="auditory_en"
+                        label="Auditory"
+                        type="text"
+                        fullWidth
+                        required
+                        onChange={e => setAuditory({...auditory, en: e.target.value})}
+                        variant="outlined"
+                        value={auditory.en}
+                    />
+                </Grid>
+                <Grid item xs={6}>
+                    <TextField
+                        margin="normal"
+                        name="auditory_ukr"
+                        label="Аудиторія"
+                        type="text"
+                        fullWidth
+                        required
+                        onChange={e => setAuditory({...auditory, ukr: e.target.value})}
+                        variant="outlined"
+                        value={auditory.ukr}
                     />
                 </Grid>
             </Grid>

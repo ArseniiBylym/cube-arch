@@ -7,7 +7,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 export const ArticlesScreen = props => {
     const [visible, setVisible] = useState(false);
 
-    const {text, linkUrl, linkText} = props;
+    const {linkUrl, linkText} = props;
     return (
         <div className={`ArticlesScreen`}>
             <Link to={linkUrl}>
@@ -25,9 +25,8 @@ export const ArticlesScreen = props => {
                         {({isVisible}) => (
                             <Grid item xs={12} md={6} className="content__wrapper">
                                 <div className={isVisible ? "content visible" : "content"}>
-                                    <div className="text">{text}</div>
                                     <div className="link">
-                                        <LinkButton linkText={linkText} linkUrl={linkUrl} />
+                                        <LinkButton linkText={linkText} linkUrl={linkUrl} color="secondary" />
                                     </div>
                                 </div>
                             </Grid>

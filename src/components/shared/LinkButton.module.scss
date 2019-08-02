@@ -1,29 +1,21 @@
-// .root{
-//     position: relative;
-//     display: inline-block;
-//     padding: 0rem 4rem;
-//     font-size: 1.5rem;
-//     color: #efefef;
-//     border: 1px solid #444;
-//     overflow: hidden;
-//     transition: all .3s ease;
-//     background-color: #444;
-
-//     &:hover {
-//         color: #444;
-//         background-color: transparent;
-//     }
-// }
 .root {
     padding: 1rem 2rem;
-    background-color: #d17d17;
     color: white;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.8rem;
     box-shadow: 0 5px 5px -2px #444444a4;
     transition: all .5s ease;
+}
+.primary {
+    background-color: #ff6c00;
     &:hover {
-        background-color: #e6932f;
+        background-color: #d65a02;
+    }
+}
+.secondary {
+    background-color: #7a716a;
+    &:hover {
+        background-color: #5a544f;
     }
 }

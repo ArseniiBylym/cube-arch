@@ -77,6 +77,10 @@ const ProgramDetails = props => {
                         <div>{content.details.duration}</div>
                         <div>{program.duration}</div>
                     </div>
+                    <div className={styles.info__auditory}>
+                        <div>{content.details.auditory}</div>
+                        <div>{program.auditory[lang]}</div>
+                    </div>
                     <div className={styles.info__places}>
                         <div>{content.details.places}</div>
                         <div>{program.places}</div>

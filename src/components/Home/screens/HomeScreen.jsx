@@ -14,6 +14,10 @@ export const HomeScreen = props => {
                         <div className="info">
                             <pre>{text}</pre>
                         </div>
+                        <div
+                            className="secondaryInfo"
+                            dangerouslySetInnerHTML={{__html: secondaryText}}
+                        />
                         <div className="subscribe">
                             <div
                                 className="testRegisterButton"
@@ -22,10 +26,6 @@ export const HomeScreen = props => {
                                 {testClass}
                             </div>
                         </div>
-                        <div
-                            className="secondaryInfo"
-                            dangerouslySetInnerHTML={{__html: secondaryText}}
-                        />
                     </div>
                 </div>
                 <div className="next">

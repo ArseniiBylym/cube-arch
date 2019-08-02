@@ -11,9 +11,9 @@ export const PageTitle = ({title, description}) => {
                     {title}
                 </Grid>
             </Grid>
-            <Container maxWidth="md" className={styles.subHeader}>
+            {/* <Container maxWidth="md" className={styles.subHeader}>
                 {description}
-            </Container>
+            </Container> */}
         </>
     );
 };
