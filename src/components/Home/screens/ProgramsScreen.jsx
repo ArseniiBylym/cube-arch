@@ -3,14 +3,14 @@ import {LinkButton} from '../../shared';
 import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import VisibilitySensor from 'react-visibility-sensor';
+import {IoIosArrowDown} from 'react-icons/io';
 
 export const ProgramsScreen = props => {
     const [visible, setVisible] = useState(false);
-    const {text, linkUrl, linkText, className} = props;
+    const {text, linkUrl, linkText, nextScreenTitle, header} = props;
     return (
-        // <div className={`ProgramsScreen ${className}`}>
         <div className={`ProgramsScreen`}>
-            <Grid container spacing={6}>
+            <Grid container spacing={0}>
                 <VisibilitySensor
                     partialVisibility={true}
                     active={!visible}
@@ -19,7 +19,8 @@ export const ProgramsScreen = props => {
                     {({isVisible}) => (
                         <Grid item xs={12} sm={4}>
                             <div className={isVisible ? "content visible" : "content"}>
-                                <div className="text">{text}</div>
+                                <div className="header">{header}</div>
+                                <div className="text"><pre>{text}</pre></div>
                                 <div className="link">
                                     <LinkButton linkText={linkText} linkUrl={linkUrl} />
                                 </div>
@@ -29,6 +30,12 @@ export const ProgramsScreen = props => {
                 </VisibilitySensor>
                 <Grid item xs={12} sm={8}>
                     <Link to={linkUrl} className="image" />
+                </Grid>
+                <Grid item xs={12} container justify="flex-end" direction="column" wrap="nowrap" alignItems="center" className="ProgramsScreen__footer" >
+                    <div className="button">{nextScreenTitle}</div>
+                    <div className="icon-container">
+                        <IoIosArrowDown className="icon" />
+                    </div>
                 </Grid>
             </Grid>
         </div>
