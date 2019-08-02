@@ -79,7 +79,7 @@ const Home = () => {
         if (timer) return;
         const timestamp = setTimeout(() => {
             setTimer(null);
-        }, 800)
+        }, 500)
         setTimer(timestamp);
         const dir = e.deltaY > 0 ? 'down' : 'up'
         switch (dir) {

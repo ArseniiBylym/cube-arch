@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Grid from '@material-ui/core/Grid';
 import {IoIosArrowDown} from 'react-icons/io';
+import {useTrail, animated} from 'react-spring'
+
 
 import './styles.scss';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -8,12 +10,13 @@ import VisibilitySensor from 'react-visibility-sensor';
 export const InfoScreen = props => {
     const [visible, setVisible] = useState(false)
     const {header, subHeader, text, nextScreenTitle} = props;
-    console.log(props)
+    const trails = useTrail(text.length, {opacity: visible ? 1 : 0, y: visible ? `0px` : `50px`}); 
     return (
         <div className='InfoScreen'>
             <VisibilitySensor 
                 partialVisibility={true}
-                active={!visible}
+                offset={{top: 0, bottom: 300}}
+                // active={!visible}
                 onChange={(isVisible) => setVisible(isVisible)}
             >
                 {({isVisible}) => (
@@ -24,9 +27,9 @@ export const InfoScreen = props => {
                         <Grid item xs={12} container justify="center" alignItems="center"  >
                             <div className="InfoScreen__subHeader" dangerouslySetInnerHTML={{__html: subHeader}} />
                         </Grid>
-                        <Grid item xs={12} className={isVisible ? "wrapper visible" : "wrapper"}>
+                        <Grid item xs={12} className="wrapper">
                             <Grid container spacing={4}>
-                                {text.map(item => (
+                                {text.map((item, index) => (
                                     <Grid
                                         key={item.title}
                                         item
@@ -34,8 +37,13 @@ export const InfoScreen = props => {
                                         sm={4}
                                         className="element"
                                     >
-                                        <div className="title">{item.title}</div>
-                                        <div className="subtitle">{item.subtitle}</div>
+                                        <animated.div style={{
+                                            opacity: trails[index].opacity,
+                                            transform: trails[index].y.interpolate(value => `translate3d(0, ${value}, 0)`)
+                                        }}>
+                                            <div className="title">{item.title}</div>
+                                            <div className="subtitle">{item.subtitle}</div>
+                                        </animated.div>
                                     </Grid>
                                 ))}
                             </Grid>
