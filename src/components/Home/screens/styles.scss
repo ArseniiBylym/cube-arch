@@ -48,38 +48,45 @@
         align-items: center;
         width: 100%;
         margin: 1rem auto;
-        padding-top: 6rem;
+        padding: 1rem 0;
         
         .title {
+            width: 85%;
+            margin: 0 auto;
             background-color: #fcfcfc99;
             padding: 2rem;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
         }
         .info{
             color: #444;
-            font-size: 6rem;
+            font-size: 4rem;
             text-transform: uppercase;
             font-weight: bold;
-            margin-bottom: 2rem;
+            pre {
+                margin: 0;
+            }
             @media screen and (max-width: 600px) {
                 font-size: 4rem;
             }
         }
         .secondaryInfo {
-            font-size: 1.3rem;
+            font-size: 2rem;
         }
         .subscribe{
-            padding-top: 2rem;
+            margin: 1rem auto;
             .testRegisterButton {
-                padding: .5rem 2rem;
-                background-color: #4f8c4f;
+                padding: 1rem 2rem;
+                background-color: #d17d17;
                 color: white;
                 cursor: pointer;
                 border-radius: 5px;
-                font-size: 1.3rem;
+                font-size: 1.8rem;
                 box-shadow: 0 5px 5px -2px #444444a4;
                 transition: all .5s ease;
                 &:hover{
-                    background-color: #3d6d3d;
+                    background-color: #e6932f;
                 }
             }
         }
@@ -90,12 +97,16 @@
         align-items: center;
         .button{
             position: relative;
-            font-size: 1.5rem;
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: #333;
+            background-color: #fcfcfc99;
+            padding: .5rem 2rem;
         }
         .icon-container{
             display: block;
             font-size: 2rem;
-            color: rgba(100, 100, 100, .5);
+            color:#333;
             .icon{
                 animation: 5s ease infinite iconDown;
             }
