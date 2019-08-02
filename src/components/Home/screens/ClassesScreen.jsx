@@ -6,7 +6,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 
 export const ClassesScreen = props => {
     const [visible, setVisible] = useState(false)
-    const {text, linkUrl, linkText} = props;
+    const {text, linkUrl, linkText, header} = props;
     return (
         <div className="ClassesScreen">
             <Grid container spacing={6}>
@@ -19,9 +19,10 @@ export const ClassesScreen = props => {
                         onChange={isVisible => setVisible(isVisible)}
                     >
                         {({isVisible}) => (
-                            <Grid item xs={12} sm={4} container direction="column-reverse">
+                            <Grid item xs={12} sm={4} >
                                 <div className={isVisible ? "content visible": "content"}>
-                                    <div className="text">{text}</div>
+                                    <div className="header">{header}</div>
+                                    <div className="text" dangerouslySetInnerHTML={{__html: text}} />
                                     <div className="link">
                                         <LinkButton linkText={linkText} linkUrl={linkUrl} />
                                     </div>

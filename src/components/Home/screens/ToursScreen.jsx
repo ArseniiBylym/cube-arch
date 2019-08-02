@@ -6,22 +6,20 @@ import VisibilitySensor from 'react-visibility-sensor';
 
 export const ToursScreen = props => {
     const [visible, setVisible] = useState(false);
-    const {text, linkUrl, linkText, className} = props;
+    const {text, linkUrl, linkText, className, header} = props;
     return (
         <div className={`ToursScreen ${className}`}>
-            <Grid container spacing={6}>
-                <Grid item xs={12} sm={9}>
-                    <Link to={linkUrl} className="image" />
-                </Grid>
+            <Grid container spacing={0}>
                 <VisibilitySensor
                     partialVisibility={true}
                     active={!visible}
                     onChange={isVisible => setVisible(isVisible)}
                 >
                     {({isVisible}) => (
-                        <Grid item xs={12} sm={3} container alignItems="center">
+                        <Grid item xs={12} sm={4}>
                             <div className={isVisible ? "content visible" : "content"}>
-                                <div className="text">{text}</div>
+                                <div className="header">{header}</div>
+                                <div className="text" dangerouslySetInnerHTML={{__html: text}} />
                                 <div className="link">
                                     <LinkButton linkText={linkText} linkUrl={linkUrl} />
                                 </div>
@@ -29,6 +27,9 @@ export const ToursScreen = props => {
                         </Grid>
                     )}
                 </VisibilitySensor>
+                <Grid item xs={12} sm={8}>
+                    <Link to={linkUrl} className="image" />
+                </Grid>
             </Grid>
         </div>
     );

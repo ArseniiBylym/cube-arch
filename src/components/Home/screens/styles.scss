@@ -233,10 +233,10 @@
         .header{
             font-size: 2rem;
             font-weight: bold;
-
         }
         .text {
             text-align: left;
+            margin: 1rem auto;
         }
         @media screen and (max-width: 600px) {
            left: 0;
@@ -262,6 +262,58 @@
             .icon{
                 animation: 5s ease infinite iconDown;
             }
+        }
+    }
+}
+
+.ClassesScreen{
+    display: flex;
+    
+    .image{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-right: auto;
+        // background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
+        // url('../../../assets/images/home/classes-min.jpg') left top/ contain no-repeat fixed;
+        background: url('../../../assets/images/home/classes-min.jpg') left top/ contain no-repeat fixed;
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            height: 92%;
+            background-position: left bottom;
+            margin-top: auto;
+        }
+    }
+    
+    .content {
+        padding: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 1s ease .5s;
+        font-size: 1.5rem;
+        &.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .header{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .text {
+            text-align: left;
+            margin: 1rem auto;
+        }
+        .link{
+            margin-top: 2rem;
+        }
+        @media screen and (max-width: 600px) {
+            left: 0;
+            width: 80%;
+            font-size: 1.2rem;
         }
     }
 }
@@ -319,8 +371,7 @@
     }
 }
 
-
-.ClassesScreen{
+.ToursScreen{
     display: flex;
     
     .image{
@@ -328,8 +379,9 @@
         width: 100%;
         height: 100%;
         margin-right: auto;
-        background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
-        url('../../../assets/images/home/classes-min.jpg') left top/ contain no-repeat fixed;
+        // background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
+        // url('../../../assets/images/home/tours-min.jpg') left center/ contain no-repeat fixed;
+        background: url('../../../assets/images/home/tours-min-reverse.png') right center/ contain no-repeat fixed;
         @media screen and (max-width: 600px) {
             width: 100%;
             height: 92%;
@@ -340,69 +392,34 @@
     
     .content {
         padding: 2rem;
-        padding-left: 0;
-        padding-bottom: 6rem;
+        margin-top: 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         opacity: 0;
-        transform: translateX(50px);
-        transition: all 1s ease .5s;
-        font-size: 1.5rem;
-        &.visible{
-            transform: translateX(0);
-            opacity: 1;
-        }
-        @media screen and (max-width: 600px) {
-           left: 0;
-           width: 80%;
-           font-size: 1.2rem;
-        }
-        .link{
-            margin-top: 2rem;
-         }
-    }
-}
-
-
-.ToursScreen{
-    display: flex;
-    
-    .image{
-        display: block;
-        width: 100%;
-        height: 100%;
-        margin-right: auto;
-        background: radial-gradient(circle 30vw at 100% 100%, #efefef 10%, transparent), 
-        url('../../../assets/images/home/tours-min.jpg') left center/ contain no-repeat fixed;
-        @media screen and (max-width: 600px) {
-            width: 100%;
-            height: 92%;
-            background-position: left bottom;
-            margin-top: auto;
-        }
-    }
-    
-    .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        opacity: 0;
-        transform: translateY(50px);
+        transform: translateX(-50px);
         transition: all 1s ease .5s;
         font-size: 1.5rem;
         &.visible {
-            transform: translateY(0);
+            transform: translateX(0);
             opacity: 1;
+        }
+        .header{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .text {
+            text-align: left;
+            margin: 1rem auto;
+        }
+        .link{
+            margin-top: 2rem;
         }
         @media screen and (max-width: 600px) {
             left: 0;
             width: 80%;
             font-size: 1.2rem;
-         }
-        .link{
-            margin: 2rem auto;
-         }
+        }
     }
 }
 
