@@ -19,7 +19,7 @@ const About = () => {
     if (!content) return <Spinner />;
     return (
         <>
-            <PageTitle title={content.title} description={content.description} />
+            <PageTitle title={content.title} />
             <div className={styles.root}>
                 <Grid container spacing={10} className={styles.container}>
                     {content.users.map(item => (

@@ -7,7 +7,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 export const ContactsScreen = props => {
     const [visible, setVisible] = useState(false);
 
-    const {address, className} = props;
+    const {address} = props;
     const {phones, email, facebook, google, instagram, twitter, development} = data.core.contacts;
     return (
         <div className={`ContactsScreen`}>

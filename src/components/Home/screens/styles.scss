@@ -78,7 +78,7 @@
             margin: 1rem auto;
             .testRegisterButton {
                 padding: 1rem 2rem;
-                background-color: #d17d17;
+                background-color: #ff6c00;
                 color: white;
                 cursor: pointer;
                 border-radius: 5px;
@@ -86,7 +86,7 @@
                 box-shadow: 0 5px 5px -2px #444444a4;
                 transition: all .5s ease;
                 &:hover{
-                    background-color: #e6932f;
+                    background-color: #d65a02;
                 }
             }
         }
@@ -98,14 +98,14 @@
         .button{
             position: relative;
             font-weight: bold;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #333;
             background-color: #fcfcfc99;
             padding: .5rem 2rem;
         }
         .icon-container{
             display: block;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color:#333;
             .icon{
                 animation: 5s ease infinite iconDown;
@@ -186,13 +186,13 @@
         .button{
             position: relative;
             font-weight: bold;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #333;
             padding: .5rem 2rem;
         }
         .icon-container{
             display: block;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color:#333;
             .icon{
                 animation: 5s ease infinite iconDown;
@@ -251,13 +251,13 @@
         .button{
             position: relative;
             font-weight: bold;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #333;
             padding: .5rem 2rem;
         }
         .icon-container{
             display: block;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color:#333;
             .icon{
                 animation: 5s ease infinite iconDown;

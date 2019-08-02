@@ -9,12 +9,12 @@ export const data = {
             instagram: "instagramAccound",
             twitter: "twitterAccount",
             phones: [
-                "+380971234567",
-                "+380667123434",
+                "+380679190575",
+                "+380934025825",
             ],
             address: {
-                en: "Ukrain, Kyiv, Nezalezhosti st, 22",
-                ukr: "Україна, Київ, вул. Незалежності, 22",
+                en: "Ukrain, Kyiv, Bilomorskya st, 22",
+                ukr: "Україна, Київ, вул. Біломорська, 1",
             },
             email: "cubearchclub.info@gmail.com",
             development: {
@@ -234,14 +234,14 @@ export const data = {
                         {index: 5, name: "classes", linkText: "details", linkUrl: "/classes", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 6, name: "tours", linkText: "details", linkUrl: "/tours", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus."},
                         {index: 7, name: "gallery", linkText: "to the gallery", linkUrl: "/gallery", text: "Go to the gallery to see photoes from owr master classes and another events"},
-                        {index: 8, name: "articles", linkText: "articles", linkUrl: "/articles", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus"},
-                        {index: 9, name: "about", linkText: "about us", linkUrl: "/about",  text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus facere maxime nulla excepturi provident enim totam. Error, laboriosam veritatis."},
-                        {index: 10, name: "contacts", linkText: "contacts", linkUrl: "/contacts", address: "Ukrain, Kyiv, Nezalezhosti st, 22", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dolore illum earum cumque aut atque quidem natus architecto distinctio accusamus"},
+                        {index: 8, name: "articles", linkText: "articles", linkUrl: "/articles"}, 
+                        {index: 9, name: "about", linkText: "about us", linkUrl: "/about"},
+                        {index: 10, name: "contacts", address: "Ukrain, Kyiv, Bilomorskya st, 1"},
                     ]
                 },
                 programs: {
                     title: "Courses",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
                         startDate: "Classes start date",
                         endDate: "Classes end date",
@@ -257,7 +257,7 @@ export const data = {
                 },
                 classes: {
                     title: "Classes",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
                         date: "Date",
                         time: "Time",
@@ -274,7 +274,7 @@ export const data = {
                 },
                 tours: {
                     title: "Tours",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
                         date: "Date",
                         time: "Time",
@@ -292,15 +292,15 @@ export const data = {
                 },
                 gallery: {
                     title: "Gallery",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 articles: {
                     title: "Articles",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 about: {
                     title: "About us",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
+                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     users: [
                         {
                             id: 0,
@@ -328,7 +328,7 @@ export const data = {
                 },
                 contacts: {
                     title: "Contacts",
-                    description: '',
+                    // description: '',
                 }
             }
         },
@@ -397,15 +397,15 @@ export const data = {
                             },
                         ]},
                         {index: 6, name: "екскурсії", linkText: "Обрати екскурсію", linkUrl: "/tours", header: `Архітектурні екскурсії Києвом для дітей`, text: `<b>Погляньте на місто очима архітектора</b> та дізнайтеся цікаві архітектурні історії про будинки, площі та вулиці.`},
-                        {index: 7, name: "галерея", linkText: "до галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з майстер классів та інших заходів"},
-                        {index: 8, name: "статті", linkText: "статті", linkUrl: "/articles", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 9, name: "про нас", linkText: "про нас", linkUrl: "/about", address: "Україна, Київ, вул. Незалежності, 22", "text": "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
-                        {index: 10, name: "контакти", linkText: "контакти", linkUrl: "/contacts", address: "Україна, Київ, вул. Незалежності, 22", text: "Якась коротка інформація про цей конкретний розділ. Приблизно 2-3 речення."},
+                        {index: 7, name: "галерея", linkText: "До галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з майстер-класів та інших заходів"},
+                        {index: 8, name: "статті", linkText: "Статті", linkUrl: "/articles"},
+                        {index: 9, name: "про нас", linkText: "Про нас", linkUrl: "/about"},
+                        {index: 10, name: "контакти", address: "Україна, Київ, вул. Біломорська, 1",},
                     ]
                 },
                 programs: {
                     title: "Курси",
-                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
                         startDate: "Початок навчання",
                         endDate: "Кінець навчання",
@@ -421,7 +421,7 @@ export const data = {
                 },
                 classes: {
                     title: "Майстер-класи",
-                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
                         date: "Дата проведення",
                         time: "Час",
@@ -438,7 +438,7 @@ export const data = {
                 },
                 tours: {
                     title: "Екскурсії",
-                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
                         date: "Дата проведення",
                         time: "Час",
@@ -456,15 +456,15 @@ export const data = {
                 },
                 gallery: {
                     title: "Галерея",
-                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 articles: {
                     title: "Статті",
-                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 about: {
                     title: "Про нас",
-                    description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
+                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     users: [
                         {
                             id: 0,
@@ -472,7 +472,7 @@ export const data = {
                             info: `Архітекторка, спеціалістка з містобудування. Має 13-річний досвід роботи у сфері міського планування, благоустрою та дизайну. Створювала ескізні проекти, концепт-дизайни об'єктів, розробляла детальні плани територій та генеральні плани міст.`,
                             image: darynaImage,
                             socials: {
-                                facebook: "https://www.facebook.com/cube.arch.club/",
+                                facebook: "https://www.facebook.com/daryna.bylym",
                                 google: "someemail@gmail.com",
                                 instagram: "instagramLink"
                             }
@@ -480,10 +480,10 @@ export const data = {
                         {
                             id: 1,
                             name: "Ольга",
-                            info: "Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. Інформація про тебе. ",
+                            info: `Засновник дитячої студії архітектури cube Arch club.  Практикуючий архітектор, викладач архітектурного проектування на кафедрі "теорії архітектури" КНУБА. Працює над дисертацію на тему проектування сучасних освітніх закладів, досліджує новітні методи освіти. Засновник мережі фахових блогів "do arch" та ін.`,
                             image: olgaImage,
                             socials: {
-                                facebook: "https://www.facebook.com/cube.arch.club/",
+                                facebook: "https://www.facebook.com/olga.mykhailovna1",
                                 google: "someemail@gmail.com",
                                 instagram: "instagramLink"
                             }
@@ -492,7 +492,7 @@ export const data = {
                 },
                 contacts: {
                     title: 'Контакти',
-                    description: '',
+                    // description: '',
                 }
             }
         }
