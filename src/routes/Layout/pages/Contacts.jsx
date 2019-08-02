@@ -26,7 +26,7 @@ const Contacts = () => {
                 </div>
                 {phones.map(item => (
                     <div key={item} className={styles.phone}>
-                        <p>{item}</p>
+                        {item}
                     </div>
                 ))}
                 <div className={styles.email}>
@@ -35,10 +35,12 @@ const Contacts = () => {
                     </a>
                 </div>
                 <div className={styles.socials}>
-                    <a href={facebook} className={styles.facebook}><IoLogoFacebook /></a>
-                    <a href={google} className={styles.google}><IoLogoGoogleplus /></a>
+                    <a href={`https://www.${facebook}`} target="_blank" rel="noopener noreferrer" >
+                        <IoLogoFacebook /><p>{facebook}</p>
+                    </a>
+                    {/* <a href={google} className={styles.google}><IoLogoGoogleplus /></a>
                     <a href={instagram} className={styles.instagram}><IoLogoInstagram /></a>
-                    <a href={twitter} className={styles.twitter}><IoLogoTwitter /></a>
+                    <a href={twitter} className={styles.twitter}><IoLogoTwitter /></a> */}
                 </div>
                 <div className={styles.development}>
                     <div className={styles.copyright}>&#169; {new Date().getFullYear()} All rights reserved</div>

@@ -4,10 +4,7 @@ import olgaImage from '../images/profile/olga_profile.jpg';
 export const data = {
     core: {
         contacts: {
-            facebook: "https://www.facebook.com/cube.arch.club/",
-            google: "someemail@gmail.com",
-            instagram: "instagramAccound",
-            twitter: "twitterAccount",
+            facebook: "facebook.com/cube.arch.club",
             phones: [
                 "+380679190575",
                 "+380934025825",
@@ -316,7 +313,7 @@ export const data = {
                         },
                         {
                             id: 1,
-                            name: "Olga",
+                            name: "Olga Pavlenko",
                             info: "Some info about you. Some info about you.Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you.",
                             image: olgaImage,
                             socials: {
@@ -481,8 +478,8 @@ export const data = {
                         },
                         {
                             id: 1,
-                            name: "Ольга",
-                            info: `Засновник дитячої студії архітектури cube Arch club.  Практикуючий архітектор, викладач архітектурного проектування на кафедрі "теорії архітектури" КНУБА. Працює над дисертацію на тему проектування сучасних освітніх закладів, досліджує новітні методи освіти. Засновник мережі фахових блогів "do arch" та ін.`,
+                            name: "Ольга Павленко",
+                            info: `Автор ідеї та засновник дитячої студії архітектури cube Arch club.  Практикуючий архітектор, викладач архітектурного проектування на кафедрі "теорії архітектури" КНУБА. Працює над дисертацію на тему проектування сучасних освітніх закладів, досліджує новітні методи освіти. Засновник мережі фахових блогів "do arch" та ін.`,
                             image: olgaImage,
                             socials: {
                                 facebook: "https://www.facebook.com/olga.mykhailovna1",

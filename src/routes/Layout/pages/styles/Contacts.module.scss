@@ -1,11 +1,15 @@
 .root {
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 300px);
     display: flex;
     justify-content: center;
     flex-flow: column nowrap;
     font-size: 2rem;
+    & > div {
+        margin: 1rem auto;
+    }
 }
-.email {
+.email, 
+.socials {
     a{
         display: flex;
         align-items: center;
@@ -18,32 +22,32 @@
         }
     }
 }
-.socials{
-    margin: 4rem auto 0 auto;
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-evenly;
-    a {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: show .8s ease forwards;
-    }
-    .facebook{
-        animation-delay: .5s;
-    }
-    .google{
-        animation-delay: .6s;
-    }
-    .instagram{
-        animation-delay: .7s;
-    }
-    .twitter{
-        animation-delay: .8s;
-    }
-}
+// .socials{
+//     margin: 4rem auto 0 auto;
+//     width: 100%;
+//     max-width: 900px;
+//     display: flex;
+//     flex-flow: row;
+//     align-items: center;
+//     justify-content: space-evenly;
+//     a {
+//         opacity: 0;
+//         transform: translateY(30px);
+//         animation: show .8s ease forwards;
+//     }
+//     .facebook{
+//         animation-delay: .5s;
+//     }
+//     .google{
+//         animation-delay: .6s;
+//     }
+//     .instagram{
+//         animation-delay: .7s;
+//     }
+//     .twitter{
+//         animation-delay: .8s;
+//     }
+// }
 
 .development {
     position: absolute;

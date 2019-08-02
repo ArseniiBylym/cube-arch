@@ -618,7 +618,8 @@
         margin: 1rem 0;
     }
 
-    .email {
+    .email,
+    .socials {
         a{
             display: flex;
             align-items: center;
@@ -630,46 +631,7 @@
             }
         }
     }
-    .phone{
-        p {
-            margin: 0 0 0 1rem;
-        }
-    }
 
-    .socials{
-        margin-top: 2rem;
-        width: 100%;
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-        justify-content: space-evenly;
-        &.visible {
-            a{
-                opacity: 1;
-                transform: translateY(0)
-            }
-        }
-        a{
-            transition: all .8s ease;
-            transform: translateY(20px)
-        }
-        .facebook{
-            opacity: 0;
-            transition-delay: .5s;
-        }
-        .google{
-            opacity: 0;
-            transition-delay: .6s;
-        }
-        .instagram{
-            opacity: 0;
-            transition-delay: .7s;
-        }
-        .twitter{
-            opacity: 0;
-            transition-delay: .8s;
-        }
-    }
     .development {
         position: absolute;
         bottom: 0;
