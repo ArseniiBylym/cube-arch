@@ -38,10 +38,10 @@ const About = () => {
                                     <div className={styles.name}>{item.name}</div>
                                     <div className={styles.info}>{item.info}</div>
                                     <div className={styles.socials}>
-                                        <a href={`mailto:${item.socials.email}`}>
+                                        {/* <a href={`mailto:${item.socials.email}`}>
                                             <MdMailOutline />
                                             <p>{item.socials.email}</p>
-                                        </a>
+                                        </a> */}
                                         <a
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -49,7 +49,7 @@ const About = () => {
                                             className={styles.facebook}
                                         >
                                             <IoLogoFacebook />
-                                            <p>{item.socials.facebook}</p>
+                                            {/* <p>{item.socials.facebook}</p> */}
                                         </a>
                                     </div>
                                 </Grid>

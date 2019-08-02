@@ -24,7 +24,8 @@ export const ContactsScreen = props => {
             </div>
             <div className="socials">
                 <a href={`https://www.${facebook}`} target="_blank" rel="noopener noreferrer" >
-                    <IoLogoFacebook /><p>{facebook}</p>
+                    <IoLogoFacebook />
+                    {/* <p>{facebook}</p> */}
                 </a>
             </div>
             <div className="development">
