@@ -1,24 +1,24 @@
 .root {
-    padding: 3rem 10rem;
-    margin-top: 2rem;
+    padding: 0 10rem;
     @media screen and (max-width: 1280px) {
-        padding: 3rem 8rem;
+        padding: 0 8rem;
     }
      @media screen and (max-width: 960px) {
-        padding: 3rem 4rem;
-    }
-    @media screen and (max-width: 600px) {
-        padding: 1rem;
+        padding: 0 1rem;
     }
     .container {
         .user {
-            padding: 5rem 10rem;
+            padding: 5rem;
+            padding-top: 0;
             opacity: 0;
             transform: translateY(30px);
             animation: show 1s ease .5s forwards;
 
             @media screen and (max-width: 1280px) {
                 padding: 3rem 4rem;
+            }
+            @media screen and (max-width: 960px) {
+                padding: 1rem 2rem;
             }
             .image {
                 margin: 0 auto;
@@ -38,12 +38,15 @@
                     margin-bottom: 2rem;
                 }
                 .socials {
-                    margin-top: 2rem;
-                    display: flex;
-                    flex-flow: row nowrap;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    font-size: 2rem;
+                    a{
+                        margin: 1rem auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        p {
+                            margin: 0 0 0 1rem;
+                        }
+                    }
                 }
             }
         }

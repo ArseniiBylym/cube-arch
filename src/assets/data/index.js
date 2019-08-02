@@ -306,9 +306,8 @@ export const data = {
                             info: "Some info about you. Some info about you.Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you.",
                             image: darynaImage,
                             socials: {
-                                facebook: "https://www.facebook.com/cube.arch.club/",
-                                google: "someemail@gmail.com",
-                                instagram: "instagramLink"
+                                facebook: "facebook.com/daryna.bylym",
+                                email: "dasha_bylym@ukr.net"
                             }
                         },
                         {
@@ -317,9 +316,8 @@ export const data = {
                             info: "Some info about you. Some info about you.Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you. Some info about you.Some info about you.",
                             image: olgaImage,
                             socials: {
-                                facebook: "https://www.facebook.com/cube.arch.club/",
-                                google: "someemail@gmail.com",
-                                instagram: "instagramLink"
+                                facebook: "facebook.com/olga.mykhailovna1",
+                                email: "ompavlenkoo@gmail.com",
                             }
                         }
                     ]
@@ -471,9 +469,8 @@ export const data = {
                             info: `Архітекторка, спеціалістка з містобудування. Має 13-річний досвід роботи у сфері міського планування, благоустрою та дизайну. Створювала ескізні проекти, концепт-дизайни об'єктів, розробляла детальні плани територій та генеральні плани міст.`,
                             image: darynaImage,
                             socials: {
-                                facebook: "https://www.facebook.com/daryna.bylym",
-                                google: "someemail@gmail.com",
-                                instagram: "instagramLink"
+                                facebook: "facebook.com/daryna.bylym",
+                                email: "dasha_bylym@ukr.net"
                             }
                         },
                         {
@@ -482,9 +479,8 @@ export const data = {
                             info: `Автор ідеї та засновник дитячої студії архітектури cube Arch club.  Практикуючий архітектор, викладач архітектурного проектування на кафедрі "теорії архітектури" КНУБА. Працює над дисертацію на тему проектування сучасних освітніх закладів, досліджує новітні методи освіти. Засновник мережі фахових блогів "do arch" та ін.`,
                             image: olgaImage,
                             socials: {
-                                facebook: "https://www.facebook.com/olga.mykhailovna1",
-                                google: "someemail@gmail.com",
-                                instagram: "instagramLink"
+                                facebook: "facebook.com/olga.mykhailovna1",
+                                email: "ompavlenkoo@gmail.com",
                             }
                         }
                     ]
