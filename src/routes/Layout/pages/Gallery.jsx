@@ -17,10 +17,6 @@ const Gallery = ({scrollPosition}) => {
 
     const lang = useStoreState(state => state.lang.current);
 
-    useEffect(()=> {
-        console.log(selectedImage);
-    })
-    
     useEffect(() => {
         if (!gallery) {
             fetchGallery();

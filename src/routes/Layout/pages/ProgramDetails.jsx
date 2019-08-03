@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styles from './styles/ProgramDetails.module.scss';
-import {useStoreState, useStoreActions} from 'easy-peasy';
+import {useStoreState} from 'easy-peasy';
 import {Api} from '../../../api/index';
 import {data} from '../../../assets/data/index';
 import {Spinner} from './../../../components/shared';
@@ -29,9 +29,6 @@ const ProgramDetails = props => {
         const content = data.lang[lang].pages.programs;
         setContent(content);
     }, [lang]);
-    useEffect(() => {
-        console.log(program);
-    });
 
     const fetchCurrentProgram = async () => {
         try {

@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
 import {IoLogoFacebook} from 'react-icons/io';
-import {MdMailOutline} from 'react-icons/md'
 import {Spinner, PageTitle} from '../../../components/shared';
 import {data} from '../../../assets/data/index';
 import styles from './styles/About.module.scss';
@@ -38,10 +37,6 @@ const About = () => {
                                     <div className={styles.name}>{item.name}</div>
                                     <div className={styles.info}>{item.info}</div>
                                     <div className={styles.socials}>
-                                        {/* <a href={`mailto:${item.socials.email}`}>
-                                            <MdMailOutline />
-                                            <p>{item.socials.email}</p>
-                                        </a> */}
                                         <a
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -49,7 +44,6 @@ const About = () => {
                                             className={styles.facebook}
                                         >
                                             <IoLogoFacebook />
-                                            {/* <p>{item.socials.facebook}</p> */}
                                         </a>
                                     </div>
                                 </Grid>
