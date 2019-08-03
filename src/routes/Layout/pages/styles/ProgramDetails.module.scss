@@ -26,9 +26,19 @@
         & > div {
             display: flex;
             flex-flow: row nowrap;
-            align-items: center;
             justify-content: space-between;
             font-size: 1.5rem;
+        }
+        &__auditory {
+            div:first-child {
+                text-align: left;
+                flex-shrink: 0;
+                margin-right: 2rem;
+            }
+            div:last-child {
+                text-align: right;
+                flex-shrink: 1;
+            }
         }
         .register{
             justify-content: center;

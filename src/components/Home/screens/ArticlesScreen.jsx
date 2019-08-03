@@ -15,7 +15,7 @@ export const ArticlesScreen = props => {
                     container
                     className="ArticlesScreen__wrapper"
                     direction="row-reverse"
-                    alignItems="flex-start"
+                    // alignItems="flex-start"
                 >
                     <VisibilitySensor
                         partialVisibility={true}
