@@ -18,13 +18,13 @@ export const HomeScreen = props => {
                             className="secondaryInfo"
                             dangerouslySetInnerHTML={{__html: secondaryText}}
                         />
-                        <div className="subscribe">
-                            <div
-                                className="testRegisterButton"
-                                onClick={() => setTestRegisterModal(true)}
-                            >
-                                {testClass}
-                            </div>
+                    </div>
+                    <div className="subscribe">
+                        <div
+                            className="testRegisterButton"
+                            onClick={() => setTestRegisterModal(true)}
+                        >
+                            {testClass}
                         </div>
                     </div>
                 </div>

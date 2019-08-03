@@ -28,7 +28,7 @@ export const ToursScreen = props => {
                         </Grid>
                     )}
                 </VisibilitySensor>
-                <Grid item xs={12} sm={8}>
+                <Grid item xs={12} sm={8} className="imageWrapper">
                     <Link to={linkUrl} className="image" />
                 </Grid>
             </Grid>

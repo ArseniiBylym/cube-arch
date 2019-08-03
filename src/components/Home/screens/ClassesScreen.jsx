@@ -16,7 +16,7 @@ export const ClassesScreen = props => {
                 // onChange={isVisible => setVisible(isVisible)}
             >
                 {({isVisible}) => (
-                    <Grid container spacing={0}>
+                    <Grid container spacing={0} className="wrapper">
                         <Grid item xs={12} sm={8} className={isVisible ? 'imageContainer visible' : 'imageContainer'}>
                             {/* <div className="imageDamper" /> */}
                             <Link to={linkUrl} className="image" />

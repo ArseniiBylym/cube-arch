@@ -14,8 +14,7 @@
     padding: 7rem 4rem;
     padding-bottom: 4rem;
     @media screen and (max-width: 600px) {
-        padding: 0rem;
-        padding-top: 2rem;
+        padding: 70px 0 0 0 !important;
     }
 }
 
@@ -24,23 +23,6 @@
     display: flex;
     flex-direction: column;
     background: url('../../../assets/images/home/home1-min.jpg') center center/ cover no-repeat fixed;
-    .logo{
-        position: fixed;
-        left: 2rem;
-        top: 1.5rem;
-        z-index: 100;
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        .image{
-            width: 4rem;
-            height: 4rem;
-        }
-        .title{
-            margin-left: 2rem;
-            font-size: 2rem;
-        }
-    }
     .content{
         display: flex;
         flex-grow: 1;
@@ -49,15 +31,23 @@
         width: 100%;
         margin: 1rem auto;
         padding: 1rem 0;
+        @media screen and (max-width: 600px) {
+            margin: 0;
+            padding: 0;
+        }
         
         .title {
             width: 85%;
-            margin: 0 auto;
+            margin: 1rem auto;
             background-color: #fcfcfc99;
             padding: 2rem;
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
+            @media screen and (max-width: 600px) {
+                width: 100%;
+                padding: 1rem 0;
+            }
         }
         .info{
             color: #444;
@@ -68,12 +58,15 @@
                 margin: 0;
             }
             @media screen and (max-width: 600px) {
-                font-size: 4rem;
+                font-size: 2rem;
             }
         }
         .secondaryInfo {
             font-size: 1.8rem;
             margin: 1rem auto;
+            @media screen and (max-width: 600px) {
+                font-size: 1.5rem;
+            }
         }
         .subscribe{
             .testRegisterButton {
@@ -95,6 +88,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media screen and (max-width: 600px) {
+            margin-bottom: 3rem;
+        }
         .button{
             position: relative;
             font-weight: bold;
@@ -131,11 +127,19 @@
     align-items: center;
     justify-content: center;
     &__header {
-        font-size: 3rem;
+        font-size: 3rem; 
+        @media screen and (max-width: 600px) {
+            font-size: 2.5rem;
+            padding-bottom: 1rem;
+        }
     }
     &__subHeader {
         width: 70%;
         font-size: 2rem;
+        @media screen and (max-width: 600px) {
+            font-size: 1.5rem;
+            padding-bottom: 1rem;
+        }
     }
     .text {
         padding: 3rem;
@@ -145,6 +149,9 @@
         background-color: #0f5812b3;
         padding: 5rem 3rem;
         color: white;
+        @media screen and (max-width: 600px) {
+           padding: 1rem 0;
+        }
         .element {
             opacity: 0;
             transform: translate3d(0, 30px, 0);
@@ -162,6 +169,9 @@
             .title{
                 font-size: 2rem;
                 margin-bottom: 2rem;
+                @media screen and (max-width: 600px) {
+                    margin-bottom: 0;
+                 }
             }
             .subtitle {
                 font-size: 1.3rem;
@@ -173,10 +183,11 @@
                 transform: translate3d(0, 0, 0);
             }
         }
-
-        
     }
     &__footer{
+        @media screen and (max-width: 600px) {
+            margin-bottom: 2rem !important;
+        }
         .button{
             position: relative;
             font-weight: bold;
@@ -200,6 +211,9 @@
     .imageContainer {
         position: relative;
         overflow: hidden;
+        @media screen and (max-width: 600px) {
+            min-height: 200px;
+        }
         &.visible {
             .imageDamper {
                 transform: translate3d(100%, 0, 0);
@@ -221,10 +235,11 @@
             width: 100%;
             height: 100%;
             margin-left: auto;
-            background: url('../../../assets/images/home/programs-min.jpg') right center/ cover no-repeat ;
+            background: url('../../../assets/images/home/programs-min.jpg') center center/ cover no-repeat ;
             @media screen and (max-width: 600px) {
                 width: 100%;
                 height: 92%;
+                background-position: center center;
             }
         }
     }
@@ -235,6 +250,11 @@
         flex-direction: column;
         align-items: center;
         font-size: 1.5rem;
+        @media screen and (max-width: 600px) {
+            margin: 0 auto;
+            padding: 0;
+         }
+        
         & > div {
             opacity: 0;
             transform: translateY(30px);
@@ -256,10 +276,16 @@
             text-align: left;
             margin: 1rem auto;
             transition-delay: .2s;
+            @media screen and (max-width: 600px) {
+                margin: 0 auto;
+            }
         }
         .link{
             margin-top: 2rem;
             transition-delay: .3s;
+            @media screen and (max-width: 600px) {
+                margin: 0 auto;
+            }
         }
         @media screen and (max-width: 600px) {
             left: 0;
@@ -289,6 +315,12 @@
 .ClassesScreen{
     display: flex;
     padding-bottom: 7rem;
+    .wrapper {
+        @media screen and (max-width: 600px) {
+            margin: 0 auto;
+            flex-flow: column-reverse nowrap;
+        }
+    }
     .imageContainer {
         position: relative;
         overflow: hidden;
@@ -331,6 +363,10 @@
         flex-direction: column;
         align-items: center;
         font-size: 1.5rem;
+        @media screen and (max-width: 600px) {
+           margin: 0 auto;
+           padding: 0;
+        }
         & > div {
             opacity: 0;
             transform: translateY(30px);
@@ -369,6 +405,9 @@
     .wrapper {
         height: 100%;
         align-content: space-evenly;
+        @media screen and (max-width: 600px) {
+            padding: 0 2rem;
+        }
         &.visible {
             .element {
                 opacity: 1;
@@ -407,6 +446,10 @@
                 background-size: cover;
                 background-repeat: no-repeat;
                 border-radius: 50%;
+                @media screen and (max-width: 600px) {
+                    width: 3rem;
+                    height: 3rem;
+                }
             }
             .name{ 
                 font-size: 1.5rem;
@@ -416,6 +459,10 @@
                 margin-top: 2rem;
                 font-size: 1.3rem;
                 text-align: left;
+                @media screen and (max-width: 600px) {
+                   margin: 0 auto;
+                   font-size: 1rem;
+                }
             }
         }
     }
@@ -424,7 +471,12 @@
 .ToursScreen{
     display: flex;
     padding-bottom: 7rem;
-    
+    .imageWrapper {
+        @media screen and (max-width: 600px) {
+            margin-bottom: 6rem;
+            min-height: 300px;
+        }
+    }
     .image{
         display: block;
         width: 100%;
@@ -432,10 +484,7 @@
         margin-right: auto;
         background: url('../../../assets/images/home/tours-min-reverse.png') right bottom/ cover no-repeat ;
         @media screen and (max-width: 600px) {
-            width: 100%;
-            height: 92%;
-            background-position: left bottom;
-            margin-top: auto;
+            background-position: center center;
         }
     }
     
@@ -446,9 +495,9 @@
         flex-direction: column;
         align-items: center;
         font-size: 1.5rem;
-        // opacity: 0;
-        // transform: translateX(-50px);
-        // transition: all 1s ease .5s;
+        @media screen and (max-width: 600px) {
+           margin: 0 auto;
+        }
         & > div {
             opacity: 0;
             transform: translateY(30px);
@@ -497,10 +546,10 @@
                 opacity: 1;
             }
         }
-        // @media screen and (max-width: 600px) {
-        //    margin-top: 4rem;
-        //    transform: scale(.45)
-        // }
+        @media screen and (max-width: 600px) {
+           margin-top: 4rem;
+           transform: scale(.45)
+        }
         .image{
             position: relative;
             box-shadow: 0px 20px 20px rgba(0,0,0,.5);
@@ -588,30 +637,21 @@
         height: 100%;
         display: flex;
         align-items: center;
-        background: url('../../../assets/images/home/articles-min.jpg') bottom center / contain no-repeat fixed;
+        background: url('../../../assets/images/home/articles-min.jpg') bottom center / cover no-repeat fixed;
         @media screen and (max-width: 600px) {
-          height: calc(100% - 5rem);
-          margin-top: 5rem;
-         }
+            align-items: flex-start
+        }
 
         .content {
             transition: all 1s ease;
             transform: translateY(30px);
             opacity: 0;
+            @media screen and (max-width: 600px) {
+                margin-top: 3rem;
+            }
             &.visible {
                 transform: translateY(0);
                 opacity: 1;
-            }
-
-            @media screen and (max-width: 600px) {
-                background-color: #d2d2d2a4;
-                width: 80%;
-                margin: 2rem auto;
-                padding: 1rem;
-               }
-            .text {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
             }
         }
     }
@@ -628,8 +668,11 @@
         background: url('../../../assets/images/home/about-min.jpg') center center/ 100% auto no-repeat ;
         box-shadow: 0 15px 20px -5px;
         @media screen and (max-width: 600px) {
-            margin-top: 5rem;
-           }
+            width: 100%;
+            height: 80vw;
+            background-position: center top;
+            box-shadow: none;
+        }
     }
     
     .content {
@@ -645,6 +688,9 @@
         opacity: 0;
         transform: translateY(30px);
         transition: all 1s ease ;
+        @media screen and (max-width: 600px) {
+            margin: 0 auto;
+        }
         &.visible {
             transform: translateY(0);
             opacity: 1;
@@ -701,5 +747,9 @@
         align-items: center;
         justify-content: space-evenly;
         font-size: 1.2rem;
+        @media screen and (max-width: 600px){
+            bottom: 0;
+            margin: -1rem auto 0 auto !important;
+        }
     }
 }
