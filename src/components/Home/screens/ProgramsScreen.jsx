@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import VisibilitySensor from 'react-visibility-sensor';
 import {IoIosArrowDown} from 'react-icons/io';
+import image from '../../../assets/images/home/programs-min.jpg'
 
 export const ProgramsScreen = props => {
     const {text, linkUrl, linkText, nextScreenTitle, header} = props;
@@ -27,7 +28,6 @@ export const ProgramsScreen = props => {
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={8} className={isVisible ? "imageContainer visible" : "imageContainer"}>
-                            {/* <div className="imageDamper" /> */}
                             <Link to={linkUrl} className="image" />
                         </Grid>
                         <Grid
