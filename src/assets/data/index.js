@@ -49,7 +49,7 @@ export const data = {
         },
         testClass: {
             en: {
-                title: 'Leave your contacts to get information about future events.',
+                title: 'Register to a free test class',
                 email: 'Email',
                 name: 'Name, surname of contact person',
                 phone: 'Phone number',
@@ -57,7 +57,7 @@ export const data = {
                 confirmMessage: 'Thank you! We will inform you about future events, wich could be interesting for you.'
             },
             ukr: {
-                title: `Влітку ніхто не хоче до школи! Якщо ви теж втомились від уроків, але не хочете зупиняти мозкову діяльність та розвиток особистості, то вам сюди.`,
+                title: `Записатися на безкоштовне пробне заняття`,
                 email: `Електронна адреса`,
                 name: `Ваші ім'я та прізвище`,
                 phone: `Телефон`,
