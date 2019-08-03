@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import VisibilitySensor from 'react-visibility-sensor';
 
 export const ArticlesScreen = props => {
-    const [visible, setVisible] = useState(false);
+    // const [visible, setVisible] = useState(false);
 
     const {linkUrl, linkText} = props;
     return (
@@ -19,8 +19,9 @@ export const ArticlesScreen = props => {
                 >
                     <VisibilitySensor
                         partialVisibility={true}
-                        active={!visible}
-                        onChange={isVisible => setVisible(isVisible)}
+                        offset={{top: 0, bottom: 300}}
+                        // active={!visible}
+                        // onChange={isVisible => setVisible(isVisible)}
                     >
                         {({isVisible}) => (
                             <Grid item xs={12} md={6} className="content__wrapper">

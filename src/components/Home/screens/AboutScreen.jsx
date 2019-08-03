@@ -4,23 +4,26 @@ import {Link} from 'react-router-dom';
 import VisibilitySensor from 'react-visibility-sensor';
 
 export const AboutScreen = props => {
-    const [visible, setVisible] = useState(false);
+    // const [visible, setVisible] = useState(false);
 
     const {linkUrl, linkText} = props;
     return (
         <div className="AboutScreen">
-            <Link to={linkUrl} className="image" />
             <VisibilitySensor
                 partialVisibility={true}
-                active={!visible}
-                onChange={isVisible => setVisible(isVisible)}
+                offset={{top: 0, bottom: 300}}
+                // active={!visible}
+                // onChange={isVisible => setVisible(isVisible)}
             >
                 {({isVisible}) => (
-                    <div className={isVisible ? "content visible" : "content"}>
-                        <div className="link">
-                            <LinkButton linkText={linkText} linkUrl={linkUrl} />
+                    <>
+                        <Link to={linkUrl} className="image" />
+                        <div className={isVisible ? 'content visible' : 'content'}>
+                            <div className="link">
+                                <LinkButton linkText={linkText} linkUrl={linkUrl} />
+                            </div>
                         </div>
-                    </div>
+                    </>
                 )}
             </VisibilitySensor>
         </div>

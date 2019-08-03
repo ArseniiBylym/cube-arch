@@ -1,23 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Grid from '@material-ui/core/Grid';
 import {IoIosArrowDown} from 'react-icons/io';
-import {useTrail, animated} from 'react-spring'
-
-
+import {Trail, animated} from 'react-spring/renderprops'
 import './styles.scss';
 import VisibilitySensor from 'react-visibility-sensor';
 
 export const InfoScreen = props => {
-    const [visible, setVisible] = useState(false)
+    useEffect(() => console.log('render'))
     const {header, subHeader, text, nextScreenTitle} = props;
-    const trails = useTrail(text.length, {opacity: visible ? 1 : 0, y: visible ? `0px` : `50px`}); 
     return (
         <div className='InfoScreen'>
             <VisibilitySensor 
                 partialVisibility={true}
-                offset={{top: 0, bottom: 300}}
-                // active={!visible}
-                onChange={(isVisible) => setVisible(isVisible)}
+                offset={{top: 200, bottom: 300}}
             >
                 {({isVisible}) => (
                     <Grid container className="InfoScreen__content" justify="center" direction="column" wrap="nowrap" style={{height: '100%'}}>
@@ -27,9 +22,9 @@ export const InfoScreen = props => {
                         <Grid item xs={12} container justify="center" alignItems="center"  >
                             <div className="InfoScreen__subHeader" dangerouslySetInnerHTML={{__html: subHeader}} />
                         </Grid>
-                        <Grid item xs={12} className="wrapper">
+                        <Grid item xs={12} className={isVisible ? "wrapper visible" : "wrapper"}>
                             <Grid container spacing={4}>
-                                {text.map((item, index) => (
+                                {text.map(item => (
                                     <Grid
                                         key={item.title}
                                         item
@@ -37,13 +32,8 @@ export const InfoScreen = props => {
                                         sm={4}
                                         className="element"
                                     >
-                                        <animated.div style={{
-                                            opacity: trails[index].opacity,
-                                            transform: trails[index].y.interpolate(value => `translate3d(0, ${value}, 0)`)
-                                        }}>
-                                            <div className="title">{item.title}</div>
-                                            <div className="subtitle">{item.subtitle}</div>
-                                        </animated.div>
+                                        <div className="title">{item.title}</div>
+                                        <div className="subtitle">{item.subtitle}</div>
                                     </Grid>
                                 ))}
                             </Grid>

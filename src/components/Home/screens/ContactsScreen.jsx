@@ -5,8 +5,6 @@ import {MdMailOutline} from 'react-icons/md';
 import VisibilitySensor from 'react-visibility-sensor';
 
 export const ContactsScreen = props => {
-    const [visible, setVisible] = useState(false);
-
     const {address} = props;
     const {phones, email, facebook, google, instagram, twitter, development} = data.core.contacts;
     return (
@@ -25,8 +23,8 @@ export const ContactsScreen = props => {
             </div>
             <VisibilitySensor
                 partialVisibility={true}
-                active={!visible}
-                onChange={isVisible => setVisible(isVisible)}
+                // active={!visible}
+                // onChange={isVisible => setVisible(isVisible)}
             >
                 {({isVisible}) => (
                     <div className={isVisible ? "socials visible" : "socials"}>

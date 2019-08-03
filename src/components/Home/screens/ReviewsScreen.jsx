@@ -4,14 +4,15 @@ import Grid from '@material-ui/core/Grid';
 import VisibilitySensor from 'react-visibility-sensor';
 
 export const ReviewsScreen = props => {
-    const [visible, setVisible] = useState(false);
+    // const [visible, setVisible] = useState(false);
     const {text, className} = props;
     return (
         <div className={`ReviewsScreen`}>
             <VisibilitySensor
                 partialVisibility={true}
-                active={!visible}
-                onChange={isVisible => setVisible(isVisible)}
+                offset={{top: 0, bottom: 300}}
+                // active={!visible}
+                // onChange={isVisible => setVisible(isVisible)}
             >
                 {({isVisible}) => (
                     <Grid container spacing={4} className={isVisible ? "wrapper visible" : "wrapper"}>

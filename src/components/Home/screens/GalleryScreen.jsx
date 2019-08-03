@@ -4,15 +4,16 @@ import {LinkButton} from '../../shared';
 import VisibilitySensor from 'react-visibility-sensor';
 
 export const GalleryScreen = props => {
-    const [visible, setVisible] = useState(false);
+    // const [visible, setVisible] = useState(false);
 
-    const {text, linkUrl, linkText, className} = props;
+    const {text, linkUrl, linkText} = props;
     return (
         <div className={`GalleryScreen`}>
             <VisibilitySensor
                 partialVisibility={true}
-                active={!visible}
-                onChange={isVisible => setVisible(isVisible)}
+                offset={{top: 0, bottom: 300}}
+                // active={!visible}
+                // onChange={isVisible => setVisible(isVisible)}
             >
                 {({isVisible}) => (
                     <>
