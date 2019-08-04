@@ -9,6 +9,10 @@
     transition: background-color .5s ease;
     z-index: 300;
     background-color: #4f8c4f;
+    @media screen and (max-width: 600px) {
+        right: 1rem;
+        bottom: 1rem;
+    }
     &:hover {
         background-color: #3d6d3d;
     }

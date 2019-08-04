@@ -15,6 +15,9 @@
     right: 0;
     z-index: 100;
     pointer-events: none;
+    @media screen and (max-width: 600px) {
+        position: absolute;
+    }
 }
 .main {
     min-height: calc(100vh - 84px);

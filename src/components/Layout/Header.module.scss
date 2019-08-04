@@ -4,6 +4,10 @@
     align-items: center;
     justify-content: space-between;
     pointer-events: none;
+    // @media screen and (max-width: 600px){
+    //     background-color: rgba(128, 128, 128, 0.37);
+    // }
+    
 }
 .logo {
     font-size: 2rem;

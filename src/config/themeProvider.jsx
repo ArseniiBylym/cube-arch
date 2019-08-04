@@ -30,6 +30,16 @@ const theme = createMuiTheme({
                 '@media (max-width:600px)': {
                     fontSize: '1rem',
                 },
+            },
+            outlined: {
+                transform: 'translate(14px, 8px) scale(1)',
+            }
+        },
+        MuiOutlinedInput: {
+            input: {
+                '@media (max-width:600px)': {
+                    padding: '5px',
+                },
             }
         },
         MuiInputBase: {
@@ -41,7 +51,8 @@ const theme = createMuiTheme({
         MuiDialog: {
             paper: {
                 '@media (max-width:600px)': {
-                    margin: '20px'
+                    margin: 0,
+                    minHeight: '300px'
                 },
             }
         },
