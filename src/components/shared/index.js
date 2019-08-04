@@ -5,3 +5,4 @@ export * from './Spinner';
 export * from './PageTitle';
 export * from './NavigationLink';
 export * from './Subscribe';
+export * from './EventCard';
