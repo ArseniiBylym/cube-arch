@@ -13,18 +13,18 @@ export const EventCard = trackWindowScroll(({cardType, id, fileUrl, image, readM
     const [imageLoaded, setImageLoaded] = useState(false);
     const lang = useStoreState(state => state.lang.current);
 
-    useEffect(() => preloadImage(), [])
+    // useEffect(() => preloadImage(), [])
 
     useEffect(() => {
         const content = data.lang[lang].pages[cardType];
         setContent(content);
     }, [lang]);
 
-    const preloadImage = () => {
-        const img = new Image();
-        img.onload = () => {setImageLoaded(true)}
-        img.src = fileUrl || image;
-    }
+    // const preloadImage = () => {
+    //     const img = new Image();
+    //     img.onload = () => {setImageLoaded(true)}
+    //     img.src = fileUrl || image;
+    // }
 
     const isFutureDate = date => {
         return Date.now() < date;
@@ -35,22 +35,18 @@ export const EventCard = trackWindowScroll(({cardType, id, fileUrl, image, readM
         <Grid key={id} item xs={12} md={6} className={styles.card}>
         <Link to={`/${cardType}/${id}`}>
             <div className={styles.card__container}>
-                {imageLoaded ? (
-                    <>
-                     <LazyLoadImage
-                        height="auto"
-                        src={fileUrl || image}
-                        scrollPosition={scrollPosition}
-                        width="100%"
-                        className={styles.card__image}
-                    />
-                        <div className={styles.card__details}>
-                            <div className={styles.card__details__text}>{content.readMore}</div>
-                        </div>
-                    </>
-                ) : (
-                    <Spinner />
-                )}
+                <LazyLoadImage
+                    height="auto"
+                    src={fileUrl || image}
+                    scrollPosition={scrollPosition}
+                    width="100%"
+                    className={styles.card__image}
+                    afterLoad={() => setImageLoaded(true)}
+                />
+                <div className={styles.card__details}>
+                    <div className={styles.card__details__text}>{content.readMore}</div>
+                </div>
+                    {!imageLoaded && <Spinner bgColor="white"/>}
                 <div className={styles.card__info}>
                     <div className={styles.card__info__name}>{name[lang]}</div>
                     {isFutureDate(+datetime) && (
