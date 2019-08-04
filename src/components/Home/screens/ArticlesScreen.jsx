@@ -20,14 +20,12 @@ export const ArticlesScreen = props => {
                     <VisibilitySensor
                         partialVisibility={true}
                         offset={{top: 0, bottom: 300}}
-                        // active={!visible}
-                        // onChange={isVisible => setVisible(isVisible)}
                     >
                         {({isVisible}) => (
                             <Grid item xs={12} md={6} className="content__wrapper">
                                 <div className={isVisible ? "content visible" : "content"}>
                                     <div className="link">
-                                        <LinkButton linkText={linkText} linkUrl={linkUrl} color="secondary" />
+                                        <LinkButton linkText={linkText} color="secondary" />
                                     </div>
                                 </div>
                             </Grid>

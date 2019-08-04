@@ -8,8 +8,16 @@ export const LinkButton = props => {
     const colorTheme = color === 'secondary' ? styles.secondary: styles.primary;
 
     return (
-        <Link to={linkUrl} className={classNames(styles.root, colorTheme)}>
-            {linkText}
-        </Link>
+        <>
+        {linkUrl ? (
+            <Link to={linkUrl} className={classNames(styles.root, colorTheme)}>
+                {linkText}
+            </Link>
+        ) : (
+            <div className={classNames(styles.root, colorTheme)} style={{display: 'inline-block'}}>
+                {linkText}
+            </div>
+        )}
+        </>
     );
 };
