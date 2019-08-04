@@ -13,7 +13,7 @@ export const InfoScreen = props => {
                 offset={{top: 200, bottom: 300}}
             >
                 {({isVisible}) => (
-                    <Grid container className="InfoScreen__content" justify="center" direction="column" wrap="nowrap" style={{height: '100%'}}>
+                    <Grid container className="InfoScreen__content" justify="space-around" direction="column" wrap="nowrap" style={{height: '100%'}}>
                         <Grid item xs={12} container alignItems="flex-end" justify="center">
                             <div className="InfoScreen__header">{header}</div>
                         </Grid>

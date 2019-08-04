@@ -131,6 +131,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &__content {
+        min-height: -webkit-fill-available;
+    }
     &__header {
         font-size: 3rem; 
         @media screen and (max-width: 600px) {
@@ -390,7 +393,7 @@
 
 .ReviewsScreen {
     .wrapper {
-        height: 100%;
+        min-height: -webkit-fill-available;
         align-content: space-evenly;
         @media screen and (max-width: 600px) {
             padding: 0 2rem;
