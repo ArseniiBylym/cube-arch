@@ -67,7 +67,6 @@
             @media screen and (max-width: 600px) {
                 font-size: 1.2rem;
                 margin: auto;
-                // line-height: 1;
             }
         }
         .subscribe{
@@ -637,13 +636,11 @@
 
 .ArticlesScreen {
     &__wrapper {
-        // height: 100%;
         min-height: -webkit-fill-available;
         display: flex;
         align-items: center;
         background: url('../../../assets/images/home/articles-min.jpg') bottom center / cover no-repeat fixed;
         @media screen and (max-width: 600px) {
-            // align-items: flex-start;
             background-attachment: initial;
             min-height: -webkit-fill-available;
         }

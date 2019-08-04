@@ -139,7 +139,7 @@ export const data = {
                 name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
                 children: `Кількість дітей, їх вік, ім'я`,
-                reason: `Що Вас зацікавило у єкскурсії? Що очікуєте?`,
+                reason: `Що Вас зацікавило у екскурсії? Що очікуєте?`,
                 sourse: `Звідки дізналися про нас? `
             }
         },
@@ -154,12 +154,12 @@ export const data = {
                 sourse: 'Where did you find out about us?'
             },
             ukr: {
-                datetime: `Бажана датата час`,
+                datetime: `Бажана датата та час`,
                 email: `Електронна адреса`,
                 name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
                 children: `Кількість дітей, їх вік, ім'я`,
-                reason: `Що Вас зацікавило у єкскурсії? Що очікуєте?`,
+                reason: `Що Вас зацікавило у екскурсії? Що очікуєте?`,
                 sourse: `Звідки дізналися про нас? `
             }
         }
@@ -234,7 +234,6 @@ export const data = {
                 },
                 programs: {
                     title: "Courses",
-                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
                         startDate: "Classes start date",
                         endDate: "Classes end date",
@@ -251,7 +250,6 @@ export const data = {
                 },
                 classes: {
                     title: "Classes",
-                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
                         date: "Date",
                         time: "Time",
@@ -268,7 +266,6 @@ export const data = {
                 },
                 tours: {
                     title: "Tours",
-                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     details: {
                         date: "Date",
                         time: "Time",
@@ -286,15 +283,12 @@ export const data = {
                 },
                 gallery: {
                     title: "Gallery",
-                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 articles: {
                     title: "Articles",
-                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                 },
                 about: {
                     title: "About us",
-                    // description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam libero nemo sint quasi at voluptatum, dolore rem, rerum cupiditate eos, ipsa sapiente accusamus! Ad sint fuga maiores repellendus incidunt nisi!",
                     users: [
                         {
                             id: 0,
@@ -303,7 +297,6 @@ export const data = {
                             image: darynaImage,
                             socials: {
                                 facebook: "facebook.com/daryna.bylym",
-                                email: "dasha_bylym@ukr.net"
                             }
                         },
                         {
@@ -313,14 +306,12 @@ export const data = {
                             image: olgaImage,
                             socials: {
                                 facebook: "facebook.com/olga.mykhailovna1",
-                                email: "ompavlenkoo@gmail.com",
                             }
                         }
                     ]
                 },
                 contacts: {
                     title: "Contacts",
-                    // description: '',
                 }
             }
         },
@@ -397,7 +388,6 @@ export const data = {
                 },
                 programs: {
                     title: "Курси",
-                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
                         startDate: "Початок навчання",
                         endDate: "Кінець навчання",
@@ -414,7 +404,6 @@ export const data = {
                 },
                 classes: {
                     title: "Майстер-класи",
-                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
                         date: "Дата проведення",
                         time: "Час",
@@ -431,7 +420,6 @@ export const data = {
                 },
                 tours: {
                     title: "Екскурсії",
-                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     details: {
                         date: "Дата проведення",
                         time: "Час",
@@ -449,15 +437,12 @@ export const data = {
                 },
                 gallery: {
                     title: "Галерея",
-                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 articles: {
                     title: "Статті",
-                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                 },
                 about: {
                     title: "Про нас",
-                    // description: "Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ. Якщо потрібно, тут більш детальна, ніж на головній сторінці, інформація про цей розділ.",
                     users: [
                         {
                             id: 0,
@@ -466,7 +451,6 @@ export const data = {
                             image: darynaImage,
                             socials: {
                                 facebook: "facebook.com/daryna.bylym",
-                                email: "dasha_bylym@ukr.net"
                             }
                         },
                         {
@@ -476,14 +460,12 @@ export const data = {
                             image: olgaImage,
                             socials: {
                                 facebook: "facebook.com/olga.mykhailovna1",
-                                email: "ompavlenkoo@gmail.com",
                             }
                         }
                     ]
                 },
                 contacts: {
                     title: 'Контакти',
-                    // description: '',
                 }
             }
         }

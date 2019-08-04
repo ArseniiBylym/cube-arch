@@ -37,7 +37,6 @@ const Contacts = () => {
                 <div className={styles.socials}>
                     <a href={`https://www.${facebook}`} target="_blank" rel="noopener noreferrer" >
                         <IoLogoFacebook />
-                        {/* <p>{facebook}</p> */}
                     </a>
                 </div>
                 <div className={styles.development}>

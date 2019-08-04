@@ -52,7 +52,7 @@ export const Articles = props => {
     const itemsList = () => {
         return articles.map(item => (
             <Grid key={item.id} item xs={12} sm={6} md={4} className={styles.section}>
-                    {item.isBlog ? getBlogPreview(item) : getMicrolink(item)}
+                {item.isBlog ? getBlogPreview(item) : getMicrolink(item)}
             </Grid>
         ))
     }

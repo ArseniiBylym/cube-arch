@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {LinkButton} from '../../shared';
 import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import VisibilitySensor from 'react-visibility-sensor';
 
 export const ToursScreen = props => {
-    // const [visible, setVisible] = useState(false);
     const {text, linkUrl, linkText, className, header} = props;
     return (
         <div className={`ToursScreen ${className}`}>
@@ -13,8 +12,6 @@ export const ToursScreen = props => {
                 <VisibilitySensor
                     partialVisibility={true}
                     offset={{top: 0, bottom: 300}}
-                    // active={!visible}
-                    // onChange={isVisible => setVisible(isVisible)}
                 >
                     {({isVisible}) => (
                         <Grid item xs={12} sm={4}>

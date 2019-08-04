@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
-// import LazyHero from 'react-lazy-hero';
 import {LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 import {Spinner, PageTitle} from '../../../components/shared';
 import {ImageViewer} from '../../../components/Gallery';
@@ -57,11 +56,6 @@ const Gallery = ({scrollPosition}) => {
         return gallery.map((item, i) => {
             return (
                 <Grid key={item.id} className={styles.image} item xs={12} sm={6} md={4} lg={3} onClick={() => setSelectedImage({image: item.url, index: i})}>
-                    {/* <LazyHero 
-                        imageSrc={item.url} 
-                        opacity={0.1}
-                        style={{minHeight: '25rem'}}
-                    /> */}
                     <LazyLoadImage
                         height="auto"
                         src={item.url}

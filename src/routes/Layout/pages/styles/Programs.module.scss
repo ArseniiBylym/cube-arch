@@ -66,7 +66,6 @@
     }
     &__info{
         position: absolute;
-        // color: white;
         color: #333;
         top: 0;
         left: 0;
@@ -74,7 +73,6 @@
         flex-grow: 1;
        
         padding: 1rem;
-        // background-color: rgba(82, 81, 77, 0.48);
         background-color: #fffdfdc9;
         &__name {
             font-weight: bold;

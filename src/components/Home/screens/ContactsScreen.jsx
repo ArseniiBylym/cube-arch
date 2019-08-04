@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {data} from '../../../assets/data/index';
-import {IoLogoFacebook, IoLogoGoogleplus, IoLogoInstagram, IoLogoTwitter} from 'react-icons/io';
+import {IoLogoFacebook} from 'react-icons/io';
 import {MdMailOutline} from 'react-icons/md';
 import VisibilitySensor from 'react-visibility-sensor';
 
@@ -11,8 +11,6 @@ export const ContactsScreen = props => {
         <VisibilitySensor
             partialVisibility={true}
             offset={{top: 0, bottom: 300}}
-            // active={!visible}
-            // onChange={isVisible => setVisible(isVisible)}
         >
             {({isVisible}) => (
                 <div className={isVisible ? 'ContactsScreen visible' : 'ContactsScreen'}>

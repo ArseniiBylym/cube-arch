@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import {IoIosArrowDown} from 'react-icons/io';
-import {Trail, animated} from 'react-spring/renderprops'
 import './styles.scss';
 import VisibilitySensor from 'react-visibility-sensor';
 
 export const InfoScreen = props => {
-    useEffect(() => console.log('render'))
     const {header, subHeader, text, nextScreenTitle} = props;
     return (
         <div className='InfoScreen'>

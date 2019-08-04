@@ -1,12 +1,3 @@
-:root {
-  --text-dark: #333;
-  --text-light: #efefef;
-  --text-middle: gray;
-  --bg-light: #efefef;
-  --bg-dark: #333;
-  --bg-middle: gray;
-}
-
 html {
   @media screen and (max-width: 1920px) {
     font-size: 12px;
@@ -22,7 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--bg-dark);
+  color: #333;
   text-align: center;
 }
 

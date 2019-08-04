@@ -83,7 +83,6 @@ export const ManageArticleForm = props => {
                 await Api.articles.update({
                     id: editedElem.id,
                     newDoc,
-                    // fileName: editedElem.fileName,
                     callback: updateArticle,
                 });
             } else {

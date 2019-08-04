@@ -127,7 +127,6 @@ export const ManageProgramForm = props => {
                 await Api.programs.update({
                     id: editedElem.id,
                     newDoc,
-                    // fileName: editedElem.fileName,
                     callback: updateProgram,
                 });
             } else {

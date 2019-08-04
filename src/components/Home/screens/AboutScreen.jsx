@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {LinkButton} from '../../shared';
 import {Link} from 'react-router-dom';
 import VisibilitySensor from 'react-visibility-sensor';
 
 export const AboutScreen = props => {
-    // const [visible, setVisible] = useState(false);
 
     const {linkUrl, linkText} = props;
     return (
@@ -12,8 +11,6 @@ export const AboutScreen = props => {
             <VisibilitySensor
                 partialVisibility={true}
                 offset={{top: 0, bottom: 300}}
-                // active={!visible}
-                // onChange={isVisible => setVisible(isVisible)}
             >
                 {({isVisible}) => (
                     <>

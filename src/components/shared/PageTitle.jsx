@@ -1,6 +1,5 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 import styles from './PageTitle.module.scss';
 
 export const PageTitle = ({title, description}) => {
@@ -11,9 +10,6 @@ export const PageTitle = ({title, description}) => {
                     {title}
                 </Grid>
             </Grid>
-            {/* <Container maxWidth="md" className={styles.subHeader}>
-                {description}
-            </Container> */}
         </>
     );
 };

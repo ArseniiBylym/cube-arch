@@ -41,7 +41,6 @@ export const TestClassRegisterModal = props => {
             phone,
             child
         }
-        console.log(registerData)
 
         setSending(true);
         try {

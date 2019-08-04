@@ -3,7 +3,7 @@ import {Screens} from '../../components/Home';
 import {Particles} from '../../components/shared'
 import styles from './Home.module.scss';
 import {Header} from '../../components/Layout'
-import { Spinner, MainSpinner } from './../../components/shared';
+import { Spinner } from './../../components/shared';
 import mainImage from '../../assets/images/home/home1-min.jpg';
 
 const SCREENS_LEN = 9;
