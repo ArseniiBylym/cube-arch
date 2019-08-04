@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import styles from './styles/TourDetails.module.scss';
 import {useStoreState, useStoreActions} from 'easy-peasy';
 import {Api} from '../../../api/index';
@@ -16,6 +16,11 @@ const TourDetails = props => {
     const tours = useStoreState(state => state.content.tours);
     const lang = useStoreState(state => state.lang.current);
     const [tour, setTour] = useState(null);
+
+    useLayoutEffect(() => {
+        const header = document.getElementById('header');
+        header.scrollIntoView();
+    }, [])
 
     useEffect(() => {
         if (!tours) {

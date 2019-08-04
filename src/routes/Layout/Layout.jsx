@@ -18,7 +18,7 @@ const Layout = () => {
     return (
         <div className={styles.root}>
             <Particles />
-            <div className={styles.header}>
+            <div className={styles.header} id='header'>
                 <Header />
             </div>
             {transitions.map(({item, props, key}) => (

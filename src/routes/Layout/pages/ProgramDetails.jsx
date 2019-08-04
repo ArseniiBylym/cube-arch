@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import styles from './styles/ProgramDetails.module.scss';
 import {useStoreState} from 'easy-peasy';
 import {Api} from '../../../api/index';
@@ -14,6 +14,11 @@ const ProgramDetails = props => {
     const programs = useStoreState(state => state.content.programs);
     const lang = useStoreState(state => state.lang.current);
     const [program, setProgram] = useState(null);
+
+    useLayoutEffect(() => {
+        const header = document.getElementById('header');
+        header.scrollIntoView();
+    }, [])
 
     useEffect(() => {
         if (!programs) {

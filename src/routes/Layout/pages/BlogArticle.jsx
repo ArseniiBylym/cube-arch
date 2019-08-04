@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import ReactMarkdown from 'react-markdown';
 import {useStoreState} from 'easy-peasy';
 import Grid from '@material-ui/core/Grid';
@@ -10,6 +10,11 @@ const BlogArticle = props => {
     const [post, setPost] = useState(null);
     const lang = useStoreState(state => state.lang.current);
     const articles = useStoreState(state => state.content.articles);
+
+    useLayoutEffect(() => {
+        const header = document.getElementById('header');
+        header.scrollIntoView();
+    }, [])
 
     useEffect(() => {
         if (!articles) {
