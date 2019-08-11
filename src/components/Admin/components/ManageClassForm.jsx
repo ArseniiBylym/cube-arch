@@ -48,6 +48,7 @@ export const ManageClassForm = props => {
         if (editedElem) {
             getSubscribers();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -80,6 +81,7 @@ export const ManageClassForm = props => {
                 setFileMode(true)
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getSubscribers = async () => {

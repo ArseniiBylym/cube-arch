@@ -20,6 +20,7 @@ const Gallery = ({scrollPosition}) => {
         if (!gallery) {
             fetchGallery();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {

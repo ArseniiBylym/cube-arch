@@ -24,6 +24,7 @@ const BlogArticle = props => {
             const post = articles.find(item => item.id === postId);
             setPost(post)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const fetchCurrentPost = async () => {

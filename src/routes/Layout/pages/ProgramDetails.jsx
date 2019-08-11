@@ -28,6 +28,7 @@ const ProgramDetails = props => {
             const program = programs.find(item => item.id === programId);
             setProgram(program);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.match.params.id]);
 
     useEffect(() => {

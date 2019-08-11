@@ -19,6 +19,7 @@ const Tours = () => {
         if (!tours) {
             fetchTours();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {

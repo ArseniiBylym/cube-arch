@@ -18,6 +18,7 @@ const Articles = () => {
         if (!articles) {
             fetchData();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {

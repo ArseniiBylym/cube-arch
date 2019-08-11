@@ -30,6 +30,7 @@ const ClassDetails = props => {
             const classItem = classes.find(item => item.id === classId);
             setClassItem(classItem);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.match.params.id]);
 
     useEffect(() => {

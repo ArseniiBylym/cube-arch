@@ -48,6 +48,7 @@ export const ManageTourForm = props => {
         if (editedElem) {
             getSubscribers();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -81,6 +82,7 @@ export const ManageTourForm = props => {
                 setFileMode(true)
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getSubscribers = async () => {

@@ -13,18 +13,11 @@ export const EventCard = trackWindowScroll(({cardType, id, fileUrl, image, readM
     const [imageLoaded, setImageLoaded] = useState(false);
     const lang = useStoreState(state => state.lang.current);
 
-    // useEffect(() => preloadImage(), [])
-
     useEffect(() => {
         const content = data.lang[lang].pages[cardType];
         setContent(content);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [lang]);
-
-    // const preloadImage = () => {
-    //     const img = new Image();
-    //     img.onload = () => {setImageLoaded(true)}
-    //     img.src = fileUrl || image;
-    // }
 
     const isFutureDate = date => {
         return Date.now() < date;

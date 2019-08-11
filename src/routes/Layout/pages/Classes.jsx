@@ -17,6 +17,7 @@ const Classes = () => {
         if (!classes) {
             fetchClasses();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {

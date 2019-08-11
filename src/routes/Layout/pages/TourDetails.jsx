@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useLayoutEffect} from 'react';
 import styles from './styles/TourDetails.module.scss';
-import {useStoreState, useStoreActions} from 'easy-peasy';
+import {useStoreState} from 'easy-peasy';
 import {Api} from '../../../api/index';
 import {data} from '../../../assets/data/index';
 import {Spinner} from './../../../components/shared';
@@ -30,6 +30,7 @@ const TourDetails = props => {
             const tour = tours.find(item => item.id === tourId);
             setTour(tour);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.match.params.id]);
 
     useEffect(() => {

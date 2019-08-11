@@ -30,6 +30,7 @@ const Home = () => {
         return function () {
             document.body.removeEventListener('keydown', onKeyDownHandler)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeScreen])
 
     const preloadImage = () => {

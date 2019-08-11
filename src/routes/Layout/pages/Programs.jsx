@@ -18,6 +18,7 @@ const Programs = (props) => {
         if(!programs) {
             fetchPrograms();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {

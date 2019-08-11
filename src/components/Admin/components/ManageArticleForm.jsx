@@ -55,6 +55,7 @@ export const ManageArticleForm = props => {
             }
             setTitle({en: title.en, ukr: title.ukr});
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const onCreate = async () => {

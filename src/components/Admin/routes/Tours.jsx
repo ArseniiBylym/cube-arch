@@ -20,6 +20,7 @@ export const Tours = props => {
         if (!tours) {
             fetchData();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const fetchData = async() => {

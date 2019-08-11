@@ -44,6 +44,7 @@ export const ManageProgramForm = props => {
         if (editedElem) {
             getRegistrations();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -75,6 +76,7 @@ export const ManageProgramForm = props => {
                 setFileMode(true)
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getRegistrations = async () => {

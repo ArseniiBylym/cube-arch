@@ -20,6 +20,7 @@ export const Classes = props => {
         if (!classes) {
             fetchData();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const fetchData = async() => {
