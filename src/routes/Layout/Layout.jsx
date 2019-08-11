@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useRef, useLayoutEffect} from 'react';
 import {Route, Switch, Redirect, __RouterContext} from 'react-router-dom';
 import {About, Classes, ClassDetails, Gallery, Programs, ProgramDetails, Tours, TourDetails, Articles, Contacts, BlogArticle} from './pages';
 import {Header} from '../../components/Layout';
@@ -10,13 +10,20 @@ const useRouter = () => useContext(__RouterContext);
 
 const Layout = () => {
     const {location} = useRouter();
+    const rootElemRef = useRef();
+    useLayoutEffect(() => {
+        if (rootElemRef.current) {
+            rootElemRef.current.scrollTop = 0;
+        }
+    }, [location]);
+
     const transitions = useTransition(location, location => location.pathname, {
         from: { opacity: 0},
         enter: { opacity: 1},
         leave: { opacity: 0},
       })
     return (
-        <div className={styles.root}>
+        <div ref={rootElemRef} className={styles.root}>
             <Particles />
             <div className={styles.header} id='header'>
                 <Header />
