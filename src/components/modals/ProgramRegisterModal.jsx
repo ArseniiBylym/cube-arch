@@ -34,6 +34,11 @@ export const ProgramRegisterModal = props => {
 
     const lang = useStoreState(state => state.lang.current);
 
+    const closeHandler = () => {
+        clearFormState();
+        closeModal();
+    }
+
     const sendHandler = async() => {
         const registerData = {
             email,
@@ -164,7 +169,7 @@ export const ProgramRegisterModal = props => {
                         <Button className={styles.buttonConfirm} disabled={sending || isDisabled()} onClick={sendHandler} color="primary">
                             {data.modals.buttons.confirm[lang]}
                         </Button>
-                        <Button className={styles.buttonCancel} disabled={sending} onClick={closeModal} color="primary">
+                        <Button className={styles.buttonCancel} disabled={sending} onClick={closeHandler} color="primary">
                         {data.modals.buttons.cancel[lang]}
                         </Button>
                     </DialogActions>
