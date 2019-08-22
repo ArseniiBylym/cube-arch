@@ -21,9 +21,11 @@ const Contacts = () => {
         <>
             <PageTitle title={content.title} description={content.description} />
             <div className={styles.root}>
-                <div className={styles.address} >
-                    {address[lang]}
-                </div>
+                {address.map(item => (
+                    <div className={styles.address} >
+                        {item[lang]}
+                    </div>
+                ))}
                 {phones.map(item => (
                     <div key={item} className={styles.phone}>
                         {item}

@@ -14,7 +14,9 @@ export const ContactsScreen = props => {
         >
             {({isVisible}) => (
                 <div className={isVisible ? 'ContactsScreen visible' : 'ContactsScreen'}>
-                    <div className="address">{address}</div>
+                    {address.map(item => (
+                        <div className="address">{item}</div>
+                    ))}
                     {phones.map(item => (
                         <div key={item} className="phone">
                             {item}

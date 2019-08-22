@@ -9,10 +9,16 @@ export const data = {
                 "+380679190575",
                 "+380934025825",
             ],
-            address: {
-                en: "Ukrain, Kyiv, Bilomorskya st, 22",
-                ukr: "Україна, Київ, вул. Біломорська, 1",
-            },
+            address: [
+                {
+                    en: "Ukraine, Kyiv, Bilomorskya st, 22",
+                    ukr: "Україна, Київ, вул. Біломорська, 1",
+                },
+                {
+                    en: "Ukraine, Kyiv, Volynskya st, 9/21",
+                    ukr: "Україна, Київ, вул. Волинська, 9/21",
+                }
+            ],
             email: "cubearchclub.info@gmail.com",
             development: {
                 name: "Arsenii Bylym",
@@ -229,7 +235,10 @@ export const data = {
                         {index: 7, name: "gallery", linkText: "To the gallery", linkUrl: "/gallery", text: "Works of our students, photos from workshops and other events"},
                         {index: 8, name: "articles", linkText: "Articles", linkUrl: "/articles"}, 
                         {index: 9, name: "about", linkText: "About us", linkUrl: "/about"},
-                        {index: 10, name: "contacts", address: "Ukrain, Kyiv, Bilomorskya st, 1"},
+                        {index: 10, name: "contacts", address: [
+                            "Ukraine, Kyiv, Bilomorskya st, 1",
+                            "Ukraine, Kyiv, Volynskya st, 9/21",
+                        ]},
                     ]
                 },
                 programs: {
@@ -383,7 +392,10 @@ export const data = {
                         {index: 7, name: "галерея", linkText: "До галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з майстер-класів та інших заходів"},
                         {index: 8, name: "статті", linkText: "Статті", linkUrl: "/articles"},
                         {index: 9, name: "про нас", linkText: "Про нас", linkUrl: "/about"},
-                        {index: 10, name: "контакти", address: "Україна, Київ, вул. Біломорська, 1",},
+                        {index: 10, name: "контакти", address: [
+                            "Україна, Київ, вул. Біломорська, 1",
+                            "Україна, Київ, вул. Волинська, 9/21",
+                        ]},
                     ]
                 },
                 programs: {
