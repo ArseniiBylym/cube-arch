@@ -1,5 +1,5 @@
 import darynaImage from '../images/profile/daryna_profile.jpg';
-import olgaImage from '../images/profile/olga_profile.jpg';
+import olgaImage from '../images/profile/olga_profile-v2.jpg';
 
 export const data = {
     core: {
@@ -10,10 +10,10 @@ export const data = {
                 "+380934025825",
             ],
             address: [
-                {
-                    en: "Ukraine, Kyiv, Bilomorskya st, 22",
-                    ukr: "Україна, Київ, вул. Біломорська, 1",
-                },
+                // {
+                //     en: "Ukraine, Kyiv, Bilomorskya st, 22",
+                //     ukr: "Україна, Київ, вул. Біломорська, 1",
+                // },
                 {
                     en: "Ukraine, Kyiv, Volynskya st, 9/21",
                     ukr: "Україна, Київ, вул. Волинська, 9/21",
@@ -107,7 +107,7 @@ export const data = {
                 name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
                 children: `Кількість дітей, їх вік, ім'я`,
-                reason: `Що Вас зацікавило у майстер-класі? Що очікуєте?`,
+                reason: `Що Вас зацікавило у онлайн курсі? Що очікуєте?`,
                 sourse: `Звідки дізналися про нас? `
             }
         },
@@ -127,7 +127,7 @@ export const data = {
                 name: `Прізвище, ім'я контактної особи`,
                 phone: `Телефон`,
                 children: `Кількість дітей, їх вік, ім'я`,
-                reason: `Що Вас зацікавило у майстер-класі? Що очікуєте?`,
+                reason: `Що Вас зацікавило у онлайн курсі? Що очікуєте?`,
                 sourse: `Звідки дізналися про нас? `
             }
         },
@@ -333,7 +333,7 @@ export const data = {
                     nav: [
                         {index: 0, name: "головна", linkUrl: "/home"},
                         {index: 1, name: "курси", linkUrl: "/courses"},
-                        {index: 2, name: "майстер-класи", linkUrl: "/classes"},
+                        {index: 2, name: "онлайн курси", linkUrl: "/classes"},
                         {index: 3, name: "екскурсії", linkUrl: "/tours"},
                         {index: 4, name: "галерея", linkUrl: "/gallery"},
                         {index: 5, name: "статті", linkUrl: "/articles"},
@@ -341,7 +341,7 @@ export const data = {
                         {index: 7, name: "контакти", linkUrl: "/contacts"}
                     ],
                     screens: [
-                        {index: 0, name: "головна", nextScreenTitle: `Яку користь дає дітям архітектура?`, text: `Навички для майбутнього —\n завдяки архітектурі`, secondaryText: `Розвивайте в дітях <b>креативність, критичне мислення,</b> вміння <b>працювати в команді</b> та <b>презентувати</b> свої ідеї за допомогою архітектурних курсів, майстер-класів та екскурсій.`,  testClass: `Записатися на безкоштовне заняття`},
+                        {index: 0, name: "головна", nextScreenTitle: `Яку користь дає дітям архітектура?`, text: `Навички для майбутнього —\n завдяки архітектурі`, secondaryText: `Розвивайте в дітях <b>креативність, критичне мислення,</b> вміння <b>працювати в команді</b> та <b>презентувати</b> свої ідеї за допомогою архітектурних курсів, онлайн курсів та екскурсій.`,  testClass: `Записатися на безкоштовне заняття`},
                         {index: 1, name: "інфо", nextScreenTitle: `Що ми пропонуємо?`, header: `Яку користь дає дітям архітектура?`, subHeader: `На наших архітектурних заняттях ваша дитина розвиває навички, які допоможуть їй <b>досягти успіху в майбутньому:</b>`, text: [
                             {
                                 title: `Креативність`,
@@ -356,44 +356,44 @@ export const data = {
                                 subtitle: `Мало створити проєкт — його треба показати з кращого боку. Дитина вчиться переконувати, доносити свою думку, презентувати свої успіхи.`
                             },
                         ]},
-                        {index: 3, name: "курси", nextScreenTitle: `Мало часу? Спробуйте короткі майстер-класи`, linkText: `Обрати курс`, linkUrl: "/courses", header: `Архітектурні курси для дітей`, text: `Серії з 8-12 занять, які допоможуть глибоко і максимально швидко зрозуміти певну архітектурну тему, наприклад:\n\n— Перші кроки в архітектурі\n— Архітектурне проектування\n— Урбан-дизайн\n— Міні-будівництво\n— Скетчінг\n\nта інші.`},
-                        {index: 4, name: "майстер-класи", linkText: `Обрати майстер-клас`, linkUrl: "/classes", header: `Архітектурні майстер-класи для дітей`, text: `<p><b>Двогодиний майстер-клас —</b> це можливість швидко познайомитися з однією <b>цікавою архітектурною темою</b> і одразу <b>застосувати знання на практиці.</b></p><p>Діти можуть спробувати себе в ролі архітектора, містопланувальника, майстра вітражів, конструктора, дизайнера…</p>`},
+                        {index: 3, name: "курси", nextScreenTitle: `Мало часу? Спробуйте короткі онлайн курси`, linkText: `Обрати курс`, linkUrl: "/courses", header: `Архітектурні курси для дітей`, text: `Серії з 8-12 занять, які допоможуть глибоко і максимально швидко зрозуміти певну архітектурну тему, наприклад:\n\n— Перші кроки в архітектурі\n— Архітектурне проектування\n— Урбан-дизайн\n— Міні-будівництво\n— Скетчінг\n\nта інші.`},
+                        {index: 4, name: "онлайн курси", linkText: `Обрати онлайн курс`, linkUrl: "/classes", header: `Архітектурні онлайн курси для дітей`, text: `<p><b>Двогодиний онлайн курс —</b> це можливість швидко познайомитися з однією <b>цікавою архітектурною темою</b> і одразу <b>застосувати знання на практиці.</b></p><p>Діти можуть спробувати себе в ролі архітектора, містопланувальника, майстра вітражів, конструктора, дизайнера…</p>`},
                         {index: 5, name: "відгуки", linkText: "відгуки", text: [
                             {
                                 name: "Nadiya Kantaurova",
-                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/13062233_213009899082458_3562126366937109409_n.jpg?_nc_cat=103&_nc_oc=AQmvpM8zb197kM19m7ygZudjgQg6qmNA7kn5e1VCuzSzIAD9E8JFo2FMmUTBkOlV0nM&_nc_ht=scontent.fiev19-1.fna&oh=553e149d60f541efd7a53fcbdbbd856c&oe=5DA18C0B",
+                                photoUrl: "https://scontent.fiev15-1.fna.fbcdn.net/v/t31.0-1/p240x240/13063393_213009899082458_3562126366937109409_o.jpg?_nc_cat=103&_nc_sid=dbb9e7&_nc_ohc=pcKs-HtNqwcAX-hXhVv&_nc_ht=scontent.fiev15-1.fna&_nc_tp=6&oh=e053c24103532ead8581cc34ba3cbdb7&oe=5F37009E",
                                 profileUrl: `https://www.facebook.com/nadiya.kantaurova?__tn__=%2CdlC-R-R&eid=ARCv9peWDPuuC_VeDR9Y6IJUlVSuyPWPyr6xzUy4t_aDR-JlyF5l8ZHBWLXZBsHMvlZb3w2IpO0uXBZu&hc_ref=ARRbErflkYZ2ow1IrVTjbeTGAQMgT4mV_LAp_DEVmM1XdcqlXFS_PIFvLy6l0cAaLuQ`,
-                                review: `Хочу порадити клуб Cube ARCH club. Була з дитиною на майстер-класі - дитина у захваті. Всі секрети архітектури викладаються у простій, ігровій формі. На практичній частині заняття діти мають можливість проявити себе. Використання у роботі різних матеріалів, розвиває у дітях креативність, фантазію та просторове мислення. Сподобалося, що в Cube ARCH club дитина може самостійно зконструювати та "відчути" архітектурні елементи з різноманітних геоометричних форм.`,
+                                review: `Хочу порадити клуб Cube ARCH club. Була з дитиною на онлайн курсі - дитина у захваті. Всі секрети архітектури викладаються у простій, ігровій формі. На практичній частині заняття діти мають можливість проявити себе. Використання у роботі різних матеріалів, розвиває у дітях креативність, фантазію та просторове мислення. Сподобалося, що в Cube ARCH club дитина може самостійно зконструювати та "відчути" архітектурні елементи з різноманітних геоометричних форм.`,
                                 linkUrl: `https://www.facebook.com/nadiya.kantaurova/posts/873724079677700`,
                             },
                             {
                                 name: "Serge Klimovych",
-                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/39594157_2055369594496305_462028370973032448_n.jpg?_nc_cat=102&_nc_oc=AQnf3SfyTNYkXjOU-jFXj8OV7Sf49CTMg4Qj4x_Szu_zkxHL5xX0ezkcNSfA4B3BCxk&_nc_ht=scontent.fiev19-1.fna&oh=1d5de1961e66e79957f7aca8e031bd1f&oe=5DB3E8E4",
+                                photoUrl: "https://scontent.fiev15-1.fna.fbcdn.net/v/t1.0-1/p240x240/39594157_2055369594496305_462028370973032448_n.jpg?_nc_cat=102&_nc_sid=dbb9e7&_nc_ohc=BPXz31CWOvYAX85G4Q4&_nc_ht=scontent.fiev15-1.fna&_nc_tp=6&oh=deb4e66a05262721fc4664c219635a76&oe=5F3A4680",
                                 profileUrl: `https://www.facebook.com/sergiy.klimovy4?__tn__=%2CdlC-R-R&eid=ARCht2eOa28x5QlXmHtPn4d2ALhTcQVwrjoiU6SZfWMNfg7ab2Lr-ivl4fDJbnT0K3KdWsVfyHVWaT1v&hc_ref=ARSTtG4_UyOpSRXWa7wRHLQPPmPFo7O7-sjkc_JrFketCbxElVv_KbKfDBosptdhsaI`,
                                 review: `Мій 9-річний син і його подруга були на повноцінному двогодинному занятті. Коли я його забирав, то побачив палаючі від ентузіазму очі - Оля і Даша гарно знаходять підхід до маленьких потенційних архітекторів, розповідаючи масу корисних речей, про які у школі зазвичай не дізнатися. Сміливо віддавайте малюків у руки викладачам - не пошкодуєте!`,
                                 linkUrl: `https://www.facebook.com/sergiy.klimovy4/posts/2394535527246375`,
                             },
                             {
                                 name: "Ірина Кравченко",
-                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/65308296_2820943744587912_6239051433279225856_n.jpg?_nc_cat=108&_nc_oc=AQlJlunDB2wsGbqBMzMh9Q4XL55efvKS9kC26hhoaRVC0HOw34MLm_syn0FE8fFCqJc&_nc_ht=scontent.fiev19-1.fna&oh=714f2b8def4cd8b23a74784716e4d7f8&oe=5DA0274B",
+                                photoUrl: "https://scontent.fiev15-1.fna.fbcdn.net/v/t1.0-1/p240x240/106059054_3703848239630787_3899233235380620983_o.jpg?_nc_cat=103&_nc_sid=dbb9e7&_nc_ohc=KckSVwBF29IAX9eYK2j&_nc_ht=scontent.fiev15-1.fna&_nc_tp=6&oh=203103dfa29bbbd5973d2cd8b50c2cc3&oe=5F386A2F",
                                 profileUrl: `https://www.facebook.com/profile.php?id=100000169437808&__tn__=%2CdlC-R-R&eid=ARD8nMMBp59eXlPl_1bz9FTePTon01_m9D-IEZWNWfCVs_wAJSYBLDOQIlKjFXaqesKo0w0lVtpG3-Hx&hc_ref=ARQW2ClsnsLyS4_33dFbCcHuwapd5kZRcMHGia7KjIFSd1SUM0lu0VSdJ-JRAPvT0fY`,
                                 review: `Діти бачать те, чого не бачимо ми, іх рішення можуть бути дуже простими, геніальними та несподіваними.`,
                                 linkUrl: `https://www.facebook.com/permalink.php?story_fbid=2600886146593674&id=100000169437808`
                             },
                             {
                                 name: "Татьяна Ромашко-Богданова",
-                                photoUrl: "https://scontent.fiev19-1.fna.fbcdn.net/v/t1.0-9/59960634_2325050447775977_4288445830542655488_n.jpg?_nc_cat=107&_nc_oc=AQn0-GAw0NMe1Fr0m1bru4eOCf8JR_oHpw8XkN8lBzRQXuSWOpkIcNolBK9gWXnJPrg&_nc_ht=scontent.fiev19-1.fna&oh=11ec12e59b0ebee0d9f2939f4309f273&oe=5DE7EEF6",
+                                photoUrl: "https://scontent.fiev15-1.fna.fbcdn.net/v/t1.0-1/p240x240/59894634_2325050451109310_6757035604552187904_o.jpg?_nc_cat=111&_nc_sid=dbb9e7&_nc_ohc=uSsTlFJSfXYAX-AULd5&_nc_ht=scontent.fiev15-1.fna&_nc_tp=6&oh=d8b45915fbefab91897bcb58f2bce618&oe=5F3A517D",
                                 profileUrl: `https://www.facebook.com/profile.php?id=100008131336394&__tn__=%2CdlC-R-R&eid=ARC-pQpw4mdwDW94nAC6O3MuyX_lFvr3hRWC7DHzkVi5qrbMIckVDyPns9CMZyIf1lkvwpB_Ty8ZUoe-&hc_ref=ARQmxykTl3KFuqMz-StBonzqIRrJBIQgoiOVaYl_i1yCrQb86NAHyVsqQO6JZDadYtc`,
                                 review: `Діти на відміну від дорослих не бояться фантазувати, вони сміливіші за нас! Я якщо ми хочемо, щоб наші міста були красивими та затишними, нам потрібно підтримувати та трішечки "направляти" дітей. І можливо, вона нас теж чомусь навчать! На відміну від університетів, тут не змушують вчитися, всі заняття проходять в ігровій формі, так, щоби діти самі розкривалися.`,
                                 linkUrl: `https://www.facebook.com/permalink.php?story_fbid=2274874792793543&id=100008131336394`,
                             },
                         ]},
                         {index: 6, name: "екскурсії", linkText: "Обрати екскурсію", linkUrl: "/tours", header: `Архітектурні екскурсії Києвом для дітей`, text: `<b>Погляньте на місто очима архітектора</b> та дізнайтеся цікаві архітектурні історії про будинки, площі та вулиці.`},
-                        {index: 7, name: "галерея", linkText: "До галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з майстер-класів та інших заходів"},
+                        {index: 7, name: "галерея", linkText: "До галереї", linkUrl: "/gallery", text: "Роботи наших учнів, фото з онлайн курсів та інших заходів"},
                         {index: 8, name: "статті", linkText: "Статті", linkUrl: "/articles"},
                         {index: 9, name: "про нас", linkText: "Про нас", linkUrl: "/about"},
                         {index: 10, name: "контакти", address: [
-                            "Україна, Київ, вул. Біломорська, 1",
+                            // "Україна, Київ, вул. Біломорська, 1",
                             "Україна, Київ, вул. Волинська, 9/21",
                         ]},
                     ]
@@ -415,17 +415,17 @@ export const data = {
                     readMore: "Детальніше"
                 },
                 classes: {
-                    title: "Майстер-класи",
+                    title: "Онлайн курси",
                     details: {
                         date: "Дата проведення",
                         time: "Час",
                         apply: "Реєстрація",
                         closed: "Реєстрацію завершено",
-                        order: "Замовити майстер-клас",
-                        price: "Вартість майстер-класу",
-                        duration: "Тривалість майстер-класу",
+                        order: "Замовити онлайн курс",
+                        price: "Вартість онлайн курсу",
+                        duration: "Тривалість онлайн курсу",
                         auditory: "Для кого",
-                        tooltip: "Перелік майстер-класів",
+                        tooltip: "Перелік онлайн курсів",
                         place: "Місце проведення"
                     },
                     readMore: "Детальніше"
@@ -456,15 +456,15 @@ export const data = {
                 about: {
                     title: "Про нас",
                     users: [
-                        {
-                            id: 0,
-                            name: "Дарина Пасюта",
-                            info: `Архітекторка, спеціалістка з містобудування. Має 13-річний досвід роботи у сфері міського планування, благоустрою та дизайну. Створювала ескізні проекти, концепт-дизайни об'єктів, розробляла детальні плани територій та генеральні плани міст.`,
-                            image: darynaImage,
-                            socials: {
-                                facebook: "facebook.com/daryna.bylym",
-                            }
-                        },
+                        // {
+                        //     id: 0,
+                        //     name: "Дарина Пасюта",
+                        //     info: `Архітекторка, спеціалістка з містобудування. Має 13-річний досвід роботи у сфері міського планування, благоустрою та дизайну. Створювала ескізні проекти, концепт-дизайни об'єктів, розробляла детальні плани територій та генеральні плани міст.`,
+                        //     image: darynaImage,
+                        //     socials: {
+                        //         facebook: "facebook.com/daryna.bylym",
+                        //     }
+                        // },
                         {
                             id: 1,
                             name: "Ольга Павленко",

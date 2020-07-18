@@ -275,7 +275,7 @@ export const ManageClassForm = props => {
                     <TextField
                         margin="normal"
                         name="name_ukr"
-                        label="Назва майстер-класу"
+                        label="Назва онлайн курсу"
                         type="text"
                         fullWidth
                         required
@@ -304,7 +304,7 @@ export const ManageClassForm = props => {
                     <TextField
                         margin="normal"
                         name="place_ukr"
-                        label="Місце майстер-класу"
+                        label="Місце онлайн курсу"
                         type="text"
                         fullWidth
                         required

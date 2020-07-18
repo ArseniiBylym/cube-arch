@@ -23,17 +23,15 @@ const About = () => {
             <div className={styles.root}>
                 <Grid container spacing={0} className={styles.container}>
                     {content.users.map(item => (
-                        <Grid item key={item.id} xs={12} md={6} className={styles.user}>
+                        <Grid item key={item.id} xs={12} className={styles.user}>
                             <Grid container spacing={2}>
                                 <Grid
                                     item
                                     xs={12}
-                                    sm={6}
-                                    md={12}
                                     className={styles.image}
                                     style={{backgroundImage: `url(${item.image})`}}
                                 />
-                                <Grid item xs={12} sm={6} md={12} className={styles.details}>
+                                <Grid item xs={12} className={styles.details}>
                                     <div className={styles.name}>{item.name}</div>
                                     <div className={styles.info}>{item.info}</div>
                                     <div className={styles.socials}>
