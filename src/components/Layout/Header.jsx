@@ -3,7 +3,7 @@ import {useStoreState} from 'easy-peasy';
 import Drawer from '@material-ui/core/Drawer';
 import {data} from '../../assets/data/index';
 import {LangToggle, NavigationLink} from './../shared';
-import logo from '../../assets/icons/logo.svg';
+import logo from '../../assets/images/cube-arch-logo.jpg';
 import styles from './Header.module.scss';
 
 export const Header = React.memo(() => {
